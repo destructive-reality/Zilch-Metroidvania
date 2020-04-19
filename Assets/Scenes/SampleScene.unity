@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 8
   jumpForce: 5
+  isGrounded: 0
 --- !u!1 &873116570
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,8 +362,9 @@ GameObject:
   m_Component:
   - component: {fileID: 873116571}
   - component: {fileID: 873116572}
+  - component: {fileID: 873116573}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,10 +394,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.060000002, y: -0.75}
+  m_Offset: {x: 0.060000002, y: -0.78}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -406,8 +408,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31111866, y: 0.0878706}
+  m_Size: {x: 0.31111866, y: 0.15}
   m_EdgeRadius: 0
+--- !u!114 &873116573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873116570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c26a0f4b468fd49abb4a8b81f77f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1339688711
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +435,7 @@ GameObject:
   - component: {fileID: 1339688712}
   m_Layer: 0
   m_Name: 2d fly ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

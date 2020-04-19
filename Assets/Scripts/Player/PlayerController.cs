@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     //Public vars
     public float horizontalSpeed;
     public float jumpForce;
+    public float dashForce;
     public bool isGrounded = false;
 
     //Player components
@@ -23,10 +24,24 @@ public class PlayerController : MonoBehaviour
         //Flip Sprite depending on orientation
         playerSpriteRenderer.flipX = horizontalAxis < 0;
 
-        transform.Translate(new Vector2(horizontalAxis * horizontalSpeed * Time.deltaTime, 0));
+
+        //Movement Left/Right
+        playerRigidbody.MovePosition(playerRigidbody.position + new Vector2(horizontalAxis * horizontalSpeed * Time.deltaTime, 0));
+
+        //Jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
+        }
+
+        //Dash
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            playerRigidbody.AddForce(Vector2.right * dashForce, ForceMode2D.Impulse);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            playerRigidbody.AddForce(Vector2.left * dashForce, ForceMode2D.Impulse);
         }
     }
 

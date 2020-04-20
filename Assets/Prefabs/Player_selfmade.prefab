@@ -174,7 +174,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 3.6
   m_Material: {fileID: 6200000, guid: de0e8a8cffa8eb34f9243050d507a66c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -192,14 +192,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ff86ece5b0f3745ab4181115e6e294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 400
+  jumpForce: 16
   movementSmoothing: 0.05
-  m_AirControl: 1
   groundLayers:
     serializedVersion: 2
     m_Bits: 55
   groundCheckTransform: {fileID: 2993224483635207055}
-  runSpeed: 40
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  groundedRadiusCheck: 0.2
+  runSpeed: 35

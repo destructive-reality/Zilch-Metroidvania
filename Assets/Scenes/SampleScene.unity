@@ -438,21 +438,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_selfmade
       objectReference: {fileID: 0}
-    - target: {fileID: 2993224484017735188, guid: d588eb3dc85596e4ab3c60c9198ab820,
-        type: 3}
-      propertyPath: jumpForce
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 2993224484017735188, guid: d588eb3dc85596e4ab3c60c9198ab820,
-        type: 3}
-      propertyPath: runSpeed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2993224484017735196, guid: d588eb3dc85596e4ab3c60c9198ab820,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 3.6
-      objectReference: {fileID: 0}
     - target: {fileID: 2993224484017735199, guid: d588eb3dc85596e4ab3c60c9198ab820,
         type: 3}
       propertyPath: m_LocalPosition.x

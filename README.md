@@ -11,6 +11,9 @@ https://docs.google.com/document/d/1I0MJbC1vRI41wLkgWC80g4Y6lZtKHXhuWOQCS7RL7TQ/
 Moodboard
 https://docs.google.com/document/d/1I0MJbC1vRI41wLkgWC80g4Y6lZtKHXhuWOQCS7RL7TQ/edit
 
+Jira
+https://destructivereality.atlassian.net/jira/software/projects/METVAN/boards/2
+
 Andres Teil
 https://destructivereality.atlassian.net/wiki/spaces/ME/pages/edit-v2/33147?draftShareId=b8388057-01da-4636-9cbf-8eb1942e01dc
 

@@ -8,7 +8,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private LayerMask groundLayers;                          // A mask determining what is ground to the character
     [SerializeField] private Transform groundCheckTransform;                           // A position marking where to check if the player is grounded.
 
-    [SerializeField] float groundedRadiusCheck = .2f; // Radius of the overlap circle to determine if grounded
+    [SerializeField] float groundCheckRadius = .5f; // Radius of the overlap circle to determine if grounded
     private bool isGrounded;            // Whether or not the player is grounded.
     private Rigidbody2D playerRigidbody2D;
     private bool isPlayerFacingRight = true;  // For determining which way the player is currently facing.
@@ -17,8 +17,6 @@ public class CharacterController2D : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public float runSpeed = 40f;
     float horizontalMove = 0f;
-    bool jump = false;
-
 
 
     private void Awake()
@@ -31,53 +29,36 @@ public class CharacterController2D : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            Debug.Log("Jumping");
-            jump = true;
+            playerRigidbody2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
     }
 
     private void FixedUpdate()
     {
-        Move(horizontalMove * Time.fixedDeltaTime, jump);
-        jump = false;
-
-        bool wasGrounded = isGrounded;
-        isGrounded = false;
-
-        // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-        // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-        //TODO Understand this.
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckTransform.position, groundedRadiusCheck, groundLayers);
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            if (colliders[i].gameObject != gameObject)
-            {
-                isGrounded = true;
-            }
-        }
-    }
-
-
-    public void Move(float horizontalMoveAxis, bool jump)
-    {
-        Vector3 targetVelocity = new Vector2(horizontalMoveAxis * 10f, playerRigidbody2D.velocity.y);
+        Vector3 targetVelocity = new Vector2(horizontalMove, playerRigidbody2D.velocity.y);
         playerRigidbody2D.velocity = Vector3.SmoothDamp(playerRigidbody2D.velocity, targetVelocity, ref currentVelocity, movementSmoothing);
 
-        if (horizontalMoveAxis > 0 && !isPlayerFacingRight)
+        if (horizontalMove > 0 && !isPlayerFacingRight)
         {
             Flip();
         }
-        else if (horizontalMoveAxis < 0 && isPlayerFacingRight)
+        else if (horizontalMove < 0 && isPlayerFacingRight)
         {
             Flip();
         }
 
-        if (isGrounded && jump)
+        isGrounded = false;
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckTransform.position, groundCheckRadius, groundLayers);
+        foreach (Collider2D collider in colliders)
         {
-            isGrounded = false;
-            playerRigidbody2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            if (collider.gameObject != gameObject)
+            {
+                Debug.Log(collider);
+                isGrounded = true;
+            }
         }
     }
 
@@ -89,5 +70,11 @@ public class CharacterController2D : MonoBehaviour
         Vector3 localPlayerXScale = transform.localScale;
         localPlayerXScale.x *= -1;
         transform.localScale = localPlayerXScale;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(groundCheckTransform.position, groundCheckRadius);
     }
 }

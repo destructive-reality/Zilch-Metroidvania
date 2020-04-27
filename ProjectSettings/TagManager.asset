@@ -45,6 +45,9 @@ TagManager:
   - name: Background
     uniqueID: 2334714609
     locked: 0
+  - name: Items
+    uniqueID: 1833563377
+    locked: 0
   - name: Player
     uniqueID: 1380472127
     locked: 0

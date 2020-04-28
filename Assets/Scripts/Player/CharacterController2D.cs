@@ -15,6 +15,7 @@ public class CharacterController2D : MonoBehaviour
     private Vector3 currentVelocity = Vector3.zero;
 
     private SpriteRenderer spriteRenderer;
+    public Animator playerAnimator;
     public float runSpeed = 40f;
     float horizontalMove = 0f;
 
@@ -28,6 +29,7 @@ public class CharacterController2D : MonoBehaviour
     private void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalMove));
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {

@@ -29,7 +29,7 @@ public class CharacterController2D : MonoBehaviour
     private void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalMove));
+        playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalMove)); //Play Animations correctly
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -51,15 +51,12 @@ public class CharacterController2D : MonoBehaviour
             Flip();
         }
 
-        //TODO don't call this every frame
         isGrounded = false;
-
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckTransform.position, groundCheckRadius, groundLayers);
         foreach (Collider2D collider in colliders)
         {
             if (collider.gameObject != gameObject)
             {
-                Debug.Log(collider);
                 isGrounded = true;
             }
         }
@@ -79,5 +76,10 @@ public class CharacterController2D : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheckTransform.position, groundCheckRadius);
+    }
+
+    public bool isAirborne()
+    {
+        return !isGrounded;
     }
 }

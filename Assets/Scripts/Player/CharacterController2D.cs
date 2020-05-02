@@ -51,9 +51,7 @@ public class CharacterController2D : MonoBehaviour
             Flip();
         }
 
-        //TODO don't call this every frame
         isGrounded = false;
-
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckTransform.position, groundCheckRadius, groundLayers);
         foreach (Collider2D collider in colliders)
         {
@@ -78,5 +76,10 @@ public class CharacterController2D : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheckTransform.position, groundCheckRadius);
+    }
+
+    public bool isAirborne()
+    {
+        return !isGrounded;
     }
 }

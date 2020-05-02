@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelConnector : MonoBehaviour
 {
     public int sceneToLoad;
+    public int doorId;
 
     private void Awake()
     {

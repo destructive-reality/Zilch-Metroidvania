@@ -59,7 +59,6 @@ public class CharacterController2D : MonoBehaviour
         {
             if (collider.gameObject != gameObject)
             {
-                Debug.Log(collider);
                 isGrounded = true;
             }
         }

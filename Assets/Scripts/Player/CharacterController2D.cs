@@ -29,7 +29,7 @@ public class CharacterController2D : MonoBehaviour
     private void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalMove));
+        playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalMove)); //Play Animations correctly
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {

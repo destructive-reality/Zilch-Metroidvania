@@ -23,6 +23,13 @@ public class CharacterController2D : MonoBehaviour
     public float runSpeed = 40f;
     float horizontalMove = 0f;
 
+    enum State {Idle, Running, Jumping, Dashing, Attacking};
+    private State playerState;
+    public float dashSpeed;
+    private float dashTime;         // remaining time of a dash
+    public float startDashTime = 0.1f;     // The time it takes to dash
+    private float dashDirecton;
+
     [Header("Sounds")]
     private AudioSource playerAudioSource;
     public AudioClip jumpSound;
@@ -32,11 +39,27 @@ public class CharacterController2D : MonoBehaviour
     {
         playerAudioSource = GetComponent<AudioSource>();
         playerRigidbody2D = GetComponent<Rigidbody2D>();
+
+        dashTime = startDashTime;
+        playerState = State.Idle;
     }
 
 
     private void Update()
     {
+        if (playerState == State.Idle || playerState == State.Running)
+        {
+            if (Input.GetButtonDown("Dash"))
+            {
+                playerState == State.Dashing;
+                dashDirecton = isPlayerFacingRight ? 1 : -1;
+            }
+        }
+        else if (playerState == State.Dashing)
+        {
+            
+        }
+        
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalMove)); //Play Animations correctly
 

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -366,6 +366,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9176276192874834772, guid: 87f11c2fd08c487489515a0198e7a198,
+        type: 3}
+      propertyPath: sceneToLoad
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9176276192874834775, guid: 87f11c2fd08c487489515a0198e7a198,
         type: 3}
       propertyPath: m_Name
@@ -453,7 +458,7 @@ GameObject:
   - component: {fileID: 1697112083}
   - component: {fileID: 1697112082}
   - component: {fileID: 1697112084}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sewer_bg
   m_TagString: Ground
   m_Icon: {fileID: 0}

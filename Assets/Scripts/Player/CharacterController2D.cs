@@ -1,8 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+//Required Components
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class CharacterController2D : MonoBehaviour
 {
+    [Header("Movement")]
     [SerializeField] private float jumpForce = 400f;                          // Amount of force added when the player jumps.
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;  // How much to smooth out the movement
     [SerializeField] private LayerMask groundLayers;                          // A mask determining what is ground to the character
@@ -19,9 +23,14 @@ public class CharacterController2D : MonoBehaviour
     public float runSpeed = 40f;
     float horizontalMove = 0f;
 
+    [Header("Sounds")]
+    private AudioSource playerAudioSource;
+    public AudioClip jumpSound;
+
 
     private void Awake()
     {
+        playerAudioSource = GetComponent<AudioSource>();
         playerRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
@@ -34,6 +43,7 @@ public class CharacterController2D : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             playerRigidbody2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            playerAudioSource.PlayOneShot(jumpSound);
         }
     }
 

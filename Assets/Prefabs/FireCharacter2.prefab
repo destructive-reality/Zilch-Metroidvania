@@ -897,7 +897,6 @@ GameObject:
   - component: {fileID: 1047782096130487534}
   - component: {fileID: 1047782096130487535}
   - component: {fileID: 1047782096130487528}
-  - component: {fileID: 8672920805022338574}
   - component: {fileID: 860947147407656699}
   m_Layer: 8
   m_Name: FireCharacter2
@@ -1008,18 +1007,6 @@ MonoBehaviour:
   playerAnimator: {fileID: 1047782095710309742}
   runSpeed: 10
   jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
---- !u!114 &8672920805022338574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6529288083630516912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a22df1b1ba05cb47ae564b02a756bdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &860947147407656699
 AudioSource:
   m_ObjectHideFlags: 0

@@ -13,4 +13,12 @@ public class LevelConnector : MonoBehaviour
         //Safety valve to always set the collider to trigger
         GetComponent<Collider2D>().isTrigger = true;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            LevelLoader.Instance.LoadLevelWithID(sceneToLoad);
+        }
+    }
 }

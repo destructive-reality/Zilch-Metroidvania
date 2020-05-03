@@ -56,7 +56,7 @@ public class CharacterController2D : MonoBehaviour
             }
             if (Input.GetButtonDown("Attack"))
             {
-                playerState = State.Attacking;
+                // playerState = State.Attacking;
             }
         }
         else if (playerState == State.Dashing)

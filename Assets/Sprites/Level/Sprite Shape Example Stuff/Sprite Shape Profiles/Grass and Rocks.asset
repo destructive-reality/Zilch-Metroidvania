@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Grass and Rocks
   m_EditorClassIdentifier: 
   m_Angles:
-  - m_Start: 45
-    m_End: 315
+  - m_Start: 84
+    m_End: 279
     m_Order: 0
     m_Sprites:
     - {fileID: 1887494081247492234, guid: d501f6d7fa84c4038b7449696f44ff38, type: 3}
-  - m_Start: -45
-    m_End: 45
+  - m_Start: -81
+    m_End: 84
     m_Order: 1
     m_Sprites:
     - {fileID: -4069628985407814602, guid: a4fef30bb3ca5463a9c33c123a81604a, type: 3}

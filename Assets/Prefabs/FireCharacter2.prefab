@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6845137951733823254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8530376148370534507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 7380900089544391861}
   - component: {fileID: 7921455227264756324}
   - component: {fileID: 5333101100105530163}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ebene 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 264388262749716312}
   - component: {fileID: 1047782095710309742}
   - component: {fileID: 1047782095710309743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5542509898001724416}
   - component: {fileID: 214493387641497264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 4582302905005673336}
   - component: {fileID: 6003226762424444419}
   - component: {fileID: 5434557834096839836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ebene 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4472005209978615744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5448388329451465268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1883069080074852342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 3041085063557057121}
   - component: {fileID: 8488927155757229512}
   - component: {fileID: 8457971974726238502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ebene 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8997046633555118180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 673153016173257349}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 7992898771029028662}
   - component: {fileID: 8229839949150683930}
   - component: {fileID: 2162720738562041207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ebene 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8102461051115725693}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8314434675279807557}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3930755509142264363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,8 @@ GameObject:
   - component: {fileID: 1047782096130487535}
   - component: {fileID: 1047782096130487528}
   - component: {fileID: 8672920805022338574}
-  m_Layer: 0
+  - component: {fileID: 860947147407656699}
+  m_Layer: 8
   m_Name: FireCharacter2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -956,7 +957,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08, y: 2.93}
+  m_Offset: {x: -0.3, y: 2.93}
   serializedVersion: 2
   m_Radius: 1.9603724
 --- !u!61 &1047782096130487535
@@ -972,7 +973,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07675147, y: 7.942991}
+  m_Offset: {x: -0.3, y: 7.942991}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1003,7 +1004,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 566
   groundCheckTransform: {fileID: 8883759046710026403}
-  groundCheckRadius: 0.3
+  groundCheckRadius: 0.25
   playerAnimator: {fileID: 1047782095710309742}
   runSpeed: 10
   jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
@@ -1019,6 +1020,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a22df1b1ba05cb47ae564b02a756bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &860947147407656699
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529288083630516912}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6622962744746053441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,7 +1125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8883759046710026403}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1060,7 +1157,7 @@ GameObject:
   - component: {fileID: 7954920120723660069}
   - component: {fileID: 8916693304710316711}
   - component: {fileID: 486831731801340310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ebene 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1162,7 +1259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7342840747412412552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1195,7 +1292,7 @@ GameObject:
   - component: {fileID: 3702958638055868797}
   - component: {fileID: 9188435212415726408}
   - component: {fileID: 3658124713645116157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ebene 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1299,7 +1396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9213489916257228791}
   - component: {fileID: 9213489916257228790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HeadSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1363,7 +1460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213489916281830769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightFootTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1394,7 +1491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9213489916324803906}
   - component: {fileID: 9213489916324803905}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1457,7 +1554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213489916511578866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New LimbSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1487,7 +1584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213489916683796861}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1517,7 +1614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213489916803860126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightFootSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1547,7 +1644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213489917140470527}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftFootSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1577,7 +1674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213489917298591870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightArmTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1608,7 +1705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9213489917448404899}
   - component: {fileID: 9213489917448404898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightFootSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1672,7 +1769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9213489917911408739}
   - component: {fileID: 9213489917911408738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1736,7 +1833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9213489917925437719}
   - component: {fileID: 9213489917925437718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftFootSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1799,7 +1896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213489917972880089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftFootTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1829,7 +1926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213489917992871003}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HeadSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1859,7 +1956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213489918186866046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HeadTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1889,7 +1986,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213489918350266175}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftArmTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -23,7 +23,7 @@ public class CharacterController2D : MonoBehaviour
     public float runSpeed = 40f;
     float horizontalMove = 0f;
 
-    enum State {Idle, Jumping, Dashing, Attacking};
+    enum State {Idle, Jumping, Dashing, Attacking};     // even necessarily when working with animator? MD
     private State playerState;
     public float dashSpeed = 70f;
     private float dashTime;         // remaining time of a dash
@@ -54,19 +54,19 @@ public class CharacterController2D : MonoBehaviour
                 playerState = State.Dashing;
                 dashDirecton = isPlayerFacingRight ? 1 : -1;
             }
-            if (Input.GetButtonDown("Attack"))
-            {
-                // playerState = State.Attacking;
-            }
+            // if (Input.GetButtonDown("Attack"))     // Attacking in this script? One script for all actions?  MD
+            // {
+            //     // playerState = State.Attacking;
+            // }
         }
         else if (playerState == State.Dashing)
         {
             if (dashTime <= 0)
             {
                 dashDirecton = 0;
-                if (isGrounded)         // making new das available when grounded, also possible with cooldown
+                if (isGrounded)         // making new dash available when grounded, also possible with cooldown  MD
                 {
-                //playerRigidbody2D.velocity = Vector2(playerRigidbody2D.velocity.x * 0.5f, playerRigidbody2D.velocity.y);
+                // playerRigidbody2D.velocity = Vector2(playerRigidbody2D.velocity.x * 0.5f, playerRigidbody2D.velocity.y);
                 playerState = State.Idle;
                 dashTime = startDashTime;
                 }

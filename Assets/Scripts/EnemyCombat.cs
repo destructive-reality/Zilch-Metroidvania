@@ -69,11 +69,11 @@ public class EnemyCombat : MonoBehaviour
         this.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) 
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag != "Player")
             return;
-        collider.GetComponent<PlayerCombat2D>().getHit(attackPower);
+        collider.GetComponent<PlayerCombat2D>().getHit(attackPower, gameObject);
         Debug.Log("Hitting " + collider.tag + " for " + attackPower);
     }
 

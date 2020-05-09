@@ -45,7 +45,7 @@ public class DestroyableObject : MonoBehaviour
         // GetComponent<MeshRenderer>().material.color = firstColor;
     }
 
-    void setbackColor() 
+    void setbackColor()
     {
         GetComponent<MeshRenderer>().material.color = firstColor;
     }

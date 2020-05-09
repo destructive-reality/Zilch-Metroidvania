@@ -6,20 +6,23 @@ public class PlayerCombat2D : MonoBehaviour
 {
     public Animator playerAnimator;
     public Transform attackPoint;
-    public LayerMask enemyLayers;
+    public LayerMask enemyLayers;       // remeber assigning layers
 
-    public int playerMaxHP = 100;
-    private int playerHP;
+    public int playerMaxHealth = 100;
+    [SerializeField] private int playerHealth;
 
     public float attackRange = 0.75f;
     public int playerAttackPower = 20;
     public float attackSpeed = 3f;
     private float nextAttackTime = 0f;
 
+    private float invincibleTime = 0f;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        playerHP = playerMaxHP;
+        playerHealth = playerMaxHealth;
     }
 
     // Update is called once per frame
@@ -40,13 +43,33 @@ public class PlayerCombat2D : MonoBehaviour
     {
         // playerAnimator.SetTrigger("Attack");
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider2D[] hitTargets = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         // remember to give enemies 2D-Colliders        MD
+        // Debug.Log(hitTargets);
 
-
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D target in hitTargets)
         {
-            enemy.GetComponent<EnemyCombat>().getHit(playerAttackPower);
+            int targetLayer = target.gameObject.layer;
+            if (targetLayer == 12)  // Destroyable
+                target.GetComponent<DestroyableObject>().getHit(playerAttackPower);
+            else if (targetLayer == 11) // Enemy
+                target.GetComponent<EnemyCombat>().getHit(playerAttackPower);
+        }
+    }
+
+    public void getHit(int damage)
+    {
+        if (Time.time >= invincibleTime)
+        {
+            Debug.Log("Time: " + Time.time + "; invincibleTime: " + invincibleTime);
+            playerHealth -= damage;
+            // Animation goes here
+            // animator.SetTrigger("Hurt");
+            // if (playerHealth <= 0)
+            // {
+            //     Die();
+            // }
+            invincibleTime = Time.time + 5f;
         }
     }
 
@@ -56,5 +79,4 @@ public class PlayerCombat2D : MonoBehaviour
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-
 }

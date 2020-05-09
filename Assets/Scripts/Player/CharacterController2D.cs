@@ -23,6 +23,13 @@ public class CharacterController2D : MonoBehaviour
     public float runSpeed = 40f;
     float horizontalMove = 0f;
 
+    enum State {Idle, Jumping, Dashing, Attacking};     // even necessarily when working with animator? MD
+    private State playerState;
+    public float dashSpeed = 70f;
+    private float dashTime;         // remaining time of a dash
+    public float startDashTime = 0.1f;     // The time it takes to dash
+    private float dashDirecton;
+
     [Header("Sounds")]
     private AudioSource playerAudioSource;
     public AudioClip jumpSound;
@@ -32,11 +39,45 @@ public class CharacterController2D : MonoBehaviour
     {
         playerAudioSource = GetComponent<AudioSource>();
         playerRigidbody2D = GetComponent<Rigidbody2D>();
+
+        dashTime = startDashTime;
+        playerState = State.Idle;
     }
 
 
     private void Update()
     {
+        if (playerState == State.Idle || playerState == State.Jumping)
+        {
+            if (Input.GetButtonDown("Dash"))
+            {
+                playerState = State.Dashing;
+                dashDirecton = isPlayerFacingRight ? 1 : -1;
+            }
+            // if (Input.GetButtonDown("Attack"))     // Attacking in this script? One script for all actions?  MD
+            // {
+            //     // playerState = State.Attacking;
+            // }
+        }
+        else if (playerState == State.Dashing)
+        {
+            if (dashTime <= 0)
+            {
+                dashDirecton = 0;
+                if (isGrounded)         // making new dash available when grounded, also possible with cooldown  MD
+                {
+                // playerRigidbody2D.velocity = Vector2(playerRigidbody2D.velocity.x * 0.5f, playerRigidbody2D.velocity.y);
+                playerState = State.Idle;
+                dashTime = startDashTime;
+                }
+            }
+            else
+            {
+                dashTime -= Time.deltaTime;
+                playerRigidbody2D.velocity = new Vector2(dashDirecton, 0) * dashSpeed;
+            }
+        }
+        
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalMove)); //Play Animations correctly
 

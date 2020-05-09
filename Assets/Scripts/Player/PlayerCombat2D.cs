@@ -36,13 +36,13 @@ public class PlayerCombat2D : MonoBehaviour
         }
     }
 
-    void Attack() 
+    void Attack()
     {
         // playerAnimator.SetTrigger("Attack");
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers); 
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         // remember to give enemies 2D-Colliders        MD
-        
+
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -50,9 +50,9 @@ public class PlayerCombat2D : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected() 
+    private void OnDrawGizmosSelected()
     {
-        if(attackPoint == null)
+        if (attackPoint == null)
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }

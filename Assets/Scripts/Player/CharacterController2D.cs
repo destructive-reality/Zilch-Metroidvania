@@ -23,7 +23,7 @@ public class CharacterController2D : MonoBehaviour
     public float runSpeed = 40f;
     float horizontalMove = 0f;
 
-    enum State {Idle, Jumping, Dashing, Attacking};     // even necessarily when working with animator? MD
+    enum State { Idle, Jumping, Dashing, Attacking };     // even necessarily when working with animator? MD
     private State playerState;
     public float dashSpeed = 70f;
     private float dashTime;         // remaining time of a dash
@@ -66,9 +66,9 @@ public class CharacterController2D : MonoBehaviour
                 dashDirecton = 0;
                 if (isGrounded)         // making new dash available when grounded, also possible with cooldown  MD
                 {
-                // playerRigidbody2D.velocity = Vector2(playerRigidbody2D.velocity.x * 0.5f, playerRigidbody2D.velocity.y);
-                playerState = State.Idle;
-                dashTime = startDashTime;
+                    // playerRigidbody2D.velocity = Vector2(playerRigidbody2D.velocity.x * 0.5f, playerRigidbody2D.velocity.y);
+                    playerState = State.Idle;
+                    dashTime = startDashTime;
                 }
             }
             else
@@ -77,7 +77,7 @@ public class CharacterController2D : MonoBehaviour
                 playerRigidbody2D.velocity = new Vector2(dashDirecton, 0) * dashSpeed;
             }
         }
-        
+
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalMove)); //Play Animations correctly
 

@@ -1569,6 +1569,7 @@ MonoBehaviour:
   attackRange: 1
   playerAttackPower: 20
   attackSpeed: 3
+  knockbackForce: 50
 --- !u!1 &1097907175
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class PlayerCombat2D : MonoBehaviour
     public float attackSpeed = 3f;
     private float nextAttackTime = 0f;
 
+    [SerializeField] private float knockbackForce = 50f;
     private float invincibleTime = 0f;
 
 
@@ -66,7 +67,13 @@ public class PlayerCombat2D : MonoBehaviour
 
             // Throw character back from damage source
             var damageSourceDirection = this.transform.position - damagingObject.transform.position;
-            transform.Translate((this.transform.position + damageSourceDirection) * Time.deltaTime * 2);
+            if (damageSourceDirection.x >= 0)
+            {
+                this.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackForce, knockbackForce / 2), ForceMode2D.Impulse);
+            }
+            else
+                this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0 - knockbackForce, knockbackForce / 2), ForceMode2D.Impulse);
+            // transform.Translate((this.transform.position + damageSourceDirection) * Time.deltaTime * 2);
 
             // Animation goes here
             // animator.SetTrigger("Hurt");

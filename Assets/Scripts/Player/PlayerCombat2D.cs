@@ -57,12 +57,17 @@ public class PlayerCombat2D : MonoBehaviour
         }
     }
 
-    public void getHit(int damage)
+    public void getHit(int damage, GameObject damagingObject)
     {
         if (Time.time >= invincibleTime)
         {
             Debug.Log("Time: " + Time.time + "; invincibleTime: " + invincibleTime);
             playerHealth -= damage;
+
+            // Throw character back from damage source
+            var damageSourceDirection = this.transform.position - damagingObject.transform.position;
+            transform.Translate((this.transform.position + damageSourceDirection) * Time.deltaTime * 2);
+
             // Animation goes here
             // animator.SetTrigger("Hurt");
             // if (playerHealth <= 0)

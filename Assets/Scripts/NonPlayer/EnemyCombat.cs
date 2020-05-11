@@ -26,12 +26,15 @@ public class EnemyCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // for disctance between Monster and player
-        var playerHeading = player.position - this.transform.position;
-        var playerDistance = playerHeading.magnitude;
-        float playerAngle = Vector3.Angle(this.transform.forward, playerHeading);
+        if (player)
+        {
+            // for disctance between Monster and player
+            var playerHeading = player.position - this.transform.position;
+            var playerDistance = playerHeading.magnitude;
+            float playerAngle = Vector3.Angle(this.transform.forward, playerHeading);
 
-        transform.Translate(playerHeading * 0.1f * Time.deltaTime, Space.World);
+            transform.Translate(playerHeading * 0.1f * Time.deltaTime, Space.World);
+        }
     }
 
     public void getHit(int damage)
@@ -64,9 +67,9 @@ public class EnemyCombat : MonoBehaviour
     {
         // Animation goes here
         // animator.SetBool("IsDead", true);
-        GetComponent<Collider2D>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
-        this.enabled = false;
+        foreach (Behaviour childComponent in gameObject.GetComponentsInChildren<Behaviour>()) { 
+            childComponent.enabled = false; 
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

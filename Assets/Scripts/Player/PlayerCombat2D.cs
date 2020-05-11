@@ -72,7 +72,7 @@ public class PlayerCombat2D : MonoBehaviour
                 this.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackForce, knockbackForce / 2), ForceMode2D.Impulse);
             }
             else
-                this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0 - knockbackForce, knockbackForce / 2), ForceMode2D.Impulse);
+                this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0 - knockbackForce, knockbackForce / 4), ForceMode2D.Impulse);
             // transform.Translate((this.transform.position + damageSourceDirection) * Time.deltaTime * 2);
 
             // Animation goes here

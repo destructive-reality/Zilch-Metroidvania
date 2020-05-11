@@ -69,7 +69,10 @@ public class EnemyCombat : MonoBehaviour
         // animator.SetBool("IsDead", true);
         foreach (Behaviour childComponent in gameObject.GetComponentsInChildren<Behaviour>()) { 
             childComponent.enabled = false; 
-        }
+            }
+        // GetComponent<Collider2D>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
+        // this.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

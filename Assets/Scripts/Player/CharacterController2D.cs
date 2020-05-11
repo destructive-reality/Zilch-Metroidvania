@@ -11,24 +11,34 @@ public class CharacterController2D : MonoBehaviour
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;  // How much to smooth out the movement
     [SerializeField] private LayerMask groundLayers;                          // A mask determining what is ground to the character
     [SerializeField] private Transform groundCheckTransform;                           // A position marking where to check if the player is grounded.
+    public float runSpeed = 40f;
 
-    [SerializeField] float groundCheckRadius = .5f; // Radius of the overlap circle to determine if grounded
+    #region Jumping
     private bool isGrounded;            // Whether or not the player is grounded.
+    [SerializeField] float groundCheckRadius = .5f; // Radius of the overlap circle to determine if grounded
+
+    #endregion
+
     private Rigidbody2D playerRigidbody2D;
     private bool isPlayerFacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 currentVelocity = Vector3.zero;
 
     private SpriteRenderer spriteRenderer;
     public Animator playerAnimator;
-    public float runSpeed = 40f;
     float horizontalMove = 0f;
 
     enum State { Idle, Jumping, Dashing, Attacking };     // even necessarily when working with animator? MD
     private State playerState;
+
+    #region Dash
+
     public float dashSpeed = 70f;
     private float dashTime;         // remaining time of a dash
     public float startDashTime = 0.1f;     // The time it takes to dash
     private float dashDirecton;
+
+    #endregion
+
 
     [Header("Sounds")]
     private AudioSource playerAudioSource;

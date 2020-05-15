@@ -9,7 +9,6 @@ public class GameMaster : MonoBehaviour
     private static GameMaster _instance;
     public static GameMaster Instance { get { return _instance; } }
 
-    public int lastLevelDoorId;
 
     private void Awake()
     {
@@ -24,6 +23,8 @@ public class GameMaster : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
     }
+
+    public int lastLevelDoorId;
 
     void OnEnable()
     {

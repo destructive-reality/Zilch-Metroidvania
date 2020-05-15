@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 1047782096130487528}
   - component: {fileID: 860947147407656699}
   m_Layer: 8
-  m_Name: FireCharacter2
+  m_Name: PlayerCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -997,15 +997,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ff86ece5b0f3745ab4181115e6e294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 16
+  jumpForce: 17
   movementSmoothing: 0.05
   groundLayers:
     serializedVersion: 2
     m_Bits: 566
   groundCheckTransform: {fileID: 8883759046710026403}
+  runSpeed: 10
   groundCheckRadius: 0.25
   playerAnimator: {fileID: 1047782095710309742}
-  runSpeed: 10
+  dashSpeed: 70
+  startDashTime: 0.1
   jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
 --- !u!82 &860947147407656699
 AudioSource:

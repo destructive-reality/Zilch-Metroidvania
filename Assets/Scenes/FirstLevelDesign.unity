@@ -2122,6 +2122,8 @@ MonoBehaviour:
   playerAttackPower: 20
   attackSpeed: 3
   knockbackForce: 50
+  startInvincibleTime: 2
+  invincibleTime: 0
 --- !u!1 &1097907175
 GameObject:
   m_ObjectHideFlags: 0

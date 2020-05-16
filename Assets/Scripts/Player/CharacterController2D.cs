@@ -63,6 +63,7 @@ public class CharacterController2D : MonoBehaviour
         Vector2 targetVelocity = new Vector2(horizontalAxisInput * runSpeed, playerRigidbody2D.velocity.y);
         playerRigidbody2D.velocity = Vector2.SmoothDamp(playerRigidbody2D.velocity, targetVelocity, ref currentVelocity, movementSmoothing);
     }
+    
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundLayers);
@@ -115,7 +116,6 @@ public class CharacterController2D : MonoBehaviour
                 dashDirecton = 0;
                 if (isGrounded)         // making new dash available when grounded, also possible with cooldown  MD
                 {
-                    // playerRigidbody2D.velocity = Vector2(playerRigidbody2D.velocity.x * 0.5f, playerRigidbody2D.velocity.y);
                     playerState = State.Idle;
                     dashTime = startDashTime;
                 }
@@ -145,10 +145,10 @@ public class CharacterController2D : MonoBehaviour
 
     void ApplyJumpForce()
     {
-        // playerRigidbody2D.velocity = Vector2.up * jumpForce;
         playerRigidbody2D.velocity = new Vector2(playerRigidbody2D.velocity.x, jumpForce);
     }
 
+    //TODO hier vllt lieber den spriterenderer flippen? BH
     private void Flip()
     {
         isPlayerFacingRight = !isPlayerFacingRight;

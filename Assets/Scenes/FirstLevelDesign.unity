@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -180,7 +180,7 @@ Transform:
   - {fileID: 1121828900}
   - {fileID: 51454285}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &50987977
 GameObject:
@@ -194,8 +194,8 @@ GameObject:
   - component: {fileID: 50987983}
   - component: {fileID: 50987982}
   - component: {fileID: 50987981}
-  - component: {fileID: 50987980}
   - component: {fileID: 50987979}
+  - component: {fileID: 50987984}
   m_Layer: 12
   m_Name: Quad
   m_TagString: Untagged
@@ -236,20 +236,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &50987980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50987977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386cb02b013636e4c9bb5b7043a1046a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 50987979}
-  maxHealth: 100
 --- !u!61 &50987981
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -323,6 +309,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50987977}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &50987984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50987977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9de67f260bdab64c85bb1e85ecca488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  firstColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 0}
 --- !u!1 &51454284
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,8 +601,8 @@ GameObject:
   - component: {fileID: 307388983}
   - component: {fileID: 307388982}
   - component: {fileID: 307388981}
-  - component: {fileID: 307388980}
   - component: {fileID: 307388979}
+  - component: {fileID: 307388980}
   m_Layer: 12
   m_Name: Quad (1)
   m_TagString: Untagged
@@ -650,11 +652,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 307388977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386cb02b013636e4c9bb5b7043a1046a, type: 3}
+  m_Script: {fileID: 11500000, guid: b9de67f260bdab64c85bb1e85ecca488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 307388979}
   maxHealth: 100
+  currentHealth: 0
+  firstColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 0}
 --- !u!61 &307388981
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1016,8 +1020,8 @@ GameObject:
   - component: {fileID: 435670497}
   - component: {fileID: 435670496}
   - component: {fileID: 435670495}
-  - component: {fileID: 435670494}
   - component: {fileID: 435670493}
+  - component: {fileID: 435670494}
   m_Layer: 12
   m_Name: Quad
   m_TagString: Untagged
@@ -1067,11 +1071,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 435670491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386cb02b013636e4c9bb5b7043a1046a, type: 3}
+  m_Script: {fileID: 11500000, guid: b9de67f260bdab64c85bb1e85ecca488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 435670493}
   maxHealth: 100
+  currentHealth: 0
+  firstColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 0}
 --- !u!61 &435670495
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1597,8 +1603,8 @@ GameObject:
   - component: {fileID: 467445084}
   - component: {fileID: 467445083}
   - component: {fileID: 467445082}
-  - component: {fileID: 467445081}
   - component: {fileID: 467445080}
+  - component: {fileID: 467445081}
   m_Layer: 12
   m_Name: Quad (1)
   m_TagString: Untagged
@@ -1648,11 +1654,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 467445078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386cb02b013636e4c9bb5b7043a1046a, type: 3}
+  m_Script: {fileID: 11500000, guid: b9de67f260bdab64c85bb1e85ecca488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 467445080}
   maxHealth: 100
+  currentHealth: 0
+  firstColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 0}
 --- !u!61 &467445082
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2356,6 +2364,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!4 &842256510 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9075990367258215198, guid: f5e1edfa8948b7d4092a3b9088aab59a,
+    type: 3}
+  m_PrefabInstance: {fileID: 720246422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1097907175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,6 +2723,7 @@ GameObject:
   - component: {fileID: 1183431164}
   - component: {fileID: 1183431158}
   - component: {fileID: 1183431163}
+  - component: {fileID: 1183431165}
   m_Layer: 11
   m_Name: FlyingEnemy
   m_TagString: Untagged
@@ -2729,10 +2744,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  maxHealth: 100
-  currentHealth: 0
   attackPower: 30
-  player: {fileID: 0}
+  player: {fileID: 842256510}
 --- !u!58 &1183431159
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2847,6 +2860,23 @@ CircleCollider2D:
   m_Offset: {x: 0.0028322677, y: 0.0028322681}
   serializedVersion: 2
   m_Radius: 0.7082262
+--- !u!114 &1183431165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183431157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 70
+  currentHealth: 0
+  firstColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 0}
+  knockbackForce: 20
 --- !u!1 &1255359080
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,8 +3091,8 @@ GameObject:
   - component: {fileID: 1347374934}
   - component: {fileID: 1347374933}
   - component: {fileID: 1347374932}
-  - component: {fileID: 1347374931}
   - component: {fileID: 1347374930}
+  - component: {fileID: 1347374935}
   m_Layer: 12
   m_Name: Quad
   m_TagString: Untagged
@@ -3103,20 +3133,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1347374931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347374928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386cb02b013636e4c9bb5b7043a1046a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1347374930}
-  maxHealth: 100
 --- !u!61 &1347374932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3190,6 +3206,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347374928}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1347374935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347374928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9de67f260bdab64c85bb1e85ecca488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  firstColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 0}
 --- !u!1 &1377937575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4129,7 +4161,7 @@ PrefabInstance:
     - target: {fileID: 1629011656182564901, guid: b843d45634d59e343ac022350b7c56fa,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1629011656182564901, guid: b843d45634d59e343ac022350b7c56fa,
         type: 3}
@@ -4165,8 +4197,8 @@ GameObject:
   - component: {fileID: 1770555436}
   - component: {fileID: 1770555435}
   - component: {fileID: 1770555434}
-  - component: {fileID: 1770555433}
   - component: {fileID: 1770555432}
+  - component: {fileID: 1770555437}
   m_Layer: 12
   m_Name: Quad
   m_TagString: Untagged
@@ -4207,20 +4239,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1770555433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770555430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386cb02b013636e4c9bb5b7043a1046a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1770555432}
-  maxHealth: 100
 --- !u!61 &1770555434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4294,6 +4312,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770555430}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1770555437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770555430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9de67f260bdab64c85bb1e85ecca488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  firstColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 0}
 --- !u!1 &1911681776
 GameObject:
   m_ObjectHideFlags: 0
@@ -4576,7 +4610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993317229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.496162, y: -21.318789, z: -9.995579}
+  m_LocalPosition: {x: -38.933926, y: -16.13416, z: -9.995579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4834,7 +4868,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2118334098
 GameObject:
@@ -4851,6 +4885,7 @@ GameObject:
   - component: {fileID: 2118334104}
   - component: {fileID: 2118334100}
   - component: {fileID: 2118334105}
+  - component: {fileID: 2118334106}
   m_Layer: 11
   m_Name: PatrolingEnemy
   m_TagString: Untagged
@@ -4889,8 +4924,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  maxHealth: 50
-  currentHealth: 0
   attackPower: 10
   player: {fileID: 0}
 --- !u!23 &2118334101
@@ -5007,6 +5040,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0000001}
   m_EdgeRadius: 0
+--- !u!114 &2118334106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118334098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  currentHealth: 0
+  firstColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 0}
+  knockbackForce: 0
 --- !u!1 &2139307496
 GameObject:
   m_ObjectHideFlags: 0

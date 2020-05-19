@@ -969,7 +969,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3.6
+  m_GravityScale: 4.2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1029,14 +1029,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ff86ece5b0f3745ab4181115e6e294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 17
-  movementSmoothing: 0.05
+  jumpForce: 15
+  movementSmoothing: 0.16
   groundLayers:
     serializedVersion: 2
     m_Bits: 566
   groundCheckTransform: {fileID: 8883759046710026403}
-  runSpeed: 10
+  runSpeed: 14
   groundCheckRadius: 0.25
+  jumpTime: 0.25
   playerAnimator: {fileID: 1047782095710309742}
   dashSpeed: 70
   startDashTime: 0.1

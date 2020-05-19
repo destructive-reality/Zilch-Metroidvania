@@ -12,21 +12,24 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private LayerMask groundLayers;                          // A mask determining what is ground to the character
     [SerializeField] private Transform groundCheckTransform;                           // A position marking where to check if the player is grounded.
     public float runSpeed = 40f;
+    private float horizontalAxisInput;
 
     #region Jumping
     private bool isGrounded;            // Whether or not the player is grounded.
     [SerializeField] float groundCheckRadius = .5f; // Radius of the overlap circle to determine if grounded
 
+    private float jumpTimeCounter = 0f;
+    public float jumpTime;
+    private bool isJumping;
+
     #endregion
 
     private Rigidbody2D playerRigidbody2D;
     private bool isPlayerFacingRight = true;  // For determining which way the player is currently facing.
-    private Vector3 currentVelocity = Vector3.zero;
+    private Vector2 currentVelocity = Vector2.zero;
 
     private SpriteRenderer spriteRenderer;
     public Animator playerAnimator;
-    float horizontalMove = 0f;
-
     enum State { Idle, Jumping, Dashing, Attacking };     // even necessarily when working with animator? MD
     private State playerState;
 
@@ -56,9 +59,46 @@ public class CharacterController2D : MonoBehaviour
         playerState = State.Idle;
     }
 
-
+    private void FixedUpdate()
+    {
+        horizontalAxisInput = Input.GetAxisRaw("Horizontal");
+        Vector2 targetVelocity = new Vector2(horizontalAxisInput * runSpeed, playerRigidbody2D.velocity.y);
+        playerRigidbody2D.velocity = Vector2.SmoothDamp(playerRigidbody2D.velocity, targetVelocity, ref currentVelocity, movementSmoothing);
+    }
+    
     private void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundLayers);
+        playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalAxisInput)); //Play Animations correctly
+
+        //Jumping
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            ApplyJumpForce();
+            playerAudioSource.PlayOneShot(jumpSound);
+        }
+
+        if (Input.GetButton("Jump") && isJumping)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                ApplyJumpForce();
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
+        }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+        }
+
+        //Dashing
         if (playerState == State.Idle || playerState == State.Jumping)
         {
             if (Input.GetButtonDown("Dash") && dashCooldown < Time.time)
@@ -79,7 +119,6 @@ public class CharacterController2D : MonoBehaviour
                 dashDirecton = 0;
                 if (isGrounded)         // making new dash available when grounded, also possible with cooldown  MD
                 {
-                    // playerRigidbody2D.velocity = Vector2(playerRigidbody2D.velocity.x * 0.5f, playerRigidbody2D.velocity.y);
                     playerState = State.Idle;
                     dashTime = startDashTime;
                 }
@@ -91,42 +130,28 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalMove)); //Play Animations correctly
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+
+        //Flip character sprite based on move direction
+        //TODO Statt dem axisinput lieber die rigibody-velocity verwenden? BH
+        if (horizontalAxisInput > 0 && !isPlayerFacingRight)
         {
-            playerRigidbody2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            playerAudioSource.PlayOneShot(jumpSound);
+            Flip();
         }
+        else if (horizontalAxisInput < 0 && isPlayerFacingRight)
+        {
+            Flip();
+        }
+
+
     }
 
-    private void FixedUpdate()
+    void ApplyJumpForce()
     {
-        Vector3 targetVelocity = new Vector2(horizontalMove, playerRigidbody2D.velocity.y);
-        playerRigidbody2D.velocity = Vector3.SmoothDamp(playerRigidbody2D.velocity, targetVelocity, ref currentVelocity, movementSmoothing);
-
-        if (horizontalMove > 0 && !isPlayerFacingRight)
-        {
-            Flip();
-        }
-        else if (horizontalMove < 0 && isPlayerFacingRight)
-        {
-            Flip();
-        }
-
-        isGrounded = false;
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckTransform.position, groundCheckRadius, groundLayers);
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.gameObject != gameObject)
-            {
-                isGrounded = true;
-            }
-        }
+        playerRigidbody2D.velocity = new Vector2(playerRigidbody2D.velocity.x, jumpForce);
     }
 
-
+    //TODO hier vllt lieber den spriterenderer flippen? BH
     private void Flip()
     {
         isPlayerFacingRight = !isPlayerFacingRight;

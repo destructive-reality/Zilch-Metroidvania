@@ -23,7 +23,7 @@ public class DamagingObject : MonoBehaviour
     {
         if (collider.tag != "Player")
             return;
-        collider.GetComponent<PlayerCombat2D>().getHit(damage, gameObject);
+        collider.GetComponent<PlayerHealth>().getHit(damage, gameObject);
     }
 
 }

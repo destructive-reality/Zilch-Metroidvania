@@ -8,23 +8,15 @@ public class PlayerCombat2D : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;       // remeber assigning layers
 
-    public int playerMaxHealth = 100;
-    [SerializeField] private int playerHealth;
-
     public float attackRange = 0.75f;
     public int playerAttackPower = 20;
     public float attackSpeed = 3f;
     private float nextAttackTime = 0f;
 
-    [SerializeField] private float knockbackForce = 50f;
-    public float startInvincibleTime = 1.5f;
-    [SerializeField] private float invincibleTime = 0f;
-
-
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = playerMaxHealth;
+        
     }
 
     // Update is called once per frame
@@ -53,36 +45,9 @@ public class PlayerCombat2D : MonoBehaviour
         {
             int targetLayer = target.gameObject.layer;
             if (targetLayer == 12)  // Destroyable
-                target.GetComponent<DestroyableObject>().getHit(playerAttackPower);
+                target.GetComponent<Health>().getHit(playerAttackPower);
             else if (targetLayer == 11) // Enemy
-                target.GetComponent<EnemyCombat>().getHit(playerAttackPower);
-        }
-    }
-
-    public void getHit(int damage, GameObject damagingObject)
-    {
-        if (Time.time >= invincibleTime)
-        {
-            Debug.Log("Time: " + Time.time + "; invincibleTime: " + invincibleTime);
-            playerHealth -= damage;
-
-            // Throw character back from damage source
-            var damageSourceDirection = this.transform.position - damagingObject.transform.position;
-            if (damageSourceDirection.x >= 0)
-            {
-                this.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackForce, knockbackForce / 2), ForceMode2D.Impulse);
-            }
-            else
-                this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0 - knockbackForce, knockbackForce / 4), ForceMode2D.Impulse);
-            // transform.Translate((this.transform.position + damageSourceDirection) * Time.deltaTime * 2);
-
-            // Animation goes here
-            // animator.SetTrigger("Hurt");
-            // if (playerHealth <= 0)
-            // {
-            //     Die();
-            // }
-            invincibleTime = Time.time + startInvincibleTime;
+                target.GetComponent<EnemyHealth>().getHit(playerAttackPower, this.gameObject);
         }
     }
 

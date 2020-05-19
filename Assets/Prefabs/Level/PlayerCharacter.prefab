@@ -929,6 +929,7 @@ GameObject:
   - component: {fileID: 1047782096130487528}
   - component: {fileID: 860947147407656699}
   - component: {fileID: 7966339911271002828}
+  - component: {fileID: 7643680188621843559}
   m_Layer: 8
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -1155,13 +1156,27 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 6144
-  playerMaxHealth: 100
-  playerHealth: 0
   attackRange: 1
   playerAttackPower: 20
   attackSpeed: 3
+--- !u!114 &7643680188621843559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529288083630516912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ab0bc383feeac4aa60da5659610757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  firstColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 1047782095710309742}
   knockbackForce: 50
-  startInvincibleTime: 2
+  startInvincibleTime: 1.5
   invincibleTime: 0
 --- !u!1 &6622962744746053441
 GameObject:

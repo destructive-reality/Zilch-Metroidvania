@@ -687,6 +687,36 @@ Transform:
   m_Father: {fileID: 5448388329451465268}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -0.001, y: -0.606, z: 163.64401}
+--- !u!1 &4950671025482465838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8037269116266527860}
+  m_Layer: 8
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8037269116266527860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4950671025482465838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.03, y: 6.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5623831863046718583}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5306219179345955070
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +928,7 @@ GameObject:
   - component: {fileID: 1047782096130487535}
   - component: {fileID: 1047782096130487528}
   - component: {fileID: 860947147407656699}
+  - component: {fileID: 7966339911271002828}
   m_Layer: 8
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -919,6 +950,7 @@ Transform:
   - {fileID: 264388262749716312}
   - {fileID: 8883759046710026403}
   - {fileID: 5542509898001724416}
+  - {fileID: 8037269116266527860}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1009,6 +1041,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 1047782095710309742}
   dashSpeed: 70
   startDashTime: 0.1
+  startDashCooldown: 2
   jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
 --- !u!82 &860947147407656699
 AudioSource:
@@ -1106,6 +1139,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7966339911271002828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529288083630516912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae717098c84e22c4f9fc244fb53800cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 1047782095710309742}
+  attackPoint: {fileID: 8037269116266527860}
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 6144
+  playerMaxHealth: 100
+  playerHealth: 0
+  attackRange: 1
+  playerAttackPower: 20
+  attackSpeed: 3
+  knockbackForce: 50
+  startInvincibleTime: 2
+  invincibleTime: 0
 --- !u!1 &6622962744746053441
 GameObject:
   m_ObjectHideFlags: 0

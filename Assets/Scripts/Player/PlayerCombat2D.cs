@@ -17,7 +17,8 @@ public class PlayerCombat2D : MonoBehaviour
     private float nextAttackTime = 0f;
 
     [SerializeField] private float knockbackForce = 50f;
-    private float invincibleTime = 0f;
+    public float startInvincibleTime = 1.5f;
+    [SerializeField] private float invincibleTime = 0f;
 
 
     // Start is called before the first frame update
@@ -81,7 +82,7 @@ public class PlayerCombat2D : MonoBehaviour
             // {
             //     Die();
             // }
-            invincibleTime = Time.time + 5f;
+            invincibleTime = Time.time + startInvincibleTime;
         }
     }
 

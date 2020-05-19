@@ -36,8 +36,10 @@ public class CharacterController2D : MonoBehaviour
     #region Dash
 
     public float dashSpeed = 70f;
-    private float dashTime;         // remaining time of a dash
     public float startDashTime = 0.1f;     // The time it takes to dash
+    private float dashTime;         // remaining time of a dash
+    public float startDashCooldown = 2f;
+    private float dashCooldown;
     private float dashDirecton;
 
     #endregion
@@ -99,10 +101,11 @@ public class CharacterController2D : MonoBehaviour
         //Dashing
         if (playerState == State.Idle || playerState == State.Jumping)
         {
-            if (Input.GetButtonDown("Dash"))
+            if (Input.GetButtonDown("Dash") && dashCooldown < Time.time)
             {
                 playerState = State.Dashing;
                 dashDirecton = isPlayerFacingRight ? 1 : -1;
+                dashCooldown = Time.time + startDashCooldown;
             }
             // if (Input.GetButtonDown("Attack"))     // Attacking in this script? One script for all actions?  MD
             // {

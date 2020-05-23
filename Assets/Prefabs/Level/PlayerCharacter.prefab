@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae717098c84e22c4f9fc244fb53800cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 1047782095710309742}
   attackPower: 20
   attackRange: 1
   attackTime: 0

@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCombat : MonoBehaviour
+public class EnemyCombat : CombatBase
 {
-    public Animator animator;
-
-    public int attackPower = 30;
     public Transform player;
 
     // Start is called before the first frame update
@@ -19,7 +16,7 @@ public class EnemyCombat : MonoBehaviour
     {
         if (player)
         {
-            // for disctance between Monster and player
+            // for disctance between enemy and player
             var playerHeading = player.position - this.transform.position;
             var playerDistance = playerHeading.magnitude;
             float playerAngle = Vector3.Angle(this.transform.forward, playerHeading);
@@ -27,12 +24,10 @@ public class EnemyCombat : MonoBehaviour
             transform.Translate(playerHeading * 0.1f * Time.deltaTime, Space.World);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collider)
+    protected void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag != "Player")
             return;
         collider.GetComponent<PlayerHealth>().getHit(attackPower, gameObject);
-        Debug.Log("Hitting " + collider.tag + " for " + attackPower);
     }
-
 }

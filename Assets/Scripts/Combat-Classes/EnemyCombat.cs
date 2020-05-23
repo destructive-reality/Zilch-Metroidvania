@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyCombat : CombatBase
 {
-    public Transform player;
 
     // Start is called before the first frame update
     void Start()
@@ -14,15 +13,7 @@ public class EnemyCombat : CombatBase
     // Update is called once per frame
     void Update()
     {
-        if (player)
-        {
-            // for disctance between enemy and player
-            var playerHeading = player.position - this.transform.position;
-            var playerDistance = playerHeading.magnitude;
-            float playerAngle = Vector3.Angle(this.transform.forward, playerHeading);
-
-            transform.Translate(playerHeading * 0.1f * Time.deltaTime, Space.World);
-        }
+        
     }
     protected void OnTriggerEnter2D(Collider2D collider)
     {

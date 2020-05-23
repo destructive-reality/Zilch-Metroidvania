@@ -512,6 +512,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.9062734
       objectReference: {fileID: 0}
+    - target: {fileID: 7966339911271002828, guid: 1562f7758c1bcf8488e96ca4f693dec2,
+        type: 3}
+      propertyPath: attackTime
+      value: 0.333
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966339911271002828, guid: 1562f7758c1bcf8488e96ca4f693dec2,
+        type: 3}
+      propertyPath: attackableLayers.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
     - target: {fileID: 8102461051115725693, guid: 1562f7758c1bcf8488e96ca4f693dec2,
         type: 3}
       propertyPath: m_LocalRotation.x

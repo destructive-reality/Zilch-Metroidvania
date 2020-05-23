@@ -249,78 +249,6 @@ MonoBehaviour:
   - {fileID: 9213489917448404898}
   - {fileID: 9213489916257228790}
   m_Weight: 1
---- !u!1 &1882263673487431158
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5542509898001724416}
-  - component: {fileID: 214493387641497264}
-  m_Layer: 8
-  m_Name: Player Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5542509898001724416
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882263673487431158}
-  m_LocalRotation: {x: -0, y: -0, z: 0.67000896, w: 0.742353}
-  m_LocalPosition: {x: -0.21198036, y: 8.919474, z: -0.024032572}
-  m_LocalScale: {x: 5.4353895, y: 5.4353895, z: 5.435389}
-  m_Children: []
-  m_Father: {fileID: 5623831863046718583}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &214493387641497264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882263673487431158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.747
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 00000000f1f4496d3f554852278312a8d59bbeee
-  m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 5.90712
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &2502422269606272134
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +643,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5623831863046718583}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5306219179345955070
 GameObject:
@@ -950,7 +878,6 @@ Transform:
   m_Children:
   - {fileID: 264388262749716312}
   - {fileID: 8883759046710026403}
-  - {fileID: 5542509898001724416}
   - {fileID: 8037269116266527860}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1157,9 +1084,9 @@ MonoBehaviour:
   attackRange: 1
   attackTime: 0
   attackPoint: {fileID: 8037269116266527860}
-  enemyLayers:
+  attackableLayers:
     serializedVersion: 2
-    m_Bits: 6144
+    m_Bits: 0
 --- !u!114 &7643680188621843559
 MonoBehaviour:
   m_ObjectHideFlags: 0

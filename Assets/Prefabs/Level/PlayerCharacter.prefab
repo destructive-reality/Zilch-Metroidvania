@@ -930,6 +930,7 @@ GameObject:
   - component: {fileID: 860947147407656699}
   - component: {fileID: 7966339911271002828}
   - component: {fileID: 7643680188621843559}
+  - component: {fileID: 5198823438255694855}
   m_Layer: 8
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -1025,12 +1026,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6529288083630516912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6ff86ece5b0f3745ab4181115e6e294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 15
+  jumpForce: 17
   movementSmoothing: 0.16
   groundLayers:
     serializedVersion: 2
@@ -1042,7 +1043,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 1047782095710309742}
   dashSpeed: 70
   startDashTime: 0.1
-  startDashCooldown: 2
+  startDashCooldown: 0.8
   jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
 --- !u!82 &860947147407656699
 AudioSource:
@@ -1157,9 +1158,9 @@ MonoBehaviour:
   attackRange: 1
   attackTime: 0
   attackPoint: {fileID: 8037269116266527860}
-  enemyLayers:
+  attackableLayers:
     serializedVersion: 2
-    m_Bits: 6144
+    m_Bits: 0
 --- !u!114 &7643680188621843559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1176,9 +1177,34 @@ MonoBehaviour:
   currentHealth: 0
   firstColor: {r: 0, g: 0, b: 0, a: 0}
   animator: {fileID: 1047782095710309742}
-  knockbackForce: 50
+  knockbackForce: 25
   startInvincibleTime: 1.5
   invincibleTime: 0
+--- !u!114 &5198823438255694855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529288083630516912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2aed19cdffe1145a63d9c202985e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 17
+  movementSmoothing: 0.16
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 1552
+  groundCheckTransform: {fileID: 8883759046710026403}
+  groundCheckRadius: 0.25
+  jumpTime: 0.25
+  playerAnimator: {fileID: 1047782095710309742}
+  dashSpeed: 35
+  startDashTime: 0.1
+  startDashCooldown: 2
+  jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
 --- !u!1 &6622962744746053441
 GameObject:
   m_ObjectHideFlags: 0

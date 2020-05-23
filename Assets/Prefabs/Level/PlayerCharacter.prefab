@@ -1152,14 +1152,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae717098c84e22c4f9fc244fb53800cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 1047782095710309742}
+  animator: {fileID: 0}
+  attackPower: 20
+  attackRange: 1
+  attackTime: 0
   attackPoint: {fileID: 8037269116266527860}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 6144
-  attackRange: 1
-  playerAttackPower: 20
-  attackSpeed: 3
 --- !u!114 &7643680188621843559
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,21 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCombat2D : MonoBehaviour
+public class PlayerCombat2D : CombatBase
 {
-    public Animator playerAnimator;
     public Transform attackPoint;
-    public LayerMask enemyLayers;       // remeber assigning layers
-
-    public float attackRange = 0.75f;
-    public int playerAttackPower = 20;
-    public float attackSpeed = 3f;
-    private float nextAttackTime = 0f;
+    public LayerMask attackableLayers;       // remeber assigning layers
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -26,28 +20,31 @@ public class PlayerCombat2D : MonoBehaviour
         {
             if (Input.GetButtonDown("Attack"))
             {
-                Attack();
+                startAttack();
                 // playerState = State.Attacking;
-                nextAttackTime = Time.time + 1f / attackSpeed;
+                nextAttackTime = Time.time + attackTime;
             }
         }
     }
 
-    void Attack()
+    void startAttack()
     {
-        // playerAnimator.SetTrigger("Attack");
-
-        Collider2D[] hitTargets = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        // animator.SetTrigger("Attack");
+        dealDamage();
+    }
+    void dealDamage()
+    {
+        Collider2D[] hitTargets = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, attackableLayers);
         // remember to give enemies 2D-Colliders        MD
         // Debug.Log(hitTargets);
 
         foreach (Collider2D target in hitTargets)
         {
             int targetLayer = target.gameObject.layer;
-            if (targetLayer == 12)  // Destroyable
-                target.GetComponent<Health>().getHit(playerAttackPower);
-            else if (targetLayer == 11) // Enemy
-                target.GetComponent<EnemyHealth>().getHit(playerAttackPower, this.gameObject);
+            if (targetLayer == LayerMask.NameToLayer("Destroyable")) 
+                target.GetComponent<Health>().getHit(attackPower);
+            else if (targetLayer == LayerMask.NameToLayer("Enemy"))
+                target.GetComponent<EnemyHealth>().getHit(attackPower, this.gameObject);
         }
     }
 
@@ -57,4 +54,6 @@ public class PlayerCombat2D : MonoBehaviour
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+
+    
 }

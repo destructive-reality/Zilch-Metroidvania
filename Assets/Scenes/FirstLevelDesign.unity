@@ -2118,7 +2118,7 @@ PrefabInstance:
     - target: {fileID: 5486330119305329176, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 52.844
+      value: 52.845
       objectReference: {fileID: 0}
     - target: {fileID: 6203913743456313313, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
@@ -2731,6 +2731,7 @@ GameObject:
   - component: {fileID: 1183431158}
   - component: {fileID: 1183431163}
   - component: {fileID: 1183431165}
+  - component: {fileID: 1183431166}
   m_Layer: 11
   m_Name: FlyingEnemy
   m_TagString: Untagged
@@ -2754,7 +2755,6 @@ MonoBehaviour:
   attackPower: 30
   attackRange: 0
   attackTime: 0
-  player: {fileID: 842256510}
 --- !u!58 &1183431159
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2886,6 +2886,19 @@ MonoBehaviour:
   firstColor: {r: 0, g: 0, b: 0, a: 0}
   animator: {fileID: 0}
   knockbackForce: 20
+--- !u!114 &1183431166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183431157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37d2e16a7d01ca4e93767fbf570c5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 842256510}
 --- !u!1 &1255359080
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,16 +3537,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.23902884
-      objectReference: {fileID: 0}
-    - target: {fileID: 1047782096130487528, guid: 1562f7758c1bcf8488e96ca4f693dec2,
-        type: 3}
-      propertyPath: jumpForce
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1047782096130487528, guid: 1562f7758c1bcf8488e96ca4f693dec2,
-        type: 3}
-      propertyPath: startDashCooldown
-      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1883069080074852342, guid: 1562f7758c1bcf8488e96ca4f693dec2,
         type: 3}
@@ -4917,7 +4920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e110a931731a2664ba8bb96322a3240f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
   rayDistance: 1
   ignoreLayers:
     serializedVersion: 2
@@ -4939,7 +4941,6 @@ MonoBehaviour:
   attackPower: 10
   attackRange: 0
   attackTime: 0
-  player: {fileID: 0}
 --- !u!23 &2118334101
 MeshRenderer:
   m_ObjectHideFlags: 0

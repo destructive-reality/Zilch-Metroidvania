@@ -19,7 +19,7 @@ public class Patrol : MovementsBase
     // Start is called before the first frame update
     void Start()
     {
-        movingRight = true;
+        // movingRight = true;
     }
 
     // Update is called once per frame

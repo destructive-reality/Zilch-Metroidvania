@@ -11,10 +11,10 @@ public class Health : MonoBehaviour
 
 
     // Start is called before the first frame update
-    protected void Start()
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
-        firstColor = GetComponent<MeshRenderer>().material.color;
+        // firstColor = GetComponent<MeshRenderer>().material.color;
     }
 
     public void getHit(int damage)

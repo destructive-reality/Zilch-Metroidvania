@@ -34,7 +34,6 @@ public class GameMaster : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
-        Debug.Log(mode);
 
         //Set Player position next to Door
         GameObject[] levelConnectors = GameObject.FindGameObjectsWithTag("LevelConnector");

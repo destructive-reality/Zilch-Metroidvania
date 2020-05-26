@@ -130,8 +130,6 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
-
-
         //Flip character sprite based on move direction
         //TODO Statt dem axisinput lieber die rigibody-velocity verwenden? BH
         if (horizontalAxisInput > 0 && !isPlayerFacingRight)
@@ -142,8 +140,6 @@ public class CharacterController2D : MonoBehaviour
         {
             Flip();
         }
-
-
     }
 
     void ApplyJumpForce()

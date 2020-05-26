@@ -13,12 +13,13 @@ public class EnemyCombat : CombatBase
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     protected void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag != "Player")
-            return;
-        collider.GetComponent<PlayerHealth>().getHit(attackPower, gameObject);
+        if (collider.CompareTag("Player"))
+        {
+            collider.GetComponent<PlayerHealth>().getHit(attackPower, gameObject);
+        }
     }
 }

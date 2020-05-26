@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-// using TMPro;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -21,9 +21,13 @@ public class UIController : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // public TextMeshProUGUI healthText;
+    [Header("UI References")]
+    public Text healthText;
+    public Slider healthBar;
 
-    public void setHealthText(int currentHealth, int maxHealth) {
-        // healthText.setText(currentHealth + "/" + maxHealth);
+    public void setHealthInUI(int newCurrentHealth, int maxHealth) {
+        healthText.text = newCurrentHealth + "/" + maxHealth;
+        healthBar.maxValue = maxHealth;
+        healthBar.value = newCurrentHealth;
     }
 }

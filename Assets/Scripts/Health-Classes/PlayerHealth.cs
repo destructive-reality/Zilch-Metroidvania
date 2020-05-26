@@ -7,6 +7,12 @@ public class PlayerHealth : KnockbackHealth
     public float startInvincibleTime = 1.5f;
     [SerializeField] private float invincibleTime = 0f;
 
+    protected override void Start() {
+        base.Start();
+        UIController.Instance.setHealthInUI(currentHealth, maxHealth);
+        Debug.Log("end of playerhealth start");
+    }
+
     public new void getHit(int damage, GameObject damagingObject)
     {
         if (Time.time >= invincibleTime)
@@ -24,6 +30,8 @@ public class PlayerHealth : KnockbackHealth
             {
                 this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0 - knockbackForce, knockbackForce / 4), ForceMode2D.Impulse);
             }
+
+            UIController.Instance.setHealthInUI(currentHealth, maxHealth);
 
             // Animation goes here
             // animator.SetTrigger("Hurt");

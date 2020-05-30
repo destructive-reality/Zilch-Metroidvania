@@ -5,14 +5,19 @@ using UnityEngine;
 public class Modifier : MonoBehaviour
 {
     public ModifierObject modifier;
+    private SpriteRenderer pickUpSprite;
     bool isInteractable = false;
     Inventory playerInventory;
 
+    private void Awake() {
+        pickUpSprite = GetComponentInChildren<SpriteRenderer>();
+        pickUpSprite.enabled = isInteractable;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            isInteractable = true;
+            isInteractable = pickUpSprite.enabled = true;
             playerInventory = other.GetComponent<Inventory>();
         }
     }
@@ -28,7 +33,7 @@ public class Modifier : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isInteractable = false;
+            isInteractable = pickUpSprite.enabled = false;
         }
     }
 }

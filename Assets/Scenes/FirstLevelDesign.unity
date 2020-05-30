@@ -1655,6 +1655,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.90627325
       objectReference: {fileID: 0}
+    - target: {fileID: 6733347216610850213, guid: f5e1edfa8948b7d4092a3b9088aab59a,
+        type: 3}
+      propertyPath: attackTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7810251255910906802, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4301,7 +4306,7 @@ PrefabInstance:
     - target: {fileID: 509972248452091637, guid: 898f01d436199394ba4b0a59fa1648d2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 509972248452091642, guid: 898f01d436199394ba4b0a59fa1648d2,
         type: 3}

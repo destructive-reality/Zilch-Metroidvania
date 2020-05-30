@@ -22,8 +22,9 @@ public class FallOnTrigger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player" && rb.velocity.y < 0)
+        if (other.gameObject.tag == "Player" && rb.velocity.y < -0.1f)
         {
+            Debug.Log(rb.velocity.y);
             Damaging.DealDamage(gameObject, damage, other.gameObject);
             // other.gameObject.GetComponent<PlayerHealth>().getHit(10, gameObject);
         }

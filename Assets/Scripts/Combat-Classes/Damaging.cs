@@ -20,7 +20,7 @@ public abstract class Damaging : MonoBehaviour
         }
         else
         {
-            target.GetComponent<Health>().getHit(damage);
+            target.GetComponent<Health>().applyDamage(damage);
         }
     }
 }

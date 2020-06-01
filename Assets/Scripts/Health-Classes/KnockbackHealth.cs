@@ -8,27 +8,12 @@ abstract public class KnockbackHealth : Health
 
     public void getHit(int damage, GameObject damagingObject)
     {
-        currentHealth -= damage;
+        applyKnockback(new Vector2(this.transform.position.x < damagingObject.transform.position.x ? knockbackForce : -knockbackForce, knockbackForce / 4));
+        base.applyDamage(damage);
+    }
 
-        if (knockbackForce > 0)
-        {
-            // Throw character back from damage source
-            var damageSourceDirection = this.transform.position - damagingObject.transform.position;
-            if (damageSourceDirection.x >= 0)
-            {
-                this.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackForce, knockbackForce / 2), ForceMode2D.Impulse);
-            }
-            else
-            {
-                this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0 - knockbackForce, knockbackForce / 4), ForceMode2D.Impulse);
-            }
-        }
-
-        // Animation goes here
-        // animator.SetTrigger("Hurt");
-        if (currentHealth <= 0)
-        {
-            die();
-        }
+    private void applyKnockback(Vector2 knockbackForceVector)
+    {
+        this.GetComponent<Rigidbody2D>().AddForce(knockbackForceVector, ForceMode2D.Impulse);
     }
 }

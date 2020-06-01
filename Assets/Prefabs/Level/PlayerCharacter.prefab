@@ -1075,11 +1075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  firstColor: {r: 0, g: 0, b: 0, a: 0}
   animator: {fileID: 1047782095710309742}
-  knockbackForce: 25
+  knockbackForce: 120
   startInvincibleTime: 1.5
-  invincibleTime: 0
 --- !u!114 &5198823438255694855
 MonoBehaviour:
   m_ObjectHideFlags: 0

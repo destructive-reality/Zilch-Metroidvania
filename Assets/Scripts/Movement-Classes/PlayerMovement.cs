@@ -32,7 +32,7 @@ public class PlayerMovement : MovementsBase
 
     #endregion
 
-    private Rigidbody2D playerRigidbody2D;
+    public Rigidbody2D playerRigidbody2D;
     // private bool movingRight = true;        // For determining which way the player is currently facing.
     private Vector2 currentVelocity = Vector2.zero;
 
@@ -53,8 +53,9 @@ public class PlayerMovement : MovementsBase
     #endregion
 
     [Header("Sounds")]
-    private AudioSource playerAudioSource;      // to controller
+    public AudioSource playerAudioSource;
     public AudioClip jumpSound;
+    public AudioClip dashSound;
 
     private void Awake()
     {
@@ -109,6 +110,7 @@ public class PlayerMovement : MovementsBase
         {
             if (Input.GetButtonDown("Dash") && dashCooldown < Time.time)
             {
+                playerAudioSource.PlayOneShot(dashSound);
                 playerState = State.Dashing;
                 dashDirecton = movingRight ? 1 : -1;
                 dashCooldown = Time.time + startDashCooldown;

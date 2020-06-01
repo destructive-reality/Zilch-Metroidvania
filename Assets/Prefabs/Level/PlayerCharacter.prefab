@@ -854,7 +854,6 @@ GameObject:
   - component: {fileID: 1047782096130487533}
   - component: {fileID: 1047782096130487534}
   - component: {fileID: 1047782096130487535}
-  - component: {fileID: 1047782096130487528}
   - component: {fileID: 860947147407656699}
   - component: {fileID: 7966339911271002828}
   - component: {fileID: 7643680188621843559}
@@ -947,32 +946,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.9191194, y: 10.078965}
   m_EdgeRadius: 0
---- !u!114 &1047782096130487528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6529288083630516912}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6ff86ece5b0f3745ab4181115e6e294, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 17
-  movementSmoothing: 0.16
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 566
-  groundCheckTransform: {fileID: 8883759046710026403}
-  runSpeed: 14
-  groundCheckRadius: 0.25
-  jumpTime: 0.25
-  playerAnimator: {fileID: 1047782095710309742}
-  dashSpeed: 70
-  startDashTime: 0.1
-  startDashCooldown: 0.8
-  jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
 --- !u!82 &860947147407656699
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1128,11 +1101,16 @@ MonoBehaviour:
   groundCheckTransform: {fileID: 8883759046710026403}
   groundCheckRadius: 0.25
   jumpTime: 0.25
+  playerRigidbody2D: {fileID: 1047782096130487533}
   playerAnimator: {fileID: 1047782095710309742}
   dashSpeed: 35
   startDashTime: 0.1
   startDashCooldown: 2
+  playerAudioSource: {fileID: 860947147407656699}
   jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
+  dashSound: {fileID: 8300000, guid: 5db09a23dcf5ede4abe0b5602c33532c, type: 3}
+  walkSoundRate: 0.8
+  walkSound: {fileID: 8300000, guid: 70b53c1b5e7019a43a8c2c10af2b6df3, type: 3}
 --- !u!114 &1632472823743449622
 MonoBehaviour:
   m_ObjectHideFlags: 0

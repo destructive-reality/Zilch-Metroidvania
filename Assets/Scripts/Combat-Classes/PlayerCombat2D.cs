@@ -43,7 +43,7 @@ public class PlayerCombat2D : CombatBase
             {
                 int targetLayer = target.gameObject.layer;
                 if (targetLayer == LayerMask.NameToLayer("Destroyable"))
-                    target.GetComponent<Health>().getHit(attackPower);
+                    target.GetComponent<Health>().applyDamage(attackPower);
                 else if (targetLayer == LayerMask.NameToLayer("Enemy"))
                     target.GetComponent<EnemyHealth>().getHit(attackPower, this.gameObject);
             }

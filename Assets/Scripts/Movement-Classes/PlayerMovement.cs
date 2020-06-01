@@ -56,6 +56,9 @@ public class PlayerMovement : MovementsBase
     public AudioSource playerAudioSource;
     public AudioClip jumpSound;
     public AudioClip dashSound;
+    public float walkSoundRate;
+    private float walkSoundTimer;
+    public AudioClip walkSound;
 
     private void Awake()
     {
@@ -64,6 +67,8 @@ public class PlayerMovement : MovementsBase
 
         dashTime = startDashTime;
         playerState = State.Idle;
+
+        walkSoundTimer = walkSoundRate;
     }
 
     private void FixedUpdate()
@@ -77,6 +82,21 @@ public class PlayerMovement : MovementsBase
     {
         isGrounded = Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundLayers);
         playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalAxisInput));      //Play Animations correctly
+
+        //Walking Sound
+        if (Mathf.Abs(horizontalAxisInput) > 0 && isGrounded)
+        {
+            if (walkSoundTimer <= 0)
+            {
+                playerAudioSource.PlayOneShot(walkSound, 0.4f);
+                walkSoundTimer = walkSoundRate;
+            }
+            walkSoundTimer -= Time.deltaTime;
+        }
+        else if (walkSoundTimer <= 0)
+        {
+            walkSoundTimer = walkSoundRate;
+        }
 
         //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)

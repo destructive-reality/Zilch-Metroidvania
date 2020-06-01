@@ -1087,7 +1087,7 @@ MonoBehaviour:
   attackPoint: {fileID: 8037269116266527860}
   attackableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 6144
 --- !u!114 &7643680188621843559
 MonoBehaviour:
   m_ObjectHideFlags: 0

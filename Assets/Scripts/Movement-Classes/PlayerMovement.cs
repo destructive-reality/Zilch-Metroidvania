@@ -32,7 +32,7 @@ public class PlayerMovement : MovementsBase
 
     #endregion
 
-    private Rigidbody2D playerRigidbody2D;
+    public Rigidbody2D playerRigidbody2D;
     // private bool movingRight = true;        // For determining which way the player is currently facing.
     private Vector2 currentVelocity = Vector2.zero;
 
@@ -53,8 +53,12 @@ public class PlayerMovement : MovementsBase
     #endregion
 
     [Header("Sounds")]
-    private AudioSource playerAudioSource;      // to controller
+    public AudioSource playerAudioSource;
     public AudioClip jumpSound;
+    public AudioClip dashSound;
+    public float walkSoundRate;
+    private float walkSoundTimer;
+    public AudioClip walkSound;
 
     private void Awake()
     {
@@ -63,6 +67,8 @@ public class PlayerMovement : MovementsBase
 
         dashTime = startDashTime;
         playerState = State.Idle;
+
+        walkSoundTimer = walkSoundRate;
     }
 
     private void FixedUpdate()
@@ -76,6 +82,21 @@ public class PlayerMovement : MovementsBase
     {
         isGrounded = Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundLayers);
         playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalAxisInput));      //Play Animations correctly
+
+        //Walking Sound
+        if (Mathf.Abs(horizontalAxisInput) > 0 && isGrounded)
+        {
+            if (walkSoundTimer <= 0)
+            {
+                playerAudioSource.PlayOneShot(walkSound, 0.4f);
+                walkSoundTimer = walkSoundRate;
+            }
+            walkSoundTimer -= Time.deltaTime;
+        }
+        else if (walkSoundTimer <= 0)
+        {
+            walkSoundTimer = walkSoundRate;
+        }
 
         //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -109,6 +130,7 @@ public class PlayerMovement : MovementsBase
         {
             if (Input.GetButtonDown("Dash") && dashCooldown < Time.time)
             {
+                playerAudioSource.PlayOneShot(dashSound);
                 playerState = State.Dashing;
                 dashDirecton = movingRight ? 1 : -1;
                 dashCooldown = Time.time + startDashCooldown;

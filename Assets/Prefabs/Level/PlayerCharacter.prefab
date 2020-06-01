@@ -859,6 +859,7 @@ GameObject:
   - component: {fileID: 7966339911271002828}
   - component: {fileID: 7643680188621843559}
   - component: {fileID: 5198823438255694855}
+  - component: {fileID: 1632472823743449622}
   m_Layer: 8
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -1083,11 +1084,11 @@ MonoBehaviour:
   animator: {fileID: 1047782095710309742}
   attackPower: 20
   attackRange: 1
-  attackTime: 0
+  attackTime: 0.5
   attackPoint: {fileID: 8037269116266527860}
   attackableLayers:
     serializedVersion: 2
-    m_Bits: 6144
+    m_Bits: 14336
 --- !u!114 &7643680188621843559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1119,11 +1120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2aed19cdffe1145a63d9c202985e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 17
+  jumpForce: 17.1
   movementSmoothing: 0.16
   groundLayers:
     serializedVersion: 2
-    m_Bits: 1552
+    m_Bits: 9744
   groundCheckTransform: {fileID: 8883759046710026403}
   groundCheckRadius: 0.25
   jumpTime: 0.25
@@ -1132,6 +1133,19 @@ MonoBehaviour:
   startDashTime: 0.1
   startDashCooldown: 2
   jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
+--- !u!114 &1632472823743449622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529288083630516912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046e441c371389c4d9fbab9f07177900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifiers: []
 --- !u!1 &6622962744746053441
 GameObject:
   m_ObjectHideFlags: 0

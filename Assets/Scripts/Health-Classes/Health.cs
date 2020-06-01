@@ -17,9 +17,8 @@ public class Health : MonoBehaviour
         // firstColor = GetComponent<MeshRenderer>().material.color;
     }
 
-    public void getHit(int damage)
+    public virtual void getHit(int damage)
     {
-        onHit();
         Debug.Log(gameObject.name + " gets Hit for " + damage);
         currentHealth -= damage;
         // Animation goes here
@@ -54,8 +53,5 @@ public class Health : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         Destroy(gameObject);
         // this.enabled = false;
-    }
-    protected virtual void onHit() {
-        // nothing at first
     }
 }

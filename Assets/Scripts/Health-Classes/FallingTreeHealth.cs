@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallingTreeHealth : Health
+public class FallingTreeHealth : AttackableHealth
 {
-
     Rigidbody2D rb;
     Vector2 hitForce = Vector2.right * 1500;
     public Transform hitPoint;
@@ -13,7 +12,7 @@ public class FallingTreeHealth : Health
     }
     protected override void onHit()
     {
-        if (true)
+        if (currentHealth == maxHealth)
         {
             Debug.Log("Tree got hit!");
             rb.AddForceAtPosition(hitForce, hitPoint.position);

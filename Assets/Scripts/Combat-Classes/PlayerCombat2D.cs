@@ -37,14 +37,16 @@ public class PlayerCombat2D : CombatBase
         Collider2D[] hitTargets = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, attackableLayers);
         // remember to give enemies 2D-Colliders        MD
         // Debug.Log(hitTargets);
-
         foreach (Collider2D target in hitTargets)
         {
-            int targetLayer = target.gameObject.layer;
-            if (targetLayer == LayerMask.NameToLayer("Destroyable")) 
-                target.GetComponent<Health>().getHit(attackPower);
-            else if (targetLayer == LayerMask.NameToLayer("Enemy"))
-                target.GetComponent<EnemyHealth>().getHit(attackPower, this.gameObject);
+            if (!target.isTrigger)
+            {
+                int targetLayer = target.gameObject.layer;
+                if (targetLayer == LayerMask.NameToLayer("Destroyable"))
+                    target.GetComponent<Health>().applyDamage(attackPower);
+                else if (targetLayer == LayerMask.NameToLayer("Enemy"))
+                    target.GetComponent<EnemyHealth>().getHit(attackPower, this.gameObject);
+            }
         }
     }
 
@@ -55,5 +57,5 @@ public class PlayerCombat2D : CombatBase
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    
+
 }

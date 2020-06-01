@@ -10,10 +10,13 @@ public class JumpPad : MonoBehaviour
     {
         GameObject otherGameObject = collision.gameObject;
 
-    	if(otherGameObject.CompareTag("Player") && otherGameObject.GetComponent<CharacterController2D>().isAirborne())
-    	{
+        if (otherGameObject.CompareTag("Player") && otherGameObject.GetComponent<PlayerMovement>().isAirborne())
+        {
             //TODO ist das schön so? vllt lieber auf dem Player?
-    		otherGameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpingForce), ForceMode2D.Impulse);
-    	}
+            otherGameObject
+                .GetComponent<PlayerMovement>()
+                .playerRigidbody2D
+                .AddForce(new Vector2(0f, jumpingForce), ForceMode2D.Impulse);
+        }
     }
 }

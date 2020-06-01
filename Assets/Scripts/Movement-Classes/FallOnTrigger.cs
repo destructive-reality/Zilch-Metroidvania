@@ -14,7 +14,7 @@ public class FallOnTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "Player")
+        if (collider.CompareTag("Player"))
         {
             rb.isKinematic = false;
         }
@@ -22,8 +22,9 @@ public class FallOnTrigger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player" && rb.velocity.y < 0)
+        if (other.gameObject.CompareTag("Player") && rb.velocity.y < -0.1f)
         {
+            Debug.Log(rb.velocity.y);
             Damaging.DealDamage(gameObject, damage, other.gameObject);
             // other.gameObject.GetComponent<PlayerHealth>().getHit(10, gameObject);
         }

@@ -7,7 +7,7 @@ public class LevitateTo : MovementsBase
     public LevitateTo()
     {
         movingRight = true;
-        speed = 0;
+        speed = 0.06f;
     }
 
     public Transform target;
@@ -40,6 +40,7 @@ public class LevitateTo : MovementsBase
     }
     private void FixedUpdate()
     {
-        transform.Translate(headingTarget * 0.1f * Time.deltaTime, Space.World);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed);
+        // transform.Translate(headingTarget * 0.1f * Time.deltaTime, Space.World);
     }
 }

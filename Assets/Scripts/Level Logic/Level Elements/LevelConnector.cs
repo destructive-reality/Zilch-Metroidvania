@@ -29,6 +29,8 @@ public class LevelConnector : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameMaster.Instance.lastLevelDoorId = doorId;
+            // Carry over Health
+            PlayerPrefs.SetInt("PlayerHealth", other.GetComponent<PlayerHealth>().getCurrentHealth());
             LevelLoader.Instance.LoadLevelWithID(sceneToLoad);
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100;
+    protected int maxHealth = 100;
     [SerializeField] protected int currentHealth;
     [SerializeField] protected Animator animator;
 
@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        currentHealth = maxHealth;
+        setHealth(maxHealth);
     }
 
     public virtual void setHealth(int healthToSetTo)
@@ -26,6 +26,7 @@ public class Health : MonoBehaviour
         {
             Debug.LogError("New health cannot be above max health.");
         }
+        Debug.Log("Setting health of " + gameObject.name + " to " + healthToSetTo);
         currentHealth = healthToSetTo;
     }
 
@@ -51,7 +52,13 @@ public class Health : MonoBehaviour
         Debug.Log(gameObject.name + " is dying. Bye!");
     }
 
-    public bool isDead() {
+    public bool isDead()
+    {
         return currentHealth <= 0;
+    }
+
+    public int getCurrentHealth()
+    {
+        return currentHealth;
     }
 }

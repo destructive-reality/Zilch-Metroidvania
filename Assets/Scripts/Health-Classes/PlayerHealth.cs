@@ -9,8 +9,7 @@ public class PlayerHealth : KnockbackHealth
 
     protected override void Start()
     {
-        base.Start();
-        UIController.Instance.setHealthInUI(currentHealth, maxHealth);
+        setHealth(PlayerPrefs.GetInt("PlayerHealth", maxHealth));
         Debug.Log("end of playerhealth start");
     }
 

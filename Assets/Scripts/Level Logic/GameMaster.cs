@@ -9,7 +9,6 @@ public class GameMaster : MonoBehaviour
     private static GameMaster _instance;
     public static GameMaster Instance { get { return _instance; } }
 
-
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -36,9 +35,9 @@ public class GameMaster : MonoBehaviour
         Debug.Log("OnSceneLoaded: " + scene.name);
 
         //Set Player position next to Door
-        GameObject[] levelConnectors = GameObject.FindGameObjectsWithTag("LevelConnector");
+        GameObject[] currentLevelConnectors = GameObject.FindGameObjectsWithTag("LevelConnector");
 
-        foreach (GameObject levelConnector in levelConnectors)
+        foreach (GameObject levelConnector in currentLevelConnectors)
         {
             LevelConnector levelConnectorScript = levelConnector.GetComponent<LevelConnector>();
             if (levelConnectorScript.doorId == lastLevelDoorId)

@@ -855,6 +855,7 @@ GameObject:
   - component: {fileID: 1047782096130487534}
   - component: {fileID: 1047782096130487535}
   - component: {fileID: 860947147407656699}
+  - component: {fileID: 1317141260972420986}
   - component: {fileID: 7966339911271002828}
   - component: {fileID: 7643680188621843559}
   - component: {fileID: 5198823438255694855}
@@ -1041,6 +1042,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1317141260972420986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529288083630516912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0000b377a781e4fb06a0d5e00c08e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealthController: {fileID: 7643680188621843559}
+  playerCombatController: {fileID: 7966339911271002828}
+  playerMovementController: {fileID: 5198823438255694855}
 --- !u!114 &7966339911271002828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,6 +1073,7 @@ MonoBehaviour:
   attackPower: 20
   attackRange: 1
   attackTime: 0
+  playerMasterController: {fileID: 1317141260972420986}
   attackPoint: {fileID: 8037269116266527860}
   attackableLayers:
     serializedVersion: 2
@@ -1073,10 +1090,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ab0bc383feeac4aa60da5659610757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   currentHealth: 0
   animator: {fileID: 1047782095710309742}
   knockbackForce: 120
+  playerMasterController: {fileID: 1317141260972420986}
   startInvincibleTime: 1.5
 --- !u!114 &5198823438255694855
 MonoBehaviour:
@@ -1090,6 +1107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2aed19cdffe1145a63d9c202985e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMasterController: {fileID: 1317141260972420986}
   jumpForce: 17
   movementSmoothing: 0.16
   groundLayers:

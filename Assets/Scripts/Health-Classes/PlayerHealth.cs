@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : KnockbackHealth
 {
+    public PlayerMasterController playerMasterController;
     public float startInvincibleTime = 1.5f;
     private float invincibleTime = 0f;
 

@@ -8,11 +8,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MovementsBase
 {
-    public PlayerMovement()
-    {
-        base.movingRight = true;
-        speed = 14f;
-    }
+    public PlayerMasterController playerMasterController;
 
     [Header("Movement")]
     [SerializeField] private float jumpForce = 20f;                          // Amount of force added when the player jumps.

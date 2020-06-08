@@ -12,14 +12,16 @@ public class Bush : MonoBehaviour
     [Header("Particles")]
     public ParticleSystem bushWalkThroughParticleSystem;
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player")) {
-            PlayBushParticlesAndSound();
-        }
-    }
+    [Header("Animation")]
+    public Animator bushAnimator;
 
-    void PlayBushParticlesAndSound() {
-        bushAudioSource.PlayOneShot(bushWalkThroughAudioClips[Random.Range (0, bushWalkThroughAudioClips.Count)]);
-        bushWalkThroughParticleSystem.Play();
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            bushAudioSource.PlayOneShot(bushWalkThroughAudioClips[Random.Range(0, bushWalkThroughAudioClips.Count)]);
+            bushWalkThroughParticleSystem.Play();
+            bushAnimator.SetTrigger("WalkThrough");
+        }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCombat2D : CombatBase
 {
+    public PlayerMasterController playerMasterController;
     public Transform attackPoint;
     public LayerMask attackableLayers;       // remeber assigning layers
 

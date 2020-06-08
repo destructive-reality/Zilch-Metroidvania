@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AttackableHealth : Health
 {
-    public override void getHit(int damage)
+    public override void applyDamage(int damage)
     {
         onHit();
-        base.getHit(damage);
+        base.applyDamage(damage);
     }
     protected virtual void onHit()
     {

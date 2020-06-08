@@ -62,9 +62,6 @@ public class PlayerMovement : MovementsBase
 
     private void Awake()
     {
-        playerAudioSource = GetComponent<AudioSource>();
-        playerRigidbody2D = GetComponent<Rigidbody2D>();
-
         dashTime = startDashTime;
         playerState = State.Idle;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class MovementsBase : MonoBehaviour
 {
     protected bool movingRight;
-    protected float speed;
+    public float speed;
 
     //TODO hier vllt lieber den spriterenderer flippen? BH
     protected void Flip()

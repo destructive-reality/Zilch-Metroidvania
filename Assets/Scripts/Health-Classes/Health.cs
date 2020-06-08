@@ -1,57 +1,64 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100;
+    protected int maxHealth = 100;
     [SerializeField] protected int currentHealth;
-    [SerializeField] protected Color firstColor;
     [SerializeField] protected Animator animator;
 
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        currentHealth = maxHealth;
-        // firstColor = GetComponent<MeshRenderer>().material.color;
+        setHealth(maxHealth);
     }
 
-    public virtual void getHit(int damage)
+    public virtual void setHealth(int healthToSetTo)
     {
-        Debug.Log(gameObject.name + " gets Hit for " + damage);
-        currentHealth -= damage;
-        // Animation goes here
-        // animator.SetTrigger("Hurt");
-        flashRed();
-        if (currentHealth <= 0)
+        if (healthToSetTo < 0)
+        {
+            Debug.LogError("New health cannot be below zero.");
+        }
+        if (healthToSetTo > maxHealth)
+        {
+            Debug.LogError("New health cannot be above max health.");
+        }
+        Debug.Log("Setting health of " + gameObject.name + " to " + healthToSetTo);
+        currentHealth = healthToSetTo;
+    }
+
+    public virtual void applyDamage(int damageToTake)
+    {
+        Debug.Log(gameObject.name + " gets Hit for " + damageToTake);
+        setHealth(Mathf.Clamp(currentHealth - damageToTake, 0, maxHealth));
+
+        if (isDead())
         {
             die();
         }
     }
-    protected void flashRed()     // reaktion to taking damage, might change later    MD
+
+    public void heal(int amountToHeal)
     {
-        GetComponent<MeshRenderer>().material.color = Color.red;
-        Invoke("setbackColor", 0.3f);
-        // yield return new WaitForSeconds(0.3f);   // didnt work in IEnuerator
-        // GetComponent<MeshRenderer>().material.color = firstColor;
+        Debug.Log(gameObject.name + " heals for " + amountToHeal);
+        setHealth(Mathf.Clamp(currentHealth + amountToHeal, 0, maxHealth));
     }
-    protected void setbackColor()
-    {
-        GetComponent<MeshRenderer>().material.color = firstColor;
-    }
-    protected void die()
+
+    protected virtual void die()
     {
         Debug.Log(gameObject.name + " is dying. Bye!");
-        // Animation goes here; Maybe better to call Animation via Main-Script    MD
-        // animator.SetBool("IsDead", true);
-        foreach (Behaviour childComponent in gameObject.GetComponentsInChildren<Behaviour>())
-        {
-            childComponent.enabled = false;
-        }
-        // GetComponent<Collider2D>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
-        Destroy(gameObject);
-        // this.enabled = false;
+    }
+
+    public bool isDead()
+    {
+        return currentHealth <= 0;
+    }
+
+    public int getCurrentHealth()
+    {
+        return currentHealth;
     }
 }

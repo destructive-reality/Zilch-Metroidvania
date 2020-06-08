@@ -11,7 +11,6 @@ public class PlayerHealth : KnockbackHealth
     protected override void Start()
     {
         setHealth(PlayerPrefs.GetInt("PlayerHealth", maxHealth));
-        Debug.Log("end of playerhealth start");
     }
 
     public override void setHealth(int healthToSetTo)

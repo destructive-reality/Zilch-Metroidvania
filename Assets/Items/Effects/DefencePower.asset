@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: DefencePower
   m_EditorClassIdentifier: 
   effectName: DefencePower
+  isUpdate: 0
+  isStart: 1

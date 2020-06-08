@@ -55,10 +55,16 @@ public class PlayerMovement : MovementsBase
     [Header("Sounds")]
     public AudioSource playerAudioSource;
     public AudioClip jumpSound;
+    [Range(0.0f, 1.0f)]
+    public float jumpSoundVolume;
     public AudioClip dashSound;
+    [Range(0.0f, 1.0f)]
+    public float dashSoundVolume;
+    public AudioClip walkSound;
+    [Range(0.0f, 1.0f)]
+    public float walkSoundVolume;
     public float walkSoundRate;
     private float walkSoundTimer;
-    public AudioClip walkSound;
 
     private void Awake()
     {
@@ -88,7 +94,7 @@ public class PlayerMovement : MovementsBase
         {
             if (walkSoundTimer <= 0)
             {
-                playerAudioSource.PlayOneShot(walkSound, 0.4f);
+                playerAudioSource.PlayOneShot(walkSound, walkSoundVolume);
                 walkSoundTimer = walkSoundRate;
             }
             walkSoundTimer -= Time.deltaTime;
@@ -104,7 +110,7 @@ public class PlayerMovement : MovementsBase
             isJumping = true;
             jumpTimeCounter = jumpTime;
             ApplyJumpForce();
-            playerAudioSource.PlayOneShot(jumpSound);
+            playerAudioSource.PlayOneShot(jumpSound, jumpSoundVolume);
         }
 
         if (Input.GetButton("Jump") && isJumping)
@@ -130,7 +136,7 @@ public class PlayerMovement : MovementsBase
         {
             if (Input.GetButtonDown("Dash") && dashCooldown < Time.time)
             {
-                playerAudioSource.PlayOneShot(dashSound);
+                playerAudioSource.PlayOneShot(dashSound, dashSoundVolume);
                 playerState = State.Dashing;
                 dashDirecton = movingRight ? 1 : -1;
                 dashCooldown = Time.time + startDashCooldown;

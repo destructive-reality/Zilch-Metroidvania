@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: AttackPower
   m_EditorClassIdentifier: 
   effectName: AttackPower
+  isUpdate: 0
+  isStart: 1

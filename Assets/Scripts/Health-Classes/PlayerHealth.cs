@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerHealth : KnockbackHealth
 {
+    public PlayerMasterController playerMasterController;
     public float startInvincibleTime = 1.5f;
     private float invincibleTime = 0f;
 
     protected override void Start()
     {
         setHealth(PlayerPrefs.GetInt("PlayerHealth", maxHealth));
-        Debug.Log("end of playerhealth start");
     }
 
     public override void setHealth(int healthToSetTo)

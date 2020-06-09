@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    protected int maxHealth = 100;
+    public int maxHealth = 100;
     [SerializeField] protected int currentHealth;
     [SerializeField] protected Animator animator;
 

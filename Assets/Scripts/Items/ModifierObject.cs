@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Modifier", menuName = "Assets/Modifier")]
+[CreateAssetMenu(fileName = "New ModifierObject", menuName = "Assets/Modifier")]
 public class ModifierObject : ScriptableObject
 {
     public string modifierName = "New Modifier";
+    public EquipmentSlot currentSlot = EquipmentSlot.None;
     public EffectObject effectBody = null;
     public EffectObject effectArm = null;
     public EffectObject effectLeg = null;

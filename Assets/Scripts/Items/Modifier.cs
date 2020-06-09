@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Modifier : MonoBehaviour
 {
-    public ModifierObject modifier;
+    [SerializeField] private GameObject modifierEffect;
     private SpriteRenderer pickUpSprite;
-    bool isInteractable = false;
-    Inventory playerInventory;
+    private bool isInteractable = false;
+    private Inventory playerInventory;
 
     private void Awake() {
         pickUpSprite = GetComponentInChildren<SpriteRenderer>();
@@ -18,14 +16,16 @@ public class Modifier : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInteractable = pickUpSprite.enabled = true;
-            playerInventory = other.GetComponent<Inventory>();
+            playerInventory = other.GetComponentInChildren<Inventory>();
         }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (isInteractable && Input.GetButtonDown("PickUp") && playerInventory)
         {
-            playerInventory.AddModifier(modifier);
+            playerInventory.AddItem(modifierEffect);
+            // modifierEffect.GetComponent<Effects>().currentSlot = EquipmentSlot.Body;
+            modifierEffect.transform.parent = playerInventory.gameObject.transform;
             Destroy(this.gameObject);
         }
     }

@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5538676189619875977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 638593028631063750}
+  - component: {fileID: 3802199718732738927}
+  m_Layer: 0
+  m_Name: ModifierEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &638593028631063750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538676189619875977}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.892805, y: -0.18723488, z: -65.907715}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7980179785615288773}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3802199718732738927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538676189619875977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632d5098d90e4564c90fdfea89bae33b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSlot: 0
+  modifier: {fileID: 11400000, guid: 53260adc0bfba074eb63679f63b98c65, type: 2}
 --- !u!1 &7980179785407727129
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7980179785615288773}
   - component: {fileID: 7980179785615288770}
-  - component: {fileID: 7980179785615288771}
+  - component: {fileID: 717199097204458426}
   m_Layer: 0
   m_Name: Modifier
   m_TagString: Untagged
@@ -112,6 +157,7 @@ Transform:
   m_Children:
   - {fileID: 7980179785667891851}
   - {fileID: 7980179785407727128}
+  - {fileID: 638593028631063750}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,7 +177,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.6
---- !u!114 &7980179785615288771
+--- !u!114 &717199097204458426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f883972f40288ef4fbe966351324bc59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifier: {fileID: 11400000, guid: 53260adc0bfba074eb63679f63b98c65, type: 2}
+  modifierEffect: {fileID: 5538676189619875977}
 --- !u!1 &7980179785667891848
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Effect", menuName = "Assets/Modifier Effect")]
+[CreateAssetMenu(fileName = "New EffectObject", menuName = "Assets/Modifier Effect")]
 public class EffectObject : ScriptableObject
 {
     public string effectName;

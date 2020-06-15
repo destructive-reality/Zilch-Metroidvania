@@ -49,7 +49,7 @@ public class Equipment : MonoBehaviour
             foreach (GameObject modifier in modifiers)
             {
                 Effect modifierEffect = modifier.GetComponent<Effect>();
-                switch (modifierEffect.modifier.currentSlot)
+                switch (modifierEffect.currentSlot)
                 {
                     case EquipmentSlot.Arm:
                         if (modifierEffect.modifier.effectArm.isUpdate)

@@ -163,7 +163,7 @@ public class PlayerMovement : MovementsBase
         }
     }
 
-    void ApplyJumpForce()
+    public void ApplyJumpForce()
     {
         playerRigidbody2D.velocity = new Vector2(playerRigidbody2D.velocity.x, jumpForce);
     }

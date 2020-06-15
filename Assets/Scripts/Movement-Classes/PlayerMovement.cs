@@ -56,7 +56,7 @@ public class PlayerMovement : MovementsBase
     public AudioClip dashSound;
     [Range(0.0f, 1.0f)]
     public float dashSoundVolume;
-    public AudioClip walkSound;
+    public List<AudioClip> walkSoundAudioClips;
     [Range(0.0f, 1.0f)]
     public float walkSoundVolume;
     public float walkSoundRate;
@@ -87,7 +87,7 @@ public class PlayerMovement : MovementsBase
         {
             if (walkSoundTimer <= 0)
             {
-                playerAudioSource.PlayOneShot(walkSound, walkSoundVolume);
+                playerAudioSource.PlayOneShot(walkSoundAudioClips[Random.Range(0, walkSoundAudioClips.Count)], walkSoundVolume);
                 walkSoundTimer = walkSoundRate;
             }
             walkSoundTimer -= Time.deltaTime;

@@ -12,7 +12,7 @@ public class RangeEffect : Effect
     {
         Debug.Log("Increase Player Dash Time");
         PlayerMovement playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
-        playerMovement.startDashTime += 0.5f;
+        playerMovement.startDashTime += 0.2f;
     }
     public override void BodyStart()   
     {

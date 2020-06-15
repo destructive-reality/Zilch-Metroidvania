@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New EffectsScript", menuName = "Assets/Modifier")]
 public abstract class Effect : MonoBehaviour
 {
     public EquipmentSlot currentSlot = EquipmentSlot.None;

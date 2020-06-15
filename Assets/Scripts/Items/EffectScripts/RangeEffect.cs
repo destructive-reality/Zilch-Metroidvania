@@ -1,25 +1,24 @@
 ﻿using UnityEngine;
 
-public class PowerEffect : Effect
+public class RangeEffect : Effect
 {
     public override void ArmStart()
     {
-        Debug.Log("Increase Player Damage");
+        Debug.Log("Increase Player Attack Range");
         PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
-        playerCombat.attackPower += 10;
+        playerCombat.attackRange += 1;
     }
     public override void LegStart()
     {
-        Debug.Log("Increase Player DashSpeed");
+        Debug.Log("Increase Player Dash Time");
         PlayerMovement playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
-        playerMovement.dashSpeed += 15;
+        playerMovement.startDashTime += 0.5f;
     }
-    public override void BodyStart()
+    public override void BodyStart()   
     {
-        Debug.Log("Increase Player Health");
+        Debug.Log("Increase Player Invincible Time");
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
-        playerHealth.maxHealth += 10;
-        playerHealth.setHealth(playerHealth.maxHealth);
+        playerHealth.startInvincibleTime += 1;
     }
     public override void HeadStart()
     {

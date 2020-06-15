@@ -1118,7 +1118,7 @@ MonoBehaviour:
   animator: {fileID: 1047782095710309742}
   attackPower: 20
   attackRange: 1
-  attackTime: 0
+  attackTime: 0.5
   playerMasterController: {fileID: 1317141260972420986}
   attackPoint: {fileID: 8037269116266527860}
   attackableLayers:
@@ -1136,6 +1136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ab0bc383feeac4aa60da5659610757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   currentHealth: 0
   animator: {fileID: 1047782095710309742}
   knockbackForce: 120

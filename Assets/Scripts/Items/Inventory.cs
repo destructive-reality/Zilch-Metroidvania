@@ -15,12 +15,12 @@ public class Inventory : MonoBehaviour
         items.Add(item);
         Debug.Log(item.name + " added to Player Inventory");
     }
-    public void UseItem(GameObject item)
+    public void UseItem(GameObject item, EquipmentSlot slot = EquipmentSlot.Body)
     {
         Debug.Log("Using " + item.name);
         if (item.GetComponent<Effect>())
         {
-            equipment.EquipModifier(item, EquipmentSlot.Body);
+            equipment.EquipModifier(item, slot);
             items.Remove(item);
         }
     }
@@ -37,6 +37,18 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))    // For Testing  MD
         {
             UseAll();
+        }
+        if (Input.GetKeyDown(KeyCode.L) && items[0])    // For Testing  MD
+        {
+            UseItem(items[0], EquipmentSlot.Leg);
+        }
+        if (Input.GetKeyDown(KeyCode.O) && items[0])    // For Testing  MD
+        {
+            UseItem(items[0], EquipmentSlot.Body);
+        }
+        if (Input.GetKeyDown(KeyCode.P) && items[0])    // For Testing  MD
+        {
+            UseItem(items[0], EquipmentSlot.Arm);
         }
     }
 

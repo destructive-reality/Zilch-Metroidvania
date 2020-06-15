@@ -2,14 +2,17 @@
 
 public class PowerEffect : Effect
 {
-
     public override void ArmStart()
     {
-
+        Debug.Log("Increase Player Damage");
+        PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
+        playerCombat.attackPower += 10;
     }
     public override void LegStart()
     {
-
+        Debug.Log("Increase Player DashSpeed");
+        PlayerMovement playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
+        playerMovement.dashSpeed += 15;
     }
     public override void BodyStart()
     {
@@ -17,7 +20,6 @@ public class PowerEffect : Effect
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
         playerHealth.maxHealth += 10;
         playerHealth.setHealth(playerHealth.maxHealth);
-        // player.GetComponent<PlayerHealth>().maxHealth += 10;
     }
     public override void HeadStart()
     {

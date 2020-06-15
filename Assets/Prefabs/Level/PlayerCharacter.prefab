@@ -903,6 +903,7 @@ GameObject:
   - component: {fileID: 7966339911271002828}
   - component: {fileID: 7643680188621843559}
   - component: {fileID: 5198823438255694855}
+  - component: {fileID: 7228385836571419879}
   m_Layer: 8
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -1179,6 +1180,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5db09a23dcf5ede4abe0b5602c33532c, type: 3}
   walkSoundVolume: 0.4
   walkSoundRate: 0.8
+--- !u!114 &7228385836571419879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529288083630516912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9999228a709837e468a4ee66ebda5ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifiers: []
 --- !u!1 &6622962744746053441
 GameObject:
   m_ObjectHideFlags: 0

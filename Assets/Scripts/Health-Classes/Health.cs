@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public Stat maxHealth;
     [SerializeField] protected int currentHealth;
     [SerializeField] protected Animator animator;
 
@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        setHealth(maxHealth);
+        setHealth((int) maxHealth.getValue());
     }
 
     public virtual void setHealth(int healthToSetTo)
@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
         {
             Debug.LogError("New health cannot be below zero.");
         }
-        if (healthToSetTo > maxHealth)
+        if (healthToSetTo > maxHealth.getValue())
         {
             Debug.LogError("New health cannot be above max health.");
         }
@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
     public virtual void applyDamage(int damageToTake)
     {
         Debug.Log(gameObject.name + " gets Hit for " + damageToTake);
-        setHealth(Mathf.Clamp(currentHealth - damageToTake, 0, maxHealth));
+        setHealth(Mathf.Clamp(currentHealth - damageToTake, 0, (int) maxHealth.getValue()));
 
         if (isDead())
         {
@@ -44,7 +44,7 @@ public class Health : MonoBehaviour
     public void heal(int amountToHeal)
     {
         Debug.Log(gameObject.name + " heals for " + amountToHeal);
-        setHealth(Mathf.Clamp(currentHealth + amountToHeal, 0, maxHealth));
+        setHealth(Mathf.Clamp(currentHealth + amountToHeal, 0, (int) maxHealth.getValue()));
     }
 
     protected virtual void die()

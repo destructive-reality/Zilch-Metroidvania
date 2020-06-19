@@ -18,8 +18,8 @@ public class PowerEffect : Effect
     {
         Debug.Log("Increase Player Health");
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
-        playerHealth.maxHealth += 10;
-        playerHealth.setHealth(playerHealth.maxHealth);
+        playerHealth.maxHealth.addModifier(10);
+        playerHealth.setHealth((int) playerHealth.maxHealth.getValue());
     }
     public override void HeadStart()
     {

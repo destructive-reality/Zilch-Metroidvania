@@ -20,7 +20,7 @@ public class AgileEffect : Effect
     {
         Debug.Log("Increase Player Invincible Time");
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
-        playerHealth.startInvincibleTime += 1;
+        playerHealth.startInvincibleTime.addModifier(1);
     }
     public override void HeadStart()
     {

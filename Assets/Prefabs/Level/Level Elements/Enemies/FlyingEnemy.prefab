@@ -166,7 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 70
+  maxHealth:
+    baseValue: 30
   currentHealth: 0
   animator: {fileID: 0}
   knockbackForce: 20

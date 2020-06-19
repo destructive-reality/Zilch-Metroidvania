@@ -1136,12 +1136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ab0bc383feeac4aa60da5659610757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth:
+    baseValue: 100
   currentHealth: 0
   animator: {fileID: 1047782095710309742}
-  knockbackForce: 120
+  knockbackForce: 50
   playerMasterController: {fileID: 1317141260972420986}
-  startInvincibleTime: 1.5
+  startInvincibleTime:
+    baseValue: 2
 --- !u!114 &5198823438255694855
 MonoBehaviour:
   m_ObjectHideFlags: 0

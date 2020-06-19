@@ -1154,9 +1154,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2aed19cdffe1145a63d9c202985e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 18
+  speed:
+    baseValue: 17
   playerMasterController: {fileID: 1317141260972420986}
-  jumpForce: 17
+  jumpForce:
+    baseValue: 17
   movementSmoothing: 0.16
   groundLayers:
     serializedVersion: 2
@@ -1166,9 +1168,11 @@ MonoBehaviour:
   jumpTime: 0.25
   playerRigidbody2D: {fileID: 1047782096130487533}
   playerAnimator: {fileID: 1047782095710309742}
-  dashSpeed: 35
+  dashSpeed:
+    baseValue: 35
   startDashTime: 0.1
-  startDashCooldown: 2
+  startDashCooldown:
+    baseValue: 2
   playerAudioSource: {fileID: 860947147407656699}
   jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
   jumpSoundVolume: 1

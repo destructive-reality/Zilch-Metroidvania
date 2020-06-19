@@ -12,7 +12,7 @@ public class PowerEffect : Effect
     {
         Debug.Log("Increase Player DashSpeed");
         PlayerMovement playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
-        playerMovement.dashSpeed += 15;
+        playerMovement.dashSpeed.addModifier(15);
     }
     public override void BodyStart()
     {

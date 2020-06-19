@@ -1143,7 +1143,7 @@ MonoBehaviour:
     baseValue: 100
   currentHealth: 0
   animator: {fileID: 1047782095710309742}
-  knockbackForce: 50
+  knockbackForce: 70
   playerMasterController: {fileID: 1317141260972420986}
   startInvincibleTime:
     baseValue: 2

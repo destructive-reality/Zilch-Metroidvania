@@ -6,7 +6,7 @@ public class PowerEffect : Effect
     {
         Debug.Log("Increase Player Damage");
         PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
-        playerCombat.attackPower += 10;
+        playerCombat.attackPower.addModifier(10);
     }
     public override void LegStart()
     {

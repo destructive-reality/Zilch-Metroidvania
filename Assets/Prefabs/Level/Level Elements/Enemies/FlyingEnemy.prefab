@@ -130,9 +130,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  attackPower: 30
-  attackRange: 0
-  attackTime: 0
+  attackPower:
+    baseValue: 15
+  attackRange:
+    baseValue: 1
+  attackTime:
+    baseValue: 0
 --- !u!50 &509972248452091643
 Rigidbody2D:
   serializedVersion: 4

@@ -8,7 +8,7 @@ public class AgileEffect : Effect
     {
         Debug.Log("Increase Player Attack Speed");
         PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
-        playerCombat.attackTime -= 0.1f;
+        playerCombat.attackTime.addModifier(-0.1f);
     }
     public override void LegStart()
     {

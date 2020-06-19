@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class CombatBase : Damaging
 {
-    public float attackTime;
-    protected float nextAttackTime = 0f;
+    public Stat attackTime;
+    protected float nextAttackTime = 0.3f;
 }

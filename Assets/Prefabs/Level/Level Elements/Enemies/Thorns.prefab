@@ -111,8 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  attackPower: 10
-  attackRange: 0
+  attackPower:
+    baseValue: 10
+  attackRange:
+    baseValue: 1.7
 --- !u!61 &3354500032329890787
 BoxCollider2D:
   m_ObjectHideFlags: 0

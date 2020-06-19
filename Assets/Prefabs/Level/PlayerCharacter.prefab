@@ -1116,9 +1116,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1047782095710309742}
-  attackPower: 20
-  attackRange: 1
-  attackTime: 0.5
+  attackPower:
+    baseValue: 20
+  attackRange:
+    baseValue: 1.5
+  attackTime:
+    baseValue: 0.3
   playerMasterController: {fileID: 1317141260972420986}
   attackPoint: {fileID: 8037269116266527860}
   attackableLayers:

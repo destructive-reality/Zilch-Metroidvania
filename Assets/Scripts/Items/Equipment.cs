@@ -33,10 +33,10 @@ public class Equipment : MonoBehaviour
                 }
                 break;
             case EquipmentSlot.Head:
-                // if (modifierEffect.modifier.effectHead.isStart)
-                // {
-                // modifierEffect.HeadStart();
-                // }
+                if (modifierEffect.modifier.effectHead.isStart)
+                {
+                modifierEffect.HeadStart();
+                }
                 break;
             // default:        // throws Error MD
                 //     Debug.LogWarning("Not a valid Equimpent-Slot");
@@ -70,10 +70,10 @@ public class Equipment : MonoBehaviour
                         }
                         break;
                     case EquipmentSlot.Head:
-                        // if (modifierEffect.modifier.effectHead.isUpdate)
-                        // {
-                            // modifierEffect.HeadUpdate();
-                        // }
+                        if (modifierEffect.modifier.effectHead.isUpdate)
+                        {
+                            modifierEffect.HeadUpdate();
+                        }
                         break;
                     // default:        // throws Error MD
                         //     Debug.LogWarning("Not a valid Equimpent-Slot");

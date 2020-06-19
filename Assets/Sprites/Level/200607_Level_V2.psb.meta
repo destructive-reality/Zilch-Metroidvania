@@ -1,0 +1,527 @@
+fileFormatVersion: 2
+guid: 0a792ba980c75434b8ccc0b9e587abf8
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Vordergrund
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4356
+      width: 3840
+      height: 592
+    spriteID: f144a47044a40b74486b495054c9e74e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4356}
+  - name: Boden
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3852
+      y: 4356
+      width: 3840
+      height: 453
+    spriteID: 406102d64b6bb2b4c8268e904a085f2d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3852, y: 4356}
+  - name: Pflanze2 Kopie 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7700
+      y: 4356
+      width: 170
+      height: 197
+    spriteID: c2877a9f06143cc42b1ce5695ca7ff3b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 5963, y: 4122}
+  - name: Ranken
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3338
+      y: 3268
+      width: 3840
+      height: 639
+    spriteID: ed408797971ba2c41a60d5cafed358cb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3338, y: 2827}
+  - name: "B\xE4ume"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3840
+      height: 1080
+    spriteID: 2161a23a5f961b04ba0cc0abaf84127d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: Pflanze2 Kopie 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7700
+      y: 4561
+      width: 134
+      height: 141
+    spriteID: 3e2a6ca50931cf1438f2163581dff4b7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 7524, y: 4160}
+  - name: Nebel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3697
+      y: 2180
+      width: 3818
+      height: 988
+    spriteID: d261fbebf4a177b43be094792c922ec7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3697, y: 2107}
+  - name: Ebene 23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4956
+      width: 1990
+      height: 796
+    spriteID: 0e7092bcef45993428870db958cf2d22
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -844, y: 4867}
+  - name: Ebene 22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3852
+      y: 1092
+      width: 3814
+      height: 1044
+    spriteID: d5887303637835040ace6eca879bc0aa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3852, y: 1092}
+  - name: Ebene 21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3268
+      width: 3326
+      height: 1080
+    spriteID: d5b342afc77be004f856b291726c6b5d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -401, y: 3268}
+  - name: Ebene 20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2180
+      width: 3685
+      height: 1080
+    spriteID: e732e57dd71ec53468907d8284e1e8f9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -151, y: 2180}
+  - name: Ebene 29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3852
+      y: 4
+      width: 3840
+      height: 1080
+    spriteID: c102b63d526cfbe40a6bb9b9e0c1a63d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3852, y: 4}
+  - name: Ebene 19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1092
+      width: 3840
+      height: 1080
+    spriteID: 29f578c529b45d344968ee3d301d10dd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1092}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 8192
+  importedTextureHeight: 8192
+  documentSize: {x: 3840, y: 1080}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 8192
+  textureActualHeight: 8192
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Vordergrund
+    spriteName: Vordergrund
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f144a47044a40b74486b495054c9e74e
+    layerID: 189
+    mosaicPosition: {x: 4, y: 4356}
+  - name: Boden
+    spriteName: Boden
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 406102d64b6bb2b4c8268e904a085f2d
+    layerID: 188
+    mosaicPosition: {x: 3852, y: 4356}
+  - name: "B\xE4ume"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 34
+    mosaicPosition: {x: 0, y: 0}
+  - name: Pflanze2 Kopie 2
+    spriteName: Pflanze2 Kopie 2
+    isGroup: 0
+    parentIndex: 2
+    spriteID: c2877a9f06143cc42b1ce5695ca7ff3b
+    layerID: 159
+    mosaicPosition: {x: 7700, y: 4356}
+  - name: Ranken
+    spriteName: Ranken
+    isGroup: 0
+    parentIndex: 2
+    spriteID: ed408797971ba2c41a60d5cafed358cb
+    layerID: 121
+    mosaicPosition: {x: 3338, y: 3268}
+  - name: "B\xE4ume"
+    spriteName: "B\xE4ume"
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 2161a23a5f961b04ba0cc0abaf84127d
+    layerID: 187
+    mosaicPosition: {x: 4, y: 4}
+  - name: Pflanzen
+    spriteName: 
+    isGroup: 1
+    parentIndex: 2
+    spriteID: 00000000000000000000000000000000
+    layerID: 88
+    mosaicPosition: {x: 0, y: 0}
+  - name: Pflanze2 Kopie 3
+    spriteName: Pflanze2 Kopie 3
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 3e2a6ca50931cf1438f2163581dff4b7
+    layerID: 160
+    mosaicPosition: {x: 7700, y: 4561}
+  - name: Hintergrund
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 78
+    mosaicPosition: {x: 0, y: 0}
+  - name: Nebel
+    spriteName: Nebel
+    isGroup: 0
+    parentIndex: 8
+    spriteID: d261fbebf4a177b43be094792c922ec7
+    layerID: 90
+    mosaicPosition: {x: 3697, y: 2180}
+  - name: Ebene 23
+    spriteName: Ebene 23
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 0e7092bcef45993428870db958cf2d22
+    layerID: 84
+    mosaicPosition: {x: 4, y: 4956}
+  - name: Ebene 22
+    spriteName: Ebene 22
+    isGroup: 0
+    parentIndex: 8
+    spriteID: d5887303637835040ace6eca879bc0aa
+    layerID: 83
+    mosaicPosition: {x: 3852, y: 1092}
+  - name: Ebene 21
+    spriteName: Ebene 21
+    isGroup: 0
+    parentIndex: 8
+    spriteID: d5b342afc77be004f856b291726c6b5d
+    layerID: 82
+    mosaicPosition: {x: 4, y: 3268}
+  - name: Ebene 20
+    spriteName: Ebene 20
+    isGroup: 0
+    parentIndex: 8
+    spriteID: e732e57dd71ec53468907d8284e1e8f9
+    layerID: 81
+    mosaicPosition: {x: 4, y: 2180}
+  - name: Ebene 29
+    spriteName: Ebene 29
+    isGroup: 0
+    parentIndex: 8
+    spriteID: c102b63d526cfbe40a6bb9b9e0c1a63d
+    layerID: 119
+    mosaicPosition: {x: 3852, y: 4}
+  - name: Ebene 19
+    spriteName: Ebene 19
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 29f578c529b45d344968ee3d301d10dd
+    layerID: 80
+    mosaicPosition: {x: 4, y: 1092}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 1
+  textureAssetName: 200607_Level_V2 Texture
+  prefabAssetName: 200607_Level_V2 Prefab
+  spriteLibAssetName: 200607_Level_V2 Sprite Lib
+  secondarySpriteTextures: []

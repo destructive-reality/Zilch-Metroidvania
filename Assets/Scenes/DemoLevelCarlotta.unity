@@ -419,11 +419,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: -0.23902635
       objectReference: {fileID: 0}
-    - target: {fileID: 4428657106517259143, guid: f5e1edfa8948b7d4092a3b9088aab59a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4656007497098265388, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -443,11 +438,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9604775
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677988240432094598, guid: f5e1edfa8948b7d4092a3b9088aab59a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4867829393153041428, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
@@ -789,6 +779,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelInteractionPackage
       objectReference: {fileID: 0}
+    - target: {fileID: 8895665693511831899, guid: f5e1edfa8948b7d4092a3b9088aab59a,
+        type: 3}
+      propertyPath: m_Range
+      value: 6.471686
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895665693511831899, guid: f5e1edfa8948b7d4092a3b9088aab59a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895665693511831899, guid: f5e1edfa8948b7d4092a3b9088aab59a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.124526225
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895665693511831899, guid: f5e1edfa8948b7d4092a3b9088aab59a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9075990367258215198, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -802,6 +812,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1112929807100437433, guid: f5e1edfa8948b7d4092a3b9088aab59a, type: 3}
     - {fileID: 1064165534931773267, guid: f5e1edfa8948b7d4092a3b9088aab59a, type: 3}
+    - {fileID: 8895665693511831899, guid: f5e1edfa8948b7d4092a3b9088aab59a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5e1edfa8948b7d4092a3b9088aab59a, type: 3}
 --- !u!1001 &1187553407
 PrefabInstance:

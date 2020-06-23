@@ -48,10 +48,6 @@ public class Inventory : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))    // For Testing  MD
-        {
-            UseAll();
-        }
         if (Input.GetKeyDown(KeyCode.L) && items[0])    // For Testing  MD
         {
             UseItem(items[0], EquipmentSlot.Leg);

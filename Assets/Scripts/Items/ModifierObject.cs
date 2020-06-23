@@ -3,6 +3,7 @@
 [CreateAssetMenu(fileName = "New ModifierObject", menuName = "Assets/Modifier")]
 public class ModifierObject : ScriptableObject
 {
+    public Sprite icon;
     public string modifierName = "New Modifier";
     public EquipmentSlot currentSlot = EquipmentSlot.None;
     public EffectObject effectBody = null;

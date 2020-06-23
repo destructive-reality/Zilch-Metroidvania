@@ -42,6 +42,12 @@ public class Equipment : MonoBehaviour
                 //     Debug.LogWarning("Not a valid Equimpent-Slot");
         }
     }
+    public void Unequip() {
+
+    }
+    public void ChangeSlot(EquipmentSlot slot) {
+
+    }
     private void Update()
     {
         if (modifiers.Count > 0)
@@ -81,4 +87,7 @@ public class Equipment : MonoBehaviour
             }
         }
     }
+
+
+
 }

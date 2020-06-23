@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public delegate void OnInventoryChanged();
+    public OnInventoryChanged onItemChangedCallback;
+
     public List<GameObject> items;
     private Equipment equipment;
 
-    private void Awake() {
+    private void Awake()
+    {
         equipment = gameObject.GetComponentInParent<Equipment>();
     }
 
@@ -14,6 +18,11 @@ public class Inventory : MonoBehaviour
     {
         items.Add(item);
         Debug.Log(item.name + " added to Player Inventory");
+        
+        if (onItemChangedCallback != null)
+        {
+            onItemChangedCallback.Invoke();
+        }
     }
     public void UseItem(GameObject item, EquipmentSlot slot = EquipmentSlot.Body)
     {
@@ -22,6 +31,11 @@ public class Inventory : MonoBehaviour
         {
             equipment.EquipModifier(item, slot);
             items.Remove(item);
+            
+            if (onItemChangedCallback != null)
+            {
+                onItemChangedCallback.Invoke();
+            }
         }
     }
     public void UseAll()

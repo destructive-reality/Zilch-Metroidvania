@@ -42,7 +42,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.479
+    m_Value: 0.45
     min: 0
     max: 1
   smoothness:
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: GameObject Profile
+  m_Name: PostPro Settings
   m_EditorClassIdentifier: 
   components:
   - {fileID: 6557881652544846590}
@@ -85,11 +85,11 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.19
+    m_Value: 0.09
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.32
     min: 0
   scatter:
     m_OverrideState: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
     min: 0
   tint:
     m_OverrideState: 0
-    m_Value: {r: 0.04649973, g: 1, b: 0, a: 1}
+    m_Value: {r: 0.13041289, g: 0.8784314, b: 0, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -110,9 +110,9 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   dirtTexture:
-    m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: c1f8a54ce0539e84cbe01308a7f69344, type: 3}
+    m_OverrideState: 0
+    m_Value: {fileID: 2800000, guid: 0149b4795107c9a4ebd460ad8cee71a4, type: 3}
   dirtIntensity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 5
     min: 0

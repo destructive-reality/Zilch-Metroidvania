@@ -5,7 +5,7 @@ public class ModifierObject : ScriptableObject
 {
     public Sprite icon;
     public string modifierName = "New Modifier";
-    public EquipmentSlot currentSlot = EquipmentSlot.None;
+    public ModifierSlot currentSlot = ModifierSlot.None;
     public EffectObject effectBody = null;
     public EffectObject effectArm = null;
     public EffectObject effectLeg = null;

@@ -6,7 +6,7 @@ public class RangeEffect : Effect
     {
         Debug.Log("Increase Player Attack Range");
         PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
-        playerCombat.attackRange.addModifier(1);
+        playerCombat.attackRange.addModifier(0.3f);
     }
     public override void LegStart()
     {

@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour
+public class EquipmentSlot : MonoBehaviour
 {
     public Image[] icons;
-    public Button ArmButton;
-    public Button LegButton;
-    public Button BodyButton;
     GameObject modifier;
 
     public void AddItem(GameObject newModifier)
@@ -20,7 +17,6 @@ public class InventorySlot : MonoBehaviour
         {
             icons[i].enabled = true;
         }
-        ArmButton.interactable = BodyButton.interactable = LegButton.interactable = true;
     }
 
     public void ClearSlot()
@@ -32,22 +28,25 @@ public class InventorySlot : MonoBehaviour
         {
             icons[i].enabled = false;
         }
-        ArmButton.interactable = BodyButton.interactable = LegButton.interactable = false;
     }
 
     public void OnArmButton()
     {
         Debug.Log("ArmButton clicked");
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Equipment>().EquipModifier(modifier, EquipmentSlot.Arm);
+        EquipOnSlot(ModifierSlot.Arm);
     }
     public void OnLegButton()
     {
         Debug.Log("LegButton clicked");
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Equipment>().EquipModifier(modifier, EquipmentSlot.Leg);
+        EquipOnSlot(ModifierSlot.Leg);
     }
     public void OnBodyButton()
     {
         Debug.Log("BodyButton clicked");
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Equipment>().EquipModifier(modifier, EquipmentSlot.Body);
+        EquipOnSlot(ModifierSlot.Body);
+    }
+    public void EquipOnSlot(ModifierSlot slot) {
+        // GameObject.FindGameObjectWithTag("Player").GetComponent<Equipment>().EquipModifier(modifier, slot);
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>().UseItem(modifier, slot);
     }
 }

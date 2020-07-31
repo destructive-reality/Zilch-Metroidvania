@@ -4,35 +4,35 @@ using UnityEngine;
 public class Equipment : MonoBehaviour
 {
     public delegate void OnEquipmentChange();
-    public event OnEquipmentChange changedEquipment;
+    public event OnEquipmentChange changedEquipmentCallback;
     public List<GameObject> modifiers;
 
-    public void EquipModifier(GameObject modifier, EquipmentSlot slot)
+    public void EquipModifier(GameObject modifier, ModifierSlot slot)
     {
         modifiers.Add(modifier);
         Effect modifierEffect = modifier.GetComponent<Effect>();
         modifierEffect.currentSlot = slot;
         switch (slot)
         {
-            case EquipmentSlot.Arm:
+            case ModifierSlot.Arm:
                 if (modifierEffect.modifier.effectArm.isStart)
                 {
                     modifierEffect.ArmStart();
                 }
                 break;
-            case EquipmentSlot.Leg:
+            case ModifierSlot.Leg:
                 if (modifierEffect.modifier.effectLeg.isStart)
                 {
                     modifierEffect.LegStart();
                 }
                 break;
-            case EquipmentSlot.Body:
+            case ModifierSlot.Body:
                 if (modifierEffect.modifier.effectBody.isStart)
                 {
                     modifierEffect.BodyStart();
                 }
                 break;
-            case EquipmentSlot.Head:
+            case ModifierSlot.Head:
                 if (modifierEffect.modifier.effectHead.isStart)
                 {
                 modifierEffect.HeadStart();
@@ -45,7 +45,7 @@ public class Equipment : MonoBehaviour
     public void Unequip() {
 
     }
-    public void ChangeSlot(EquipmentSlot slot) {
+    public void ChangeSlot(ModifierSlot slot) {
 
     }
     private void Update()
@@ -57,25 +57,25 @@ public class Equipment : MonoBehaviour
                 Effect modifierEffect = modifier.GetComponent<Effect>();
                 switch (modifierEffect.currentSlot)
                 {
-                    case EquipmentSlot.Arm:
+                    case ModifierSlot.Arm:
                         if (modifierEffect.modifier.effectArm.isUpdate)
                         {
                             modifierEffect.ArmUpdate();
                         }
                         break;
-                    case EquipmentSlot.Leg:
+                    case ModifierSlot.Leg:
                         if (modifierEffect.modifier.effectLeg.isUpdate)
                         {
                             modifierEffect.LegUpdate();
                         }
                         break;
-                    case EquipmentSlot.Body:
+                    case ModifierSlot.Body:
                         if (modifierEffect.modifier.effectBody.isUpdate)
                         {
                             modifierEffect.BodyUpdate();
                         }
                         break;
-                    case EquipmentSlot.Head:
+                    case ModifierSlot.Head:
                         if (modifierEffect.modifier.effectHead.isUpdate)
                         {
                             modifierEffect.HeadUpdate();

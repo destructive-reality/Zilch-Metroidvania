@@ -1233,7 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed:
-    baseValue: 11
+    baseValue: 16
   playerMasterController: {fileID: 1317141260972420986}
   jumpForce:
     baseValue: 17

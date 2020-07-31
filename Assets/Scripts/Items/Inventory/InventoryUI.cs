@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -24,7 +22,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))    // Sollte noch zu einem Unity Button-Teil werden statt der feste Keycode
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
@@ -32,7 +30,7 @@ public class InventoryUI : MonoBehaviour
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            Debug.Log("Cast Ray from " + Input.mousePosition);
+            // Debug.Log("Cast Ray from " + Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit))
             {

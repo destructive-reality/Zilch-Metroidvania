@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ParallaxTest.unity
     guid: d93c70339604f504c896c967e22a2394
+  - enabled: 1
+    path: Assets/Scenes/DemoLevelCarlotta.unity
+    guid: d8fb9e5b94301b14db01a24d5125b935
   m_configObjects: {}

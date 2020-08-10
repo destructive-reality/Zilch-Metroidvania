@@ -82,9 +82,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  attackPower: 30
-  attackRange: 0
-  attackTime: 0
+  attackPower:
+    baseValue: 15
+  attackRange:
+    baseValue: 1
+  attackTime:
+    baseValue: 0
 --- !u!50 &509972248452091643
 Rigidbody2D:
   serializedVersion: 4
@@ -118,7 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 70
+  maxHealth:
+    baseValue: 30
   currentHealth: 0
   animator: {fileID: 0}
   knockbackForce: 20
@@ -134,7 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37d2e16a7d01ca4e93767fbf570c5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.06
+  speed:
+    baseValue: 0.07
   target: {fileID: 0}
 --- !u!212 &3460577125119433471
 SpriteRenderer:

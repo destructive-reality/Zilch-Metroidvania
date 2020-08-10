@@ -79,7 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e110a931731a2664ba8bb96322a3240f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed:
+    baseValue: 3
   rayDistance: 1
   ignoreLayers:
     serializedVersion: 2
@@ -124,9 +125,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  attackPower: 10
-  attackRange: 0
-  attackTime: 0
+  attackPower:
+    baseValue: 10
+  attackRange:
+    baseValue: 1
+  attackTime:
+    baseValue: 0
 --- !u!61 &3811832996060555768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,7 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth:
+    baseValue: 50
   currentHealth: 0
   animator: {fileID: 0}
   knockbackForce: 0

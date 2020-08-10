@@ -5,18 +5,18 @@ using UnityEngine;
 public class PlayerHealth : KnockbackHealth
 {
     public PlayerMasterController playerMasterController;
-    public float startInvincibleTime = 1.5f;
+    public Stat startInvincibleTime;
     private float invincibleTime = 0f;
 
     protected override void Start()
     {
-        setHealth(PlayerPrefs.GetInt("PlayerHealth", maxHealth));
+        setHealth(PlayerPrefs.GetInt("PlayerHealth", (int) maxHealth.getValue()));
     }
 
     public override void setHealth(int healthToSetTo)
     {
         base.setHealth(healthToSetTo);
-        UIController.Instance.setHealthInUI(currentHealth, maxHealth);
+        UIController.Instance.setHealthInUI(currentHealth, (int) maxHealth.getValue());
     }
 
     public new void getHit(int damage, GameObject damagingObject)
@@ -25,7 +25,7 @@ public class PlayerHealth : KnockbackHealth
         {
             Debug.Log("Time: " + Time.time + "; invincibleTime: " + invincibleTime);
             base.getHit(damage, damagingObject);
-            invincibleTime = Time.time + startInvincibleTime;
+            invincibleTime = Time.time + startInvincibleTime.getValue();
             PostProController.Instance.TriggerChromaticAberrationDamageAnimation();
         }
     }

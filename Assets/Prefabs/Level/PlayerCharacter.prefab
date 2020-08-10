@@ -1189,9 +1189,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1047782095710309742}
-  attackPower: 20
-  attackRange: 1
-  attackTime: 0.5
+  attackPower:
+    baseValue: 20
+  attackRange:
+    baseValue: 1.5
+  attackTime:
+    baseValue: 0.3
   playerMasterController: {fileID: 1317141260972420986}
   attackPoint: {fileID: 8037269116266527860}
   attackableLayers:
@@ -1209,12 +1212,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ab0bc383feeac4aa60da5659610757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth:
+    baseValue: 100
   currentHealth: 0
   animator: {fileID: 1047782095710309742}
-  knockbackForce: 120
+  knockbackForce: 70
   playerMasterController: {fileID: 1317141260972420986}
-  startInvincibleTime: 1.5
+  startInvincibleTime:
+    baseValue: 2
 --- !u!114 &5198823438255694855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,9 +1232,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2aed19cdffe1145a63d9c202985e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 11
+  speed:
+    baseValue: 16
   playerMasterController: {fileID: 1317141260972420986}
-  jumpForce: 17
+  jumpForce:
+    baseValue: 17
   movementSmoothing: 0.16
   groundLayers:
     serializedVersion: 2
@@ -1239,9 +1246,11 @@ MonoBehaviour:
   jumpTime: 0.25
   playerRigidbody2D: {fileID: 1047782096130487533}
   playerAnimator: {fileID: 1047782095710309742}
-  dashSpeed: 35
+  dashSpeed:
+    baseValue: 35
   startDashTime: 0.1
-  startDashCooldown: 2
+  startDashCooldown:
+    baseValue: 2
   playerAudioSource: {fileID: 860947147407656699}
   jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
   jumpSoundVolume: 1

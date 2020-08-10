@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465d35b4ef2e3ae429bce1e1f0aa0cc5, type: 3}
   m_Name: Agile
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 47fd5ad335d39dd4cb07011711be5710, type: 3}
   modifierName: Agile Stone
   currentSlot: 0
   effectBody: {fileID: 11400000, guid: 3228c2dc747f18d4ba71914aba8e0a43, type: 2}
   effectArm: {fileID: 11400000, guid: 6f0c7e1341f9e9745a017b26758fe33f, type: 2}
   effectLeg: {fileID: 11400000, guid: 38d8a6391d62fc148b47481e38f141c4, type: 2}
+  effectHead: {fileID: 0}
   modifierDescription: Increases the Agility of the carrier.

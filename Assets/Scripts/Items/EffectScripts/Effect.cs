@@ -2,7 +2,7 @@
 
 public abstract class Effect : MonoBehaviour
 {
-    public EquipmentSlot currentSlot = EquipmentSlot.None;
+    public ModifierSlot currentSlot = ModifierSlot.None;
     public ModifierObject modifier;
 
     public abstract void ArmStart();
@@ -15,4 +15,4 @@ public abstract class Effect : MonoBehaviour
     public abstract void HeadUpdate();
 }
 
-public enum EquipmentSlot { None, Arm, Leg, Body, Head }
+public enum ModifierSlot { None, Arm, Leg, Body, Head }

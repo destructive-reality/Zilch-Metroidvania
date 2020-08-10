@@ -6,7 +6,7 @@ public class RangeEffect : Effect
     {
         Debug.Log("Increase Player Attack Range");
         PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
-        playerCombat.attackRange += 1;
+        playerCombat.attackRange.addModifier(0.3f);
     }
     public override void LegStart()
     {
@@ -18,7 +18,7 @@ public class RangeEffect : Effect
     {
         Debug.Log("Increase Player Invincible Time");
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
-        playerHealth.startInvincibleTime += 1;
+        playerHealth.startInvincibleTime.addModifier(1);
     }
     public override void HeadStart()
     {

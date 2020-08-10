@@ -13,7 +13,7 @@ public class DamagingObject : Damaging
         // attackRange = 0.87f;
         damageCollider = GetComponent<CircleCollider2D>();
         damageCollider.radius = attackRange.getValue();
-        Debug.Log(attackRange);
+        // Debug.Log(attackRange);
     }
     protected void OnTriggerEnter2D(Collider2D collider)
     {

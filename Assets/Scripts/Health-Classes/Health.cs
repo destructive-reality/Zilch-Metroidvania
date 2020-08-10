@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
         {
             Debug.LogError("New health cannot be above max health.");
         }
-        Debug.Log("Setting health of " + gameObject.name + " to " + healthToSetTo);
+        // Debug.Log("Setting health of " + gameObject.name + " to " + healthToSetTo);
         currentHealth = healthToSetTo;
     }
 
@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
 
     public void heal(int amountToHeal)
     {
-        Debug.Log(gameObject.name + " heals for " + amountToHeal);
+        // Debug.Log(gameObject.name + " heals for " + amountToHeal);
         setHealth(Mathf.Clamp(currentHealth + amountToHeal, 0, (int) maxHealth.getValue()));
     }
 

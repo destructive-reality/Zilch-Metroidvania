@@ -11,7 +11,9 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("Try getting Equipment for Inventory");
         equipment = gameObject.GetComponentInParent<Equipment>();
+        Debug.Log("Get Equipment for Inventory: " + equipment.gameObject.name);
     }
 
     public void AddItem(GameObject item)

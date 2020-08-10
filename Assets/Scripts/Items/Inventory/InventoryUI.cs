@@ -15,7 +15,7 @@ public class InventoryUI : MonoBehaviour
         cam = Camera.allCameras[0];
 
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
-        inventory.onItemChangedCallback += UpdateUI;
+        inventory.onItemChangedCallback += UpdateInventoryUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
     }
@@ -36,12 +36,12 @@ public class InventoryUI : MonoBehaviour
             {
                 Debug.Log(hit.collider.name + " was hit.");
             }
-            else 
-                Debug.Log("No hit :(");
+            // else 
+            //     Debug.Log("No hit :(");
         }
     }
 
-    void UpdateUI()
+    void UpdateInventoryUI()
     {
         Debug.Log("Updating UI");
         for (int i = 0; i < slots.Length; i++)

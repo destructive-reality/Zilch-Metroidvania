@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : MonoBehaviour, IDropHandler
 {
     public Image[] icons;
+    public Button ItemButton;
     public Button ArmButton;
     public Button LegButton;
     public Button BodyButton;
@@ -18,7 +20,7 @@ public class InventorySlot : MonoBehaviour
         {
             icons[i].enabled = true;
         }
-        ArmButton.interactable = BodyButton.interactable = LegButton.interactable = true;
+        ItemButton.interactable = ArmButton.interactable = BodyButton.interactable = LegButton.interactable = true;
     }
 
     public void ClearSlot()
@@ -30,7 +32,7 @@ public class InventorySlot : MonoBehaviour
         {
             icons[i].enabled = false;
         }
-        ArmButton.interactable = BodyButton.interactable = LegButton.interactable = false;
+        ItemButton.interactable = ArmButton.interactable = BodyButton.interactable = LegButton.interactable = false;
     }
 
     public void OnArmButton()
@@ -51,5 +53,12 @@ public class InventorySlot : MonoBehaviour
     public void EquipOnSlot(ModifierSlot slot) {
         // GameObject.FindGameObjectWithTag("Player").GetComponent<Equipment>().EquipModifier(modifier, slot);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>().UseItem(modifier, slot);
+    }
+
+    public void OnDrop(PointerEventData eventData) {
+        if (eventData.pointerDrag != null)
+        {
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+        }
     }
 }

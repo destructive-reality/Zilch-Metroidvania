@@ -140,6 +140,8 @@ GameObject:
   - component: {fileID: 1271481936006723046}
   - component: {fileID: 1271481936006723044}
   - component: {fileID: 1271481936006723045}
+  - component: {fileID: 5007244112302098677}
+  - component: {fileID: 3596193335394462557}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -203,6 +205,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5007244112302098677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271481936006723047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f5feeceec16a945b7bc1991230e9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &3596193335394462557
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271481936006723047}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1271481936324375267
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +544,7 @@ MonoBehaviour:
   - {fileID: 1271481937248392843}
   - {fileID: 1271481935958200646}
   - {fileID: 1271481936324375264}
+  ItemButton: {fileID: 1271481937702995953}
   ArmButton: {fileID: 1271481937248392852}
   LegButton: {fileID: 1271481935958200647}
   BodyButton: {fileID: 1271481936324375265}
@@ -635,7 +662,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1271481937702995952}
   m_OnClick:
     m_PersistentCalls:

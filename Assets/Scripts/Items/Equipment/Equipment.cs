@@ -41,6 +41,10 @@ public class Equipment : MonoBehaviour
             // default:        // throws Error MD
                 //     Debug.LogWarning("Not a valid Equimpent-Slot");
         }
+        if (changedEquipmentCallback != null)
+        {
+            changedEquipmentCallback.Invoke();
+        }
     }
     public void Unequip() {
 

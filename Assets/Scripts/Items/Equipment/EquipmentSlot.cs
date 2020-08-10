@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class EquipmentSlot : MonoBehaviour
+public class EquipmentSlot : MonoBehaviour, IDropHandler
 {
     public Image[] icons;
-    GameObject modifier;
+    public Button ItemButton;
+    private EquipmentUI equipmentUI;
+    private GameObject modifier;
 
     public void AddItem(GameObject newModifier)
     {
@@ -17,6 +18,7 @@ public class EquipmentSlot : MonoBehaviour
         {
             icons[i].enabled = true;
         }
+        ItemButton.interactable = true;
     }
 
     public void ClearSlot()
@@ -28,25 +30,48 @@ public class EquipmentSlot : MonoBehaviour
         {
             icons[i].enabled = false;
         }
+        ItemButton.interactable = false;
     }
 
-    public void OnArmButton()
+    public void EquipOnSlot(ModifierSlot slot)
     {
-        Debug.Log("ArmButton clicked");
-        EquipOnSlot(ModifierSlot.Arm);
-    }
-    public void OnLegButton()
-    {
-        Debug.Log("LegButton clicked");
-        EquipOnSlot(ModifierSlot.Leg);
-    }
-    public void OnBodyButton()
-    {
-        Debug.Log("BodyButton clicked");
-        EquipOnSlot(ModifierSlot.Body);
-    }
-    public void EquipOnSlot(ModifierSlot slot) {
         // GameObject.FindGameObjectWithTag("Player").GetComponent<Equipment>().EquipModifier(modifier, slot);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>().UseItem(modifier, slot);
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        if (eventData.pointerDrag != null)
+        {
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+        }
+        switch (equipmentUI.checkSlot(this.gameObject))
+        {
+            case null:
+                Debug.Log("No corresponding Slot found!");
+                return;
+            case 0:     // Head
+                return;
+            case 1:     // Arm
+                return;
+            case 2:     // Arm
+                return;
+            case 3:     // Leg
+                return;
+            case 4:     // Leg
+                return;
+            default:
+                Debug.Log("Body");
+                return;
+        }
+
+    }
+
+    private void Start() {
+        equipmentUI = GameObject.FindWithTag("UI").GetComponentInChildren<EquipmentUI>();
+        if (!equipmentUI)
+        {
+            Debug.LogError("No Equipment UI found for Equipment Slot!");
+        }
     }
 }

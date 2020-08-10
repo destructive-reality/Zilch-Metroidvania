@@ -26,6 +26,7 @@ public class PlayerHealth : KnockbackHealth
             Debug.Log("Time: " + Time.time + "; invincibleTime: " + invincibleTime);
             base.getHit(damage, damagingObject);
             invincibleTime = Time.time + startInvincibleTime.getValue();
+            PostProController.Instance.TriggerChromaticAberrationDamageAnimation();
         }
     }
 }

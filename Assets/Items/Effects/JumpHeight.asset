@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: JumpHeight
   m_EditorClassIdentifier: 
   effectName: JumpHeight
+  isUpdate: 0
+  isStart: 1

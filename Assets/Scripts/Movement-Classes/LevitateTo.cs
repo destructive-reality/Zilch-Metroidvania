@@ -4,21 +4,9 @@ using UnityEngine;
 
 public class LevitateTo : MovementsBase
 {
-    public LevitateTo()
-    {
-        movingRight = true;
-        speed = 0.06f;
-    }
-
     public Transform target;
     protected Vector3 headingTarget;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -40,7 +28,7 @@ public class LevitateTo : MovementsBase
     }
     private void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed.getValue());
         // transform.Translate(headingTarget * 0.1f * Time.deltaTime, Space.World);
     }
 }

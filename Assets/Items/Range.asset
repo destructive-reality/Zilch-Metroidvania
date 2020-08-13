@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465d35b4ef2e3ae429bce1e1f0aa0cc5, type: 3}
+  m_Name: Range
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 8e2adef93b39833438ef690c4950ada9, type: 3}
+  modifierName: RangeStone
+  currentSlot: 0
+  effectBody: {fileID: 11400000, guid: 84734ee70a8ddf844ad2499b62f91954, type: 2}
+  effectArm: {fileID: 11400000, guid: 2c515d06abbed4844816abbb75a24dca, type: 2}
+  effectLeg: {fileID: 11400000, guid: 3228c2dc747f18d4ba71914aba8e0a43, type: 2}
+  effectHead: {fileID: 0}
+  modifierDescription: This stone doesn't make everything longer.

@@ -4,29 +4,6 @@ using UnityEngine;
 
 public abstract class CombatBase : Damaging
 {
-
-    public float attackTime;
-    protected float nextAttackTime = 0f;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void startAttack()
-    {
-
-    }
-    void dealDamage()
-    {
-
-    }
+    public Stat attackTime;
+    protected float nextAttackTime = 0.3f;
 }

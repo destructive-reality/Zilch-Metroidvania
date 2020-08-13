@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class MovementsBase : MonoBehaviour
 {
-    protected bool movingRight;
-    protected float speed;
+    protected bool movingRight = true;
+    public Stat speed;
 
-    //TODO hier vllt lieber den spriterenderer flippen? BH
+    //TODO hier vllt lieber den spriterenderer flippen? BH -> 8.6.20: Ja bitte, das ist ziemlich dumm. BH
     protected void Flip()
     {
         movingRight = !movingRight;

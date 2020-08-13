@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class PlayerCombat2D : CombatBase
 {
+    public PlayerMasterController playerMasterController;
     public Transform attackPoint;
     public LayerMask attackableLayers;       // remeber assigning layers
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,7 +17,7 @@ public class PlayerCombat2D : CombatBase
             {
                 startAttack();
                 // playerState = State.Attacking;
-                nextAttackTime = Time.time + attackTime;
+                nextAttackTime = Time.time + attackTime.getValue();
             }
         }
     }
@@ -34,7 +29,7 @@ public class PlayerCombat2D : CombatBase
     }
     void dealDamage()
     {
-        Collider2D[] hitTargets = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, attackableLayers);
+        Collider2D[] hitTargets = Physics2D.OverlapCircleAll(attackPoint.position, attackRange.getValue(), attackableLayers);
         // remember to give enemies 2D-Colliders        MD
         // Debug.Log(hitTargets);
         foreach (Collider2D target in hitTargets)
@@ -42,10 +37,10 @@ public class PlayerCombat2D : CombatBase
             if (!target.isTrigger)
             {
                 int targetLayer = target.gameObject.layer;
-                if (targetLayer == LayerMask.NameToLayer("Destroyable"))
-                    target.GetComponent<Health>().applyDamage(attackPower);
+                if (targetLayer == LayerMask.NameToLayer("Destroyable") || targetLayer == LayerMask.NameToLayer("Attackable"))
+                    target.GetComponent<Health>().applyDamage((int) attackPower.getValue());
                 else if (targetLayer == LayerMask.NameToLayer("Enemy"))
-                    target.GetComponent<EnemyHealth>().getHit(attackPower, this.gameObject);
+                    target.GetComponent<EnemyHealth>().getHit((int) attackPower.getValue(), this.gameObject);
             }
         }
     }
@@ -54,7 +49,7 @@ public class PlayerCombat2D : CombatBase
     {
         if (attackPoint == null)
             return;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange.getValue());
     }
 
 

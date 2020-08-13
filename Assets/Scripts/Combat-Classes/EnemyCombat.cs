@@ -4,22 +4,11 @@ using UnityEngine;
 
 public class EnemyCombat : CombatBase
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     protected void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {
-            collider.GetComponent<PlayerHealth>().getHit(attackPower, gameObject);
+            collider.GetComponent<PlayerHealth>().getHit((int) attackPower.getValue(), gameObject);
         }
     }
 }

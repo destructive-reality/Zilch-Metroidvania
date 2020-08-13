@@ -11,7 +11,7 @@ public class PlayerMovement : MovementsBase
     public PlayerMasterController playerMasterController;
 
     [Header("Movement")]
-    [SerializeField] private float jumpForce = 20f;                          // Amount of force added when the player jumps.
+    [SerializeField] private Stat jumpForce;                          // Amount of force added when the player jumps.
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .16f;  // How much to smooth out the movement
     [SerializeField] private LayerMask groundLayers;                          // A mask determining what is ground to the character
     [SerializeField] private Transform groundCheckTransform;                  // A position marking where to check if the player is grounded.
@@ -39,11 +39,11 @@ public class PlayerMovement : MovementsBase
 
     #region Dash
 
-    public float dashSpeed = 70f;
+    public Stat dashSpeed;
     public float startDashTime = 0.1f;  // The time it takes to dash
     private float dashTime;             // remaining time of a dash
-    public float startDashCooldown = 2f;
-    private float dashCooldown;
+    public Stat startDashCooldown;
+    private float dashCooldown;         // remaining dash cooldown
     private float dashDirecton;
 
     #endregion
@@ -73,7 +73,7 @@ public class PlayerMovement : MovementsBase
     private void FixedUpdate()
     {
         horizontalAxisInput = Input.GetAxisRaw("Horizontal");
-        Vector2 targetVelocity = new Vector2(horizontalAxisInput * speed, playerRigidbody2D.velocity.y);
+        Vector2 targetVelocity = new Vector2(horizontalAxisInput * speed.getValue(), playerRigidbody2D.velocity.y);
         playerRigidbody2D.velocity = Vector2.SmoothDamp(playerRigidbody2D.velocity, targetVelocity, ref currentVelocity, movementSmoothing);
     }
 
@@ -132,7 +132,7 @@ public class PlayerMovement : MovementsBase
                 playerAudioSource.PlayOneShot(dashSound, dashSoundVolume);
                 playerState = State.Dashing;
                 dashDirecton = movingRight ? 1 : -1;
-                dashCooldown = Time.time + startDashCooldown;
+                dashCooldown = Time.time + startDashCooldown.getValue();
             }
             // if (Input.GetButtonDown("Attack"))     // Attacking in this script? One script for all actions?  MD
             // {
@@ -153,7 +153,7 @@ public class PlayerMovement : MovementsBase
             else
             {
                 dashTime -= Time.deltaTime;
-                playerRigidbody2D.velocity = new Vector2(dashDirecton, 0) * dashSpeed;
+                playerRigidbody2D.velocity = new Vector2(dashDirecton, 0) * dashSpeed.getValue();
             }
         }
 
@@ -171,7 +171,7 @@ public class PlayerMovement : MovementsBase
 
     public void ApplyJumpForce()
     {
-        playerRigidbody2D.velocity = new Vector2(playerRigidbody2D.velocity.x, jumpForce);
+        playerRigidbody2D.velocity = new Vector2(playerRigidbody2D.velocity.x, jumpForce.getValue());
     }
 
     void OnDrawGizmos()

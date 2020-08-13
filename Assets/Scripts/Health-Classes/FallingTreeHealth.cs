@@ -12,7 +12,7 @@ public class FallingTreeHealth : AttackableHealth
     }
     protected override void onHit()
     {
-        if (currentHealth == maxHealth)
+        if (currentHealth == (int) maxHealth.getValue())
         {
             Debug.Log("Tree got hit!");
             rb.AddForceAtPosition(hitForce, hitPoint.position);

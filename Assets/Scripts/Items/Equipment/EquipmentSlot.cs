@@ -6,9 +6,33 @@ public class EquipmentSlot : MonoBehaviour, IDropHandler
 {
     public Image[] icons;
     public Button ItemButton;
+    private int slotNumber;
+    private ModifierSlot slotPosition;
     private EquipmentUI equipmentUI;
     private GameObject modifier;
 
+    public void InitializeEquipmentSlotPosition(int i)
+    {
+        slotNumber = i;
+        switch (i)
+        {
+            case 0:
+                slotPosition = ModifierSlot.Head;
+                break;
+            case 1:
+            case 2:
+                slotPosition = ModifierSlot.Arm;
+                break;
+            case 3:
+            case 4:
+                slotPosition = ModifierSlot.Leg;
+                break;
+            default:
+                slotPosition = ModifierSlot.Body;
+                break;
+        }
+        // icons[0].GetComponent<DragDrop>().isEquiped = true;
+    }
     public void AddItem(GameObject newModifier)
     {
         modifier = newModifier;
@@ -67,7 +91,17 @@ public class EquipmentSlot : MonoBehaviour, IDropHandler
 
     }
 
-    private void Start() {
+    public string GetModifierName()
+    {
+        if (modifier)
+            return modifier.GetComponent<Effect>().modifier.modifierName;
+        else {
+            Debug.Log("No modifier in " + slotNumber);
+            return null;}
+    }
+
+    private void Start()
+    {
         equipmentUI = GameObject.FindWithTag("UI").GetComponentInChildren<EquipmentUI>();
         if (!equipmentUI)
         {

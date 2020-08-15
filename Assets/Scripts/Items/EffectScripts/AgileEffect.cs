@@ -32,7 +32,6 @@ public class AgileEffect : Effect
     }
     public override void LegUpdate()
     {
-        Debug.Log("Check for double Jump");
         if (playerMovement.isAirborne() && Input.GetButtonDown("Jump") && !isDoublejumped)
         {
             Debug.Log("Execute Double Jump");

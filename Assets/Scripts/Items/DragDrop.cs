@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public int slotNumber;
+    public bool isEquiped;
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;

@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
     public void UseItem(GameObject item, ModifierSlot slot = ModifierSlot.Body)
     {
         Debug.Log("Using " + item.name + " on " + slot.ToString());
-        if (item.GetComponent<Effect>())
+        if (item.GetComponent<Effect>() && equipment.ValidateOperation(slot))
         {
             equipment.EquipModifier(item, slot);
             items.Remove(item);

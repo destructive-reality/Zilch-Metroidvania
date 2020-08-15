@@ -9,18 +9,15 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     public Button ArmButton;
     public Button LegButton;
     public Button BodyButton;
-    GameObject modifier;
+    public int slotNumber;
+    private GameObject modifier;
 
     public void AddItem(GameObject newModifier)
     {
         modifier = newModifier;
 
         icons[0].sprite = modifier.GetComponent<Effect>().modifier.icon;
-        for (int i = 0; i < icons.Length; i++)
-        {
-            icons[i].enabled = true;
-        }
-        ItemButton.interactable = ArmButton.interactable = BodyButton.interactable = LegButton.interactable = true;
+        EnableInteraction(true);
     }
 
     public void ClearSlot()
@@ -28,11 +25,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         modifier = null;
 
         icons[0].sprite = null;
-        for (int i = 0; i < icons.Length; i++)
-        {
-            icons[i].enabled = false;
-        }
-        ItemButton.interactable = ArmButton.interactable = BodyButton.interactable = LegButton.interactable = false;
+        EnableInteraction(false);
     }
 
     public void OnArmButton()
@@ -56,9 +49,23 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     }
 
     public void OnDrop(PointerEventData eventData) {
+        Debug.Log("Droped on Inventroy Slot " + slotNumber);
+        Debug.Log("modifier is Equiped? " + eventData.pointerDrag.GetComponent<DragDrop>().isEquiped);
         if (eventData.pointerDrag != null)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
         }
+        if (eventData.pointerDrag.GetComponent<DragDrop>().isEquiped)
+        {
+            Debug.Log("Item is equiped");
+            // unequip this item with number from Equipment
+        }
+    }
+    private void EnableInteraction(bool value) {
+        for (int i = 0; i < icons.Length; i++)
+        {
+            icons[i].enabled = value;
+        }
+        ItemButton.interactable = ArmButton.interactable = BodyButton.interactable = LegButton.interactable = value;
     }
 }

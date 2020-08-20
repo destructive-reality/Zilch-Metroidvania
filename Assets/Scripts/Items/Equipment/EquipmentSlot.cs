@@ -1,12 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class EquipmentSlot : MonoBehaviour
 {
     public Image[] icons;
     public Button ItemButton;
+    public ModifierSlot slotPosition;
     private int slotNumber;
-    private ModifierSlot slotPosition;
     private EquipmentUI equipmentUI;
     private GameObject modifier;
 
@@ -56,10 +56,11 @@ public class EquipmentSlot : MonoBehaviour
         ItemButton.interactable = false;
     }
 
-    public void EquipOnSlot(ModifierSlot slot)
+    public void ChangeSlotOf(int modifierSlotNumber)
     {
-        // GameObject.FindGameObjectWithTag("Player").GetComponent<Equipment>().EquipModifier(modifier, slot);
-        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>().UseItem(modifier, slot);
+        // GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>().UseItem(modifier, slot);
+        Debug.Log("Initiate modifier slot change");
+        equipmentUI.StartSlotChange(modifierSlotNumber, slotPosition);
     }
 
     // public void OnDrop(PointerEventData eventData)
@@ -92,38 +93,25 @@ public class EquipmentSlot : MonoBehaviour
     //     }
     // }
 
+    public GameObject GetModifier()
+    {
+        if (modifier)
+            return modifier;
+        else
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            Debug.Log("No modifier in " + slotNumber);
+            return null;
         }
-        switch (equipmentUI.checkSlot(this.gameObject))
-        {
-            case null:
-                Debug.Log("No corresponding Slot found!");
-                return;
-            case 0:     // Head
-                return;
-            case 1:     // Arm
-                return;
-            case 2:     // Arm
-                return;
-            case 3:     // Leg
-                return;
-            case 4:     // Leg
-                return;
-            default:
-                Debug.Log("Body");
-                return;
-        }
-
     }
-
     public string GetModifierName()
     {
         if (modifier)
             return modifier.GetComponent<Effect>().modifier.modifierName;
-        else {
+        else
+        {
             Debug.Log("No modifier in " + slotNumber);
-            return null;}
+            return null;
+        }
     }
 
     private void Start()

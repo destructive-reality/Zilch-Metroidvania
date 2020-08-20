@@ -9,12 +9,14 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
-    private void Awake() {
+    private void Awake()
+    {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    private void Start() {
+    private void Start()
+    {
         canvas = GameObject.FindWithTag("UI").GetComponent<Canvas>();
         if (!canvas)
         {
@@ -22,23 +24,56 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData) {
-        
+    public void OnPointerDown(PointerEventData eventData)
+    {
+
     }
-    public void OnBeginDrag(PointerEventData eventData) {
+    public void OnBeginDrag(PointerEventData eventData)
+    {
         canvasGroup.alpha = 0.5f;
         canvasGroup.blocksRaycasts = false;
     }
-    public void OnDrag(PointerEventData eventData) {
+    public void OnDrag(PointerEventData eventData)
+    {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
-    public void OnEndDrag(PointerEventData eventData) {
+    public void OnEndDrag(PointerEventData eventData)
+    {
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         Debug.Log("Release Drag");
-        if (rectTransform.anchoredPosition != new Vector2(0, 0))
+        // MonoBehaviour targetScript = null;
+        // Debug.Log(eventData.pointerEnter.GetComponentInChildren<DragDrop>().slotNumber);
+        if (eventData.pointerEnter.GetComponentInParent<InventorySlot>())
         {
-            rectTransform.anchoredPosition = new Vector2(0, 0);
+            InventorySlot targetScript = eventData.pointerEnter.GetComponentInParent<InventorySlot>();
+            if (isEquiped)
+            {
+                // unequip
+
+            }
+            // else
+            // {
+            //     nix   
+            // }
         }
+        else if (eventData.pointerEnter.GetComponentInParent<EquipmentSlot>())
+        {
+            EquipmentSlot targetScript = eventData.pointerEnter.GetComponentInParent<EquipmentSlot>();
+            if (isEquiped)
+            {
+                // change slot
+                targetScript.ChangeSlotOf(slotNumber);
+            }
+            else    // when not equiped
+            {
+                // equip
+                Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
+                Debug.Log("Slot number: " + slotNumber);  
+                Debug.Log("Equip to position: " + targetScript.slotPosition);
+                inventory.UseItem(inventory.items[slotNumber], targetScript.slotPosition);
+            }
+        }
+        rectTransform.anchoredPosition = new Vector2(0, 0);
     }
 }

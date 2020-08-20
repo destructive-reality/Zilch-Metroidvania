@@ -24,6 +24,10 @@ public class EquipmentUI : MonoBehaviour
         }
         return null;
     }
+    public void StartSlotChange(int modifierSlotNumber, ModifierSlot slot){
+        equipment.ChangeSlot(slots[modifierSlotNumber].GetModifier(), slot);
+        slots[modifierSlotNumber].ClearSlot();
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -37,6 +41,7 @@ public class EquipmentUI : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].InitializeEquipmentSlotPosition(i);
+            slots[i].icons[0].gameObject.GetComponent<DragDrop>().slotNumber = i;
         }
     }
 

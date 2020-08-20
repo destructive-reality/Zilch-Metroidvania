@@ -34,13 +34,13 @@ public class Equipment : MonoBehaviour
                     }
                     break;
                 case ModifierSlot.Arm:
-                if (modifiers[i].GetComponent<Effect>().currentSlot == ModifierSlot.Arm)
+                    if (modifiers[i].GetComponent<Effect>().currentSlot == ModifierSlot.Arm)
                     {
                         counter++;
                     }
                     break;
                 case ModifierSlot.Leg:
-                if (modifiers[i].GetComponent<Effect>().currentSlot == ModifierSlot.Leg)
+                    if (modifiers[i].GetComponent<Effect>().currentSlot == ModifierSlot.Leg)
                     {
                         counter++;
                     }
@@ -48,7 +48,7 @@ public class Equipment : MonoBehaviour
             }
             if (counter >= checker)
             {
-                return false;         
+                return false;
             }
         }
         return true;
@@ -58,47 +58,72 @@ public class Equipment : MonoBehaviour
         modifiers.Add(modifier);
         Effect modifierEffect = modifier.GetComponent<Effect>();
         modifierEffect.currentSlot = slot;
-        switch (slot)
-        {
-            case ModifierSlot.Arm:
-                if (modifierEffect.modifier.effectArm.isStart)
-                {
-                    modifierEffect.ArmStart();
-                }
-                break;
-            case ModifierSlot.Leg:
-                if (modifierEffect.modifier.effectLeg.isStart)
-                {
-                    modifierEffect.LegStart();
-                }
-                break;
-            case ModifierSlot.Body:
-                if (modifierEffect.modifier.effectBody.isStart)
-                {
-                    modifierEffect.BodyStart();
-                }
-                break;
-            case ModifierSlot.Head:
-                if (modifierEffect.modifier.effectHead.isStart)
-                {
-                    modifierEffect.HeadStart();
-                }
-                break;
-                // default:        // throws Error MD
-                //     Debug.LogWarning("Not a valid Equimpent-Slot");
-        }
+        ExecuteStartEffect(modifierEffect, slot);
         if (changedEquipmentCallback != null)
         {
             changedEquipmentCallback.Invoke();
         }
     }
-    public void Unequip()
+    private void ExecuteStartEffect(Effect modifierEffect, ModifierSlot slot, bool enable = true)
     {
-
+        switch (slot)
+        {
+            case ModifierSlot.Arm:
+                if (modifierEffect.modifier.effectArm.isStart)
+                {
+                    modifierEffect.ArmStart(enable);
+                }
+                break;
+            case ModifierSlot.Leg:
+                if (modifierEffect.modifier.effectLeg.isStart)
+                {
+                    modifierEffect.LegStart(enable);
+                }
+                break;
+            case ModifierSlot.Body:
+                if (modifierEffect.modifier.effectBody.isStart)
+                {
+                    modifierEffect.BodyStart(enable);
+                }
+                break;
+            case ModifierSlot.Head:
+                if (modifierEffect.modifier.effectHead.isStart)
+                {
+                    modifierEffect.HeadStart(enable);
+                }
+                break;
+            default:
+                Debug.LogWarning("Not a valid Equimpent-Slot");
+                break;
+        }
     }
-    public void ChangeSlot(Modifier modifier, ModifierSlot slot)
+    public void Unequip(GameObject modifier)
     {
-
+        Effect modifierEffect = modifier.GetComponent<Effect>();
+        ExecuteStartEffect(modifierEffect, modifierEffect.currentSlot, false);
+        modifierEffect.currentSlot = ModifierSlot.None;
+        modifiers.Remove(modifier);
+        if (changedEquipmentCallback != null)
+        {
+            changedEquipmentCallback.Invoke();
+        }
+    }
+    public void ChangeSlot(GameObject modifier, ModifierSlot slot)
+    {
+        Effect modifierEffect = modifier.GetComponent<Effect>();
+        ModifierSlot oldSlot = modifierEffect.currentSlot;
+        if (oldSlot == slot)
+        {
+            Debug.Log("Don't change modifier slot");
+            return;
+        }
+        modifierEffect.currentSlot = slot;
+        ExecuteStartEffect(modifierEffect, oldSlot, false);
+        ExecuteStartEffect(modifierEffect, slot);
+        if (changedEquipmentCallback != null)
+        {
+            changedEquipmentCallback.Invoke();
+        }
     }
     private void Update()
     {
@@ -133,8 +158,9 @@ public class Equipment : MonoBehaviour
                             modifierEffect.HeadUpdate();
                         }
                         break;
-                        // default:        // throws Error MD
-                        //     Debug.LogWarning("Not a valid Equimpent-Slot");
+                        default:       
+                            Debug.LogWarning("Not a valid Equimpent-Slot");
+                        break;
                 }
             }
         }

@@ -40,37 +40,27 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    public void UseAll()
-    {
-        foreach (GameObject item in items)
-        {
-            UseItem(item);
-            // Könnte einen Fehler werfen, da in UseItem ein item der Liste gelöscht werden könnte. What to do..? MD
-        }
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L) && items[0])    // For Testing  MD
-        {
-            UseItem(items[0], ModifierSlot.Leg);
-        }
-        if (Input.GetKeyDown(KeyCode.O) && items[0])    // For Testing  MD
-        {
-            UseItem(items[0], ModifierSlot.Body);
-        }
-        if (Input.GetKeyDown(KeyCode.P) && items[0])    // For Testing  MD
-        {
-            UseItem(items[0], ModifierSlot.Arm);
-        }
-    }
-
-    // if(modifier.effectBody.isStart)
+    // public void UseAll()
     // {
-    //     Invoke("Effects." + modifier.effectBody.effectName + "Start", 0);
-    //     // modifier.effectBody.effectScript.Start();
+    //     foreach (GameObject item in items)
+    //     {
+    //         UseItem(item);
+    //         // Könnte einen Fehler werfen, da in UseItem ein item der Liste gelöscht werden könnte. What to do..? MD
+    //     }
     // }
-    // protected OnEquipmentChange(EventArgs arguments) {
-
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.L) && items[0])    // For Testing  MD
+    //     {
+    //         UseItem(items[0], ModifierSlot.Leg);
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.O) && items[0])    // For Testing  MD
+    //     {
+    //         UseItem(items[0], ModifierSlot.Body);
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.P) && items[0])    // For Testing  MD
+    //     {
+    //         UseItem(items[0], ModifierSlot.Arm);
+    //     }
     // }
-
 }

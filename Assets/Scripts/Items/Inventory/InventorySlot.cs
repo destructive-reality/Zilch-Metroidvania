@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
+// using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour, IDropHandler
+public class InventorySlot : MonoBehaviour//, IDropHandler
 {
     public Image[] icons;
     public Button ItemButton;
@@ -48,19 +48,19 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>().UseItem(modifier, slot);
     }
 
-    public void OnDrop(PointerEventData eventData) {
-        Debug.Log("Droped on Inventroy Slot " + slotNumber);
-        Debug.Log("modifier is Equiped? " + eventData.pointerDrag.GetComponent<DragDrop>().isEquiped);
-        if (eventData.pointerDrag != null)
-        {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-        }
-        if (eventData.pointerDrag.GetComponent<DragDrop>().isEquiped)
-        {
-            Debug.Log("Item is equiped");
-            // unequip this item with number from Equipment
-        }
-    }
+    // public void OnDrop(PointerEventData eventData) {
+    //     Debug.Log("Droped on Inventroy Slot " + slotNumber);
+    //     Debug.Log("modifier is Equiped? " + eventData.pointerDrag.GetComponent<DragDrop>().isEquiped);
+    //     if (eventData.pointerDrag != null)
+    //     {
+    //         eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+    //     }
+    //     if (eventData.pointerDrag.GetComponent<DragDrop>().isEquiped)
+    //     {
+    //         Debug.Log("Item is equiped");
+    //         // unequip this item with number from Equipment
+    //     }
+    // }
     private void EnableInteraction(bool value) {
         for (int i = 0; i < icons.Length; i++)
         {

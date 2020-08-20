@@ -1,8 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
-public class EquipmentSlot : MonoBehaviour, IDropHandler
+public class EquipmentSlot : MonoBehaviour
 {
     public Image[] icons;
     public Button ItemButton;
@@ -63,9 +62,36 @@ public class EquipmentSlot : MonoBehaviour, IDropHandler
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>().UseItem(modifier, slot);
     }
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        if (eventData.pointerDrag != null)
+    // public void OnDrop(PointerEventData eventData)
+    // {
+    //     if (eventData.pointerDrag != null)
+    //     {
+    //         eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+    //     }
+    //     // int modifierSlotNumber = ;
+    //     switch (equipmentUI.checkSlot(this.gameObject))
+    //     {
+    //         case null:
+    //             Debug.Log("No corresponding Slot found!");
+    //             return;
+    //         case 0:     // Head
+    //             EquipOnSlot(ModifierSlot.Head);
+    //             return;
+    //         case 1:     // Arm
+    //         case 2:     // Arm
+    //             EquipOnSlot(ModifierSlot.Arm);
+    //             return;
+    //         case 3:     // Leg
+    //         case 4:     // Leg
+    //             EquipOnSlot(ModifierSlot.Leg);
+    //             return;
+    //         default:
+    //             EquipOnSlot();
+    //             Debug.Log("Body");
+    //             return;
+    //     }
+    // }
+
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
         }

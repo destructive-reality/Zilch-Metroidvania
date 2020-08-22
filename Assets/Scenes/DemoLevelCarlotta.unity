@@ -230,11 +230,11 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -17.548857, y: -4.8702717}
-  - {x: -13.490978, y: -4.906582}
-  - {x: -4.1352158, y: -4.935753}
-  - {x: -2.9389262, y: -4.929483}
-  - {x: -2.9346535, y: -8.432071}
-  - {x: 11.791219, y: -8.297535}
+  - {x: -13.613176, y: -4.9062023}
+  - {x: -4.016013, y: -4.9123583}
+  - {x: -2.8123827, y: -4.9031315}
+  - {x: -2.8205893, y: -8.312594}
+  - {x: 11.793452, y: -8.296413}
   - {x: 13.686918, y: -7.345582}
   - {x: 14.866622, y: -6.7653055}
   - {x: 16.056099, y: -6.1938334}
@@ -4582,7 +4582,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: -3.538927, y: -5.527615, z: 0}
+    - position: {x: -3.4145784, y: -5.5027447, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -4591,7 +4591,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: -3.538927, y: -9.027616, z: 0}
+    - position: {x: -3.4270124, y: -8.903267, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -6613,7 +6613,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -289498155
   m_SortingLayer: 2
-  m_SortingOrder: 13
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5426428518611783959, guid: 0a792ba980c75434b8ccc0b9e587abf8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

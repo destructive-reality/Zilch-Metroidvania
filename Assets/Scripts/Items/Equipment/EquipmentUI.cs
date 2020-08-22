@@ -71,11 +71,16 @@ public class EquipmentUI : MonoBehaviour
         Debug.Log("Updating Equipment UI");
         for (int i = 0; i < slots.Length; i++)
         {
+            slots[i].ClearSlot();
+        }
+        for (int i = 0; i < slots.Length; i++)
+        {
             if (i < equipment.modifiers.Count)
             {
-                if (equipment.modifiers[i].GetComponent<Effect>().currentSlot == ModifierSlot.Head)
+                Effect modifierEffect = equipment.modifiers[i].GetComponent<Effect>();
+                if (modifierEffect.currentSlot == ModifierSlot.Head)
                 {
-                    if (slots[0].GetModifierName() == equipment.modifiers[i].GetComponent<Effect>().modifier.modifierName || slots[0].GetModifierName() == null)
+                    if (slots[0].GetModifierName() == modifierEffect.modifier.modifierName || slots[0].GetModifierName() == null)
                     {
                         slots[0].AddItem(equipment.modifiers[i]);
                     }
@@ -84,13 +89,13 @@ public class EquipmentUI : MonoBehaviour
                         Debug.Log("Head-slot is reserved. Can't equip " + equipment.modifiers[i].name);
                     }
                 }
-                else if (equipment.modifiers[i].GetComponent<Effect>().currentSlot == ModifierSlot.Arm)
+                else if (modifierEffect.currentSlot == ModifierSlot.Arm)
                 {
-                    if (slots[1].GetModifierName() == equipment.modifiers[i].GetComponent<Effect>().modifier.modifierName || slots[1].GetModifierName() == null)
+                    if (slots[1].GetModifierName() == modifierEffect.modifier.modifierName || slots[1].GetModifierName() == null)
                     {
                         slots[1].AddItem(equipment.modifiers[i]);
                     }
-                    else if (slots[2].GetModifierName() == equipment.modifiers[i].GetComponent<Effect>().modifier.modifierName || slots[2].GetModifierName() == null)
+                    else if (slots[2].GetModifierName() == modifierEffect.modifier.modifierName || slots[2].GetModifierName() == null)
                     {
                         slots[2].AddItem(equipment.modifiers[i]);
                     }
@@ -99,16 +104,16 @@ public class EquipmentUI : MonoBehaviour
                         Debug.Log("Arm-slots are reserved. Can't equip " + equipment.modifiers[i].name);
                     }
                 }
-                else if (equipment.modifiers[i].GetComponent<Effect>().currentSlot == ModifierSlot.Leg)
+                else if (modifierEffect.currentSlot == ModifierSlot.Leg)
                 {
-                    if (slots[3].GetModifierName() == equipment.modifiers[i].GetComponent<Effect>().modifier.modifierName || slots[3].GetModifierName() == null)
+                    if (slots[3].GetModifierName() == modifierEffect.modifier.modifierName || slots[3].GetModifierName() == null)
                     {
-                        Debug.Log("Slot 3 has " + slots[3].GetModifierName());
+                        // Debug.Log("Slot 3 has " + slots[3].GetModifierName());
                         slots[3].AddItem(equipment.modifiers[i]);
                     }
-                    else if (slots[4].GetModifierName() == equipment.modifiers[i].GetComponent<Effect>().modifier.modifierName || slots[4].GetModifierName() == null)
+                    else if (slots[4].GetModifierName() == modifierEffect.modifier.modifierName || slots[4].GetModifierName() == null)
                     {
-                        Debug.Log("Slot 4 has " + slots[4].GetModifierName());
+                        // Debug.Log("Slot 4 has " + slots[4].GetModifierName());
                         slots[4].AddItem(equipment.modifiers[i]);
                     }
                     else
@@ -116,18 +121,18 @@ public class EquipmentUI : MonoBehaviour
                         Debug.Log("Leg-slots are reserved. Can't equip " + equipment.modifiers[i].name);
                     }
                 }
-                else if (equipment.modifiers[i].GetComponent<Effect>().currentSlot == ModifierSlot.Body)
+                else if (modifierEffect.currentSlot == ModifierSlot.Body)
                 {
-                    for (int j = 5; j < equipment.modifiers.Count; j++)
+                    for (int j = 5; j < slots.Length; j++)
                     {
-                        if (slots[j].GetModifierName() == equipment.modifiers[i].GetComponent<Effect>().modifier.modifierName || slots[j].GetModifierName() == null)
+                        if (slots[j].GetModifierName() == modifierEffect.modifier.modifierName || slots[j].GetModifierName() == null)
                         {
                             slots[j].AddItem(equipment.modifiers[i]);
                             break;
                         }
                         else
                         {
-                            Debug.Log("Body-slots are reserved. Can't equip " + equipment.modifiers[i].GetComponent<Effect>().modifier.modifierName);
+                            Debug.Log("Body-slots are reserved. Can't equip " + modifierEffect.modifier.modifierName);
                         }
                     }
                 }

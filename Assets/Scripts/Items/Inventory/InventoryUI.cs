@@ -42,8 +42,6 @@ public class InventoryUI : MonoBehaviour
             {
                 Debug.Log(hit.collider.name + " was hit.");
             }
-            // else 
-            //     Debug.Log("No hit :(");
         }
     }
 

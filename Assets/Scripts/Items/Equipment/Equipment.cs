@@ -64,40 +64,7 @@ public class Equipment : MonoBehaviour
             changedEquipmentCallback.Invoke();
         }
     }
-    private void ExecuteStartEffect(Effect modifierEffect, ModifierSlot slot, bool enable = true)
-    {
-        switch (slot)
-        {
-            case ModifierSlot.Arm:
-                if (modifierEffect.modifier.effectArm.isStart)
-                {
-                    modifierEffect.ArmStart(enable);
-                }
-                break;
-            case ModifierSlot.Leg:
-                if (modifierEffect.modifier.effectLeg.isStart)
-                {
-                    modifierEffect.LegStart(enable);
-                }
-                break;
-            case ModifierSlot.Body:
-                if (modifierEffect.modifier.effectBody.isStart)
-                {
-                    modifierEffect.BodyStart(enable);
-                }
-                break;
-            case ModifierSlot.Head:
-                if (modifierEffect.modifier.effectHead.isStart)
-                {
-                    modifierEffect.HeadStart(enable);
-                }
-                break;
-            default:
-                Debug.LogWarning("Not a valid Equimpent-Slot");
-                break;
-        }
-    }
-    public void Unequip(GameObject modifier)
+    public void UnequipModifier(GameObject modifier)
     {
         Effect modifierEffect = modifier.GetComponent<Effect>();
         ExecuteStartEffect(modifierEffect, modifierEffect.currentSlot, false);
@@ -165,7 +132,38 @@ public class Equipment : MonoBehaviour
             }
         }
     }
-
-
-
+    private void ExecuteStartEffect(Effect modifierEffect, ModifierSlot slot, bool enable = true)
+    {
+        switch (slot)
+        {
+            case ModifierSlot.Arm:
+                if (modifierEffect.modifier.effectArm.isStart)
+                {
+                    modifierEffect.ArmStart(enable);
+                }
+                break;
+            case ModifierSlot.Leg:
+                if (modifierEffect.modifier.effectLeg.isStart)
+                {
+                    modifierEffect.LegStart(enable);
+                }
+                break;
+            case ModifierSlot.Body:
+                if (modifierEffect.modifier.effectBody.isStart)
+                {
+                    modifierEffect.BodyStart(enable);
+                }
+                break;
+            case ModifierSlot.Head:
+                if (modifierEffect.modifier.effectHead.isStart)
+                {
+                    modifierEffect.HeadStart(enable);
+                }
+                break;
+            default:
+                Debug.LogWarning("Not a valid Equimpent-Slot");
+                break;
+        }
+    }
+    
 }

@@ -42,20 +42,22 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         Debug.Log("Release Drag");
-        // MonoBehaviour targetScript = null;
-        // Debug.Log(eventData.pointerEnter.GetComponentInChildren<DragDrop>().slotNumber);
         if (eventData.pointerEnter.GetComponentInParent<InventorySlot>())
         {
-            InventorySlot targetScript = eventData.pointerEnter.GetComponentInParent<InventorySlot>();
+            // InventorySlot targetScript = eventData.pointerEnter.GetComponentInParent<InventorySlot>();
             if (isEquiped)
             {
-                // unequip
+                Debug.Log("Unequip the item at slot " + slotNumber);
+                EquipmentSlot slotScript = GetComponentInParent<EquipmentSlot>();
+                Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
+                Equipment equipment = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Equipment>();
+                
+                inventory.AddItem(slotScript.GetModifier());
+                equipment.UnequipModifier(slotScript.GetModifier());
+                // Inventory.AddItem
+                // Equipment.UnequipModifier(Modifier)
 
             }
-            // else
-            // {
-            //     nix   
-            // }
         }
         else if (eventData.pointerEnter.GetComponentInParent<EquipmentSlot>())
         {

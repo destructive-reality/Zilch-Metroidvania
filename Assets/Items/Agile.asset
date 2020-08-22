@@ -19,4 +19,6 @@ MonoBehaviour:
   effectArm: {fileID: 11400000, guid: 6f0c7e1341f9e9745a017b26758fe33f, type: 2}
   effectLeg: {fileID: 11400000, guid: 38d8a6391d62fc148b47481e38f141c4, type: 2}
   effectHead: {fileID: 0}
-  modifierDescription: Increases the Agility of the carrier.
+  modifierDescription: Increases the Agility of the carrier. Can increase attack
+    speed as well as the time to dodge after taking damage. Might also grand the
+    ability to jump in the air.

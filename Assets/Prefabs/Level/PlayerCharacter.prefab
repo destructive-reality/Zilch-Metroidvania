@@ -249,6 +249,17 @@ MonoBehaviour:
   - {fileID: 9213489917448404898}
   - {fileID: 9213489916257228790}
   m_Weight: 1
+  m_SolverEditorData:
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
 --- !u!1 &2502422269606272134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,11 +1268,20 @@ MonoBehaviour:
   dashSound: {fileID: 8300000, guid: eb393dafe3ca4a14996f19e0bbf90527, type: 3}
   dashSoundVolume: 1
   walkSoundAudioClips:
-  - {fileID: 8300000, guid: eb393dafe3ca4a14996f19e0bbf90527, type: 3}
-  - {fileID: 8300000, guid: 29e3aceed8ed103478387fa56fb18ec4, type: 3}
-  - {fileID: 8300000, guid: 5db09a23dcf5ede4abe0b5602c33532c, type: 3}
-  walkSoundVolume: 0.4
-  walkSoundRate: 0.8
+  - {fileID: 8300000, guid: f83eb3bdb18dcae48b98023c1ff4cb3a, type: 3}
+  - {fileID: 8300000, guid: 1adec981e97cab04eae8f493df7e6bca, type: 3}
+  - {fileID: 8300000, guid: 6b40e186ff297c047857351de54e10da, type: 3}
+  - {fileID: 8300000, guid: 2d6911fa39461c74a9d6cd9f7b704580, type: 3}
+  - {fileID: 8300000, guid: 069dee455be42c74fa3fa7e82fc11e09, type: 3}
+  - {fileID: 8300000, guid: 6ed7ff3392c94f946971741bfb5d53fc, type: 3}
+  - {fileID: 8300000, guid: 8907b01a922e9af48bee979e58485d4c, type: 3}
+  - {fileID: 8300000, guid: 7e840263754c1054ca42baf7f9793de6, type: 3}
+  - {fileID: 8300000, guid: 6cd91af73a0a94f4db1cd7bd8d4c870f, type: 3}
+  - {fileID: 8300000, guid: 6905a65a10d97ea41af74b59a11b644a, type: 3}
+  - {fileID: 8300000, guid: 19b1acd2027e971479a4eeb6181506a1, type: 3}
+  - {fileID: 8300000, guid: 747cd8bba59ac084bbb64cba73479b8b, type: 3}
+  walkSoundVolume: 0.2
+  walkSoundRate: 0.35
 --- !u!114 &7228385836571419879
 MonoBehaviour:
   m_ObjectHideFlags: 0

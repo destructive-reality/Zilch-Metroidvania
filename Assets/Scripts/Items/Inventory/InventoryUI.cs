@@ -4,10 +4,10 @@ public class InventoryUI : MonoBehaviour
 {
     public Transform itemsParent;
     public GameObject inventoryUI;
-    Inventory inventory;
-    InventorySlot[] slots;
+    private Inventory inventory;
+    private InventorySlot[] slots;
 
-    Camera cam;
+    private Camera cam;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,12 @@ public class InventoryUI : MonoBehaviour
         inventory.onItemChangedCallback += UpdateInventoryUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].slotNumber = i;
+            slots[i].icons[0].gameObject.GetComponent<DragDrop>().slotNumber = i;
+        }
+
     }
 
     private void Update()
@@ -36,8 +42,6 @@ public class InventoryUI : MonoBehaviour
             {
                 Debug.Log(hit.collider.name + " was hit.");
             }
-            // else 
-            //     Debug.Log("No hit :(");
         }
     }
 

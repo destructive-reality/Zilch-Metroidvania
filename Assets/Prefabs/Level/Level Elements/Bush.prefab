@@ -131,8 +131,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1475181785
-  m_SortingLayer: 5
+  m_SortingLayerID: -289498155
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -2552942316252081288, guid: 2b674f1027215874498c90dceb60dfcc,
     type: 3}
@@ -237,8 +237,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1475181785
-  m_SortingLayer: 5
+  m_SortingLayerID: -289498155
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: -7225824424401004782, guid: 2b674f1027215874498c90dceb60dfcc,
     type: 3}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 5067889793639922452}
   - component: {fileID: 3706300674628918202}
   m_Layer: 0
-  m_Name: firstFullBusch
+  m_Name: Bush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -504,7 +504,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1475181785
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0

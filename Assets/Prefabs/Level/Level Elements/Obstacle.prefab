@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2079029427152669104}
   - component: {fileID: -6502535765519807965}
   m_Layer: 12
-  m_Name: Quad
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,6 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 100
+    baseValue: 4
   currentHealth: 0
   animator: {fileID: 0}

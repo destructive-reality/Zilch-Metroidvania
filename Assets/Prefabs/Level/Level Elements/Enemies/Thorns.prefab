@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   attackPower:
-    baseValue: 10
+    baseValue: 1
   attackRange:
     baseValue: 1.7
 --- !u!61 &3354500032329890787

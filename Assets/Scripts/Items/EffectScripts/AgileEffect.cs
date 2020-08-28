@@ -2,16 +2,19 @@
 
 public class AgileEffect : Effect
 {
-    PlayerMovement playerMovement;
+    private PlayerMovement playerMovement;
     private bool isDoublejumped;
+    private float attackSpeedBoost = -0.1f;
+    private int iFrameTimeBoost = 1;
     public override void ArmStart(bool value)
     {
         Debug.Log("Increase Player Attack Speed: " + value);
+
         PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
         if (value)
-            playerCombat.attackTime.addModifier(-0.1f);
+            playerCombat.attackTime.addModifier(attackSpeedBoost);
         else
-            playerCombat.attackTime.removeModifier(-0.1f);
+            playerCombat.attackTime.removeModifier(attackSpeedBoost);
     }
     public override void LegStart(bool value)
     {
@@ -22,11 +25,12 @@ public class AgileEffect : Effect
     public override void BodyStart(bool value)
     {
         Debug.Log("Increase Player Invincible Time: " + value);
+
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
         if (value)
-            playerHealth.startInvincibleTime.addModifier(1);
+            playerHealth.startInvincibleTime.addModifier(iFrameTimeBoost);
         else
-            playerHealth.startInvincibleTime.removeModifier(1);
+            playerHealth.startInvincibleTime.removeModifier(iFrameTimeBoost);
     }
     public override void HeadStart(bool value)
     {

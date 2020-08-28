@@ -6,11 +6,12 @@ public class LevitateTo : MovementsBase
 {
     public Transform target;
     protected Vector3 headingTarget;
+    private bool isActive = false;
     
     // Update is called once per frame
     void Update()
     {
-        if (target)
+        if (target && isActive)
         {
             // for disctance between enemy and target
             headingTarget = target.position - this.transform.position;

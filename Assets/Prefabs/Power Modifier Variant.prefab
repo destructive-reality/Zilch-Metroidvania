@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 7980179785615288768, guid: 52e3ed338f0721249a9c4f46bb0aa57a,
         type: 3}
       propertyPath: m_Name
-      value: Power Modifier
+      value: Power Modifier Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7980179785615288773, guid: 52e3ed338f0721249a9c4f46bb0aa57a,
         type: 3}

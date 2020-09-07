@@ -57,4 +57,8 @@ public class PostProController : MonoBehaviour
         Debug.Log("Triggering CA");
         animator.SetTrigger("ChromaticAberrationDamage");
     }
+
+    public void SetLowLifePulseBool(bool boolean) {
+        animator.SetBool("LowLifePulse", boolean);
+    }
 }

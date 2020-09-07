@@ -8,6 +8,8 @@ public class PlayerHealth : KnockbackHealth
     public Stat startInvincibleTime;
     private float invincibleTime = 0f;
 
+    public int lowLifePulseThreshold = 1;
+
     protected override void Start()
     {
         setHealth(PlayerPrefs.GetInt("PlayerHealth", (int) maxHealth.getValue()));
@@ -17,6 +19,7 @@ public class PlayerHealth : KnockbackHealth
     {
         base.setHealth(healthToSetTo);
         UIController.Instance.setHealthInUI(currentHealth, (int) maxHealth.getValue());
+        PostProController.Instance.SetLowLifePulseBool(currentHealth <= lowLifePulseThreshold ? true : false);
     }
 
     public new void getHit(int damage, GameObject damagingObject)
@@ -27,6 +30,16 @@ public class PlayerHealth : KnockbackHealth
             base.getHit(damage, damagingObject);
             invincibleTime = Time.time + startInvincibleTime.getValue();
             PostProController.Instance.TriggerChromaticAberrationDamageAnimation();
+        }
+
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.L)) {
+            setHealth(1);
+        }
+        if (Input.GetKeyDown(KeyCode.O)) {
+            setHealth(2);
         }
     }
 }

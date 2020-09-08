@@ -12,19 +12,12 @@ public class FlyTowards : EnemyState
         speed = _speed;
     }
 
-    public override IEnumerator Start()
+    public override IEnumerator FixedUpdate()
     {
-        behaviour.UseUpdate();
-        yield break;
-    }
-
-    public override IEnumerator Update()
-    {
+        base.FixedUpdate();
         Debug.Log("Flying towards target");
         behaviour.transform.position = Vector2.MoveTowards(behaviour.transform.position, target, speed);
         
-        yield return new WaitForFixedUpdate();
-        behaviour.UseUpdate();
         yield break;
     }
 }

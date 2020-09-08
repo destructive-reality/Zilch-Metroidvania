@@ -19,4 +19,9 @@ public abstract class EnemyState
     {
         yield break;
     }
+    
+    public virtual IEnumerator FixedUpdate()
+    {
+        yield break;
+    }
 }

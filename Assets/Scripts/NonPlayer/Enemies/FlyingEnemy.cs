@@ -5,50 +5,67 @@ using UnityEngine;
 public class FlyingEnemy : EnemyBehaviour
 {
     public Stat speed;
-    public float flyAroundRange = 35f;
+    public float flyAroundRange;
     private Vector3 startPosition;
     private Vector3 target;
     private float targetDistance;
-    public void Start()
+
+    public override void ResetState()
+    {
+        target = Vector3.zero;
+        targetDistance = 0;
+        SetState(new FlyAround(this, startPosition, flyAroundRange, speed.getValue()));
+    }
+
+    private void Start()
     {
         startPosition = new Vector3(transform.position.x, transform.position.y);
         SetState(new FlyAround(this, startPosition, flyAroundRange, speed.getValue()));
     }
 
-    public void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (state is Wait) return;
+        StartCoroutine(state.FixedUpdate());
+    }
 
-        if (target == new Vector3(0, 0, 0) && Vector3.Distance(startPosition, GameObject.FindGameObjectWithTag("Player").transform.position) <= 10f)
+    private void Update()
+    {
+        StartCoroutine(state.Update());
+
+        // if (state is Wait) return;
+
+        Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        if (target == Vector3.zero && Vector3.Distance(startPosition, playerPosition) <= 10f)
         {
-            Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
             target = new Vector3(playerPosition.x, playerPosition.y);
             Debug.Log("FlyingEnemy notices Target");
         }
 
-        if (target != null && state is FlyAround)
-        {
-            targetDistance = Vector3.Distance(this.transform.position, target);
-            if (Vector3.Distance(startPosition, target) <= 12f)
-            {
-                Debug.Log("FlyingEnemy flies towards target");
-                SetState(new FlyTowards(this, GameObject.FindGameObjectWithTag("Player").transform.position, speed.getValue()));
-            }
+        // if (state is FlyReset && Vector3.Distance(startPosition, gameObject.transform.position) <= 1f)
+        // {
+        //     SetState(new FlyAround(this, startPosition, flyAroundRange, speed.getValue()));
+        // }
 
+        if (target != Vector3.zero && (state is FlyReset || state is FlyAround))
+        {
+            if (Vector3.Distance(startPosition, target) <= 10f)
+            {
+                // StopCoroutine(currentCoroutine);
+                Debug.Log("FlyingEnemy flies towards target");
+                target = new Vector3(playerPosition.x, playerPosition.y);
+                targetDistance = Vector3.Distance(this.transform.position, target);
+                SetState(new FlyTowards(this, target, speed.getValue()));
+            }
         }
 
         if (state is FlyTowards)
         {
             targetDistance = Vector3.Distance(this.transform.position, target);
-            if (targetDistance <= 1)
+            if (targetDistance <= 1f)
                 SetState(new Wait(this));
-        }
-    }
 
-    public override void ResetState()
-    {
-        target = new Vector3();
-        SetState(new FlyAround(this, startPosition, flyAroundRange, speed.getValue()));
+        }
+
     }
 
 }

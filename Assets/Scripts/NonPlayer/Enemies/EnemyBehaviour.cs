@@ -3,16 +3,13 @@
 public abstract class EnemyBehaviour : MonoBehaviour
 {
     protected EnemyState state;
+    // protected Coroutine currentCoroutine;
 
     public void SetState(EnemyState _state)
     {
         state = _state;
+        // currentCoroutine = 
         StartCoroutine(state.Start());
-    }
-
-    public void UseUpdate()
-    {
-        StartCoroutine(state.Update());
     }
 
     public abstract void ResetState();

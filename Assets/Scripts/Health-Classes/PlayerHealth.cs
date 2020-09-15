@@ -33,14 +33,4 @@ public class PlayerHealth : KnockbackHealth
         }
 
     }
-
-    private void Update() {
-        // TODO: DEBUG (später rausmachen)
-        if (Input.GetKeyDown(KeyCode.L)) {
-            setHealth(1);
-        }
-        if (Input.GetKeyDown(KeyCode.O)) {
-            setHealth(2);
-        }
-    }
 }

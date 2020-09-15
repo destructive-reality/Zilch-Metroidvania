@@ -1201,7 +1201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1047782095710309742}
   attackPower:
-    baseValue: 20
+    baseValue: 1
   attackRange:
     baseValue: 1.5
   attackTime:
@@ -1224,7 +1224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 100
+    baseValue: 5
   currentHealth: 0
   animator: {fileID: 1047782095710309742}
   knockbackForce: 70

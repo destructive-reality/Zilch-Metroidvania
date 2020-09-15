@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 509972248452091645}
   - component: {fileID: 509972248452091646}
   - component: {fileID: 3460577125119433471}
+  - component: {fileID: 7835785056609124633}
   m_Layer: 11
   m_Name: FlyingEnemy
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509972248452091637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.17, y: -15.55, z: -0.89728415}
+  m_LocalPosition: {x: -25.17, y: -15.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,7 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   attackPower:
-    baseValue: 15
+    baseValue: 1
   attackRange:
     baseValue: 1
   attackTime:
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 30
+    baseValue: 2
   currentHealth: 0
   animator: {fileID: 0}
   knockbackForce: 20
@@ -133,7 +134,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509972248452091637}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c37d2e16a7d01ca4e93767fbf570c5d9, type: 3}
   m_Name: 
@@ -192,3 +193,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7835785056609124633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509972248452091637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0574070c64e21714c8212d093d479657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed:
+    baseValue: 0.2
+  flyAroundRange: 5

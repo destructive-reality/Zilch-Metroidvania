@@ -1231,6 +1231,7 @@ MonoBehaviour:
   playerMasterController: {fileID: 1317141260972420986}
   startInvincibleTime:
     baseValue: 2
+  lowLifePulseThreshold: 1
 --- !u!114 &5198823438255694855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,9 +1267,9 @@ MonoBehaviour:
     baseValue: 2
   playerAudioSource: {fileID: 860947147407656699}
   jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
-  jumpSoundVolume: 1
+  jumpSoundVolume: 0.4
   dashSound: {fileID: 8300000, guid: eb393dafe3ca4a14996f19e0bbf90527, type: 3}
-  dashSoundVolume: 1
+  dashSoundVolume: 0.13
   walkSoundAudioClips:
   - {fileID: 8300000, guid: f83eb3bdb18dcae48b98023c1ff4cb3a, type: 3}
   - {fileID: 8300000, guid: 1adec981e97cab04eae8f493df7e6bca, type: 3}
@@ -1282,7 +1283,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6905a65a10d97ea41af74b59a11b644a, type: 3}
   - {fileID: 8300000, guid: 19b1acd2027e971479a4eeb6181506a1, type: 3}
   - {fileID: 8300000, guid: 747cd8bba59ac084bbb64cba73479b8b, type: 3}
-  walkSoundVolume: 0.2
+  walkSoundVolume: 0.05
   walkSoundRate: 0.35
 --- !u!114 &7228385836571419879
 MonoBehaviour:

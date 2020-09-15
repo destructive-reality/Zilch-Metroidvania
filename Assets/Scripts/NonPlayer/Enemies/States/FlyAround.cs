@@ -52,10 +52,10 @@ public class FlyAround : EnemyState
         float range = Random.Range(0, _maxRange);
         Vector2 randomV = new Vector2(range * Mathf.Sin(angle), range * Mathf.Cos(angle));
 
-        Debug.Log("Random Vector is " + randomV);
-        Debug.Log("Distance is " + Vector2.Distance(target, target + randomV));
+        // Debug.Log("Random Vector is " + randomV);
+        // Debug.Log("Distance is " + Vector2.Distance(target, target + randomV));
         target = target + randomV;
-        Debug.Log("Target is " + target);
+        // Debug.Log("Target is " + target);
 
         return target;
     }

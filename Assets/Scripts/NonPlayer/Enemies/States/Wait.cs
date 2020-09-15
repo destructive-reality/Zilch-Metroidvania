@@ -11,7 +11,7 @@ public class Wait : EnemyState
     public override IEnumerator Start()
     {
         base.Start();
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         behaviour.ResetState();
 
         yield break;

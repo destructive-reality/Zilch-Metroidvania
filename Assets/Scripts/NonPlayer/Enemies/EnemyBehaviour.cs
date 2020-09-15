@@ -2,6 +2,7 @@
 
 public abstract class EnemyBehaviour : MonoBehaviour
 {
+    public bool isFacingRight = true;
     protected EnemyState state;
     // protected Coroutine currentCoroutine;
 
@@ -13,4 +14,12 @@ public abstract class EnemyBehaviour : MonoBehaviour
     }
 
     public abstract void ResetState();
+
+    public void Flip () {
+        isFacingRight = !isFacingRight;
+
+        Vector3 localXScale = transform.localScale;
+        localXScale.x *= -1;
+        transform.localScale = localXScale;
+    }
 }

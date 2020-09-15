@@ -1255,6 +1255,8 @@ MonoBehaviour:
   groundCheckTransform: {fileID: 8883759046710026403}
   groundCheckRadius: 0.25
   jumpTime: 0.25
+  gravityScaleUp: 6
+  gravityScaleDown: 10
   playerRigidbody2D: {fileID: 1047782096130487533}
   playerAnimator: {fileID: 1047782095710309742}
   dashSpeed:

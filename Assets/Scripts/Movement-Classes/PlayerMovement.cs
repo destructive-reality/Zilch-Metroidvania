@@ -22,6 +22,8 @@ public class PlayerMovement : MovementsBase
 
     private float jumpTimeCounter = 0f;
     public float jumpTime = 0.25f;
+    public float gravityScaleUp = 4.2f;
+    public float gravityScaleDown = 6.2f;
     private bool isJumping;
 
     #endregion
@@ -77,6 +79,9 @@ public class PlayerMovement : MovementsBase
 
     private void Update()
     {
+        //Update gravity scale of the player's rigidbody based on jumping or falling
+        playerRigidbody2D.gravityScale = playerRigidbody2D.velocity.y > 0 ? gravityScaleUp : gravityScaleDown;
+
         isGrounded = Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundLayers);
         playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalAxisInput));      //Play Animations correctly
 

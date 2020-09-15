@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 
-public class Patrol : MovementsBase
+public class PatrolMovement : MovementsBase
 {
     public float rayDistance = 1f;
     public LayerMask ignoreLayers;
 
     public Transform groundDetection;
 
-    // Update is called once per frame
     void Update()
     {
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, rayDistance, ~ignoreLayers);

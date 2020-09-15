@@ -39,14 +39,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3811832996060555766}
-  - component: {fileID: 3811832996060555762}
   - component: {fileID: 3811832996060555769}
   - component: {fileID: 3811832996060555765}
   - component: {fileID: 3811832996060555768}
   - component: {fileID: 3811832996060555771}
   - component: {fileID: 5196412656422174778}
+  - component: {fileID: 7224045951320415391}
   m_Layer: 11
-  m_Name: PatrolingEnemy
+  m_Name: PatrollingEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -67,25 +67,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3811832996060555762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3811832996060555763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e110a931731a2664ba8bb96322a3240f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed:
-    baseValue: 3
-  rayDistance: 1
-  ignoreLayers:
-    serializedVersion: 2
-    m_Bits: 6455
-  groundDetection: {fileID: 3811832994168298662}
 --- !u!61 &3811832996060555769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -225,3 +206,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7224045951320415391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811832996060555763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf339f78c567cd42bb317eac5f41577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFacingRight: 1
+  speed:
+    baseValue: 3
+  groundDetector: {fileID: 3811832994168298662}

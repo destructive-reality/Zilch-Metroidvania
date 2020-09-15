@@ -36,44 +36,51 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (Input.GetButtonDown("Inventory") || Input.GetButtonDown("Equipment"))
+        {
+            rectTransform.anchoredPosition = new Vector2(0, 0);
+        }
     }
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         Debug.Log("Release Drag");
-        if (eventData.pointerEnter.GetComponentInParent<InventorySlot>())
+        if (eventData.pointerEnter)
         {
-            // InventorySlot targetScript = eventData.pointerEnter.GetComponentInParent<InventorySlot>();
-            if (isEquiped)
+            if (eventData.pointerEnter.GetComponentInParent<InventorySlot>())
             {
-                Debug.Log("Unequip the item at slot " + slotNumber);
-                EquipmentSlot slotScript = GetComponentInParent<EquipmentSlot>();
-                Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
-                Equipment equipment = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Equipment>();
-                
-                inventory.AddItem(slotScript.GetModifier());
-                equipment.UnequipModifier(slotScript.GetModifier());
-                // Inventory.AddItem
-                // Equipment.UnequipModifier(Modifier)
+                // InventorySlot targetScript = eventData.pointerEnter.GetComponentInParent<InventorySlot>();
+                if (isEquiped)
+                {
+                    Debug.Log("Unequip the item at slot " + slotNumber);
+                    EquipmentSlot slotScript = GetComponentInParent<EquipmentSlot>();
+                    Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
+                    Equipment equipment = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Equipment>();
 
+                    inventory.AddItem(slotScript.GetModifier());
+                    equipment.UnequipModifier(slotScript.GetModifier());
+                    // Inventory.AddItem
+                    // Equipment.UnequipModifier(Modifier)
+
+                }
             }
-        }
-        else if (eventData.pointerEnter.GetComponentInParent<EquipmentSlot>())
-        {
-            EquipmentSlot targetScript = eventData.pointerEnter.GetComponentInParent<EquipmentSlot>();
-            if (isEquiped)
+            else if (eventData.pointerEnter.GetComponentInParent<EquipmentSlot>())
             {
-                // change slot
-                targetScript.ChangeSlotOf(slotNumber);
-            }
-            else    // when not equiped
-            {
-                // equip
-                Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
-                Debug.Log("Slot number: " + slotNumber);  
-                Debug.Log("Equip to position: " + targetScript.slotPosition);
-                inventory.UseItem(inventory.items[slotNumber], targetScript.slotPosition);
+                EquipmentSlot targetScript = eventData.pointerEnter.GetComponentInParent<EquipmentSlot>();
+                if (isEquiped)
+                {
+                    // change slot
+                    targetScript.ChangeSlotOf(slotNumber);
+                }
+                else    // when not equiped
+                {
+                    // equip
+                    Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
+                    Debug.Log("Slot number: " + slotNumber);
+                    Debug.Log("Equip to position: " + targetScript.slotPosition);
+                    inventory.UseItem(inventory.items[slotNumber], targetScript.slotPosition);
+                }
             }
         }
         rectTransform.anchoredPosition = new Vector2(0, 0);

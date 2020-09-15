@@ -28,11 +28,11 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))    // Sollte noch zu einem Unity Button-Teil werden statt der feste Keycode
+        if (Input.GetButtonDown("Inventory")) 
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))    // auch Unity-Button für Linksklick? Sollte sich ja nicht ändern denke; außer viell. zu nem Rechtsklick für Linkshänder
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;

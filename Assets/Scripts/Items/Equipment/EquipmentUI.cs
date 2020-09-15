@@ -47,11 +47,11 @@ public class EquipmentUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))    // Sollte noch zu einem Unity Button-Teil werden statt der feste Keycode
+        if (Input.GetButtonDown("Equipment"))
         {
             equipmentUI.SetActive(!equipmentUI.activeSelf);
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))       // auch Unity-Button für Linksklick? Sollte sich ja nicht ändern denke; außer viell. zu nem Rechtsklick für Linkshänder
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;

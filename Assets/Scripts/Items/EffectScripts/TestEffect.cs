@@ -6,15 +6,18 @@ public class TestEffect : Effect
 {
     PlayerMovement playerMovement;
     private bool isDoublejumped;
+    private int attackPowerBoost = 1; 
+    private float dashTimeBoost = 0.2f;
+    private int healthBoost = 1;
 
     public override void ArmStart(bool value)
     {
         Debug.Log("Increase Player Damage: " + value);
         PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
         if (value)
-            playerCombat.attackPower.addModifier(10);
+            playerCombat.attackPower.addModifier(attackPowerBoost);
         else
-            playerCombat.attackPower.removeModifier(10);
+            playerCombat.attackPower.removeModifier(attackPowerBoost);
     }
     public override void LegStart(bool value)
     {
@@ -27,18 +30,18 @@ public class TestEffect : Effect
         Debug.Log("Increase Player Dash Time: " + value);
         PlayerMovement playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
         if (value)
-            playerMovement.startDashTime += 0.2f;
+            playerMovement.startDashTime += dashTimeBoost;
         else
-            playerMovement.startDashTime -= 0.2f;
+            playerMovement.startDashTime -= dashTimeBoost;
     }
     public override void BodyStart(bool value)
     {
         Debug.Log("Increase Player Health: " + value);
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
         if (value)
-            playerHealth.maxHealth.addModifier(10);
+            playerHealth.maxHealth.addModifier(healthBoost);
         else
-            playerHealth.maxHealth.removeModifier(10);
+            playerHealth.maxHealth.removeModifier(healthBoost);
         playerHealth.setHealth((int)playerHealth.maxHealth.getValue());
     }
     public override void ArmUpdate()

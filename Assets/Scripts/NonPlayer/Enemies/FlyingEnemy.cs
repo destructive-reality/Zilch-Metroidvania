@@ -6,6 +6,7 @@ public class FlyingEnemy : EnemyBehaviour {
     private Vector3 startPosition;
     private Vector3 target;
     private float targetDistance;
+    // private Animator animator;
 
     public override void ResetState () {
         target = Vector3.zero;
@@ -13,8 +14,13 @@ public class FlyingEnemy : EnemyBehaviour {
         SetState (new FlyAround (this, startPosition, flyAroundRange, speed.getValue ()));
     }
 
+    public Vector3 GetStartPosition () {
+        return startPosition;
+    }
+
     private void Start () {
         startPosition = new Vector3 (transform.position.x, transform.position.y);
+        // animator = GetComponent<Animator> ();
         SetState (new FlyAround (this, startPosition, flyAroundRange, speed.getValue ()));
     }
 
@@ -31,12 +37,14 @@ public class FlyingEnemy : EnemyBehaviour {
             Debug.Log ("FlyingEnemy notices Target");
         }
 
-        if (target != Vector3.zero && (state is FlyReset || state is FlyAround)) {
+        if (target != Vector3.zero && (state is FlyAround)) {
             if (Vector3.Distance (startPosition, target) <= 10f) {
                 Debug.Log ("FlyingEnemy flies towards target");
                 target = new Vector3 (playerPosition.x, playerPosition.y);
                 targetDistance = Vector3.Distance (this.transform.position, target);
                 SetState (new FlyTowards (this, target, speed.getValue ()));
+
+                // animator.SetBool ("isPlayerNear", true);
             }
         }
 

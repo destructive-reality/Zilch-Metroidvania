@@ -6,7 +6,7 @@ public class ParallaxLayer : MonoBehaviour
 {
     public float parallaxFactor;
 
-    const float smoothTime = 0.05F;
+    const float smoothTime = 0.04F;
     private Vector3 velocity = Vector3.zero;
     Vector3 targetPosition;
 

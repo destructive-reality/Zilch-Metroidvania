@@ -25,15 +25,6 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
-    void Update()
-    {
-        //TODO
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            LoadNextLevel();
-        }
-    }
-
     public void LoadNextLevel()
     {
         LoadLevelWithID(SceneManager.GetActiveScene().buildIndex + 1);

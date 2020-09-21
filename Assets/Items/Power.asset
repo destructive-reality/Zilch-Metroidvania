@@ -18,6 +18,6 @@ MonoBehaviour:
   effectBody: {fileID: 11400000, guid: 1c0bf0e3b30790247bcfd1a8d9e7f8d7, type: 2}
   effectArm: {fileID: 11400000, guid: ade531777d98ca94897788a38539bfcb, type: 2}
   effectLeg: {fileID: 11400000, guid: 16b1faa1beed10442bf7d0412d8e4cb9, type: 2}
-  effectHead: {fileID: 0}
+  effectHead: {fileID: 11400000, guid: 546575982b45cb54fb8022c0f57b649c, type: 2}
   modifierDescription: It will increase your physical strength depending on the slot
     it's equiped.

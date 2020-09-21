@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 509972248452091642}
   - component: {fileID: 509972248452091639}
   - component: {fileID: 509972248452091644}
-  - component: {fileID: 509972248452091638}
   - component: {fileID: 509972248452091643}
-  - component: {fileID: 509972248452091645}
-  - component: {fileID: 509972248452091646}
   - component: {fileID: 3460577125119433471}
+  - component: {fileID: 509972248452091645}
+  - component: {fileID: 509972248452091638}
+  - component: {fileID: 723086836318268066}
+  - component: {fileID: 1779733545369302272}
   - component: {fileID: 7835785056609124633}
   m_Layer: 11
   m_Name: FlyingEnemy
@@ -70,25 +71,6 @@ CircleCollider2D:
   m_Offset: {x: 0.0028322677, y: 0.0028322681}
   serializedVersion: 2
   m_Radius: 0.7082262
---- !u!114 &509972248452091638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509972248452091637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5288b9fb00cfe53478fbb349a59416f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  attackPower:
-    baseValue: 1
-  attackRange:
-    baseValue: 1
-  attackTime:
-    baseValue: 0
 --- !u!50 &509972248452091643
 Rigidbody2D:
   serializedVersion: 4
@@ -110,38 +92,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &509972248452091645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509972248452091637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth:
-    baseValue: 2
-  currentHealth: 0
-  animator: {fileID: 0}
-  knockbackForce: 20
---- !u!114 &509972248452091646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509972248452091637}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c37d2e16a7d01ca4e93767fbf570c5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed:
-    baseValue: 0.07
-  target: {fileID: 0}
 --- !u!212 &3460577125119433471
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -193,6 +143,77 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &509972248452091645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509972248452091637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 2
+  currentHealth: 0
+  animator: {fileID: 0}
+  knockbackForce: 20
+--- !u!114 &509972248452091638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509972248452091637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5288b9fb00cfe53478fbb349a59416f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  attackPower:
+    baseValue: 1
+  attackRange:
+    baseValue: 1
+  attackTime:
+    baseValue: 0
+--- !u!114 &723086836318268066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509972248452091637}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82186fca187922540a2b1fe1c7ea2d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFacingRight: 1
+  speed:
+    baseValue: 0.2
+  flyAroundRange: 5
+--- !u!95 &1779733545369302272
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509972248452091637}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11a2e277c259bdc48ae683f9844e0fcb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &7835785056609124633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0574070c64e21714c8212d093d479657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFacingRight: 1
   speed:
     baseValue: 0.2
-  flyAroundRange: 5

@@ -12,7 +12,7 @@ public class Patrol : EnemyState {
         speed = _speed;
         groundDetection = _groundDetector;
         moveOnLayer = LayerMask.GetMask("Ground");
-        Debug.Log(groundDetection.gameObject.name);
+        // Debug.Log(groundDetection.gameObject.name);
     }
 
     public override IEnumerator Update () {

@@ -23,7 +23,8 @@ public class FlyAround : EnemyState
         yield break;
     }
 
-    public override IEnumerator Update(){
+    public override IEnumerator Update()
+    {
         base.Update();
         if (targetDistance() <= 1f)
         {

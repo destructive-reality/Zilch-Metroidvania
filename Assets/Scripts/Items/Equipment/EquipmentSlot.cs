@@ -27,7 +27,7 @@ public class EquipmentSlot : MonoBehaviour
                 slotPosition = ModifierSlot.Leg;
                 break;
             default:
-                slotPosition = ModifierSlot.Body;
+                slotPosition = ModifierSlot.Weapon;
                 break;
         }
         // icons[0].GetComponent<DragDrop>().isEquiped = true;

@@ -23,7 +23,7 @@ public class RangeEffect : Effect
         else
             playerMovement.startDashTime -= dashTimeBoost;
     }
-    public override void BodyStart(bool value = true)
+    public override void WeaponStart(bool value = true)
     {
         Debug.Log("Increase Player Invincible Time: " + value);
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
@@ -44,7 +44,7 @@ public class RangeEffect : Effect
     {
 
     }
-    public override void BodyUpdate()
+    public override void WeaponUpdate()
     {
 
     }

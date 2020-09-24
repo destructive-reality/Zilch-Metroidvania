@@ -7,12 +7,12 @@ public abstract class Effect : MonoBehaviour
 
     public abstract void ArmStart(bool value = true);
     public abstract void LegStart(bool value = true);
-    public abstract void BodyStart(bool value = true);
+    public abstract void WeaponStart(bool value = true);
     public abstract void HeadStart(bool value = true);
     public abstract void ArmUpdate();
     public abstract void LegUpdate();
-    public abstract void BodyUpdate();
+    public abstract void WeaponUpdate();
     public abstract void HeadUpdate();
 }
 
-public enum ModifierSlot { None, Arm, Leg, Body, Head }
+public enum ModifierSlot { None, Arm, Leg, Weapon, Head }

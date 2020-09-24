@@ -113,10 +113,10 @@ public class Equipment : MonoBehaviour
                             modifierEffect.LegUpdate();
                         }
                         break;
-                    case ModifierSlot.Body:
+                    case ModifierSlot.Weapon:
                         if (modifierEffect.modifier.effectBody.isUpdate)
                         {
-                            modifierEffect.BodyUpdate();
+                            modifierEffect.WeaponUpdate();
                         }
                         break;
                     case ModifierSlot.Head:
@@ -148,10 +148,10 @@ public class Equipment : MonoBehaviour
                     _modifierEffect.LegStart(_isToBeEnabled);
                 }
                 break;
-            case ModifierSlot.Body:
+            case ModifierSlot.Weapon:
                 if (_modifierEffect.modifier.effectBody.isStart)
                 {
-                    _modifierEffect.BodyStart(_isToBeEnabled);
+                    _modifierEffect.WeaponStart(_isToBeEnabled);
                 }
                 break;
             case ModifierSlot.Head:

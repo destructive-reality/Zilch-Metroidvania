@@ -34,7 +34,7 @@ public class TestEffect : Effect
         else
             playerMovement.startDashTime -= dashTimeBoost;
     }
-    public override void BodyStart(bool value)
+    public override void WeaponStart(bool value)
     {
         Debug.Log("Increase Player Health: " + value);
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
@@ -61,7 +61,7 @@ public class TestEffect : Effect
             isDoublejumped = !isDoublejumped;
         }
     }
-    public override void BodyUpdate()
+    public override void WeaponUpdate()
     {
 
     }

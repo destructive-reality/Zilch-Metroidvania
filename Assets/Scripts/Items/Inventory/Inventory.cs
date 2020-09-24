@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
             onItemChangedCallback.Invoke();
         }
     }
-    public void UseItem(GameObject item, ModifierSlot slot = ModifierSlot.Body)
+    public void UseItem(GameObject item, ModifierSlot slot = ModifierSlot.Weapon)
     {
         Debug.Log("Using " + item.name + " on " + slot.ToString());
         if (item.GetComponent<Effect>() && equipment.ValidateOperation(slot))

@@ -41,7 +41,7 @@ public class InventorySlot : MonoBehaviour//, IDropHandler
     public void OnBodyButton()
     {
         // Debug.Log("BodyButton clicked");
-        EquipOnSlot(ModifierSlot.Body);
+        EquipOnSlot(ModifierSlot.Weapon);
     }
     public void EquipOnSlot(ModifierSlot slot) {
         // GameObject.FindGameObjectWithTag("Player").GetComponent<Equipment>().EquipModifier(modifier, slot);

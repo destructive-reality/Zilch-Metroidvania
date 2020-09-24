@@ -121,7 +121,7 @@ public class EquipmentUI : MonoBehaviour
                         Debug.Log("Leg-slots are reserved. Can't equip " + equipment.modifiers[i].name);
                     }
                 }
-                else if (modifierEffect.currentSlot == ModifierSlot.Body)
+                else if (modifierEffect.currentSlot == ModifierSlot.Weapon)
                 {
                     for (int j = 5; j < slots.Length; j++)
                     {

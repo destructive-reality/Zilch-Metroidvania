@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class EquipmentUI : MonoBehaviour
 {
@@ -24,9 +24,9 @@ public class EquipmentUI : MonoBehaviour
         }
         return null;
     }
-    public void StartSlotChange(int modifierSlotNumber, ModifierSlot slot){
-        equipment.ChangeSlot(slots[modifierSlotNumber].GetModifier(), slot);
-        slots[modifierSlotNumber].ClearSlot();
+    public void StartSlotChange(int _modifierSlotNumber, ModifierSlot _slotToChangeTo){
+        equipment.ChangeSlot(slots[_modifierSlotNumber].GetModifier(), _slotToChangeTo);
+        slots[_modifierSlotNumber].ClearSlot();
     }
 
     // Start is called before the first frame update

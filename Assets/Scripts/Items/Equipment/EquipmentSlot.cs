@@ -10,10 +10,10 @@ public class EquipmentSlot : MonoBehaviour
     private EquipmentUI equipmentUI;
     private GameObject modifier;
 
-    public void InitializeEquipmentSlotPosition(int i)
+    public void InitializeEquipmentSlotPosition(int _i)
     {
-        slotNumber = i;
-        switch (i)
+        slotNumber = _i;
+        switch (_i)
         {
             case 0:
                 slotPosition = ModifierSlot.Head;
@@ -32,9 +32,9 @@ public class EquipmentSlot : MonoBehaviour
         }
         // icons[0].GetComponent<DragDrop>().isEquiped = true;
     }
-    public void AddItem(GameObject newModifier)
+    public void AddItem(GameObject _newModifier)
     {
-        modifier = newModifier;
+        modifier = _newModifier;
 
         icons[0].sprite = modifier.GetComponent<Effect>().modifier.icon;
         for (int i = 0; i < icons.Length; i++)
@@ -56,11 +56,10 @@ public class EquipmentSlot : MonoBehaviour
         ItemButton.interactable = false;
     }
 
-    public void ChangeSlotOf(int modifierSlotNumber)
+    public void ChangeSlotOf(int _modifierSlotNumber)
     {
         // GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>().UseItem(modifier, slot);
-        Debug.Log("Initiate modifier slot change");
-        equipmentUI.StartSlotChange(modifierSlotNumber, slotPosition);
+        equipmentUI.StartSlotChange(_modifierSlotNumber, slotPosition);
     }
 
     // public void OnDrop(PointerEventData eventData)

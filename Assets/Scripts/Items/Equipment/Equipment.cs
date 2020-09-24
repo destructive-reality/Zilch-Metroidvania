@@ -7,11 +7,11 @@ public class Equipment : MonoBehaviour
     public event OnEquipmentChange changedEquipmentCallback;
     public List<GameObject> modifiers;
 
-    public bool ValidateOperation(ModifierSlot slot)
+    public bool ValidateOperation(ModifierSlot _slot)
     {
         int counter = 0;
         int checker;
-        switch (slot)
+        switch (_slot)
         {
             case ModifierSlot.Head:
                 checker = 1;
@@ -25,7 +25,7 @@ public class Equipment : MonoBehaviour
         }
         for (int i = 0; i < modifiers.Count; i++)
         {
-            switch (slot)
+            switch (_slot)
             {
                 case ModifierSlot.Head:
                     if (modifiers[i].GetComponent<Effect>().currentSlot == ModifierSlot.Head)
@@ -53,40 +53,40 @@ public class Equipment : MonoBehaviour
         }
         return true;
     }
-    public void EquipModifier(GameObject modifier, ModifierSlot slot)
+    public void EquipModifier(GameObject _modifier, ModifierSlot _slot)
     {
-        modifiers.Add(modifier);
-        Effect modifierEffect = modifier.GetComponent<Effect>();
-        modifierEffect.currentSlot = slot;
-        ExecuteStartEffect(modifierEffect, slot);
+        modifiers.Add(_modifier);
+        Effect modifierEffect = _modifier.GetComponent<Effect>();
+        modifierEffect.currentSlot = _slot;
+        ExecuteStartEffect(modifierEffect, _slot);
         if (changedEquipmentCallback != null)
         {
             changedEquipmentCallback.Invoke();
         }
     }
-    public void UnequipModifier(GameObject modifier)
+    public void UnequipModifier(GameObject _modifier)
     {
-        Effect modifierEffect = modifier.GetComponent<Effect>();
+        Effect modifierEffect = _modifier.GetComponent<Effect>();
         ExecuteStartEffect(modifierEffect, modifierEffect.currentSlot, false);
         modifierEffect.currentSlot = ModifierSlot.None;
-        modifiers.Remove(modifier);
+        modifiers.Remove(_modifier);
         if (changedEquipmentCallback != null)
         {
             changedEquipmentCallback.Invoke();
         }
     }
-    public void ChangeSlot(GameObject modifier, ModifierSlot slot)
+    public void ChangeSlot(GameObject _modifier, ModifierSlot _slot)
     {
-        Effect modifierEffect = modifier.GetComponent<Effect>();
+        Effect modifierEffect = _modifier.GetComponent<Effect>();
         ModifierSlot oldSlot = modifierEffect.currentSlot;
-        if (oldSlot == slot)
+        if (oldSlot == _slot)
         {
             Debug.Log("Don't change modifier slot");
             return;
         }
-        modifierEffect.currentSlot = slot;
+        modifierEffect.currentSlot = _slot;
         ExecuteStartEffect(modifierEffect, oldSlot, false);
-        ExecuteStartEffect(modifierEffect, slot);
+        ExecuteStartEffect(modifierEffect, _slot);
         if (changedEquipmentCallback != null)
         {
             changedEquipmentCallback.Invoke();
@@ -132,32 +132,32 @@ public class Equipment : MonoBehaviour
             }
         }
     }
-    private void ExecuteStartEffect(Effect modifierEffect, ModifierSlot slot, bool enable = true)
+    private void ExecuteStartEffect(Effect _modifierEffect, ModifierSlot _slot, bool _isToBeEnabled = true)
     {
-        switch (slot)
+        switch (_slot)
         {
             case ModifierSlot.Arm:
-                if (modifierEffect.modifier.effectArm.isStart)
+                if (_modifierEffect.modifier.effectArm.isStart)
                 {
-                    modifierEffect.ArmStart(enable);
+                    _modifierEffect.ArmStart(_isToBeEnabled);
                 }
                 break;
             case ModifierSlot.Leg:
-                if (modifierEffect.modifier.effectLeg.isStart)
+                if (_modifierEffect.modifier.effectLeg.isStart)
                 {
-                    modifierEffect.LegStart(enable);
+                    _modifierEffect.LegStart(_isToBeEnabled);
                 }
                 break;
             case ModifierSlot.Body:
-                if (modifierEffect.modifier.effectBody.isStart)
+                if (_modifierEffect.modifier.effectBody.isStart)
                 {
-                    modifierEffect.BodyStart(enable);
+                    _modifierEffect.BodyStart(_isToBeEnabled);
                 }
                 break;
             case ModifierSlot.Head:
-                if (modifierEffect.modifier.effectHead.isStart)
+                if (_modifierEffect.modifier.effectHead.isStart)
                 {
-                    modifierEffect.HeadStart(enable);
+                    _modifierEffect.HeadStart(_isToBeEnabled);
                 }
                 break;
             default:

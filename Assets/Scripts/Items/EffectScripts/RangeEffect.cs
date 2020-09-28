@@ -2,25 +2,37 @@
 
 public class RangeEffect : Effect
 {
-    public override void ArmStart()
+    private float attackRangeBoost = 0.3f;
+    private float dashTimeBoost = 0.2f;
+    private int iFrameTimeBoost = 1;
+    public override void ArmStart(bool value = true)
     {
-        Debug.Log("Increase Player Attack Range");
+        Debug.Log("Increase Player Attack Range: " + value);
         PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
-        playerCombat.attackRange.addModifier(0.3f);
+        if (value)
+            playerCombat.attackRange.addModifier(attackRangeBoost);
+        else 
+            playerCombat.attackRange.removeModifier(attackRangeBoost);
     }
-    public override void LegStart()
+    public override void LegStart(bool value = true)
     {
-        Debug.Log("Increase Player Dash Time");
+        Debug.Log("Increase Player Dash Time: " + value);
         PlayerMovement playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
-        playerMovement.startDashTime += 0.2f;
+        if (value)
+            playerMovement.startDashTime += dashTimeBoost;
+        else
+            playerMovement.startDashTime -= dashTimeBoost;
     }
-    public override void BodyStart()   
+    public override void BodyStart(bool value = true)
     {
-        Debug.Log("Increase Player Invincible Time");
+        Debug.Log("Increase Player Invincible Time: " + value);
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
-        playerHealth.startInvincibleTime.addModifier(1);
+        if (value)
+            playerHealth.startInvincibleTime.addModifier(iFrameTimeBoost);
+        else
+            playerHealth.startInvincibleTime.removeModifier(iFrameTimeBoost);
     }
-    public override void HeadStart()
+    public override void HeadStart(bool value = true)
     {
 
     }

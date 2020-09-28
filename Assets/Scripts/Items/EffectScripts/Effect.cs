@@ -15,4 +15,4 @@ public abstract class Effect : MonoBehaviour
     public abstract void HeadUpdate();
 }
 
-public enum ModifierSlot { None, Arm, Leg, Weapon, Head }
+public enum ModifierSlot { None, Head, Arm, Leg, Weapon }

@@ -13,7 +13,7 @@ public class WaitBehaviour : StateMachineBehaviour {
     override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         timer += Time.deltaTime;
         if (timer >= startTime + waitTime) {
-            Debug.Log ("Change to Fly Around");
+            // Debug.Log ("Change to Fly Around");
             animator.SetTrigger ("flyAround");
         }
     }

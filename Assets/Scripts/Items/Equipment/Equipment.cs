@@ -75,14 +75,14 @@ public class Equipment : MonoBehaviour
             changedEquipmentCallback.Invoke();
         }
     }
-    public void ChangeSlot(GameObject _modifier, ModifierSlot _slot)
+    public bool ChangeSlot(GameObject _modifier, ModifierSlot _slot)
     {
         Effect modifierEffect = _modifier.GetComponent<Effect>();
         ModifierSlot oldSlot = modifierEffect.currentSlot;
         if (oldSlot == _slot)
         {
             Debug.Log("Don't change modifier slot");
-            return;
+            return false;
         }
         modifierEffect.currentSlot = _slot;
         ExecuteStartEffect(modifierEffect, oldSlot, false);
@@ -91,6 +91,7 @@ public class Equipment : MonoBehaviour
         {
             changedEquipmentCallback.Invoke();
         }
+        return true;
     }
     private void Update()
     {

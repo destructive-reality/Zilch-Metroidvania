@@ -2953,6 +2953,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3418172928355127815}
     m_Modifications:
+    - target: {fileID: 113313706986975509, guid: 7929b57a234c70c40b4d29207bbe225f,
+        type: 3}
+      propertyPath: slotPosition
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1168583096533083889, guid: 7929b57a234c70c40b4d29207bbe225f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3238,6 +3243,11 @@ PrefabInstance:
       propertyPath: equipmentUI
       value: 
       objectReference: {fileID: 5472642983030576253}
+    - target: {fileID: 113313706986975509, guid: 7929b57a234c70c40b4d29207bbe225f,
+        type: 3}
+      propertyPath: slotPosition
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1168583096533083889, guid: 7929b57a234c70c40b4d29207bbe225f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4268,6 +4278,11 @@ PrefabInstance:
       propertyPath: equipmentUI
       value: 
       objectReference: {fileID: 5472642983030576253}
+    - target: {fileID: 113313706986975509, guid: 7929b57a234c70c40b4d29207bbe225f,
+        type: 3}
+      propertyPath: slotPosition
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1168583096533083889, guid: 7929b57a234c70c40b4d29207bbe225f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4538,6 +4553,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3418172928355127815}
     m_Modifications:
+    - target: {fileID: 113313706986975509, guid: 7929b57a234c70c40b4d29207bbe225f,
+        type: 3}
+      propertyPath: slotPosition
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1168583096533083889, guid: 7929b57a234c70c40b4d29207bbe225f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5113,6 +5133,11 @@ PrefabInstance:
       propertyPath: equipmentUI
       value: 
       objectReference: {fileID: 5472642983030576253}
+    - target: {fileID: 113313706986975509, guid: 7929b57a234c70c40b4d29207bbe225f,
+        type: 3}
+      propertyPath: slotPosition
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1168583096533083889, guid: 7929b57a234c70c40b4d29207bbe225f,
         type: 3}
       propertyPath: m_LocalPosition.x

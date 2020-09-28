@@ -21,7 +21,7 @@ public class PlatformPatrolBehaviour : StateMachineBehaviour {
     override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         RaycastHit2D groundInfo = Physics2D.Raycast (groundDetection.position, Vector2.down, rayDistance, moveOnLayer);
         if (groundInfo.collider == null) {
-            Debug.Log ("PatrollingEnemy needs to flip");
+            // Debug.Log ("PatrollingEnemy needs to flip");
             enemyScript.Flip ();
         }
         if (enemyScript.isFacingRight) {

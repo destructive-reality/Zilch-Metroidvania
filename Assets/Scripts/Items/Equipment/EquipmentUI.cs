@@ -20,9 +20,10 @@ public class EquipmentUI : MonoBehaviour {
         }
         return null;
     }
-    public void StartSlotChange(int _modifierSlotNumber, ModifierSlot _slotToChangeTo){
-        equipment.ChangeSlot(slots[_modifierSlotNumber].GetModifier(), _slotToChangeTo);
-        slots[_modifierSlotNumber].ClearSlot();
+    public void StartSlotChange (int _modifierSlotNumber, ModifierSlot _slotToChangeTo) {
+        equipment.ChangeSlot (slots[_modifierSlotNumber].GetModifier (), _slotToChangeTo);
+        // slots[_modifierSlotNumber].ClearSlot ();
+
     }
 
     // Start is called before the first frame update

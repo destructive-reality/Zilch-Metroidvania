@@ -34,7 +34,6 @@ public class EquipmentUI : MonoBehaviour {
         equipment.changedEquipmentCallback += UpdateEquipmentUI;
 
         slots = itemsParent.GetComponentsInChildren<EquipmentSlot> ();
-        for (int i = 0; i < slots.Length; i++)
         for (int i = 0; i < slots.Length; i++) {
             slots[i].InitializeEquipmentSlotPosition (i);
             slots[i].icons[0].gameObject.GetComponent<DragDrop> ().slotNumber = i;

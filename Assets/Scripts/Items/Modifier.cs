@@ -19,7 +19,7 @@ public class Modifier : MonoBehaviour
             playerInventory = other.GetComponentInChildren<Inventory>();
         }
     }
-    private void OnTriggerStay2D(Collider2D other)
+    private void Update()
     {
         if (isInteractable && Input.GetButtonDown("PickUp") && playerInventory)
         {

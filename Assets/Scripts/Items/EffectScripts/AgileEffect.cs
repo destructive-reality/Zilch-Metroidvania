@@ -22,7 +22,7 @@ public class AgileEffect : Effect
         playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
         isDoublejumped = false;
     }
-    public override void BodyStart(bool value)
+    public override void WeaponStart(bool value)
     {
         Debug.Log("Increase Player Invincible Time: " + value);
 
@@ -53,7 +53,7 @@ public class AgileEffect : Effect
             isDoublejumped = !isDoublejumped;
         }
     }
-    public override void BodyUpdate()
+    public override void WeaponUpdate()
     {
 
     }

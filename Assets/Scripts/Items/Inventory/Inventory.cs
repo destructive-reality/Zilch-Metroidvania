@@ -16,23 +16,23 @@ public class Inventory : MonoBehaviour
         Debug.Log("Get Equipment for Inventory: " + equipment.gameObject.name);
     }
 
-    public void AddItem(GameObject item)
+    public void AddItem(GameObject _item)
     {
-        items.Add(item);
-        Debug.Log(item.name + " added to Player Inventory");
+        items.Add(_item);
+        Debug.Log(_item.name + " added to Player Inventory");
         
         if (onItemChangedCallback != null)
         {
             onItemChangedCallback.Invoke();
         }
     }
-    public void UseItem(GameObject item, ModifierSlot slot = ModifierSlot.Body)
+    public void UseItem(GameObject _item, ModifierSlot _slot = ModifierSlot.Weapon)
     {
-        Debug.Log("Using " + item.name + " on " + slot.ToString());
-        if (item.GetComponent<Effect>() && equipment.ValidateOperation(slot))
+        Debug.Log("Using " + _item.name + " on " + _slot.ToString());
+        if (_item.GetComponent<Effect>() && equipment.ValidateOperation(_slot))
         {
-            equipment.EquipModifier(item, slot);
-            items.Remove(item);
+            equipment.EquipModifier(_item, _slot);
+            items.Remove(_item);
             
             if (onItemChangedCallback != null)
             {

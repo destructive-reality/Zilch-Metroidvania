@@ -9,7 +9,7 @@ public class StepSoundCollectionApplier : MonoBehaviour
     // Start is called before the first frame update
 
    private void OnCollisionEnter2D(Collision2D other) {
-       if (other.gameObject.CompareTag("Player")) {
+       if (this.groundSoundCollection && other.gameObject.CompareTag("Player")) {
            other.gameObject.GetComponent<PlayerMovement>().setGroundSoundCollection(this.groundSoundCollection);
        }
    }

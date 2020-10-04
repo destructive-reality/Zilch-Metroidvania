@@ -23,7 +23,7 @@ public class PowerEffect : Effect
         else
             playerMovement.dashSpeed.removeModifier(dashSpeedBoost);
     }
-    public override void BodyStart(bool value)
+    public override void WeaponStart(bool value)
     {
         Debug.Log("Increase Player Health: " + value);
 
@@ -46,7 +46,7 @@ public class PowerEffect : Effect
     {
 
     }
-    public override void BodyUpdate()
+    public override void WeaponUpdate()
     {
 
     }

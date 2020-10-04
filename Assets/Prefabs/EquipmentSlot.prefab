@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 1168583098122966154}
   - {fileID: 1168583097714276140}
   ItemButton: {fileID: 1168583096914969149}
+  slotPosition: 0
 --- !u!1 &1168583096914969151
 GameObject:
   m_ObjectHideFlags: 0

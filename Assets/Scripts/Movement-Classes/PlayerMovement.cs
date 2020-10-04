@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 //Required Components
 [RequireComponent(typeof(AudioSource))]
@@ -24,6 +22,8 @@ public class PlayerMovement : MovementsBase
 
     private float jumpTimeCounter = 0f;
     public float jumpTime = 0.25f;
+    public float gravityScaleUp = 4.2f;
+    public float gravityScaleDown = 6.2f;
     private bool isJumping;
 
     #endregion
@@ -56,7 +56,8 @@ public class PlayerMovement : MovementsBase
     public AudioClip dashSound;
     [Range(0.0f, 1.0f)]
     public float dashSoundVolume;
-    public List<AudioClip> walkSoundAudioClips;
+    public GroundSoundCollection defaultGroundSoundCollection;
+    [SerializeField] private GroundSoundCollection currentGroundSoundCollection;
     [Range(0.0f, 1.0f)]
     public float walkSoundVolume;
     public float walkSoundRate;
@@ -64,6 +65,8 @@ public class PlayerMovement : MovementsBase
 
     private void Awake()
     {
+        currentGroundSoundCollection = defaultGroundSoundCollection;
+
         dashTime = startDashTime;
         playerState = State.Idle;
 
@@ -79,6 +82,9 @@ public class PlayerMovement : MovementsBase
 
     private void Update()
     {
+        //Update gravity scale of the player's rigidbody based on jumping or falling
+        playerRigidbody2D.gravityScale = playerRigidbody2D.velocity.y > 0 ? gravityScaleUp : gravityScaleDown;
+
         isGrounded = Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundLayers);
         playerAnimator.SetFloat("horizontalVelocity", Mathf.Abs(horizontalAxisInput));      //Play Animations correctly
 
@@ -87,7 +93,7 @@ public class PlayerMovement : MovementsBase
         {
             if (walkSoundTimer <= 0)
             {
-                playerAudioSource.PlayOneShot(walkSoundAudioClips[Random.Range(0, walkSoundAudioClips.Count)], walkSoundVolume);
+                playerAudioSource.PlayOneShot(currentGroundSoundCollection.walkSoundAudioClips[Random.Range(0, currentGroundSoundCollection.walkSoundAudioClips.Count)], walkSoundVolume);
                 walkSoundTimer = walkSoundRate;
             }
             walkSoundTimer -= Time.deltaTime;
@@ -183,5 +189,14 @@ public class PlayerMovement : MovementsBase
     public bool isAirborne()
     {
         return !isGrounded;
+    }
+
+    public void setGroundSoundCollection(GroundSoundCollection newCollection)
+    {
+        if (currentGroundSoundCollection != newCollection)
+        {
+            this.currentGroundSoundCollection = newCollection;
+            Debug.Log("Ground Sound Collection switched to: " + newCollection.name);
+        }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2079029427152669104}
   - component: {fileID: -6502535765519807965}
   m_Layer: 12
-  m_Name: Quad
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079029427152669106}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00999999, y: -3.4400005, z: 2.5830216}
+  m_LocalPosition: {x: 0.00999999, y: -3.4400005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -140,6 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 100
+    baseValue: 4
   currentHealth: 0
   animator: {fileID: 0}

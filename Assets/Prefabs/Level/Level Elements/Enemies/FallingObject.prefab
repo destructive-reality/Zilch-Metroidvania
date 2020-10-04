@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9de67f260bdab64c85bb1e85ecca488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth:
+    baseValue: 2
   currentHealth: 0
-  firstColor: {r: 0, g: 0, b: 0, a: 0}
   animator: {fileID: 0}
 --- !u!50 &3293268808699658451
 Rigidbody2D:
@@ -185,4 +185,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690cf28a47b289340be68fa76270b727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 1

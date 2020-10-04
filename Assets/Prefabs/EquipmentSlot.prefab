@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 1168583098122966154}
   - {fileID: 1168583097714276140}
   ItemButton: {fileID: 1168583096914969149}
+  slotPosition: 0
 --- !u!1 &1168583096914969151
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +524,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f5feeceec16a945b7bc1991230e9b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotNumber: 0
+  isEquiped: 1
 --- !u!225 &1778877355175199213
 CanvasGroup:
   m_ObjectHideFlags: 0

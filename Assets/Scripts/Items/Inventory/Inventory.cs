@@ -16,23 +16,23 @@ public class Inventory : MonoBehaviour
         Debug.Log("Get Equipment for Inventory: " + equipment.gameObject.name);
     }
 
-    public void AddItem(GameObject item)
+    public void AddItem(GameObject _item)
     {
-        items.Add(item);
-        Debug.Log(item.name + " added to Player Inventory");
+        items.Add(_item);
+        Debug.Log(_item.name + " added to Player Inventory");
         
         if (onItemChangedCallback != null)
         {
             onItemChangedCallback.Invoke();
         }
     }
-    public void UseItem(GameObject item, ModifierSlot slot = ModifierSlot.Body)
+    public void UseItem(GameObject _item, ModifierSlot _slot = ModifierSlot.Weapon)
     {
-        Debug.Log("Using " + item.name + " on " + slot.ToString());
-        if (item.GetComponent<Effect>())
+        Debug.Log("Using " + _item.name + " on " + _slot.ToString());
+        if (_item.GetComponent<Effect>() && equipment.ValidateOperation(_slot))
         {
-            equipment.EquipModifier(item, slot);
-            items.Remove(item);
+            equipment.EquipModifier(_item, _slot);
+            items.Remove(_item);
             
             if (onItemChangedCallback != null)
             {
@@ -40,37 +40,27 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    public void UseAll()
-    {
-        foreach (GameObject item in items)
-        {
-            UseItem(item);
-            // Könnte einen Fehler werfen, da in UseItem ein item der Liste gelöscht werden könnte. What to do..? MD
-        }
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L) && items[0])    // For Testing  MD
-        {
-            UseItem(items[0], ModifierSlot.Leg);
-        }
-        if (Input.GetKeyDown(KeyCode.O) && items[0])    // For Testing  MD
-        {
-            UseItem(items[0], ModifierSlot.Body);
-        }
-        if (Input.GetKeyDown(KeyCode.P) && items[0])    // For Testing  MD
-        {
-            UseItem(items[0], ModifierSlot.Arm);
-        }
-    }
-
-    // if(modifier.effectBody.isStart)
+    // public void UseAll()
     // {
-    //     Invoke("Effects." + modifier.effectBody.effectName + "Start", 0);
-    //     // modifier.effectBody.effectScript.Start();
+    //     foreach (GameObject item in items)
+    //     {
+    //         UseItem(item);
+    //         // Könnte einen Fehler werfen, da in UseItem ein item der Liste gelöscht werden könnte. What to do..? MD
+    //     }
     // }
-    // protected OnEquipmentChange(EventArgs arguments) {
-
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.L) && items[0])    // For Testing  MD
+    //     {
+    //         UseItem(items[0], ModifierSlot.Leg);
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.O) && items[0])    // For Testing  MD
+    //     {
+    //         UseItem(items[0], ModifierSlot.Body);
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.P) && items[0])    // For Testing  MD
+    //     {
+    //         UseItem(items[0], ModifierSlot.Arm);
+    //     }
     // }
-
 }

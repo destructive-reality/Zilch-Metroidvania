@@ -9,8 +9,6 @@ public class DamagingObject : Damaging
     // Start is called before the first frame update
     void Start()
     {
-        // attackPower = 10;
-        // attackRange = 0.87f;
         damageCollider = GetComponent<CircleCollider2D>();
         damageCollider.radius = attackRange.getValue();
         // Debug.Log(attackRange);

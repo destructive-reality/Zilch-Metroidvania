@@ -2,27 +2,37 @@
 
 public class AgileEffect : Effect
 {
-    PlayerMovement playerMovement;
+    private PlayerMovement playerMovement;
     private bool isDoublejumped;
-    public override void ArmStart()
+    private float attackSpeedBoost = -0.1f;
+    private int iFrameTimeBoost = 1;
+    public override void ArmStart(bool value)
     {
-        Debug.Log("Increase Player Attack Speed");
+        Debug.Log("Increase Player Attack Speed: " + value);
+
         PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
-        playerCombat.attackTime.addModifier(-0.1f);
+        if (value)
+            playerCombat.attackTime.addModifier(attackSpeedBoost);
+        else
+            playerCombat.attackTime.removeModifier(attackSpeedBoost);
     }
-    public override void LegStart()
+    public override void LegStart(bool value)
     {
-        Debug.Log("Give Player Double Jump");
+        Debug.Log("Give Player Double Jump: " + value);
         playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
         isDoublejumped = false;
     }
-    public override void BodyStart()   
+    public override void WeaponStart(bool value)
     {
-        Debug.Log("Increase Player Invincible Time");
+        Debug.Log("Increase Player Invincible Time: " + value);
+
         PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
-        playerHealth.startInvincibleTime.addModifier(1);
+        if (value)
+            playerHealth.startInvincibleTime.addModifier(iFrameTimeBoost);
+        else
+            playerHealth.startInvincibleTime.removeModifier(iFrameTimeBoost);
     }
-    public override void HeadStart()
+    public override void HeadStart(bool value)
     {
 
     }
@@ -32,18 +42,18 @@ public class AgileEffect : Effect
     }
     public override void LegUpdate()
     {
-        Debug.Log("Check for double Jump");
         if (playerMovement.isAirborne() && Input.GetButtonDown("Jump") && !isDoublejumped)
         {
             Debug.Log("Execute Double Jump");
             playerMovement.ApplyJumpForce();
+            isDoublejumped = true;
         }
         if (isDoublejumped && !playerMovement.isAirborne())
         {
             isDoublejumped = !isDoublejumped;
         }
     }
-    public override void BodyUpdate()
+    public override void WeaponUpdate()
     {
 
     }

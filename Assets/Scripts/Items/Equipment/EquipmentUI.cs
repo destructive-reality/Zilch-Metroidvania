@@ -7,6 +7,26 @@ public class EquipmentUI : MonoBehaviour
     private Equipment equipment;
     private EquipmentSlot[] slots;
 
+    private void Start()
+    {
+        equipment = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Equipment>();
+        equipment.changedEquipmentCallback += UpdateEquipmentUI;
+
+        slots = itemsParent.GetComponentsInChildren<EquipmentSlot>();
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].InitializeEquipmentSlotPosition(i);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Equipment"))
+        {
+            equipmentUI.SetActive(!equipmentUI.activeSelf);
+        }
+    }
+
     public dynamic checkSlot(GameObject slot)
     {
         Debug.Log("Checking for Slot");
@@ -22,35 +42,10 @@ public class EquipmentUI : MonoBehaviour
         }
         return null;
     }
+    
     public void StartSlotChange(int _modifierSlotNumber, ModifierSlot _slotToChangeTo)
     {
         equipment.ChangeSlot(slots[_modifierSlotNumber].GetModifier(), _slotToChangeTo);
-        // slots[_modifierSlotNumber].ClearSlot ();
-
-    }
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-        equipment = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Equipment>();
-        equipment.changedEquipmentCallback += UpdateEquipmentUI;
-
-        slots = itemsParent.GetComponentsInChildren<EquipmentSlot>();
-        for (int i = 0; i < slots.Length; i++)
-        {
-            slots[i].InitializeEquipmentSlotPosition(i);
-            // slots[i].icons[0].gameObject.GetComponent<DragDrop>().slotNumber = i;
-        }
-
-        // Debug.Log (slotss.TryGetValue (ModifierSlot.Head, out slots[0]));
-    }
-
-    private void Update()
-    {
-        if (Input.GetButtonDown("Equipment"))
-        {
-            equipmentUI.SetActive(!equipmentUI.activeSelf);
-        }
     }
 
     private void UpdateEquipmentUI()
@@ -95,12 +90,10 @@ public class EquipmentUI : MonoBehaviour
                 {
                     if (slots[3].GetModifierName() == modifierEffect.modifier.modifierName || slots[3].GetModifierName() == null)
                     {
-                        // Debug.Log("Slot 3 has " + slots[3].GetModifierName());
                         slots[3].AddItem(equipment.modifiers[i]);
                     }
                     else if (slots[4].GetModifierName() == modifierEffect.modifier.modifierName || slots[4].GetModifierName() == null)
                     {
-                        // Debug.Log("Slot 4 has " + slots[4].GetModifierName());
                         slots[4].AddItem(equipment.modifiers[i]);
                     }
                     else
@@ -128,9 +121,6 @@ public class EquipmentUI : MonoBehaviour
                     Debug.Log("All slots are reserved!");
                 }
             }
-            // else {
-            // slots[i].ClearSlot ();
-            // }
         }
     }
 }

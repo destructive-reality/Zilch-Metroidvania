@@ -5,7 +5,6 @@ public class Inventory : MonoBehaviour
 {
     public delegate void OnInventoryChanged();
     public OnInventoryChanged onItemChangedCallback;
-
     public List<GameObject> items;
     private Equipment equipment;
 
@@ -26,6 +25,7 @@ public class Inventory : MonoBehaviour
             onItemChangedCallback.Invoke();
         }
     }
+    
     public void UseItem(GameObject _item, ModifierSlot _slot = ModifierSlot.Weapon)
     {
         Debug.Log("Using " + _item.name + " on " + _slot.ToString());
@@ -40,27 +40,12 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    // public void UseAll()
-    // {
-    //     foreach (GameObject item in items)
-    //     {
-    //         UseItem(item);
-    //         // Könnte einen Fehler werfen, da in UseItem ein item der Liste gelöscht werden könnte. What to do..? MD
-    //     }
-    // }
-    // private void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.L) && items[0])    // For Testing  MD
-    //     {
-    //         UseItem(items[0], ModifierSlot.Leg);
-    //     }
-    //     if (Input.GetKeyDown(KeyCode.O) && items[0])    // For Testing  MD
-    //     {
-    //         UseItem(items[0], ModifierSlot.Body);
-    //     }
-    //     if (Input.GetKeyDown(KeyCode.P) && items[0])    // For Testing  MD
-    //     {
-    //         UseItem(items[0], ModifierSlot.Arm);
-    //     }
-    // }
+    
+    public void UseItem(GameObject _item, GameObject _equipmentSlot, EquipmentSlot _slotScript){
+        Debug.Log("Using " + _item.name + " on " + _equipmentSlot.name);
+        if (_slotScript.GetModifier() == null)
+        {
+            _slotScript.AddItem(_item);
+        }
+    }
 }

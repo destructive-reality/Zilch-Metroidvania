@@ -3,11 +3,16 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    #region Item-Info
     public int slotNumber;
     public bool isEquipment;
+    #endregion
+    
+    #region UI-Info
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    #endregion
 
     private void Awake()
     {
@@ -26,12 +31,15 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        // Item Text anzeigen?
     }
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 0.5f;
         canvasGroup.blocksRaycasts = false;
     }
+    
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
@@ -40,6 +48,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             rectTransform.anchoredPosition = new Vector2(0, 0);
         }
     }
+    
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 1f;
@@ -69,12 +78,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
                 EquipmentSlot targetScript = eventData.pointerEnter.GetComponentInParent<EquipmentSlot>();
                 if (isEquipment)
                 {
-                    // change slot
                     targetScript.ChangeSlotOf(slotNumber);
                 }
-                else    // when no equipment
+                else
                 {
-                    // equip
                     Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
                     Debug.Log("Slot number: " + slotNumber);
                     Debug.Log("Equip to position: " + targetScript.slotPosition);

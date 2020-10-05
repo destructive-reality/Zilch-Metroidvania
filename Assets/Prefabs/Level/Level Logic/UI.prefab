@@ -739,7 +739,7 @@ RectTransform:
   m_GameObject: {fileID: 2665979178092052570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 6542659394257706358}
   m_Father: {fileID: 7641880772417987492}
@@ -747,7 +747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 371.28, y: -169.7}
+  m_AnchoredPosition: {x: 313.6, y: -81.6}
   m_SizeDelta: {x: 1347.0446, y: 184.79926}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1033572498939188715
@@ -1033,14 +1033,14 @@ RectTransform:
   m_GameObject: {fileID: 4884042793022798630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 7641880772417987492}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 373.22, y: -180}
+  m_AnchoredPosition: {x: 316, y: -91}
   m_SizeDelta: {x: 1441, y: 294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2065969338276176786
@@ -1251,7 +1251,7 @@ GameObject:
   - component: {fileID: 2641519491262882838}
   - component: {fileID: 3632505407467265218}
   - component: {fileID: 8679034027086633594}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1274,8 +1274,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 376.62006, y: -164.79996}
-  m_SizeDelta: {x: 713.73724, y: 116.6387}
+  m_AnchoredPosition: {x: 317.16, y: -78.82}
+  m_SizeDelta: {x: 566.9246, y: 88.91777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3632505407467265218
 CanvasRenderer:
@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 0.4117647}
+  m_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 0.68235296}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

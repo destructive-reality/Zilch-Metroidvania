@@ -217,6 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f5feeceec16a945b7bc1991230e9b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotNumber: 0
+  isEquiped: 0
 --- !u!225 &3596193335394462557
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -548,6 +550,7 @@ MonoBehaviour:
   ArmButton: {fileID: 1271481937248392852}
   LegButton: {fileID: 1271481935958200647}
   BodyButton: {fileID: 1271481936324375265}
+  slotNumber: 0
 --- !u!1 &1271481937702995955
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,8 +617,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 84e8c5d054cfb9c4da345ca2fd3cc80c, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: bc01359175b619e47b0c381f23b74b70, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

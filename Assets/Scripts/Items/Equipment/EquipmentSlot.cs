@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class EquipmentSlot : MonoBehaviour
 {
-    public Image[] icons;
+    public Image icon;
     public Button ItemButton;
     public ModifierSlot slotPosition;
     private int slotNumber;
@@ -30,17 +30,15 @@ public class EquipmentSlot : MonoBehaviour
                 slotPosition = ModifierSlot.Weapon;
                 break;
         }
-        // icons[0].GetComponent<DragDrop>().isEquiped = true;
+        icon.gameObject.GetComponent<DragDrop>().slotNumber = _i;
     }
     public void AddItem(GameObject _newModifier)
     {
         modifier = _newModifier;
 
-        icons[0].sprite = modifier.GetComponent<Effect>().modifier.icon;
-        for (int i = 0; i < icons.Length; i++)
-        {
-            icons[i].enabled = true;
-        }
+        icon.sprite = modifier.GetComponent<Effect>().modifier.icon;
+        icon.enabled = true;
+
         ItemButton.interactable = true;
     }
 
@@ -48,11 +46,10 @@ public class EquipmentSlot : MonoBehaviour
     {
         modifier = null;
 
-        icons[0].sprite = null;
-        for (int i = 0; i < icons.Length; i++)
-        {
-            icons[i].enabled = false;
-        }
+        icon.sprite = null;
+
+        icon.enabled = false;
+
         ItemButton.interactable = false;
     }
 

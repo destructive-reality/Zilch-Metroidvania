@@ -126,8 +126,8 @@ public class Equipment : MonoBehaviour
                             modifierEffect.HeadUpdate();
                         }
                         break;
-                        default:       
-                            Debug.LogWarning("Not a valid Equimpent-Slot");
+                    default:
+                        Debug.LogWarning("Not a valid Equimpent-Slot");
                         break;
                 }
             }
@@ -166,5 +166,4 @@ public class Equipment : MonoBehaviour
                 break;
         }
     }
-    
 }

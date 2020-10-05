@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public int slotNumber;
-    public bool isEquiped;
+    public bool isEquipment;
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -50,7 +50,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             if (eventData.pointerEnter.GetComponentInParent<InventorySlot>())
             {
                 // InventorySlot targetScript = eventData.pointerEnter.GetComponentInParent<InventorySlot>();
-                if (isEquiped)
+                if (isEquipment)
                 {
                     Debug.Log("Unequip the item at slot " + slotNumber);
                     EquipmentSlot slotScript = GetComponentInParent<EquipmentSlot>();
@@ -67,12 +67,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             else if (eventData.pointerEnter.GetComponentInParent<EquipmentSlot>())
             {
                 EquipmentSlot targetScript = eventData.pointerEnter.GetComponentInParent<EquipmentSlot>();
-                if (isEquiped)
+                if (isEquipment)
                 {
                     // change slot
                     targetScript.ChangeSlotOf(slotNumber);
                 }
-                else    // when not equiped
+                else    // when no equipment
                 {
                     // equip
                     Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();

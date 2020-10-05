@@ -52,11 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac94882b355948f4184f11b2e0bad01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icons:
-  - {fileID: 1168583098074001449}
-  - {fileID: 1168583097302405959}
-  - {fileID: 1168583098122966154}
-  - {fileID: 1168583097714276140}
+  icon: {fileID: 1168583098074001449}
   ItemButton: {fileID: 1168583096914969149}
   slotPosition: 0
 --- !u!1 &1168583096914969151
@@ -196,7 +192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1168583097302405977
 RectTransform:
   m_ObjectHideFlags: 0
@@ -325,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1168583097714276142
 RectTransform:
   m_ObjectHideFlags: 0
@@ -525,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  isEquiped: 1
+  isEquipment: 1
 --- !u!225 &1778877355175199213
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -556,7 +552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1168583098122966156
 RectTransform:
   m_ObjectHideFlags: 0

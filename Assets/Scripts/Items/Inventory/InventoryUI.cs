@@ -21,7 +21,7 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].slotNumber = i;
-            slots[i].icons[0].gameObject.GetComponent<DragDrop>().slotNumber = i;
+            slots[i].icon.gameObject.GetComponent<DragDrop>().slotNumber = i;
         }
 
     }

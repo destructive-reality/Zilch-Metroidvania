@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271481935958200640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  isEquiped: 0
+  isEquipment: 0
 --- !u!225 &3596193335394462557
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271481936324375266
 RectTransform:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271481937248392853
 RectTransform:
   m_ObjectHideFlags: 0
@@ -541,11 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e1a8bed00587546b56e421220913e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icons:
-  - {fileID: 1271481936006723045}
-  - {fileID: 1271481937248392843}
-  - {fileID: 1271481935958200646}
-  - {fileID: 1271481936324375264}
+  icon: {fileID: 1271481936006723045}
   ItemButton: {fileID: 1271481937702995953}
   ArmButton: {fileID: 1271481937248392852}
   LegButton: {fileID: 1271481935958200647}

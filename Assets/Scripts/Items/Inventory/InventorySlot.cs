@@ -4,11 +4,8 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour//, IDropHandler
 {
-    public Image[] icons;
+    public Image icon;
     public Button ItemButton;
-    public Button ArmButton;
-    public Button LegButton;
-    public Button BodyButton;
     public int slotNumber;
     private GameObject modifier;
 
@@ -16,7 +13,7 @@ public class InventorySlot : MonoBehaviour//, IDropHandler
     {
         modifier = newModifier;
 
-        icons[0].sprite = modifier.GetComponent<Effect>().modifier.icon;
+        icon.sprite = modifier.GetComponent<Effect>().modifier.icon;
         EnableInteraction(true);
     }
 
@@ -24,26 +21,12 @@ public class InventorySlot : MonoBehaviour//, IDropHandler
     {
         modifier = null;
 
-        icons[0].sprite = null;
+        icon.sprite = null;
         EnableInteraction(false);
     }
 
-    public void OnArmButton()
+    public void EquipOnSlot(ModifierSlot slot)
     {
-        // Debug.Log("ArmButton clicked");
-        EquipOnSlot(ModifierSlot.Arm);
-    }
-    public void OnLegButton()
-    {
-        // Debug.Log("LegButton clicked");
-        EquipOnSlot(ModifierSlot.Leg);
-    }
-    public void OnBodyButton()
-    {
-        // Debug.Log("BodyButton clicked");
-        EquipOnSlot(ModifierSlot.Weapon);
-    }
-    public void EquipOnSlot(ModifierSlot slot) {
         // GameObject.FindGameObjectWithTag("Player").GetComponent<Equipment>().EquipModifier(modifier, slot);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>().UseItem(modifier, slot);
     }
@@ -61,11 +44,10 @@ public class InventorySlot : MonoBehaviour//, IDropHandler
     //         // unequip this item with number from Equipment
     //     }
     // }
-    private void EnableInteraction(bool value) {
-        for (int i = 0; i < icons.Length; i++)
-        {
-            icons[i].enabled = value;
-        }
-        ItemButton.interactable = ArmButton.interactable = BodyButton.interactable = LegButton.interactable = value;
+    private void EnableInteraction(bool value)
+    {
+        icon.enabled = value;
+
+        ItemButton.interactable = value;
     }
 }

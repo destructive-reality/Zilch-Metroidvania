@@ -45,9 +45,9 @@ public class UIController : MonoBehaviour {
     }
 
     private void addMaxHealth (int amount) {
-        Debug.LogWarning ("Max Health bigger than Images by " + amount);
+        // Debug.LogWarning ("Max Health bigger than Images by " + amount);
         for (int i = 0; i < amount; i++) {
-            Debug.Log ("Add " + amount + " HelthBlobs");
+            // Debug.Log ("Add " + amount + " HelthBlobs");
             GameObject newHelth = new GameObject ("HelthBlob (" + helthImages.Count + ")", typeof (CanvasRenderer), typeof (Image));
             newHelth.transform.SetParent (helth.transform);
             newHelth.transform.localScale = new Vector3 (1, 1, 1);

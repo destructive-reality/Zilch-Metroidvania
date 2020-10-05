@@ -15,7 +15,7 @@ public class FlyTowards : EnemyState
     public override IEnumerator FixedUpdate()
     {
         base.FixedUpdate();
-        Debug.Log("Flying towards target");
+        // Debug.Log("Flying towards target");
         behaviour.transform.position = Vector2.MoveTowards(behaviour.transform.position, target, speed);
         
         yield break;

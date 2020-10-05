@@ -56,7 +56,8 @@ public class PlayerMovement : MovementsBase
     public AudioClip dashSound;
     [Range(0.0f, 1.0f)]
     public float dashSoundVolume;
-    public List<AudioClip> walkSoundAudioClips;
+    public GroundSoundCollection defaultGroundSoundCollection;
+    [SerializeField] private GroundSoundCollection currentGroundSoundCollection;
     [Range(0.0f, 1.0f)]
     public float walkSoundVolume;
     public float walkSoundRate;
@@ -64,6 +65,8 @@ public class PlayerMovement : MovementsBase
 
     private void Awake()
     {
+        currentGroundSoundCollection = defaultGroundSoundCollection;
+
         dashTime = startDashTime;
         playerState = State.Idle;
 
@@ -90,7 +93,7 @@ public class PlayerMovement : MovementsBase
         {
             if (walkSoundTimer <= 0)
             {
-                playerAudioSource.PlayOneShot(walkSoundAudioClips[Random.Range(0, walkSoundAudioClips.Count)], walkSoundVolume);
+                playerAudioSource.PlayOneShot(currentGroundSoundCollection.walkSoundAudioClips[Random.Range(0, currentGroundSoundCollection.walkSoundAudioClips.Count)], walkSoundVolume);
                 walkSoundTimer = walkSoundRate;
             }
             walkSoundTimer -= Time.deltaTime;
@@ -186,5 +189,14 @@ public class PlayerMovement : MovementsBase
     public bool isAirborne()
     {
         return !isGrounded;
+    }
+
+    public void setGroundSoundCollection(GroundSoundCollection newCollection)
+    {
+        if (currentGroundSoundCollection != newCollection)
+        {
+            this.currentGroundSoundCollection = newCollection;
+            Debug.Log("Ground Sound Collection switched to: " + newCollection.name);
+        }
     }
 }

@@ -1,33 +1,60 @@
 ﻿using UnityEngine;
 
-public class FlyingEnemyAnimator : EnemyBehaviour {
+public class FlyingEnemyAnimator : EnemyBehaviour
+{
     public Stat speed;
-    private Vector3 startPosition;
-    private Vector3 target;
+    [SerializeField] private float aggressionRange = 10f;
+    private Vector2 startPosition;
+    private Vector2 target;
     private Animator animator;
 
-    public override void ResetState () { }
+    public override void ResetState() { }
 
-    public Vector3 GetStartPosition () {
+    public Vector3 GetStartPosition()
+    {
         return startPosition;
     }
 
-    private void Start () {
-        startPosition = new Vector3 (transform.position.x, transform.position.y);
-        animator = GetComponent<Animator> ();
+    private void Start()
+    {
+        startPosition = new Vector2(transform.position.x, transform.position.y);
+        animator = GetComponent<Animator>();
     }
 
-    private void Update () {
-        Vector3 playerPosition = GameObject.FindGameObjectWithTag ("Player").transform.position;
-        target = new Vector3 (playerPosition.x, playerPosition.y);
+    private void Update()
+    {
+        // Collider2D[] hit;
+        // hit = Physics2D.OverlapCircleAll(startPosition, aggressionRange, LayerMask.NameToLayer("Player"));
+        // Debug.Log(hit);
+        // foreach (var result in hit)
+        // {
+        //     Debug.Log("result");
+        //     Debug.Log(result);
+        // }
 
-        AnimatorStateInfo currentAnimation = animator.GetCurrentAnimatorStateInfo (0);
+        Vector2 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        target = new Vector2(playerPosition.x, playerPosition.y);
 
-        if ((currentAnimation.IsName ("FlyAround") || currentAnimation.IsName ("Wait")) &&
-        Vector3.Distance (startPosition, target) <= 10f) {
-            Debug.Log ("FlyingEnemy near Player");
-            animator.SetBool ("isPlayerNear", true);
+        AnimatorStateInfo currentAnimation = animator.GetCurrentAnimatorStateInfo(0);
 
+        if ((currentAnimation.IsName("FlyAround") || currentAnimation.IsName("Wait")) &&
+        Vector2.Distance(startPosition, target) <= aggressionRange)
+        {
+            Debug.Log("FlyingEnemy near Player");
+            animator.SetBool("isPlayerNear", true);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        if (startPosition != new Vector2(0, 0))
+        {
+            Gizmos.DrawWireSphere(startPosition, aggressionRange);
+        }
+        else
+        {
+            Gizmos.DrawWireSphere(this.transform.position, aggressionRange);
         }
     }
 }

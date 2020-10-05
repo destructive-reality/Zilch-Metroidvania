@@ -12,6 +12,8 @@ public class UIController : MonoBehaviour {
     public Slider healthBar;
     public GameObject helth;
     private List<Image> helthImages;
+    private Color helthBaseColor;
+    private Color helthDamagedColor;
 
     private void Awake () {
         if (_instance != null && _instance != this) {
@@ -22,6 +24,9 @@ public class UIController : MonoBehaviour {
 
         DontDestroyOnLoad (this.gameObject);
         helthImages = new List<Image> (helth.GetComponentsInChildren<Image> ());
+        helthBaseColor = helthImages[0].color;
+        helthDamagedColor = helthBaseColor;
+        helthDamagedColor.a = 0.3f;
     }
 
     public void setHealthInUI (int newCurrentHealth, int maxHealth) {
@@ -37,9 +42,11 @@ public class UIController : MonoBehaviour {
 
         for (int i = 0; i < maxHealth; i++) {
             if (i < newCurrentHealth) {
-                helthImages[i].color = new Vector4 (1, 1, 1, 1);
+                helthImages[i].color = helthBaseColor;
+                // helthImages[i].color = new Vector4 (1, 1, 1, 1);
             } else {
-                helthImages[i].color = new Vector4 (0.5f, 0.5f, 0.5f, 0.3f);
+                helthImages[i].color = helthDamagedColor;
+                // helthImages[i].color = new Vector4 (0.5f, 0.5f, 0.5f, 0.3f);
             }
         }
     }

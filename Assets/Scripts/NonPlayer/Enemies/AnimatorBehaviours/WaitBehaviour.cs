@@ -14,7 +14,7 @@ public class WaitBehaviour : StateMachineBehaviour {
         timer += Time.deltaTime;
         if (timer >= startTime + waitTime) {
             // Debug.Log ("Change to Fly Around");
-            animator.SetTrigger ("flyAround");
+            animator.SetTrigger ("nextAnimation");
         }
     }
 }

@@ -1878,7 +1878,7 @@ PrefabInstance:
     - target: {fileID: 6121853363776226691, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3031983
+      value: 2.997828
       objectReference: {fileID: 0}
     - target: {fileID: 6121853363776226691, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
@@ -4986,6 +4986,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoofEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8989124149612149202, guid: eeb673b58df287b42be0757f5555916c,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 8989124149612149225, guid: eeb673b58df287b42be0757f5555916c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5040,6 +5046,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989124149612149228, guid: eeb673b58df287b42be0757f5555916c,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989124149612149228, guid: eeb673b58df287b42be0757f5555916c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989124149612149228, guid: eeb673b58df287b42be0757f5555916c,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989124149612149228, guid: eeb673b58df287b42be0757f5555916c,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2.8573818
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb673b58df287b42be0757f5555916c, type: 3}

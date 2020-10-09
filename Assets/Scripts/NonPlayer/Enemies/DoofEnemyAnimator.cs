@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DoofEnemyAnimator : EnemyBehaviour
 {
-    [SerializeField] private float aggressionRange;
+    // public Stat speed;
     private Vector2 startPosition;
     void Start()
     {

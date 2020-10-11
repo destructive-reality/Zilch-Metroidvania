@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
     public Image icon;
-    public Button ItemButton;
+    public Button itemButton;
     protected GameObject item;
 
-    public void AddItem(GameObject newModifier)
+    public void AddItem(GameObject _newModifier)
     {
-        item = newModifier;
+        item = _newModifier;
         icon.sprite = item.GetComponent<Effect>().modifier.icon;
         EnableInteraction(true);
     }
@@ -23,10 +21,10 @@ public class Slot : MonoBehaviour
         EnableInteraction(false);
     }
 
-    protected void EnableInteraction(bool value)
+    protected void EnableInteraction(bool _value)
     {
-        icon.enabled = value;
-        ItemButton.interactable = value;
+        icon.enabled = _value;
+        itemButton.interactable = _value;
     }
 
 }

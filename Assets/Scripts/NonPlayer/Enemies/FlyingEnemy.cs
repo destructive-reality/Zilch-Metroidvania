@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class FlyingEnemy : EnemyBehaviour {
-    public Stat speed;
+    // public Stat speed;
     public float flyAroundRange;
     private Vector3 startPosition;
     private Vector3 target;

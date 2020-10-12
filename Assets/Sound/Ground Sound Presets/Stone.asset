@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6026a5e687852bb40be068cbbfdce1da, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
-  walkSoundAudioClips: []
+  walkSoundAudioClips:
+  - {fileID: 8300000, guid: feef7f5458b400745a5de452a9a0ddb8, type: 3}
+  - {fileID: 8300000, guid: 1de9bb5e424ec9e47a12b3207f3c1a31, type: 3}
+  - {fileID: 8300000, guid: 94838333f36fdfd4ca6381398182c04f, type: 3}
+  - {fileID: 8300000, guid: 1a928bee2b53a06428a181583ee9ffc2, type: 3}
+  - {fileID: 8300000, guid: 7eccb470b713afc46ba62677b46dd391, type: 3}
+  - {fileID: 8300000, guid: 8edac76d4a6794a45aff648996f0a998, type: 3}
+  - {fileID: 8300000, guid: 709f7dad780f3404aa2ae2741665b530, type: 3}
+  - {fileID: 8300000, guid: ba8f5be49a324224bb58529202de4533, type: 3}
+  - {fileID: 8300000, guid: 5918dd175379ec844b8431633289ed84, type: 3}
+  - {fileID: 8300000, guid: 9203d2783b0531e4da53f956d11e18bf, type: 3}

@@ -187,5 +187,5 @@ MonoBehaviour:
   isFacingRight: 1
   speed:
     baseValue: 4
-  attackRange: 2.25
+  attackRange: 1.7
   aggressionRange: 7

@@ -3323,7 +3323,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 0
-  currentHealth: 0
   animator: {fileID: 0}
   hitPoint: {fileID: 772826686}
 --- !u!1001 &1454434820

@@ -1225,9 +1225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 5
-  currentHealth: 0
   animator: {fileID: 1047782095710309742}
-  knockbackForce: 70
+  knockbackForce: 30
   playerMasterController: {fileID: 1317141260972420986}
   startInvincibleTime:
     baseValue: 2
@@ -1272,6 +1271,7 @@ MonoBehaviour:
   dashSoundVolume: 0.13
   defaultGroundSoundCollection: {fileID: 11400000, guid: 5f3096aef52362643a030306fdce7b6d,
     type: 2}
+  currentGroundSoundCollection: {fileID: 0}
   walkSoundVolume: 0.05
   walkSoundRate: 0.35
 --- !u!114 &7228385836571419879

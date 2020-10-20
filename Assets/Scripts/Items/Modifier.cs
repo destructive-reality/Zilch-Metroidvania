@@ -7,10 +7,12 @@ public class Modifier : MonoBehaviour
     private bool isInteractable = false;
     private Inventory playerInventory;
 
-    private void Awake() {
+    private void Awake()
+    {
         pickUpSprite = GetComponentInChildren<SpriteRenderer>();
         pickUpSprite.enabled = isInteractable;
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -19,16 +21,17 @@ public class Modifier : MonoBehaviour
             playerInventory = other.GetComponentInChildren<Inventory>();
         }
     }
+
     private void Update()
     {
         if (isInteractable && Input.GetButtonDown("PickUp") && playerInventory)
         {
             playerInventory.AddItem(modifierEffect);
-            // modifierEffect.GetComponent<Effects>().currentSlot = EquipmentSlot.Body;
             modifierEffect.transform.parent = playerInventory.gameObject.transform;
             Destroy(this.gameObject);
         }
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

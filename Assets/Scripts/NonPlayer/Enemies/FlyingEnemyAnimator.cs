@@ -2,9 +2,10 @@
 
 public class FlyingEnemyAnimator : EnemyBehaviour
 {
-    public Stat speed;
+    // public Stat speed;
     [SerializeField] private float aggressionRange = 10f;
     private Vector2 startPosition;
+    private Vector2 playerPosition;
     private Vector2 target;
     private Animator animator;
 
@@ -32,12 +33,12 @@ public class FlyingEnemyAnimator : EnemyBehaviour
         //     Debug.Log(result);
         // }
 
-        Vector2 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         target = new Vector2(playerPosition.x, playerPosition.y);
 
         AnimatorStateInfo currentAnimation = animator.GetCurrentAnimatorStateInfo(0);
 
-        if ((currentAnimation.IsName("FlyAround") || currentAnimation.IsName("Wait")) &&
+        if ((currentAnimation.IsName("FlyAround") || currentAnimation.IsName("WaitFor")) &&
         Vector2.Distance(startPosition, target) <= aggressionRange)
         {
             Debug.Log("FlyingEnemy near Player");

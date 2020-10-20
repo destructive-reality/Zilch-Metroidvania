@@ -2,7 +2,7 @@
 
 public class FallOnTrigger : MonoBehaviour
 {
-    public int damage;
+    public int damage = 1;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -23,8 +23,8 @@ public class FallOnTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && rb.velocity.y < -0.1f)
         {
             Debug.Log(rb.velocity.y);
-            Damaging.DealDamage(gameObject, damage, other.gameObject);
-            // other.gameObject.GetComponent<PlayerHealth>().getHit(10, gameObject);
+            // Damaging.DealDamage(gameObject, damage, other.gameObject);
+            other.gameObject.GetComponent<PlayerHealth>().getHit(damage, gameObject);
         }
     }
 }

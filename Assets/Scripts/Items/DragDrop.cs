@@ -3,11 +3,16 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    #region Item-Info
     public int slotNumber;
-    public bool isEquiped;
+    public bool isEquipment;
+    #endregion
+    
+    #region UI-Info
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    #endregion
 
     private void Awake()
     {
@@ -26,12 +31,15 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        // Item Text anzeigen?
     }
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 0.5f;
         canvasGroup.blocksRaycasts = false;
     }
+    
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
@@ -40,6 +48,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             rectTransform.anchoredPosition = new Vector2(0, 0);
         }
     }
+    
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 1f;
@@ -50,7 +59,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             if (eventData.pointerEnter.GetComponentInParent<InventorySlot>())
             {
                 // InventorySlot targetScript = eventData.pointerEnter.GetComponentInParent<InventorySlot>();
-                if (isEquiped)
+                if (isEquipment)
                 {
                     Debug.Log("Unequip the item at slot " + slotNumber);
                     EquipmentSlot slotScript = GetComponentInParent<EquipmentSlot>();
@@ -67,14 +76,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             else if (eventData.pointerEnter.GetComponentInParent<EquipmentSlot>())
             {
                 EquipmentSlot targetScript = eventData.pointerEnter.GetComponentInParent<EquipmentSlot>();
-                if (isEquiped)
+                if (isEquipment)
                 {
-                    // change slot
                     targetScript.ChangeSlotOf(slotNumber);
                 }
-                else    // when not equiped
+                else
                 {
-                    // equip
                     Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
                     Debug.Log("Slot number: " + slotNumber);
                     Debug.Log("Equip to position: " + targetScript.slotPosition);

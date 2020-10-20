@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class PlatformPatrollingEnemyAnimator : EnemyBehaviour {
-    public Stat speed;
+    // public Stat speed;
     public Transform groundDetector;
     private Animator animator;
     public override void ResetState () {

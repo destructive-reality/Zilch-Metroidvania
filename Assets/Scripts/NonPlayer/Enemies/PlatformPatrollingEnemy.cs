@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class PlatformPatrollingEnemy : EnemyBehaviour {
-    public Stat speed;
+    // public Stat speed;
     public Transform groundDetector;
     public override void ResetState () {
         SetState (new Patrol (this, speed.getValue (), groundDetector));

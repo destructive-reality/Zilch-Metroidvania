@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271481935958200640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7550754227291994819}
+      - m_Target: {fileID: 0}
         m_MethodName: OnLegButton
         m_Mode: 1
         m_Arguments:
@@ -142,6 +142,8 @@ GameObject:
   - component: {fileID: 1271481936006723045}
   - component: {fileID: 5007244112302098677}
   - component: {fileID: 3596193335394462557}
+  - component: {fileID: 1267790279033367267}
+  - component: {fileID: 8186654616009464826}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -217,6 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f5feeceec16a945b7bc1991230e9b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotNumber: 0
+  isEquipment: 0
 --- !u!225 &3596193335394462557
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -229,6 +233,44 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!223 &1267790279033367267
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271481936006723047}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 50
+  m_TargetDisplay: 0
+--- !u!114 &8186654616009464826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271481936006723047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1271481936324375267
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271481936324375266
 RectTransform:
   m_ObjectHideFlags: 0
@@ -347,7 +389,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7550754227291994819}
+      - m_Target: {fileID: 0}
         m_MethodName: OnBodyButton
         m_Mode: 1
         m_Arguments:
@@ -376,7 +418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271481937248392853
 RectTransform:
   m_ObjectHideFlags: 0
@@ -476,7 +518,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7550754227291994819}
+      - m_Target: {fileID: 0}
         m_MethodName: OnArmButton
         m_Mode: 1
         m_Arguments:
@@ -496,7 +538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1271481937555956541}
-  - component: {fileID: 7550754227291994819}
+  - component: {fileID: 7323313805083813771}
   m_Layer: 0
   m_Name: InventorySlot
   m_TagString: Untagged
@@ -527,7 +569,7 @@ RectTransform:
   m_AnchoredPosition: {x: -429.68564, y: 604.0914}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7550754227291994819
+--- !u!114 &7323313805083813771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -539,15 +581,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e1a8bed00587546b56e421220913e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icons:
-  - {fileID: 1271481936006723045}
-  - {fileID: 1271481937248392843}
-  - {fileID: 1271481935958200646}
-  - {fileID: 1271481936324375264}
-  ItemButton: {fileID: 1271481937702995953}
-  ArmButton: {fileID: 1271481937248392852}
-  LegButton: {fileID: 1271481935958200647}
-  BodyButton: {fileID: 1271481936324375265}
+  icon: {fileID: 1271481936006723045}
+  itemButton: {fileID: 1271481937702995953}
 --- !u!1 &1271481937702995955
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,8 +649,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 84e8c5d054cfb9c4da345ca2fd3cc80c, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: bc01359175b619e47b0c381f23b74b70, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

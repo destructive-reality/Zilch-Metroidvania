@@ -7,6 +7,47 @@ public class Equipment : MonoBehaviour
     public event OnEquipmentChange changedEquipmentCallback;
     public List<GameObject> modifiers;
 
+    private void Update()
+    {
+        if (modifiers.Count > 0)
+        {
+            foreach (GameObject modifier in modifiers)
+            {
+                Effect modifierEffect = modifier.GetComponent<Effect>();
+                switch (modifierEffect.currentSlot)
+                {
+                    case ModifierSlot.Arm:
+                        if (modifierEffect.modifier.effectArm.isUpdate)
+                        {
+                            modifierEffect.ArmUpdate();
+                        }
+                        break;
+                    case ModifierSlot.Leg:
+                        if (modifierEffect.modifier.effectLeg.isUpdate)
+                        {
+                            modifierEffect.LegUpdate();
+                        }
+                        break;
+                    case ModifierSlot.Weapon:
+                        if (modifierEffect.modifier.effectBody.isUpdate)
+                        {
+                            modifierEffect.WeaponUpdate();
+                        }
+                        break;
+                    case ModifierSlot.Head:
+                        if (modifierEffect.modifier.effectHead.isUpdate)
+                        {
+                            modifierEffect.HeadUpdate();
+                        }
+                        break;
+                    default:
+                        Debug.LogWarning("Not a valid Equimpent-Slot");
+                        break;
+                }
+            }
+        }
+    }
+    
     public bool ValidateOperation(ModifierSlot _slot)
     {
         int counter = 0;
@@ -53,6 +94,7 @@ public class Equipment : MonoBehaviour
         }
         return true;
     }
+    
     public void EquipModifier(GameObject _modifier, ModifierSlot _slot)
     {
         modifiers.Add(_modifier);
@@ -64,6 +106,15 @@ public class Equipment : MonoBehaviour
             changedEquipmentCallback.Invoke();
         }
     }
+
+    public void EquipModifier(GameObject _modifierToEquip, GameObject _equipmentSlot, EquipmentSlot _slotScript)
+    {
+        modifiers.Add(_modifierToEquip);
+        Effect modifierEffect = _modifierToEquip.GetComponent<Effect>();
+        modifierEffect.currentSlot = _slotScript.slotPosition;
+        ExecuteStartEffect(modifierEffect, modifierEffect.currentSlot);
+    }
+
     public void UnequipModifier(GameObject _modifier)
     {
         Effect modifierEffect = _modifier.GetComponent<Effect>();
@@ -75,6 +126,7 @@ public class Equipment : MonoBehaviour
             changedEquipmentCallback.Invoke();
         }
     }
+    
     public bool ChangeSlot(GameObject _modifier, ModifierSlot _slot)
     {
         Effect modifierEffect = _modifier.GetComponent<Effect>();
@@ -93,46 +145,7 @@ public class Equipment : MonoBehaviour
         }
         return true;
     }
-    private void Update()
-    {
-        if (modifiers.Count > 0)
-        {
-            foreach (GameObject modifier in modifiers)
-            {
-                Effect modifierEffect = modifier.GetComponent<Effect>();
-                switch (modifierEffect.currentSlot)
-                {
-                    case ModifierSlot.Arm:
-                        if (modifierEffect.modifier.effectArm.isUpdate)
-                        {
-                            modifierEffect.ArmUpdate();
-                        }
-                        break;
-                    case ModifierSlot.Leg:
-                        if (modifierEffect.modifier.effectLeg.isUpdate)
-                        {
-                            modifierEffect.LegUpdate();
-                        }
-                        break;
-                    case ModifierSlot.Weapon:
-                        if (modifierEffect.modifier.effectBody.isUpdate)
-                        {
-                            modifierEffect.WeaponUpdate();
-                        }
-                        break;
-                    case ModifierSlot.Head:
-                        if (modifierEffect.modifier.effectHead.isUpdate)
-                        {
-                            modifierEffect.HeadUpdate();
-                        }
-                        break;
-                        default:       
-                            Debug.LogWarning("Not a valid Equimpent-Slot");
-                        break;
-                }
-            }
-        }
-    }
+    
     private void ExecuteStartEffect(Effect _modifierEffect, ModifierSlot _slot, bool _isToBeEnabled = true)
     {
         switch (_slot)
@@ -166,5 +179,4 @@ public class Equipment : MonoBehaviour
                 break;
         }
     }
-    
 }

@@ -13,7 +13,7 @@ public class DoofEnemyAnimator : EnemyBehaviour
     private Vector2 playerPosition;
     // private Vector2 target;
 
-    void Start()
+    private void Start()
     {
         position = gameObject.transform.position;
         startPosition = new Vector2(position.x, position.y);
@@ -21,7 +21,7 @@ public class DoofEnemyAnimator : EnemyBehaviour
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
 
-    void Update()
+    private void Update()
     {
         position = gameObject.transform.position;
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
@@ -47,10 +47,14 @@ public class DoofEnemyAnimator : EnemyBehaviour
                 Debug.Log("Player out of Doof's aggro range");
                 animator.SetBool("isNeedingReset", true);
             }
+            else if (animator.GetBool("isNeedingReset") && Vector2.Distance(position, playerPosition) < aggressionRange)
+            {
+                animator.SetBool("isNeedingReset", false);
+            }
             else if (Vector2.Distance(position, playerPosition) < attackRange)
             {
                 Debug.Log("Doof in attackRange");
-                animator.SetTrigger("attackRange");
+                animator.SetTrigger("inAttackRange");
             }
         }
         else if (currentAnimation.IsName("Attack") && Vector2.Distance(position, playerPosition) > aggressionRange)
@@ -70,7 +74,12 @@ public class DoofEnemyAnimator : EnemyBehaviour
         throw new System.NotImplementedException();
     }
 
-    void OnDrawGizmosSelected()
+    public Vector2 StartPosition
+    {
+        get {return startPosition; }
+    }
+
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, aggressionRange);

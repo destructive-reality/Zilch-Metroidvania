@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class WalkBackBehaviour : StateMachineBehaviour
 {
+    // [SerializeField] private 
+    private DoofEnemyAnimator doofEnemyScript;
+    private Vector2 startPosition;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        // animator.ResetTrigger("nextAnimation");
         animator.SetBool("isNeedingReset", false);
-        animator.SetTrigger("reseted");
+        Debug.Log("In WalkBackState");
+        doofEnemyScript = animator.GetComponent<DoofEnemyAnimator>();
+        startPosition = doofEnemyScript.StartPosition;
+
+        
+        Debug.Log(startPosition);
+        // animator.SetTrigger("reseted");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

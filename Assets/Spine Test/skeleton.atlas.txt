@@ -1,0 +1,97 @@
+
+skeleton.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Auge_auf
+  rotate: true
+  xy: 967, 136
+  size: 36, 39
+  orig: 36, 39
+  offset: 0, 0
+  index: -1
+Auge_zu
+  rotate: false
+  xy: 967, 216
+  size: 39, 40
+  orig: 39, 40
+  offset: 0, 0
+  index: -1
+Flügel hinten
+  rotate: true
+  xy: 555, 9
+  size: 73, 56
+  orig: 73, 56
+  offset: 0, 0
+  index: -1
+Flügel vorne
+  rotate: true
+  xy: 956, 26
+  size: 96, 59
+  orig: 96, 59
+  offset: 0, 0
+  index: -1
+Full_Body
+  rotate: false
+  xy: 2, 28
+  size: 439, 336
+  orig: 439, 336
+  offset: 0, 0
+  index: -1
+Füße_vorne
+  rotate: true
+  xy: 967, 174
+  size: 40, 38
+  orig: 40, 38
+  offset: 0, 0
+  index: -1
+Füßehinten
+  rotate: true
+  xy: 613, 46
+  size: 36, 35
+  orig: 36, 35
+  offset: 0, 0
+  index: -1
+Kopf
+  rotate: true
+  xy: 736, 124
+  size: 240, 229
+  orig: 240, 229
+  offset: 0, 0
+  index: -1
+Körper
+  rotate: false
+  xy: 443, 84
+  size: 291, 280
+  orig: 291, 280
+  offset: 0, 0
+  index: -1
+Körper_hinten
+  rotate: true
+  xy: 736, 26
+  size: 96, 218
+  orig: 96, 218
+  offset: 0, 0
+  index: -1
+Ohr hinten
+  rotate: false
+  xy: 967, 258
+  size: 39, 48
+  orig: 39, 48
+  offset: 0, 0
+  index: -1
+Ohr vorne
+  rotate: true
+  xy: 967, 308
+  size: 56, 46
+  orig: 56, 46
+  offset: 0, 0
+  index: -1
+Stachel
+  rotate: true
+  xy: 443, 2
+  size: 80, 110
+  orig: 80, 110
+  offset: 0, 0
+  index: -1

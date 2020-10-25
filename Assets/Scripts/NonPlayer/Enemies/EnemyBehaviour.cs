@@ -5,12 +5,10 @@ public abstract class EnemyBehaviour : MonoBehaviour
     public bool isFacingRight = true;
     public Stat speed;
     protected EnemyState state;
-    // protected Coroutine currentCoroutine;
 
     public void SetState(EnemyState _state)
     {
         state = _state;
-        // currentCoroutine = 
         StartCoroutine(state.Start());
     }
 

@@ -23,7 +23,6 @@ public class AttackBehaviour : StateMachineBehaviour {
         frameCountForTesting ++;
         if (frameCountForTesting == 80 && animatorScript.DistanceToPlayer(attackPoint.position) <= attackRange)
         {
-            // Debug.Log("Inflict damage to player");
             combatScript.Attack();
         }
     }

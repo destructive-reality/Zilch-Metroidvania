@@ -42,12 +42,12 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.31
     min: 0
     max: 1
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.232
+    m_Value: 0.84
     min: 0.01
     max: 1
   rounded:
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: PostPro Settings
+  m_Name: Ingame
   m_EditorClassIdentifier: 
   components:
   - {fileID: 6557881652544846590}

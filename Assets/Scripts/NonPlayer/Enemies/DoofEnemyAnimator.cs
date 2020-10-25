@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoofEnemyAnimator : EnemyBehaviour
 {
+    public Transform groundDetector;
     [SerializeField] private float aggressionRange = 7f;
     private DoofEnemyCombat combatScript;
     private Animator animator;

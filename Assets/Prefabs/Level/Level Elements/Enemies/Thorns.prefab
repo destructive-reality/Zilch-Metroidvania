@@ -97,7 +97,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.87
+  m_Radius: 0.8
 --- !u!114 &3354500032329890718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   attackPower:
     baseValue: 1
   attackRange:
-    baseValue: 1.7
+    baseValue: 0.8
 --- !u!61 &3354500032329890787
 BoxCollider2D:
   m_ObjectHideFlags: 0

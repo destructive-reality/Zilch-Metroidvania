@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WalkTowardsBehaviour : StateMachineBehaviour
 {
     private float speed;
     private Rigidbody2D rigidbody;
     private Vector2 playerPosition;
-    private DoofEnemyAnimator enemyScript;
+    private HorizontalMovingEnemy enemyScript;
 
     #region MovementOnPlatform
     private Transform groundDetector;
@@ -17,7 +15,7 @@ public class WalkTowardsBehaviour : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        enemyScript = animator.GetComponent<DoofEnemyAnimator>();
+        enemyScript = animator.GetComponent<HorizontalMovingEnemy>();
         speed = enemyScript.speed.getValue();
         rigidbody = animator.gameObject.GetComponent<Rigidbody2D>();
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;

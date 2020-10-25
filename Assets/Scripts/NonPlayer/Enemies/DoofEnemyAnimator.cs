@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DoofEnemyAnimator : EnemyBehaviour
+public class DoofEnemyAnimator : HorizontalMovingEnemy
 {
-    public Transform groundDetector;
     [SerializeField] private float aggressionRange = 7f;
     private DoofEnemyCombat combatScript;
     private Animator animator;

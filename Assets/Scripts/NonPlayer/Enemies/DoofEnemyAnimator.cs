@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class DoofEnemyAnimator : EnemyBehaviour
 {
-    // public Stat speed;
-    public float attackRange;
     [SerializeField] private float aggressionRange = 7f;
+    private DoofEnemyCombat combatScript;
     private Animator animator;
     private Vector2 position;
     private Vector2 startPosition;
     private Vector2 playerPosition;
-    // private Vector2 target;
 
     private void Start()
     {
+        combatScript = gameObject.GetComponent<DoofEnemyCombat>();
         position = gameObject.transform.position;
         startPosition = new Vector2(position.x, position.y);
         animator = GetComponent<Animator>();
@@ -27,7 +26,7 @@ public class DoofEnemyAnimator : EnemyBehaviour
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         AnimatorStateInfo currentAnimation = animator.GetCurrentAnimatorStateInfo(0);
 
-        if (!currentAnimation.IsName("WalkTowards") && Vector2.Distance(position, playerPosition) <= aggressionRange && !animator.GetBool("isPlayerNear"))
+        if (!currentAnimation.IsName("WalkTowards") && DistanceToPlayer(position) <= aggressionRange && !animator.GetBool("isPlayerNear"))
         {
             Debug.Log("DoofEnemy is near Player");
             animator.SetBool("isPlayerNear", true);
@@ -42,22 +41,22 @@ public class DoofEnemyAnimator : EnemyBehaviour
             {
                 Flip();
             }
-            if (Vector2.Distance(position, playerPosition) > aggressionRange && !animator.GetBool("isNeedingReset"))
+            if (DistanceToPlayer(position) > aggressionRange && !animator.GetBool("isNeedingReset"))
             {
-                Debug.Log("Player out of Doof's aggro range");
-                animator.SetBool("isNeedingReset", true);
+                Debug.Log("Player out of Doof's aggro range");      // Dieser Teil wird komischer weise ausgeführt, 
+                animator.SetBool("isNeedingReset", true);           // nachdem das OnStateEnter von Reset-State ausgeführt wurde (MD)
             }
-            else if (animator.GetBool("isNeedingReset") && Vector2.Distance(position, playerPosition) < aggressionRange)
+            else if (animator.GetBool("isNeedingReset") && DistanceToPlayer(position) < aggressionRange)
             {
                 animator.SetBool("isNeedingReset", false);
             }
-            else if (Vector2.Distance(position, playerPosition) < attackRange)
+            if (DistanceToPlayer(combatScript.attackPoint.position) < combatScript.attackRange.getValue())
             {
-                Debug.Log("Doof in attackRange");
+                // Debug.Log("Doof in attackRange");
                 animator.SetTrigger("inAttackRange");
             }
         }
-        else if (currentAnimation.IsName("Attack") && Vector2.Distance(position, playerPosition) > aggressionRange)
+        else if (currentAnimation.IsName("Attack") && DistanceToPlayer(position) > aggressionRange)
         {
             Debug.Log("Player out of Doof's aggro range");
             animator.SetBool("isNeedingReset", true);
@@ -76,14 +75,18 @@ public class DoofEnemyAnimator : EnemyBehaviour
 
     public Vector2 StartPosition
     {
-        get {return startPosition; }
+        get { return startPosition; }
+    }
+
+    public float DistanceToPlayer(Vector2 _fromPoint)
+    {
+        float range = Vector2.Distance(_fromPoint, playerPosition);
+        return range;
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(this.transform.position, aggressionRange);
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(this.transform.position, attackRange);
+        Gizmos.DrawWireSphere(this.transform.position, aggressionRange);
     }
 }

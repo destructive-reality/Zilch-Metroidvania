@@ -2530,7 +2530,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761358706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.01, y: -19.14, z: -0.6376953}
+  m_LocalPosition: {x: -17.01, y: -19.14, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 200668689}
@@ -2579,6 +2579,7 @@ MonoBehaviour:
   patrolPointTransforms:
   - {fileID: 825923882}
   - {fileID: 2132376627}
+  aggressionRange: 7
 --- !u!1 &772826685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,7 +2634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825923881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 999541777}

@@ -3,7 +3,7 @@
 public class DoofEnemyAnimator : HorizontalMovingEnemy
 {
     [SerializeField] private float aggressionRange = 7f;
-    private DoofEnemyCombat combatScript;
+    private MeleeEnemyCombat combatScript;
     private Animator animator;
     private Vector2 position;
     private Vector2 startPosition;
@@ -11,7 +11,7 @@ public class DoofEnemyAnimator : HorizontalMovingEnemy
 
     private void Start()
     {
-        combatScript = gameObject.GetComponent<DoofEnemyCombat>();
+        combatScript = gameObject.GetComponent<MeleeEnemyCombat>();
         position = gameObject.transform.position;
         startPosition = new Vector2(position.x, position.y);
         animator = GetComponent<Animator>();

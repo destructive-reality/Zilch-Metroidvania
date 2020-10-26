@@ -90,7 +90,8 @@ GameObject:
   - component: {fileID: 8989124149612149231}
   - component: {fileID: 8989124149612149228}
   - component: {fileID: 8989124149612149229}
-  - component: {fileID: 8230635881133743602}
+  - component: {fileID: 4686470635078003931}
+  - component: {fileID: 188168342989609801}
   - component: {fileID: 8989124149612149224}
   m_Layer: 11
   m_Name: DoofEnemy
@@ -192,8 +193,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.29045224
+  m_UseAutoMass: 0
+  m_Mass: 2.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -221,7 +222,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8230635881133743602
+--- !u!114 &4686470635078003931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,14 +231,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 8989124149612149202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a792862e2ebba8f4a890e0a307c08428, type: 3}
+  m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 3
+  animator: {fileID: 8989124149612149229}
+  knockbackForce: 30
+--- !u!114 &188168342989609801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989124149612149202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed29c374537481a44a3ea5436b6320a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8989124149612149229}
   attackPower:
     baseValue: 1
   attackRange:
-    baseValue: 2
+    baseValue: 1.8
   attackTime:
     baseValue: 1.5
   attackPoint: {fileID: 9160113071482698690}

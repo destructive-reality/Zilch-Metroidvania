@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DoofEnemyCombat : EnemyCombat
+public class MeleeEnemyCombat : EnemyCombat
 {
     public Transform attackPoint;
     public Collider2D damagingCollider;
@@ -21,7 +21,7 @@ public class DoofEnemyCombat : EnemyCombat
         {
             if (collider.CompareTag("Player"))
             {
-                Debug.Log("Damaging Player");
+                // Debug.Log("Damaging Player");
                 collider.GetComponent<PlayerHealth>().getHit((int)attackPower.getValue(), gameObject);
             }
             damagingCollider.enabled = false;

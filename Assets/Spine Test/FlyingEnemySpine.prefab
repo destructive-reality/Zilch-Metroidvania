@@ -12,7 +12,10 @@ GameObject:
   - component: {fileID: 141134427586545248}
   - component: {fileID: 141134427586545249}
   - component: {fileID: 141134427586545262}
+  - component: {fileID: 4058713844957919429}
   - component: {fileID: 141134427586545250}
+  - component: {fileID: 4074813437772349487}
+  - component: {fileID: 145904598958754680}
   m_Layer: 0
   m_Name: FlyingEnemySpine
   m_TagString: Untagged
@@ -100,6 +103,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4058713844957919429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141134427586545251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e973959bbd27f6a4980a1006163b0c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &141134427586545250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +155,40 @@ MonoBehaviour:
     useCustomMixMode: 1
     layerMixModes: 01000000
     layerBlendModes: 01000000
+--- !u!50 &4074813437772349487
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141134427586545251}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &145904598958754680
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141134427586545251}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.49538952, y: 0.110051274}
+  m_Size: {x: 3.8069606, y: 2.6227808}
+  m_Direction: 1

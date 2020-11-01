@@ -167,11 +167,11 @@ public class PlayerMovement : MovementsBase
         //TODO Statt dem axisinput lieber die rigibody-velocity verwenden? BH
         if (horizontalAxisInput > 0 && !movingRight)
         {
-            Flip();
+            flip();
         }
         else if (horizontalAxisInput < 0 && movingRight)
         {
-            Flip();
+            flip();
         }
     }
 

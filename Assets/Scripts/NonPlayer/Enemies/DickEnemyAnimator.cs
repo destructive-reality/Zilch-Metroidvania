@@ -28,7 +28,7 @@ public class DickEnemyAnimator : HorizontalMovingEnemy
         {
             patrolPoints.Add(new Vector2(trn.position.x, trn.position.y));
         }
-        // foreach (Transform transform in patrolPointTransforms)  // Might as well delete uneccessary GOs /\/\D
+        // foreach (Transform transform in patrolPointTransforms)  // Might as well delete uneccessary GOs MD
         // {
         //     GameObject.Destroy(transform.gameObject);
         // }
@@ -56,20 +56,8 @@ public class DickEnemyAnimator : HorizontalMovingEnemy
         }
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
     private void OnDrawGizmosSelected()
     {
-        // Gizmos.color = Color.red;
-        // Vector2 gizmoTarget = new Vector2(this.transform.position.x, this.transform.position.y);
-        // if (isFacingRight)
-        //     gizmoTarget.x += aggressionRange;
-        // else
-        //     gizmoTarget.x -= aggressionRange;
-        // Gizmos.DrawLine(this.transform.position, gizmoTarget);
         Gizmos.color = Color.green;
         Gizmos.DrawRay(this.transform.position, new Vector2(rayDirection.x, 0));
     }

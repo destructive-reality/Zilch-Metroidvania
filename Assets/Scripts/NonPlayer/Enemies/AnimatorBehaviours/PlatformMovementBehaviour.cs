@@ -15,7 +15,6 @@ public class PlatformMovementBehaviour : StateMachineBehaviour {
         speed = enemyScript.speed.getValue();
         moveOnLayer = LayerMask.GetMask("Ground");
         groundDetector = enemyScript.groundDetector;
-
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)

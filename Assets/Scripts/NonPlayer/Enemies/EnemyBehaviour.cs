@@ -14,7 +14,8 @@ public abstract class EnemyBehaviour : MonoBehaviour
 
     public abstract void ResetState();
 
-    public void Flip () {
+    public void Flip()
+    {
         isFacingRight = !isFacingRight;
 
         Vector3 localXScale = transform.localScale;

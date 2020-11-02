@@ -20,7 +20,7 @@ public class Patrol : EnemyState {
         RaycastHit2D groundInfo = Physics2D.Raycast (groundDetection.position, Vector2.down, rayDistance, moveOnLayer);
         if (groundInfo.collider == null) {
             // Debug.Log("PatrollingEnemy needs to flip");
-            behaviour.Flip ();
+            behaviour.flip ();
         }
         yield break;
     }

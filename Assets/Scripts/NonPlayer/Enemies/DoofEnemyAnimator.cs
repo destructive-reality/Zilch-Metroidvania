@@ -28,11 +28,11 @@ public class DoofEnemyAnimator : MeleeHorizontalMovingEnemy
         {
             if (playerPosition.x < position.x && isFacingRight)
             {
-                Flip();
+                flip();
             }
             else if (playerPosition.x > position.x && !isFacingRight)
             {
-                Flip();
+                flip();
             }
             if (DistanceToPlayer(position) > aggressionRange && !animator.GetBool("isNeedingReset"))
             {

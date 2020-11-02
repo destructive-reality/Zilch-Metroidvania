@@ -24,7 +24,7 @@ public class PointsPatrolBehaviour : PlatformMovementBehaviour
         if ((animator.transform.position.x < patrolPoints[0].x && animator.transform.position.x < patrolPoints[1].x) ||
             (animator.transform.position.x > patrolPoints[0].x && animator.transform.position.x > patrolPoints[1].x))
         {
-            enemyScript.Flip();
+            enemyScript.flip();
         }
 
     }
@@ -42,7 +42,7 @@ public class PointsPatrolBehaviour : PlatformMovementBehaviour
             if ((patrolPoints[currentTarget].x > animator.transform.position.x && !enemyScript.isFacingRight) ||
                 (patrolPoints[currentTarget].x < animator.transform.position.x && enemyScript.isFacingRight))
             {
-                enemyScript.Flip();
+                enemyScript.flip();
             }
         }
     }

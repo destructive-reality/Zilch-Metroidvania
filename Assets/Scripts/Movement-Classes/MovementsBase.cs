@@ -5,7 +5,7 @@ public abstract class MovementsBase : MonoBehaviour
     public bool isFacingRight = true;
     public Stat speed;
 
-    public void Flip()
+    public void flip()
     {
         isFacingRight = !isFacingRight;
 
@@ -17,7 +17,7 @@ public abstract class MovementsBase : MonoBehaviour
 
     public void flipRight()
     {
-        movingRight = true;
+        isFacingRight = true;
 
         Vector3 localScale = transform.localScale;
         if (localScale.x < 0)
@@ -29,7 +29,7 @@ public abstract class MovementsBase : MonoBehaviour
 
     public void flipLeft()
     {
-        movingRight = false;
+        isFacingRight = false;
 
         Vector3 localScale = transform.localScale;
         if (localScale.x > 0)

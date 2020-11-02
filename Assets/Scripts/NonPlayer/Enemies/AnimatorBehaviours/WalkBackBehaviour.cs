@@ -34,7 +34,7 @@ public class WalkBackBehaviour : StateMachineBehaviour
         }
         else
         {
-            doofEnemyScript.Flip();
+            doofEnemyScript.flip();
             return;
         }
         if (Vector2.Distance(animator.transform.position, startPosition) <= 1f)

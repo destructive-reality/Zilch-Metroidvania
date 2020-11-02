@@ -16,7 +16,7 @@ public class WalkTowardsBehaviour : PlatformMovementBehaviour
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;
         if ((animator.transform.position.x > playerPosition.x && enemyScript.isFacingRight) || (animator.transform.position.x < playerPosition.x && !enemyScript.isFacingRight))
         {
-            enemyScript.Flip();
+            enemyScript.flip();
         }
     }
 

@@ -2,13 +2,12 @@
 
 public abstract class MovementsBase : MonoBehaviour
 {
-    protected bool movingRight = true;
+    public bool isFacingRight = true;
     public Stat speed;
 
-    //Flip the Sprite (Default: Right)
     public void flip()
     {
-        movingRight = !movingRight;
+        isFacingRight = !isFacingRight;
 
         //TODO kann man das nicht ohne zwischenspeichern direkt flippen?
         Vector3 localXScale = transform.localScale;
@@ -18,7 +17,7 @@ public abstract class MovementsBase : MonoBehaviour
 
     public void flipRight()
     {
-        movingRight = true;
+        isFacingRight = true;
 
         Vector3 localScale = transform.localScale;
         if (localScale.x < 0)
@@ -30,7 +29,7 @@ public abstract class MovementsBase : MonoBehaviour
 
     public void flipLeft()
     {
-        movingRight = false;
+        isFacingRight = false;
 
         Vector3 localScale = transform.localScale;
         if (localScale.x > 0)

@@ -15,11 +15,11 @@ public class LevitateTo : MovementsBase
             headingTarget = target.position - this.transform.position;
             // float targetDistance = headingTarget.magnitude;
             // float targetAngle = Vector3.Angle(this.transform.forward, headingTarget);
-            if (headingTarget.x > 0 && !movingRight)
+            if (headingTarget.x > 0 && !isFacingRight)
             {
                 flip();
             }
-            if (headingTarget.x < 0 && movingRight)
+            if (headingTarget.x < 0 && isFacingRight)
             {
                 flip();
             }

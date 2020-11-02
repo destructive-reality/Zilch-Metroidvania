@@ -22,7 +22,7 @@ public class PlatformPatrolBehaviour : StateMachineBehaviour {
         RaycastHit2D groundInfo = Physics2D.Raycast (groundDetection.position, Vector2.down, rayDistance, moveOnLayer);
         if (groundInfo.collider == null) {
             // Debug.Log ("PatrollingEnemy needs to flip");
-            enemyScript.Flip ();
+            enemyScript.flip ();
         }
         if (enemyScript.isFacingRight) {
             animator.transform.Translate (Vector2.right * speed * Time.deltaTime);

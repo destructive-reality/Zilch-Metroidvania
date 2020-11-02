@@ -92,7 +92,7 @@ MonoBehaviour:
   isFacingRight: 0
   speed:
     baseValue: 0.07
-  aggressionRange: 8
+  aggressionRange: 10
 --- !u!114 &9175722806140414136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc29372d69283b4fadff344c3fd5c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFacingRight: 1
   speed:
     baseValue: 0
 --- !u!114 &509972248452091645

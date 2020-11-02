@@ -12,7 +12,7 @@ public class PointsPatrolBehaviour : PlatformMovementBehaviour
         base.OnStateEnter(animator, animatorStateInfo, layerIndex);
         
         enemyScript = animator.gameObject.GetComponent<DickEnemyAnimator>();
-        Debug.Log(enemyScript.GetType());
+
         if (enemyScript is DickEnemyAnimator)
         {
             dickScript = enemyScript as DickEnemyAnimator; 

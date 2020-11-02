@@ -32,7 +32,7 @@ public class PatrolTowardsPlayerBehaviour : WalkTowardsBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
-        if ((playerPosition.x < leftX && animator.transform.position.x < leftX + 1) || (playerPosition.x > rightX && animator.transform.position.x > rightX - 1))
+        if ((playerPosition.x < leftX && animator.transform.position.x < leftX + 1.5f) || (playerPosition.x > rightX && animator.transform.position.x > rightX - 1.5f))
         {
             Debug.Log("Distance to leftX is " + (leftX - playerPosition.x));
             if ((leftX - playerPosition.x > 3 && leftX - playerPosition.x < 10) || (playerPosition.x - rightX > 3 && playerPosition.x - rightX < 10))
@@ -41,7 +41,7 @@ public class PatrolTowardsPlayerBehaviour : WalkTowardsBehaviour
             }
             else
             {
-                animator.SetTrigger("wait");
+                animator.SetBool("isNeedingReset", true);
             }
         }
         // if (playerPosition.x < leftX || playerPosition.x > rightX)

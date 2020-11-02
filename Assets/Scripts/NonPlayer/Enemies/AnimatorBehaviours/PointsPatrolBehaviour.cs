@@ -10,16 +10,22 @@ public class PointsPatrolBehaviour : PlatformMovementBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, animatorStateInfo, layerIndex);
-        
+
         enemyScript = animator.gameObject.GetComponent<DickEnemyAnimator>();
 
         if (enemyScript is DickEnemyAnimator)
         {
-            dickScript = enemyScript as DickEnemyAnimator; 
+            dickScript = enemyScript as DickEnemyAnimator;
             patrolPoints = dickScript.getPatrolPoints();
         }
         else
             Debug.LogWarning("No Dick for PointPatorlBehaviour ");
+
+        if ((animator.transform.position.x < patrolPoints[0].x && animator.transform.position.x < patrolPoints[1].x) ||
+            (animator.transform.position.x > patrolPoints[0].x && animator.transform.position.x > patrolPoints[1].x))
+        {
+            enemyScript.Flip();
+        }
 
     }
 
@@ -33,7 +39,11 @@ public class PointsPatrolBehaviour : PlatformMovementBehaviour
                 currentTarget = 0;
             else
                 currentTarget++;
-            enemyScript.Flip();
+            if ((patrolPoints[currentTarget].x > animator.transform.position.x && !enemyScript.isFacingRight) ||
+                (patrolPoints[currentTarget].x < animator.transform.position.x && enemyScript.isFacingRight))
+            {
+                enemyScript.Flip();
+            }
         }
     }
 

@@ -8,7 +8,6 @@ public class PatrolTowardsPlayerBehaviour : WalkTowardsBehaviour
     private List<Vector2> patrolPoints;
     private float leftX;
     private float rightX;
-    // private int currentTarget = 0;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -19,6 +18,7 @@ public class PatrolTowardsPlayerBehaviour : WalkTowardsBehaviour
         dickScript = enemyScript as DickEnemyAnimator;
         patrolPoints = dickScript.getPatrolPoints();
 
+        leftX = rightX = patrolPoints[0].x;
         foreach (Vector2 point in patrolPoints)
         {
             if (point.x < leftX)
@@ -26,12 +26,10 @@ public class PatrolTowardsPlayerBehaviour : WalkTowardsBehaviour
             if (point.x > rightX)
                 rightX = point.x;
         }
-
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.OnStateUpdate(animator, stateInfo, layerIndex);
         if ((playerPosition.x < leftX && animator.transform.position.x < leftX + 1.5f) || (playerPosition.x > rightX && animator.transform.position.x > rightX - 1.5f))
         {
             Debug.Log("Distance to leftX is " + (leftX - playerPosition.x));
@@ -44,10 +42,9 @@ public class PatrolTowardsPlayerBehaviour : WalkTowardsBehaviour
                 animator.SetBool("isNeedingReset", true);
             }
         }
-        // if (playerPosition.x < leftX || playerPosition.x > rightX)
-        // {
-        //     return;
-        // }
+        else
+            base.OnStateUpdate(animator, stateInfo, layerIndex);
+
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

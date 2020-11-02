@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5821229737130567920}
   - component: {fileID: 5821229737130567931}
   - component: {fileID: 5821229737130567930}
+  - component: {fileID: 3990488031853133817}
   m_Layer: 11
   m_Name: DickEnemy
   m_TagString: Untagged
@@ -186,6 +187,22 @@ MonoBehaviour:
   - {fileID: 5821229737200081065}
   - {fileID: 5821229738511023536}
   aggressionRange: 7
+--- !u!114 &3990488031853133817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5821229737130567921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 5
+  animator: {fileID: 5821229737130567920}
+  knockbackForce: 10
 --- !u!1 &5821229737200081066
 GameObject:
   m_ObjectHideFlags: 0

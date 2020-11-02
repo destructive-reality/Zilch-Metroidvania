@@ -12,7 +12,7 @@ public class PatrolMovement : MovementsBase
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, rayDistance, ~ignoreLayers);
         if (groundInfo.collider == null)
         {
-            Flip();
+            flip();
         }
     }
     private void FixedUpdate()

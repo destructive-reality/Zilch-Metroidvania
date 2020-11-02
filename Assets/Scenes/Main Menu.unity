@@ -238,11 +238,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Pressable Button (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 3876854143659251836, guid: 7f3cea43c0db39148adf92e5b3141e19,
-        type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3876854144492606570, guid: 7f3cea43c0db39148adf92e5b3141e19,
         type: 3}
       propertyPath: m_Color.r
@@ -402,11 +397,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI Pressable Button (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876854143659251836, guid: 7f3cea43c0db39148adf92e5b3141e19,
-        type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3876854144492606570, guid: 7f3cea43c0db39148adf92e5b3141e19,
         type: 3}
@@ -669,7 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 868066013}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &781129926 stripped
@@ -681,12 +671,6 @@ Transform:
 --- !u!224 &819347747 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3876854143659251834, guid: 7f3cea43c0db39148adf92e5b3141e19,
-    type: 3}
-  m_PrefabInstance: {fileID: 3876854143915776345}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &868066013 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3876854143659251835, guid: 7f3cea43c0db39148adf92e5b3141e19,
     type: 3}
   m_PrefabInstance: {fileID: 3876854143915776345}
   m_PrefabAsset: {fileID: 0}
@@ -1243,12 +1227,7 @@ PrefabInstance:
     - target: {fileID: 3876854143659251836, guid: 7f3cea43c0db39148adf92e5b3141e19,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876854143659251836, guid: 7f3cea43c0db39148adf92e5b3141e19,
-        type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3876854143659251836, guid: 7f3cea43c0db39148adf92e5b3141e19,
         type: 3}

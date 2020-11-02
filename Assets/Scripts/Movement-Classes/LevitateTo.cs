@@ -17,11 +17,11 @@ public class LevitateTo : MovementsBase
             // float targetAngle = Vector3.Angle(this.transform.forward, headingTarget);
             if (headingTarget.x > 0 && !isFacingRight)
             {
-                Flip();
+                flip();
             }
             if (headingTarget.x < 0 && isFacingRight)
             {
-                Flip();
+                flip();
             }
         }
     }

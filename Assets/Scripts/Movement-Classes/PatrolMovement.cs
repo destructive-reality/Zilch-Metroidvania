@@ -17,7 +17,7 @@ public class PatrolMovement : MovementsBase
     }
     private void FixedUpdate()
     {
-        if (movingRight)
+        if (isFacingRight)
         {
             transform.Translate(Vector2.right * speed.getValue() * Time.deltaTime);
         }

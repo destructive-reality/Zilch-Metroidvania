@@ -2,12 +2,12 @@
 
 public abstract class MovementsBase : MonoBehaviour
 {
-    protected bool movingRight = true;
+    public bool isFacingRight = true;
     public Stat speed;
 
-    protected void Flip()
+    public void Flip()
     {
-        movingRight = !movingRight;
+        isFacingRight = !isFacingRight;
 
         Vector3 localXScale = transform.localScale;
         localXScale.x *= -1;

@@ -137,7 +137,7 @@ public class PlayerMovement : MovementsBase
             {
                 playerAudioSource.PlayOneShot(dashSound, dashSoundVolume);
                 playerState = State.Dashing;
-                dashDirecton = movingRight ? 1 : -1;
+                dashDirecton = isFacingRight ? 1 : -1;
                 dashCooldown = Time.time + startDashCooldown.getValue();
             }
             // if (Input.GetButtonDown("Attack"))     // Attacking in this script? One script for all actions?  MD
@@ -165,11 +165,11 @@ public class PlayerMovement : MovementsBase
 
         //Flip character sprite based on move direction
         //TODO Statt dem axisinput lieber die rigibody-velocity verwenden? BH
-        if (horizontalAxisInput > 0 && !movingRight)
+        if (horizontalAxisInput > 0 && !isFacingRight)
         {
             Flip();
         }
-        else if (horizontalAxisInput < 0 && movingRight)
+        else if (horizontalAxisInput < 0 && isFacingRight)
         {
             Flip();
         }

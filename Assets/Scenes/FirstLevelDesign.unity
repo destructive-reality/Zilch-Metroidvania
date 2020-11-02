@@ -5301,6 +5301,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Power Modifier
       objectReference: {fileID: 0}
+    - target: {fileID: 7434394318933435107, guid: f0b7a5759f454a24782e0a63d969863f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7434394318933435110, guid: f0b7a5759f454a24782e0a63d969863f,
         type: 3}
       propertyPath: m_LocalPosition.x

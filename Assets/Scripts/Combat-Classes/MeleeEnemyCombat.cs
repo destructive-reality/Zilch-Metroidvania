@@ -21,7 +21,7 @@ public class MeleeEnemyCombat : EnemyCombat
         {
             if (collider.CompareTag("Player"))
             {
-                // Debug.Log("Damaging Player");
+                Debug.Log("Damaging Player");
                 collider.GetComponent<PlayerHealth>().getHit((int)attackPower.getValue(), gameObject);
             }
             damagingCollider.enabled = false;

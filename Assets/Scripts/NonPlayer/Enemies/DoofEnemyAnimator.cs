@@ -1,21 +1,16 @@
 ﻿using UnityEngine;
 
-public class DoofEnemyAnimator : HorizontalMovingEnemy
+public class DoofEnemyAnimator : MeleeHorizontalMovingEnemy
 {
     [SerializeField] private float aggressionRange = 7f;
-    private MeleeEnemyCombat combatScript;
-    private Animator animator;
     private Vector2 position;
     private Vector2 startPosition;
-    private Vector2 playerPosition;
 
-    private void Start()
+    protected override void Start()
     {
-        combatScript = gameObject.GetComponent<MeleeEnemyCombat>();
+        base.Start();
         position = gameObject.transform.position;
         startPosition = new Vector2(position.x, position.y);
-        animator = GetComponent<Animator>();
-        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
 
     private void Update()
@@ -74,12 +69,6 @@ public class DoofEnemyAnimator : HorizontalMovingEnemy
     public Vector2 StartPosition
     {
         get { return startPosition; }
-    }
-
-    public float DistanceToPlayer(Vector2 _fromPoint)
-    {
-        float range = Vector2.Distance(_fromPoint, playerPosition);
-        return range;
     }
 
     private void OnDrawGizmosSelected()

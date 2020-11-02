@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DickEnemyAnimator : HorizontalMovingEnemy
+public class DickEnemyAnimator : MeleeHorizontalMovingEnemy
 {
     public Transform[] patrolPointTransforms;
     [SerializeField] private float aggressionRange = 5;
-    private Animator animator;
     private List<Vector2> patrolPoints;
     private Vector2 rayDirection;
 
@@ -20,9 +19,9 @@ public class DickEnemyAnimator : HorizontalMovingEnemy
         return patrolPoints;
     }
 
-    private void Start()
+    protected override void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
+        base.Start();
         patrolPoints = new List<Vector2>();
         foreach (Transform trn in patrolPointTransforms)
         {
@@ -39,7 +38,7 @@ public class DickEnemyAnimator : HorizontalMovingEnemy
     {
         // Draw raycast to look for Player in facing-direction when not attacking
         AnimatorStateInfo animatorState = animator.GetCurrentAnimatorStateInfo(0);
-        if (!animatorState.IsName("PatrolTowardsPlayer"))
+        if (animatorState.IsName("Patrol") || animatorState.IsName("Wait"))
         {
             if (isFacingRight)
                 rayDirection = Vector2.right;
@@ -52,6 +51,14 @@ public class DickEnemyAnimator : HorizontalMovingEnemy
             {
                 animator.SetTrigger("seesPlayer");
                 // Debug.Log("seeing Player");
+            }
+        }
+        if (animatorState.IsName("PatrolTowardsPlayer"))
+        {
+            playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            if (DistanceToPlayer(combatScript.attackPoint.position) < combatScript.attackRange.getValue())
+            {
+                animator.SetTrigger("inAttackRange");
             }
         }
     }

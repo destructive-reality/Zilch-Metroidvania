@@ -40,7 +40,7 @@ public class PlayerCombat2D : CombatBase
                 if (targetLayer == LayerMask.NameToLayer("Destroyable") || targetLayer == LayerMask.NameToLayer("Attackable"))
                     target.GetComponent<Health>().applyDamage((int) attackPower.getValue());
                 else if (targetLayer == LayerMask.NameToLayer("Enemy"))
-                    target.GetComponent<EnemyHealth>().getHit((int) attackPower.getValue(), this.gameObject);
+                    target.GetComponent<KnockbackHealth>().getHit((int) attackPower.getValue(), this.gameObject); //Change KnockbackHealth back to EnemyHealth?
             }
         }
     }

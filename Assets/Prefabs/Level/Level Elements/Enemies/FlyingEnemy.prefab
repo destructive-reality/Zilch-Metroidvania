@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 509972248452091643}
   - component: {fileID: 7835785056609124633}
   - component: {fileID: 9175722806140414136}
-  - component: {fileID: 509972248452091645}
+  - component: {fileID: 2879589085486195459}
   - component: {fileID: 509972248452091638}
   - component: {fileID: 1779733545369302272}
   - component: {fileID: 4435346111820826529}
@@ -68,10 +68,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -108,7 +108,7 @@ MonoBehaviour:
   isFacingRight: 1
   speed:
     baseValue: 0
---- !u!114 &509972248452091645
+--- !u!114 &2879589085486195459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,13 +117,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 509972248452091637}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
+  m_Script: {fileID: 11500000, guid: cf872489ccc75104ea7f58a79ad8f362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 2
   animator: {fileID: 0}
-  knockbackForce: 20
+  knockbackForce: 25
 --- !u!114 &509972248452091638
 MonoBehaviour:
   m_ObjectHideFlags: 0

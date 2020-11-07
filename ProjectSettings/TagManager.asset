@@ -25,7 +25,7 @@ TagManager:
   - Destroyable
   - Attackable
   - Post Processing
-  - 
+  - DeadEnemy
   - 
   - 
   - 

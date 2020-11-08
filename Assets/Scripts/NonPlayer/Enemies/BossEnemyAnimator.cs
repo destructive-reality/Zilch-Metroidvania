@@ -11,7 +11,7 @@ public class BossEnemyAnimator : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        animator.SetTrigger("RapidFire");
+        animator.SetTrigger("BoomerangFire");
     }
 
     // Update is called once per frame

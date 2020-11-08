@@ -4,22 +4,14 @@ public class Boomerang : Projectile
 {
     [SerializeField] private float yVelocity;
     private Vector3 startPosition;
-    // private Vector3 direction;
-    // private float velocity;
     private float multiplier;
     private BoomerangState state;
 
     public void Setup(Vector2 _direction, float _timeToLife = 9f, float _velocity = 10f, float _yVelocity = -2)
     {
         base.Setup(_direction, _timeToLife, _velocity);
-        // direction = _direction;
-        // if (direction.x == -1)
-        // {
-        //     transform.Rotate(0, 0, 180);
-        // }
-        // velocity = _velocity;
+
         yVelocity = _yVelocity;
-        // Destroy(gameObject, _timeToLife);
     }
 
     private void Start()
@@ -27,7 +19,6 @@ public class Boomerang : Projectile
         startPosition = transform.position;
         multiplier = 1 / (3 * 1 / Time.fixedDeltaTime);
         state = BoomerangState.FlyForward;
-        // Setup(Vector2.left);
     }
 
     private void FixedUpdate()
@@ -37,7 +28,7 @@ public class Boomerang : Projectile
             transform.position += new Vector3(direction.x * 0.9f, yVelocity * multiplier) * velocity * Time.deltaTime;
             transform.RotateAround(transform.position, Vector3.forward, 200 * multiplier);
 
-            if (transform.position.y < startPosition.y + yVelocity && yVelocity < 0 || transform.position.y > startPosition.y + yVelocity && yVelocity > 0)
+            if (transform.position.y < (startPosition.y + yVelocity) && yVelocity < 0 || transform.position.y > (startPosition.y + yVelocity) && yVelocity > 0)
             {
                 yVelocity = 0;
                 direction.x *= -1;

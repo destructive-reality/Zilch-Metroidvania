@@ -11,7 +11,8 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 1091131679429820892}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -220,7 +221,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 3251239065350001586, guid: 85109c639cb0a3449adb4772b5ccc6b4,
     type: 3}
+  projectileLifeTime: 3
+  projectileYOriginAdjustment: 0
   fireFrames: 00000000280000005500000096000000
+--- !u!114 &1091131679429820892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8e7166aa764854ebee0404a57e3c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabProjectile: {fileID: 5729339247721047001, guid: 65cd7302ed1fb054d9a5c5311a5044a4,
+    type: 3}
+  projectileLifeTime: 9
+  projectileYOriginAdjustment: 1.5
+  fireFrames: 14000000
 --- !u!1102 &1639935949980965661
 AnimatorState:
   serializedVersion: 5

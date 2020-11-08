@@ -40,7 +40,7 @@ public class RapidFireBehaviour : StateMachineBehaviour
         Debug.Log(animatorScript);
         dir.x = animatorScript.isFacingRight ? 1 : -1;
 
-        Vector2 origin = combatScript.attackPoint.position;
+        Vector2 origin = combatScript.rangeAttackPoint.position;
         origin.y += projectileYOriginAdjustment;
         Transform tsfProjectile = Instantiate(prefabProjectile, origin, Quaternion.identity);
         tsfProjectile.GetComponent<Projectile>().Setup(dir, projectileLifeTime, 10);

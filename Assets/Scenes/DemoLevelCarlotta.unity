@@ -6219,7 +6219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1108166601}
   m_Layer: 11
-  m_Name: AttackPoint
+  m_Name: RangeAttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6448,6 +6448,7 @@ Transform:
   m_Children:
   - {fileID: 1145100180}
   - {fileID: 1108166601}
+  - {fileID: 2094075637}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6499,7 +6500,8 @@ MonoBehaviour:
     baseValue: 3
   attackRange:
     baseValue: 10
-  attackPoint: {fileID: 1108166601}
+  rangeAttackPoint: {fileID: 1108166601}
+  rockslideAttackHeigt: {fileID: 2094075637}
 --- !u!114 &1271967228 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5155172592189466103, guid: f5e1edfa8948b7d4092a3b9088aab59a,
@@ -6739,6 +6741,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac9e91d83552a99469821994d1676ea9, type: 3}
+--- !u!1 &2094075636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2094075637}
+  m_Layer: 11
+  m_Name: RockslideAttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2094075637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094075636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1263411949}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &34098214224933285
 GameObject:
   m_ObjectHideFlags: 0

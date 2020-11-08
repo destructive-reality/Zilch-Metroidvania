@@ -2,5 +2,6 @@
 
 public class BossCombat : EnemyCombat 
 {
-    public Transform attackPoint;
+    public Transform rangeAttackPoint;
+    public Transform rockslideAttackHeigt;
 }

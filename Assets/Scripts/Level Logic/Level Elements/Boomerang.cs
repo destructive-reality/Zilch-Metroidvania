@@ -1,24 +1,25 @@
 using UnityEngine;
 
-public class Boomerang : MonoBehaviour
+public class Boomerang : Projectile
 {
     [SerializeField] private float yVelocity;
     private Vector3 startPosition;
-    private Vector3 direction;
-    private float velocity;
+    // private Vector3 direction;
+    // private float velocity;
     private float multiplier;
     private BoomerangState state;
 
-    public void Setup(Vector2 _direction, float _velocity = 10f, float _yVelocity = -2)
+    public void Setup(Vector2 _direction, float _timeToLife = 9f, float _velocity = 10f, float _yVelocity = -2)
     {
-        direction = _direction;
-        if (direction.x == -1)
-        {
-            transform.Rotate(0, 0, 180);
-        }
-        velocity = _velocity;
+        base.Setup(_direction, _timeToLife, _velocity);
+        // direction = _direction;
+        // if (direction.x == -1)
+        // {
+        //     transform.Rotate(0, 0, 180);
+        // }
+        // velocity = _velocity;
         yVelocity = _yVelocity;
-        Destroy(gameObject, 9f);
+        // Destroy(gameObject, _timeToLife);
     }
 
     private void Start()
@@ -76,16 +77,6 @@ public class Boomerang : MonoBehaviour
             {
                 state = BoomerangState.FlyBack;
             }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        PlayerHealth health = other.GetComponent<PlayerHealth>();
-        if (health != null)
-        {
-            health.getHit(1, this.gameObject);
-            Destroy(gameObject);
         }
     }
 

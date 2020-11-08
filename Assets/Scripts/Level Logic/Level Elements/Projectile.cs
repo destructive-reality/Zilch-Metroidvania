@@ -2,10 +2,10 @@
 
 public class Projectile : MonoBehaviour     // vielleicht von EnemyCombat erben lassen, da die OnTriggerEnter auch Schaden verursacht??
 {
-    private Vector3 direction;
-    private float velocity;
+    protected Vector3 direction;
+    protected float velocity;
 
-    public void Setup(Vector2 _direction, float _velocity = 5f)
+    public void Setup(Vector2 _direction, float _timeToLive = 3f, float _velocity = 5f)
     {
         direction = _direction;
         if (direction.x == -1)
@@ -13,15 +13,15 @@ public class Projectile : MonoBehaviour     // vielleicht von EnemyCombat erben 
             transform.Rotate(0, 0, 180);
         }
         velocity = _velocity;
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, _timeToLive);
     }
 
-    private void FixedUpdate()
-    {
-        transform.position += direction * velocity * Time.deltaTime;
-    }
+    // private void FixedUpdate()
+    // {
+    //     transform.position += direction * velocity * Time.deltaTime;
+    // }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected void OnTriggerEnter2D(Collider2D other)
     {
         PlayerHealth health = other.GetComponent<PlayerHealth>();
         if (health != null)

@@ -24,10 +24,10 @@ public class AttackBehaviour : StateMachineBehaviour
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
         frameCountForTesting++;
-        Debug.Log(animatorScript.DistanceToPlayer(attackPoint.position));
+        // Debug.Log(animatorScript.DistanceToPlayer(attackPoint.position));
         if (frameCountForTesting == 80 && animatorScript.DistanceToPlayer(attackPoint.position) <= attackRange)
         {
-            Debug.Log("Try Attack from AttackBehaviour");
+            // Debug.Log("Try Attack from AttackBehaviour");
             combatScript.Attack();
         }
     }

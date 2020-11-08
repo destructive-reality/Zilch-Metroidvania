@@ -7,7 +7,7 @@ public class MeleeEnemyCombat : EnemyCombat
 
     private void Start()
     {
-        nextAttackTime = 1.5f;
+        // nextAttackTime = 1.5f;
     }
 
     public void Attack()

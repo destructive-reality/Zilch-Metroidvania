@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyCombat : CombatBase
+public class EnemyCombat : Damaging
 {
     protected void OnTriggerEnter2D(Collider2D collider)
     {

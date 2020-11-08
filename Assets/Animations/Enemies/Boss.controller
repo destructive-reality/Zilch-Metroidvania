@@ -42,7 +42,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 1
+  m_ExitTime: 2
   m_HasExitTime: 1
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 3251239065350001586, guid: 85109c639cb0a3449adb4772b5ccc6b4,
     type: 3}
-  fireFrames: 00000000140000003200000046000000
+  fireFrames: 00000000280000005500000096000000
 --- !u!1102 &1639935949980965661
 AnimatorState:
   serializedVersion: 5

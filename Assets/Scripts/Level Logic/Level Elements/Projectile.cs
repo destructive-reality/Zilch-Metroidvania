@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour     // vielleicht von EnemyCombat erben 
         Destroy(gameObject, 3f);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         transform.position += direction * velocity * Time.deltaTime;
     }

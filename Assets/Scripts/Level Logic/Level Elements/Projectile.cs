@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour     // vielleicht von EnemyCombat erben lassen, da die OnTriggerEnter auch Schaden verursacht??
 {
     private Vector3 direction;
     private float velocity;

@@ -5,7 +5,7 @@ public class Projectile : MonoBehaviour     // vielleicht von EnemyCombat erben 
     protected Vector3 direction;
     protected float velocity;
 
-    public void Setup(Vector2 _direction, float _timeToLive = 3f, float _velocity = 5f)
+    public void Setup(Vector2 _direction, float _timeToExist = 3f, float _velocity = 5f)
     {
         direction = _direction;
         if (direction.x == -1)
@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour     // vielleicht von EnemyCombat erben 
             transform.Rotate(0, 0, 180);
         }
         velocity = _velocity;
-        Destroy(gameObject, _timeToLive);
+        Destroy(gameObject, _timeToExist);
     }
 
     // private void FixedUpdate()

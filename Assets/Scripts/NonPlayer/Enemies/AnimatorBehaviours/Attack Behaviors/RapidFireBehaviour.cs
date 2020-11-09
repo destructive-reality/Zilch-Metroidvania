@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class RapidFireBehaviour : StateMachineBehaviour
 {
-    [SerializeField] private Transform prefabProjectile;
-    [SerializeField] private float projectileLifeTime = 3;
-    [SerializeField] private float projectileYOriginAdjustment = 0;
-    [SerializeField] private int[] fireFrames;
-    private int currentFrame = 0;
+    [SerializeField] protected Transform prefabProjectile;
+    [SerializeField] protected float projectileLifeTime = 3;
+    [SerializeField] protected float projectileYOriginAdjustment = 0;
+    [SerializeField] protected float projectileVelocity = 10;
+    [SerializeField] protected int[] fireFrames;
+    protected int currentFrame = 0;
     protected BossEnemyAnimator animatorScript;
     protected BossCombat combatScript;
     // private 
@@ -30,20 +31,20 @@ public class RapidFireBehaviour : StateMachineBehaviour
         currentFrame++;
     }
 
-    // public override void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
-    // {
-    // }
+    public override void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
+    {
+        currentFrame = 0;
+    }
 
     protected void FireProjectile(Transform _trfAnimator)
     {
         Vector2 dir = Vector2.right;
-        Debug.Log(animatorScript);
         dir.x = animatorScript.isFacingRight ? 1 : -1;
 
         Vector2 origin = combatScript.rangeAttackPoint.position;
         origin.y += projectileYOriginAdjustment;
         Transform tsfProjectile = Instantiate(prefabProjectile, origin, Quaternion.identity);
-        tsfProjectile.GetComponent<Projectile>().Setup(dir, projectileLifeTime, 10);
+        tsfProjectile.GetComponent<Projectile>().Setup(dir, projectileLifeTime, projectileVelocity);
     }
 
 }

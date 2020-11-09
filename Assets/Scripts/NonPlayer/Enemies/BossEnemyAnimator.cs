@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BossEnemyAnimator : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class BossEnemyAnimator : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        animator.SetTrigger("BoomerangFire");
+        animator.SetTrigger("RockSlide");
     }
 
     // Update is called once per frame

@@ -9,7 +9,7 @@ public class BossEnemyAnimator : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        animator.SetTrigger("RockSlide");
+        // animator.SetTrigger("RockSlide");
     }
 
     // Update is called once per frame

@@ -40,11 +40,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.ik": {
-      "version": "2.0.2-preview.1",
+      "version": "3.0.2-preview.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "2.0.2"
+        "com.unity.2d.common": "3.0.1"
       },
       "url": "https://packages.unity.com"
     },
@@ -213,7 +213,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.1",
+      "version": "3.0.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -222,7 +222,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.4.3",
+      "version": "1.4.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {

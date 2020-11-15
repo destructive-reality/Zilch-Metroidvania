@@ -10,7 +10,7 @@ public class InventoryUI : MonoBehaviour
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
-        inventory.onItemChangedCallback += UpdateInventoryUI;
+        // inventory.onItemChangedCallback += UpdateInventoryUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         for (int i = 0; i < slots.Length; i++)
@@ -22,12 +22,26 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Inventory")) 
+        if (Input.GetButtonDown("Inventory"))
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
     }
 
+    public void AddNewItem(GameObject _item)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].GetItem() == null)
+            {
+                slots[i].AddItem(_item);
+                return;
+            }
+        }
+
+    }
+
+    /* 
     private void UpdateInventoryUI()
     {
         Debug.Log("Updating UI");
@@ -43,4 +57,5 @@ public class InventoryUI : MonoBehaviour
             }
         }
     }
+    */
 }

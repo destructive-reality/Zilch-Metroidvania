@@ -25,6 +25,8 @@ public class Inventory : MonoBehaviour
             onItemChangedCallback.Invoke();
         }
     }
+
+    // public void
     
     public void UseItem(GameObject _item, ModifierSlot _slot = ModifierSlot.Weapon)
     {

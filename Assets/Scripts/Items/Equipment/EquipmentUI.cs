@@ -10,7 +10,7 @@ public class EquipmentUI : MonoBehaviour
     private void Start()
     {
         equipment = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Equipment>();
-        equipment.changedEquipmentCallback += UpdateEquipmentUI;
+        // equipment.changedEquipmentCallback += UpdateEquipmentUI;
 
         slots = itemsParent.GetComponentsInChildren<EquipmentSlot>();
         for (int i = 0; i < slots.Length; i++)
@@ -19,7 +19,7 @@ public class EquipmentUI : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Update()       //need to change to listen to input
     {
         if (Input.GetButtonDown("Equipment"))
         {
@@ -48,6 +48,7 @@ public class EquipmentUI : MonoBehaviour
         equipment.ChangeSlot(slots[_modifierSlotNumber].GetItem(), _slotToChangeTo);
     }
 
+    /*
     private void UpdateEquipmentUI()
     {
         Debug.Log("Updating Equipment UI");
@@ -122,5 +123,6 @@ public class EquipmentUI : MonoBehaviour
                 }
             }
         }
-    }
+    } 
+    */
 }

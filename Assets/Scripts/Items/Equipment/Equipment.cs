@@ -107,7 +107,7 @@ public class Equipment : MonoBehaviour
         }
     }
 
-    public void EquipModifier(GameObject _modifierToEquip, GameObject _equipmentSlot, EquipmentSlot _slotScript)
+    public void EquipModifier(GameObject _modifierToEquip, EquipmentSlot _slotScript)
     {
         modifiers.Add(_modifierToEquip);
         Effect modifierEffect = _modifierToEquip.GetComponent<Effect>();

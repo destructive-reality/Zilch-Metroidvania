@@ -7,14 +7,14 @@ public abstract class Slot : MonoBehaviour
     public Button itemButton;
     protected GameObject item;
 
-    public void AddItem(GameObject _newModifier)
+    public virtual void AddItem(GameObject _newModifier)
     {
         item = _newModifier;
         icon.sprite = item.GetComponent<Effect>().modifier.icon;
         EnableInteraction(true);
     }
 
-    public void ClearSlot()
+    public virtual void ClearSlot()
     {
         item = null;
         icon.sprite = null;
@@ -32,10 +32,16 @@ public abstract class Slot : MonoBehaviour
     public void MoveItem(GameObject _newItem, Slot _fromSlot)
     {
         if (item)
-            _fromSlot.AddItem(item);
-        else
+        {
             _fromSlot.ClearSlot();
-
+            _fromSlot.AddItem(item);
+            ClearSlot();
+        }
+        else
+        {
+            Debug.Log("Clear slot with Name: " + _fromSlot.gameObject.name);
+            _fromSlot.ClearSlot();
+        }
         AddItem(_newItem);
     }
 

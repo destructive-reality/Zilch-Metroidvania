@@ -45,7 +45,7 @@ public class EquipmentUI : MonoBehaviour
     
     public void StartSlotChange(int _modifierSlotNumber, ModifierSlot _slotToChangeTo)
     {
-        equipment.ChangeSlot(slots[_modifierSlotNumber].GetModifier(), _slotToChangeTo);
+        equipment.ChangeSlot(slots[_modifierSlotNumber].GetItem(), _slotToChangeTo);
     }
 
     private void UpdateEquipmentUI()

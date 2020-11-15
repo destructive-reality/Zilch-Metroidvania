@@ -42,17 +42,6 @@ public class EquipmentSlot : Slot
     {
         equipmentUI.StartSlotChange(_modifierSlotNumber, slotPosition);
     }
-
-    public GameObject GetModifier()
-    {
-        if (item)
-            return item;
-        else
-        {
-            Debug.Log("No modifier in " + slotNumber);
-            return null;
-        }
-    }
     
     public string GetModifierName()
     {

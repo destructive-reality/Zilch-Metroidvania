@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
     
     public void UseItem(GameObject _item, GameObject _equipmentSlot, EquipmentSlot _slotScript){
         Debug.Log("Using " + _item.name + " on " + _equipmentSlot.name);
-        if (_slotScript.GetModifier() == null)
+        if (_slotScript.GetItem() == null)
         {
             _slotScript.AddItem(_item);
         }

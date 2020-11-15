@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Equipment : MonoBehaviour
 {
-    public delegate void OnEquipmentChange();
-    public event OnEquipmentChange changedEquipmentCallback;
+    // public delegate void OnEquipmentChange();
+    // public event OnEquipmentChange changedEquipmentCallback;
     public List<GameObject> modifiers;
 
     private void Update()
@@ -101,16 +101,17 @@ public class Equipment : MonoBehaviour
         Effect modifierEffect = _modifier.GetComponent<Effect>();
         modifierEffect.currentSlot = _slot;
         ExecuteStartEffect(modifierEffect, _slot);
-        if (changedEquipmentCallback != null)
-        {
-            changedEquipmentCallback.Invoke();
-        }
+        // if (changedEquipmentCallback != null)
+        // {
+        //     changedEquipmentCallback.Invoke();
+        // }
     }
 
     public void EquipModifier(GameObject _modifierToEquip, EquipmentSlot _slotScript)
     {
         modifiers.Add(_modifierToEquip);
         Effect modifierEffect = _modifierToEquip.GetComponent<Effect>();
+        Debug.Log("Equip " + modifierEffect.name + " from " + _slotScript.gameObject.name + " on " + _slotScript.slotPosition);
         modifierEffect.currentSlot = _slotScript.slotPosition;
         ExecuteStartEffect(modifierEffect, modifierEffect.currentSlot);
     }
@@ -120,11 +121,12 @@ public class Equipment : MonoBehaviour
         Effect modifierEffect = _modifier.GetComponent<Effect>();
         ExecuteStartEffect(modifierEffect, modifierEffect.currentSlot, false);
         modifierEffect.currentSlot = ModifierSlot.None;
+        Debug.Log("Remove Modifier " + modifierEffect.name);
         modifiers.Remove(_modifier);
-        if (changedEquipmentCallback != null)
-        {
-            changedEquipmentCallback.Invoke();
-        }
+        // if (changedEquipmentCallback != null)
+        // {
+        //     changedEquipmentCallback.Invoke();
+        // }
     }
     
     public bool ChangeSlot(GameObject _modifier, ModifierSlot _slot)
@@ -139,10 +141,10 @@ public class Equipment : MonoBehaviour
         modifierEffect.currentSlot = _slot;
         ExecuteStartEffect(modifierEffect, oldSlot, false);
         ExecuteStartEffect(modifierEffect, _slot);
-        if (changedEquipmentCallback != null)
-        {
-            changedEquipmentCallback.Invoke();
-        }
+        // if (changedEquipmentCallback != null)
+        // {
+        //     changedEquipmentCallback.Invoke();
+        // }
         return true;
     }
     

@@ -3,14 +3,15 @@ using UnityEngine;
 public class EquipmentUI : MonoBehaviour
 {
     public Transform itemsParent;
-    public GameObject equipmentUI;
+    private GameObject equipmentUIGO;
     private Equipment equipment;
     private EquipmentSlot[] slots;
 
     private void Start()
     {
+        equipmentUIGO = itemsParent.gameObject;
         equipment = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Equipment>();
-        // equipment.changedEquipmentCallback += UpdateEquipmentUI;
+        /* equipment.changedEquipmentCallback += UpdateEquipmentUI; */
 
         slots = itemsParent.GetComponentsInChildren<EquipmentSlot>();
         for (int i = 0; i < slots.Length; i++)
@@ -19,34 +20,34 @@ public class EquipmentUI : MonoBehaviour
         }
     }
 
-    private void Update()       //need to change to listen to input
+    private void Update()
     {
         if (Input.GetButtonDown("Equipment"))
         {
-            equipmentUI.SetActive(!equipmentUI.activeSelf);
+            equipmentUIGO.SetActive(!equipmentUIGO.activeSelf);
         }
     }
 
-    public dynamic checkSlot(GameObject slot)
-    {
-        Debug.Log("Checking for Slot");
-        Debug.Log(slot);
-        for (int i = 0; i < slots.Length; i++)
-        {
-            Debug.Log(slots[i]);
-            if (slot.name == slots[i].name)
-            {
-                Debug.Log("Slot is " + i);
-                return i;
-            }
-        }
-        return null;
-    }
+    // public dynamic checkSlot(GameObject slot)
+    // {
+    //     Debug.Log("Checking for Slot");
+    //     Debug.Log(slot);
+    //     for (int i = 0; i < slots.Length; i++)
+    //     {
+    //         Debug.Log(slots[i]);
+    //         if (slot.name == slots[i].name)
+    //         {
+    //             Debug.Log("Slot is " + i);
+    //             return i;
+    //         }
+    //     }
+    //     return null;
+    // }
     
-    public void StartSlotChange(int _modifierSlotNumber, ModifierSlot _slotToChangeTo)
-    {
-        equipment.ChangeSlot(slots[_modifierSlotNumber].GetItem(), _slotToChangeTo);
-    }
+    // public void StartSlotChange(int _modifierSlotNumber, ModifierSlot _slotToChangeTo)
+    // {
+    //     equipment.ChangeSlot(slots[_modifierSlotNumber].GetItem(), _slotToChangeTo);
+    // }
 
     /*
     private void UpdateEquipmentUI()

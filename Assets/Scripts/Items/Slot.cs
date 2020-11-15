@@ -33,13 +33,14 @@ public abstract class Slot : MonoBehaviour
     {
         if (item)
         {
+            GameObject tempItem = item;
             _fromSlot.ClearSlot();
-            _fromSlot.AddItem(item);
             ClearSlot();
+            _fromSlot.AddItem(tempItem);
         }
         else
         {
-            Debug.Log("Clear slot with Name: " + _fromSlot.gameObject.name);
+            // Debug.Log("Clear slot with Name: " + _fromSlot.gameObject.name);
             _fromSlot.ClearSlot();
         }
         AddItem(_newItem);

@@ -17,7 +17,8 @@ public class InventorySlot : Slot
 
     public override void ClearSlot()
     {
-        // inventory.UseItem(item);
+        if (item)
+            inventory.UseItem(item);
         base.ClearSlot();
     }
 

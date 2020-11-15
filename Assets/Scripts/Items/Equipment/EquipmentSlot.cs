@@ -3,16 +3,19 @@
 public class EquipmentSlot : Slot
 {
     public ModifierSlot slotPosition;
+    private Equipment equipment;
     private int slotNumber;
-    private EquipmentUI equipmentUI;
+    // private EquipmentUI equipmentUI;
 
     private void Start()
     {
-        equipmentUI = GameObject.FindWithTag("UI").GetComponentInChildren<EquipmentUI>();
-        if (!equipmentUI)
-        {
-            Debug.LogError("No Equipment UI found for Equipment Slot!");
-        }
+        // equipmentUI = GameObject.FindWithTag("UI").GetComponentInChildren<EquipmentUI>();
+        equipment = GameObject.FindWithTag("Player").GetComponent<Equipment>();
+
+        // if (!equipmentUI)
+        // {
+        //     Debug.LogError("No Equipment UI found for Equipment Slot!");
+        // }
     }
 
     public void InitializeEquipmentSlotPosition(int _i)
@@ -38,22 +41,11 @@ public class EquipmentSlot : Slot
         icon.gameObject.GetComponent<DragDrop>().slotNumber = _i;
     }
 
-    public void ChangeSlotOf(int _modifierSlotNumber)
-    {
-        equipmentUI.StartSlotChange(_modifierSlotNumber, slotPosition);
-    }
+    // public void ChangeSlotOf(int _modifierSlotNumber)
+    // {
+    //     equipmentUI.StartSlotChange(_modifierSlotNumber, slotPosition);
+    // }
 
-    public GameObject GetModifier()
-    {
-        if (item)
-            return item;
-        else
-        {
-            Debug.Log("No modifier in " + slotNumber);
-            return null;
-        }
-    }
-    
     public string GetModifierName()
     {
         if (item)
@@ -63,5 +55,19 @@ public class EquipmentSlot : Slot
             Debug.Log("No modifier in " + slotNumber);
             return null;
         }
+    }
+
+    public override void AddItem(GameObject _newModifier)
+    {
+        base.AddItem(_newModifier);
+        equipment.EquipModifier(_newModifier, this);
+    }
+
+    public override void ClearSlot()
+    {
+        if (item != null)
+            equipment.UnequipModifier(item);
+
+        base.ClearSlot();
     }
 }

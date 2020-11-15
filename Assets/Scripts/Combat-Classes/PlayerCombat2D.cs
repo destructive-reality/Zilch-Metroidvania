@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCombat2D : CombatBase
+public class PlayerCombat2D : Damaging
 {
     public PlayerMasterController playerMasterController;
     public Transform attackPoint;
     public LayerMask attackableLayers;       // remeber assigning layers
+    public Stat attackTime;
+    protected float nextAttackTime = 0.3f;
+
 
     // Update is called once per frame
     void Update()
@@ -38,9 +41,9 @@ public class PlayerCombat2D : CombatBase
             {
                 int targetLayer = target.gameObject.layer;
                 if (targetLayer == LayerMask.NameToLayer("Destroyable") || targetLayer == LayerMask.NameToLayer("Attackable"))
-                    target.GetComponent<Health>().applyDamage((int) attackPower.getValue());
+                    target.GetComponent<Health>().applyDamage((int)attackPower.getValue());
                 else if (targetLayer == LayerMask.NameToLayer("Enemy"))
-                    target.GetComponent<KnockbackHealth>().getHit((int) attackPower.getValue(), this.gameObject); //Change KnockbackHealth back to EnemyHealth?
+                    target.GetComponent<KnockbackHealth>().getHit((int)attackPower.getValue(), this.gameObject); //Change KnockbackHealth back to EnemyHealth?
             }
         }
     }

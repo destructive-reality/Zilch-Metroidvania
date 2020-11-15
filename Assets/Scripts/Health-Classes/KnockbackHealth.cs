@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// using System.Collections;
+// using System.Collections.Generic;
 using UnityEngine;
 
 abstract public class KnockbackHealth : Health
@@ -9,7 +9,7 @@ abstract public class KnockbackHealth : Health
     public void getHit(int damage, GameObject damagingObject)
     {
         applyKnockback(new Vector2(this.transform.position.x < damagingObject.transform.position.x ? -knockbackForce : knockbackForce, knockbackForce / 4));
-        base.applyDamage(damage);
+        applyDamage(damage);
     }
 
     private void applyKnockback(Vector2 knockbackForceVector)

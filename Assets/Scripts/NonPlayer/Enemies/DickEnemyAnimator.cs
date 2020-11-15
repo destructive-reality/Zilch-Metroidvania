@@ -40,10 +40,6 @@ public class DickEnemyAnimator : MeleeHorizontalMovingEnemy
         AnimatorStateInfo animatorState = animator.GetCurrentAnimatorStateInfo(0);
         if (animatorState.IsName("Patrol") || animatorState.IsName("Wait"))
         {
-            // if (isFacingRight)
-            //     rayDirection = Vector2.right;
-            // else
-            //     rayDirection = Vector2.left;
             rayDirection = isFacingRight ? Vector2.right : Vector2.left;
 
             rayDirection.x *= aggressionRange;

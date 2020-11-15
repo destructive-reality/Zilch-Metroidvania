@@ -26,14 +26,19 @@ public class PointsPatrolBehaviour : PlatformMovementBehaviour
         {
             enemyScript.flip();
         }
-
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator, animatorStateInfo, layerIndex);
 
-        if (Vector2.Distance(animator.transform.position, patrolPoints[currentTarget]) <= 1)
+        if ((patrolPoints[currentTarget].x < animator.transform.position.x && enemyScript.isFacingRight) || 
+            (patrolPoints[currentTarget].x > animator.transform.position.x && !enemyScript.isFacingRight))
+        {
+            enemyScript.flip();
+        }
+
+        if (Vector2.Distance(animator.transform.position, patrolPoints[currentTarget]) <= 1.5f)
         {
             if (currentTarget + 1 >= patrolPoints.Count)
                 currentTarget = 0;

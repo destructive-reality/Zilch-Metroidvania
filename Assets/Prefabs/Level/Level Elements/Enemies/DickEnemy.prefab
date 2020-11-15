@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5821229737130567920}
   - component: {fileID: 5821229737130567931}
   - component: {fileID: 5821229737130567930}
-  - component: {fileID: 3990488031853133817}
+  - component: {fileID: 3514590588894738461}
   m_Layer: 11
   m_Name: DickEnemy
   m_TagString: Untagged
@@ -55,6 +55,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -163,8 +164,6 @@ MonoBehaviour:
     baseValue: 2
   attackRange:
     baseValue: 2
-  attackTime:
-    baseValue: 3
   attackPoint: {fileID: 5821229737452253245}
   damagingCollider: {fileID: 5821229737452253244}
 --- !u!114 &5821229737130567930
@@ -187,7 +186,7 @@ MonoBehaviour:
   - {fileID: 5821229737200081065}
   - {fileID: 5821229738511023536}
   aggressionRange: 7
---- !u!114 &3990488031853133817
+--- !u!114 &3514590588894738461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,7 +195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5821229737130567921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
+  m_Script: {fileID: 11500000, guid: 21be084880c77524c9d9bdf7246b2fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:

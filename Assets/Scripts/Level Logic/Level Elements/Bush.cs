@@ -21,7 +21,7 @@ public class Bush : MonoBehaviour
         {
             bushAudioSource.PlayOneShot(bushWalkThroughAudioClips[Random.Range(0, bushWalkThroughAudioClips.Count)]);
             bushWalkThroughParticleSystem.Play();
-            bushAnimator.SetTrigger("WalkThrough");
+            // bushAnimator.SetTrigger("WalkThrough");
         }
     }
 }

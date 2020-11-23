@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TooltipHoverBoxController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class TooltipHoverBoxController : MonoBehaviour
     public Vector2 offset;
 
     public GameObject tooltipContentParent;
+    public Text toolTipText;
 
      private void Awake () {
         if (_instance != null && _instance != this) {
@@ -28,5 +30,9 @@ public class TooltipHoverBoxController : MonoBehaviour
 
     public void setVisible(bool shouldBeVisible) {
         tooltipContentParent.SetActive(shouldBeVisible);
+    }
+
+    public void changeText(string newText) {
+        toolTipText.text = newText;
     }
 }

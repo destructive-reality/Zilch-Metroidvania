@@ -97,12 +97,16 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         rectTransform.anchoredPosition = new Vector2(0, 0);
     }
 
-    public void OnPointerEnter(PointerEventData eventData) {
-        Debug.Log("Mouse entered drag drop zone");
+    public void OnPointerEnter(PointerEventData eventData)
+    {
         TooltipHoverBoxController.Instance.setVisible(true);
+
+        ModifierObject hoveredModifier = GetComponentInParent<Slot>().GetItem().GetComponentInParent<Effect>().modifier;
+        TooltipHoverBoxController.Instance.changeText($"{hoveredModifier.modifierName} \n \n {hoveredModifier.modifierDescription}");
     }
 
-    public void OnPointerExit(PointerEventData eventData) {
+    public void OnPointerExit(PointerEventData eventData)
+    {
         TooltipHoverBoxController.Instance.setVisible(false);
     }
 }

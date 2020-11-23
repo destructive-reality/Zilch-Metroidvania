@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     #region Item-Info
     public int slotNumber;
@@ -95,5 +95,18 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             // }
         }
         rectTransform.anchoredPosition = new Vector2(0, 0);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        TooltipHoverBoxController.Instance.setVisible(true);
+
+        ModifierObject hoveredModifier = GetComponentInParent<Slot>().GetItem().GetComponentInParent<Effect>().modifier;
+        TooltipHoverBoxController.Instance.changeText($"{hoveredModifier.modifierName} \n \n {hoveredModifier.modifierDescription}");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        TooltipHoverBoxController.Instance.setVisible(false);
     }
 }

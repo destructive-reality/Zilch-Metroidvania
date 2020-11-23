@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: {fileID: 8300000, guid: f58874fb32c95584588a29523566a6b1, type: 3}
-  interruptPlayingSound: 0
+  interruptPlayingSound: 1
 --- !u!1101 &-8060336399552378181
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: {fileID: 8300000, guid: f58874fb32c95584588a29523566a6b1, type: 3}
-  interruptPlayingSound: 0
+  interruptPlayingSound: 1
 --- !u!1107 &-4930264061542529080
 AnimatorStateMachine:
   serializedVersion: 5

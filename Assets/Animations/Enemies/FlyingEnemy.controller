@@ -78,8 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0bf7f79e74cb34b95c6410f2f4c3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 0}
-  interruptPlayingSound: 0
+  soundToPlay: {fileID: 8300000, guid: 5b35db8d478cc4ffb93882bf67fc8032, type: 3}
+  interruptPlayingSound: 1
 --- !u!1101 &-5208812415412860692
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0bf7f79e74cb34b95c6410f2f4c3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 0}
+  soundToPlay: {fileID: 8300000, guid: fdc7825f159ce4af89398a973c13c2c0, type: 3}
   interruptPlayingSound: 1
 --- !u!114 &5598426005508603039
 MonoBehaviour:

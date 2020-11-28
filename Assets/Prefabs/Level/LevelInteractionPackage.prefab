@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6121853363776226691}
   - component: {fileID: 2101218714436915122}
-  - component: {fileID: 4677988240432094598}
   - component: {fileID: 5993870324957332293}
   - component: {fileID: 2327647423776230301}
   - component: {fileID: 5155172592189466103}
@@ -32,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139575700529879286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.2373233, y: -1.4738219, z: 3.4458275}
+  m_LocalPosition: {x: -19.39371, y: -1.4857194, z: 3.4458275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8023718425481029919}
@@ -81,14 +80,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4677988240432094598
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2139575700529879286}
-  m_Enabled: 1
 --- !u!114 &5993870324957332293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,12 +1029,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1562f7758c1bcf8488e96ca4f693dec2, type: 3}
---- !u!4 &9075990367258215198 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5623831863046718583, guid: 1562f7758c1bcf8488e96ca4f693dec2,
-    type: 3}
-  m_PrefabInstance: {fileID: 3746916203892262761}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6318509533268976526 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7228385836571419879, guid: 1562f7758c1bcf8488e96ca4f693dec2,
@@ -1056,6 +1041,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9999228a709837e468a4ee66ebda5ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &9075990367258215198 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5623831863046718583, guid: 1562f7758c1bcf8488e96ca4f693dec2,
+    type: 3}
+  m_PrefabInstance: {fileID: 3746916203892262761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7212155454973098908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1192,6 +1183,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Healthbar Frame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542659394257706358, guid: 0aaaa63c865a01442ba1d6435740b737,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542659394257706358, guid: 0aaaa63c865a01442ba1d6435740b737,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6542659394257706358, guid: 0aaaa63c865a01442ba1d6435740b737,
         type: 3}

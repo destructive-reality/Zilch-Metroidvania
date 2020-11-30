@@ -5,19 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Leuchtpflanze : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        animator = GetComponent<Animator>();
-    }
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.transform.position.x > this.transform.position.x) {
+        if (other.transform.position.x > this.transform.position.x)
+        {
             animator.SetTrigger("bendToLeft");
         }
-        else {
+        else
+        {
             animator.SetTrigger("bendToRight");
         }
     }

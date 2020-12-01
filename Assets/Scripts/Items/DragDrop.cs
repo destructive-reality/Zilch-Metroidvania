@@ -14,6 +14,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup;
     #endregion
 
+    [Header("Sounds")]
+    public AudioClip itemHoverSound;
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -103,6 +106,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
         ModifierObject hoveredModifier = GetComponentInParent<Slot>().GetItem().GetComponentInParent<Effect>().modifier;
         TooltipHoverBoxController.Instance.changeText($"{hoveredModifier.modifierName} \n \n {hoveredModifier.modifierDescription}");
+
+        //Play sound on hover
+        UIController.Instance.getUiAudioSource().PlayOneShot(itemHoverSound);
     }
 
     public void OnPointerExit(PointerEventData eventData)

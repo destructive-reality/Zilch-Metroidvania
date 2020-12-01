@@ -7,11 +7,15 @@ public abstract class Slot : MonoBehaviour
     public Button itemButton;
     protected GameObject item;
 
+    [Header("Sounds")]
+    public AudioClip itemAddSound;
+
     public virtual void AddItem(GameObject _newModifier)
     {
         item = _newModifier;
         icon.sprite = item.GetComponent<Effect>().modifier.icon;
         EnableInteraction(true);
+        UIController.Instance.getUiAudioSource().PlayOneShot(itemAddSound);
     }
 
     public virtual void ClearSlot()

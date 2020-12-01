@@ -4842,8 +4842,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -289498155
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -4953,7 +4953,7 @@ MonoBehaviour:
   maxHealth:
     baseValue: 1
   animator: {fileID: 0}
-  selfDestructTimeAfterHealthDeath: 10
+  selfDestructTimeAfterHealthDeath: 4
   destroyParticles: {fileID: 2092527987374553179}
   deathSound: {fileID: 8300000, guid: a843f14448fac314393b36151fcc0507, type: 3}
 --- !u!33 &4092583654074617649

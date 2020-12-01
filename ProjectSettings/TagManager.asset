@@ -9,6 +9,7 @@ TagManager:
   - LevelConnector
   - UI
   - Enemy
+  - LevelDecoration
   layers:
   - Default
   - TransparentFX

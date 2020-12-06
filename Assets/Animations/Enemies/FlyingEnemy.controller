@@ -228,6 +228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 0.8
+  layersToDistanceTo:
+    serializedVersion: 2
+    m_Bits: 512
   raycastDistance: 0.5
 --- !u!91 &9100000
 AnimatorController:

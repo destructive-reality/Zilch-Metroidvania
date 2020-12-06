@@ -1,41 +1,67 @@
 ﻿using UnityEngine;
 
+public enum FLIP_DIRECTION
+{
+  LEFT = 0, RIGHT = 1, FLIP = 2
+}
+
 public abstract class MovementsBase : MonoBehaviour
 {
-    public bool isFacingRight = true;
-    public Stat speed;
+  public bool isFacingRight = true;
+  public Stat speed;
 
-    public void flip()
+  public void flip(FLIP_DIRECTION _direction = FLIP_DIRECTION.FLIP)
+  {
+    Vector3 localScale = transform.localScale;
+    if (_direction == FLIP_DIRECTION.FLIP)
     {
-        isFacingRight = !isFacingRight;
-
-        //TODO kann man das nicht ohne zwischenspeichern direkt flippen?
-        Vector3 localXScale = transform.localScale;
-        localXScale.x *= -1;
-        transform.localScale = localXScale;
+      isFacingRight = !isFacingRight;
+      //TODO kann man das nicht ohne zwischenspeichern direkt flippen?
+      localScale.x *= -1;
     }
 
-    public void flipRight()
+    else if (_direction == FLIP_DIRECTION.RIGHT)
     {
-        isFacingRight = true;
-
-        Vector3 localScale = transform.localScale;
-        if (localScale.x < 0)
-        {
-            localScale.x *= -1;
-        }
-        transform.localScale = localScale;
+      isFacingRight = true;
+      if (localScale.x < 0)
+      {
+        localScale.x *= -1;
+      }
     }
 
-    public void flipLeft()
+    else if (_direction == FLIP_DIRECTION.LEFT)
     {
-        isFacingRight = false;
-
-        Vector3 localScale = transform.localScale;
-        if (localScale.x > 0)
-        {
-            localScale.x *= -1;
-        }
-        transform.localScale = localScale;
+      isFacingRight = false;
+      if (localScale.x > 0)
+      {
+        localScale.x *= -1;
+      }
     }
+
+    transform.localScale = localScale;
+  }
+
+  //   public void flipRight()
+  //   {
+  //     isFacingRight = true;
+
+  //     Vector3 localScale = transform.localScale;
+  //     if (localScale.x < 0)
+  //     {
+  //       localScale.x *= -1;
+  //     }
+  //     transform.localScale = localScale;
+  //   }
+
+  //   public void flipLeft()
+  //   {
+  //     isFacingRight = false;
+
+  //     Vector3 localScale = transform.localScale;
+  //     if (localScale.x > 0)
+  //     {
+  //       localScale.x *= -1;
+  //     }
+  //     transform.localScale = localScale;
+  //   }
 }

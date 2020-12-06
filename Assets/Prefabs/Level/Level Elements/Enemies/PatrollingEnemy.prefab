@@ -45,12 +45,11 @@ GameObject:
   - component: {fileID: 9180903099515805295}
   - component: {fileID: 3811832996060555771}
   - component: {fileID: 3811832996060555765}
-  - component: {fileID: 7224045951320415391}
   - component: {fileID: 5980070629582941435}
   - component: {fileID: 114143283879010588}
   m_Layer: 11
   m_Name: PatrollingEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,6 +136,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -208,7 +208,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 3
-  currentHealth: 0
   animator: {fileID: 0}
   knockbackForce: 0
 --- !u!114 &3811832996060555765
@@ -228,24 +227,6 @@ MonoBehaviour:
     baseValue: 1
   attackRange:
     baseValue: 1
-  attackTime:
-    baseValue: 0
---- !u!114 &7224045951320415391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3811832996060555763}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf339f78c567cd42bb317eac5f41577, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFacingRight: 1
-  speed:
-    baseValue: 3
-  groundDetector: {fileID: 3811832994168298662}
 --- !u!95 &5980070629582941435
 Animator:
   serializedVersion: 3

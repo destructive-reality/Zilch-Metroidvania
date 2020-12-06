@@ -423,6 +423,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
+  layersToDistanceTo:
+    serializedVersion: 2
+    m_Bits: 512
   raycastDistance: 0.5
 --- !u!1101 &5912896116501251053
 AnimatorStateTransition:

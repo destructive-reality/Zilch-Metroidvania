@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4828533098640292747}
   - component: {fileID: 509972248452091643}
   - component: {fileID: 7835785056609124633}
-  - component: {fileID: 9175722806140414136}
   - component: {fileID: 2879589085486195459}
   - component: {fileID: 509972248452091638}
   - component: {fileID: 1779733545369302272}
@@ -22,7 +21,7 @@ GameObject:
   - component: {fileID: 5986268002934663748}
   - component: {fileID: 8813407412074154572}
   m_Layer: 11
-  m_Name: FlyingEnemy
+  m_Name: Ichus
   m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -107,25 +106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0574070c64e21714c8212d093d479657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFacingRight: 0
-  speed:
-    baseValue: 0.07
-  aggressionRange: 10
---- !u!114 &9175722806140414136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509972248452091637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc29372d69283b4fadff344c3fd5c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   isFacingRight: 1
   speed:
-    baseValue: 0
+    baseValue: 0.15
+  aggressionRange: 10
 --- !u!114 &2879589085486195459
 MonoBehaviour:
   m_ObjectHideFlags: 0

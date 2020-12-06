@@ -3,14 +3,15 @@
 public class FlyTowardsBehaviour : StateMachineBehaviour
 {
   public float speedMultiplier;
+  public LayerMask layersToDistanceTo;
   private float speed;
   private Vector3 target;
-
-  private EnemyMovement enemyMovement;
+  private MovementsBase movementScript;
+  [SerializeField] private float raycastDistance = 2f;
 
   override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
   {
-    enemyMovement = animator.GetComponent<EnemyMovement>();
+    movementScript = animator.GetComponent<MovementsBase>();
     FlyingEnemyAnimator enemyScript = animator.GetComponent<FlyingEnemyAnimator>();
     speed = enemyScript.speed.getValue() * speedMultiplier;
 
@@ -22,14 +23,32 @@ public class FlyTowardsBehaviour : StateMachineBehaviour
   {
     if (animator.transform.position.x > target.x)
     {
-      enemyMovement.flip(FLIP_DIRECTION.LEFT);
+      movementScript.flip(FLIP_DIRECTION.LEFT);
     }
     else
     {
-      enemyMovement.flip(FLIP_DIRECTION.RIGHT);
+      movementScript.flip(FLIP_DIRECTION.RIGHT);
     }
 
-    animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed);
+    // Check ground distance
+    RaycastHit2D hitDown = Physics2D.Raycast(animator.transform.position, Vector2.down, raycastDistance, layersToDistanceTo);
+    RaycastHit2D hitUp = Physics2D.Raycast(animator.transform.position, Vector2.up, raycastDistance, layersToDistanceTo);
+    if (hitDown.collider != null && target.y < animator.transform.position.y && hitDown.distance < 1)
+    {
+      Debug.Log("dont go lower");
+      // animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(target.x, target.y), speed);
+      animator.SetTrigger("wait");
+    }
+    else if (hitUp.collider != null && target.y > animator.transform.position.y && hitUp.distance < 1)
+    {
+      Debug.Log("dont go higher");
+      // animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(target.x, animator.transform.position.y), speed);
+      animator.SetTrigger("wait");
+    }
+    else
+    {
+      animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed);
+    }
 
     float targetDistance = Vector2.Distance(target, animator.transform.position);
     if (targetDistance <= 1f)

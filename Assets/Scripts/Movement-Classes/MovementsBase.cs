@@ -2,7 +2,7 @@
 
 public enum FLIP_DIRECTION
 {
-  LEFT = 0, RIGHT = 1, FLIP = 2
+  LEFT = 0, RIGHT = 1, OTHER = 2
 }
 
 public abstract class MovementsBase : MonoBehaviour
@@ -10,10 +10,10 @@ public abstract class MovementsBase : MonoBehaviour
   public bool isFacingRight = true;
   public Stat speed;
 
-  public void flip(FLIP_DIRECTION _direction = FLIP_DIRECTION.FLIP)
+  public void flip(FLIP_DIRECTION _direction = FLIP_DIRECTION.OTHER)
   {
     Vector3 localScale = transform.localScale;
-    if (_direction == FLIP_DIRECTION.FLIP)
+    if (_direction == FLIP_DIRECTION.OTHER)
     {
       isFacingRight = !isFacingRight;
       //TODO kann man das nicht ohne zwischenspeichern direkt flippen?

@@ -34,9 +34,9 @@ RectTransform:
   m_Father: {fileID: 7641880772417987492}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 673.2998, y: -71.36011}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -230, y: -78.82}
   m_SizeDelta: {x: 431.61133, y: 130.80048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5533923663376670774
@@ -1013,7 +1013,6 @@ MonoBehaviour:
   healthText: {fileID: 5302536266505398109}
   healthBar: {fileID: 1166360796629697684}
   helth: {fileID: 2665979178092052570}
-  uiAudioSource: {fileID: 6955851055740990905}
 --- !u!82 &6955851055740990905
 AudioSource:
   m_ObjectHideFlags: 0

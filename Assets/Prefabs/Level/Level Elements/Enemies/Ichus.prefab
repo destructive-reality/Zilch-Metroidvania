@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFacingRight: 1
   speed:
-    baseValue: 0.15
+    baseValue: 0.1
   aggressionRange: 10
 --- !u!114 &2879589085486195459
 MonoBehaviour:

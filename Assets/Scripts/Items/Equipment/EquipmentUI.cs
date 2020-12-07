@@ -22,7 +22,7 @@ public class EquipmentUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Equipment"))
+        if (Input.GetButtonDown("Equipment") && !PauseMenu.GameIsPaused)
         {
             equipmentUIGO.SetActive(!equipmentUIGO.activeSelf);
         }

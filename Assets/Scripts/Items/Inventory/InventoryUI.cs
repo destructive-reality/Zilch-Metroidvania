@@ -22,7 +22,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Inventory"))
+        if (Input.GetButtonDown("Inventory") && !PauseMenu.GameIsPaused)
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
         }

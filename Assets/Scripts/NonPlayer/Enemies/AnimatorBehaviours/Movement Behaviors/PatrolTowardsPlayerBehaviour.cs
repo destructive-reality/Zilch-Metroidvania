@@ -33,13 +33,18 @@ public class PatrolTowardsPlayerBehaviour : WalkTowardsBehaviour
         if ((playerPosition.x < leftX && animator.transform.position.x < leftX + 1.5f) || (playerPosition.x > rightX && animator.transform.position.x > rightX - 1.5f))
         {
             Debug.Log("Distance to leftX is " + (leftX - playerPosition.x));
-            if ((leftX - playerPosition.x > 3 && leftX - playerPosition.x < 10) || (playerPosition.x - rightX > 3 && playerPosition.x - rightX < 10))
+            if (playerInAttackRange(0, 3, animator))
+            {
+                animator.SetTrigger("inAttackRange");
+            }
+            else if (playerInAttackRange(3, 10, animator))
             {
                 animator.SetTrigger("inRangeAttackRange");
             }
             else
             {
                 animator.SetBool("isNeedingReset", true);
+                return;
             }
         }
         else
@@ -53,5 +58,14 @@ public class PatrolTowardsPlayerBehaviour : WalkTowardsBehaviour
         animator.ResetTrigger("inRangeAttackRange");
         animator.ResetTrigger("seesPlayer");
         // animator.ResetTrigger("wait");
+    }
+
+    private bool playerInAttackRange(float _minRange, float _maxRange, Animator animator)
+    {
+        if (playerPosition.x - animator.transform.position.x > _minRange && playerPosition.x - animator.transform.position.x < _maxRange)
+        {
+            return true;
+        }
+        return false;
     }
 }

@@ -7,8 +7,14 @@ public class Modifier : MonoBehaviour
     private bool isInteractable = false;
     private Inventory playerInventory;
 
+    [Header("Sounds")]
+    public AudioClip pickupSound;
+    private AudioSource audioSource;
+
+
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         pickUpSprite = GetComponentInChildren<SpriteRenderer>();
         pickUpSprite.enabled = isInteractable;
     }
@@ -26,6 +32,7 @@ public class Modifier : MonoBehaviour
     {
         if (isInteractable && Input.GetButtonDown("PickUp") && playerInventory)
         {
+            audioSource.PlayOneShot(pickupSound);
             playerInventory.AddItem(modifierEffect);
             modifierEffect.transform.parent = playerInventory.gameObject.transform;
             Destroy(this.gameObject);

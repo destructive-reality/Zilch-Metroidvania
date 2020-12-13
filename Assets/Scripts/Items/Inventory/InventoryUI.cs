@@ -24,7 +24,7 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetButtonDown("Inventory") && !PauseMenu.GameIsPaused)
         {
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            SetInventoryUIVisible(!inventoryUI.activeSelf);
         }
     }
 
@@ -41,21 +41,7 @@ public class InventoryUI : MonoBehaviour
 
     }
 
-    /* 
-    private void UpdateInventoryUI()
-    {
-        Debug.Log("Updating UI");
-        for (int i = 0; i < slots.Length; i++)
-        {
-            if (i < inventory.items.Count)
-            {
-                slots[i].AddItem(inventory.items[i]);
-            }
-            else
-            {
-                slots[i].ClearSlot();
-            }
-        }
+    public void SetInventoryUIVisible(bool visibleBoolean) {
+         inventoryUI.SetActive(visibleBoolean);
     }
-    */
 }

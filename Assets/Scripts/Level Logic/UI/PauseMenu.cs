@@ -5,15 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = true;
-
     public GameObject pauseMenuCanvas;
+    [Header("Submenu")]
+    public InventoryUI inventoryUI;
+    public EquipmentUI equipmentUI;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public static bool GameIsPaused = false;
 
     // Update is called once per frame
     void Update()
@@ -44,6 +41,9 @@ public class PauseMenu : MonoBehaviour
         pauseMenuCanvas.SetActive(true);
         Time.timeScale = 0;
         GameIsPaused = true;
+
+        equipmentUI.SetEquipmentUIVisible(false);
+        inventoryUI.SetInventoryUIVisible(false);
     }
 
     public void LoadMenu()

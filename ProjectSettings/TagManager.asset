@@ -44,8 +44,8 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Far Background
+    uniqueID: 444591317
     locked: 0
   - name: Background
     uniqueID: 2334714609
@@ -56,15 +56,27 @@ TagManager:
   - name: Items
     uniqueID: 1833563377
     locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Player
     uniqueID: 1380472127
     locked: 0
   - name: Enemies
     uniqueID: 3842925595
     locked: 0
-  - name: Foreground
-    uniqueID: 2819785511
+  - name: Ground
+    uniqueID: 696946775
+    locked: 0
+  - name: Ground Decoration
+    uniqueID: 952393563
     locked: 0
   - name: Projectiles
     uniqueID: 1858308637
+    locked: 0
+  - name: Foreground
+    uniqueID: 2819785511
+    locked: 0
+  - name: Near Foreground
+    uniqueID: 3206142467
     locked: 0

@@ -955,6 +955,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuCanvas: {fileID: 7714380573440457887}
+  inventoryUI: {fileID: 6328041105288315015}
+  equipmentUI: {fileID: 5472642983030576253}
 --- !u!114 &3058929375897618794
 MonoBehaviour:
   m_ObjectHideFlags: 0

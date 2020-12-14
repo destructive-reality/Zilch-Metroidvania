@@ -9,12 +9,11 @@ public class Modifier : MonoBehaviour
 
     [Header("Sounds")]
     public AudioClip pickupSound;
-    private AudioSource audioSource;
+    public float pickupSoundVolume = 1f;
 
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
         pickUpSprite = GetComponentInChildren<SpriteRenderer>();
         pickUpSprite.enabled = isInteractable;
     }
@@ -32,7 +31,8 @@ public class Modifier : MonoBehaviour
     {
         if (isInteractable && Input.GetButtonDown("PickUp") && playerInventory)
         {
-            audioSource.PlayOneShot(pickupSound);
+            Debug.Log(pickupSound);
+            AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, pickupSoundVolume);
             playerInventory.AddItem(modifierEffect);
             modifierEffect.transform.parent = playerInventory.gameObject.transform;
             Destroy(this.gameObject);

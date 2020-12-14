@@ -2,6 +2,8 @@
 
 public class InventoryUI : MonoBehaviour
 {
+    public static bool isInventoryVisible = false;
+
     public Transform itemsParent;
     public GameObject inventoryUI;
     private Inventory inventory;
@@ -41,7 +43,9 @@ public class InventoryUI : MonoBehaviour
 
     }
 
-    public void SetInventoryUIVisible(bool visibleBoolean) {
-         inventoryUI.SetActive(visibleBoolean);
+    public void SetInventoryUIVisible(bool visibleBoolean)
+    {
+        isInventoryVisible = visibleBoolean;
+        inventoryUI.SetActive(visibleBoolean);
     }
 }

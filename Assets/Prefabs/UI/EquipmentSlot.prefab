@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1168583098074001449}
   itemButton: {fileID: 1168583096914969149}
-  itemAddSound: {fileID: 8300000, guid: 144f040b2693e4949a7197d60a936b0c, type: 3}
+  itemAddSound: {fileID: 8300000, guid: a618e2f2b666f43238437534f65d955d, type: 3}
   slotPosition: 0
 --- !u!1 &1168583096914969151
 GameObject:
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotNumber: 0
   isEquipment: 1
-  itemHoverSound: {fileID: 8300000, guid: 4ad8b14261ca4cf47a0846e7e02d2f16, type: 3}
+  itemHoverSound: {fileID: 8300000, guid: 80173d122731a487d8c391d480a0fff5, type: 3}
 --- !u!225 &1778877355175199213
 CanvasGroup:
   m_ObjectHideFlags: 0

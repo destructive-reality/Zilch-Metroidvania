@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0bf7f79e74cb34b95c6410f2f4c3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 8300000, guid: 7972039d43dfd46a0b53889220d0eb8e, type: 3}
+  soundToPlay: {fileID: 8300000, guid: c2735fb6e20204d0094835b6a6bc3f04, type: 3}
   interruptPlayingSound: 1
 --- !u!1102 &5299786414239165514
 AnimatorState:

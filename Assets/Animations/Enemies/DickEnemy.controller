@@ -286,7 +286,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nextAnimation
     m_Type: 9
     m_DefaultFloat: 0
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0bf7f79e74cb34b95c6410f2f4c3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 8300000, guid: 4eef181b5bed9424d94b8931a6685102, type: 3}
+  soundToPlay: {fileID: 8300000, guid: fc80714298e0844f1918d9d151a8a705, type: 3}
   interruptPlayingSound: 1
 --- !u!1101 &3930400716683456581
 AnimatorStateTransition:

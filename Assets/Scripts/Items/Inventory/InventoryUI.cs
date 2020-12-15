@@ -2,6 +2,8 @@
 
 public class InventoryUI : MonoBehaviour
 {
+    public static bool isInventoryVisible = false;
+
     public Transform itemsParent;
     public GameObject inventoryUI;
     private Inventory inventory;
@@ -22,9 +24,9 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Inventory"))
+        if (Input.GetButtonDown("Inventory") && !PauseMenu.GameIsPaused)
         {
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            SetInventoryUIVisible(!inventoryUI.activeSelf);
         }
     }
 
@@ -41,21 +43,9 @@ public class InventoryUI : MonoBehaviour
 
     }
 
-    /* 
-    private void UpdateInventoryUI()
+    public void SetInventoryUIVisible(bool visibleBoolean)
     {
-        Debug.Log("Updating UI");
-        for (int i = 0; i < slots.Length; i++)
-        {
-            if (i < inventory.items.Count)
-            {
-                slots[i].AddItem(inventory.items[i]);
-            }
-            else
-            {
-                slots[i].ClearSlot();
-            }
-        }
+        isInventoryVisible = visibleBoolean;
+        inventoryUI.SetActive(visibleBoolean);
     }
-    */
 }

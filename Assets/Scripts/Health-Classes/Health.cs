@@ -47,6 +47,10 @@ public class Health : MonoBehaviour
         setHealth(Mathf.Clamp(currentHealth + _amountToHeal, 0, (int) maxHealth.getValue()));
     }
 
+    public void healToMaxHealth() {
+        heal((int)maxHealth.getValue());
+    }
+
     protected virtual void die()
     {
         Debug.Log(gameObject.name + " is dying. Bye!");

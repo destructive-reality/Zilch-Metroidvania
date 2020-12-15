@@ -6,6 +6,7 @@ public class FlyTowardsBehaviour : StateMachineBehaviour
   public LayerMask layersToDistanceTo;
   private float speed;
   private Vector3 target;
+  private float distanceToStartWait;
   private MovementsBase movementScript;
   [SerializeField] private float raycastDistance = 2f;
 
@@ -16,6 +17,7 @@ public class FlyTowardsBehaviour : StateMachineBehaviour
     speed = enemyScript.speed.getValue() * speedMultiplier;
 
     target = GameObject.FindGameObjectWithTag("Player").transform.position;
+    distanceToStartWait = 1;
     animator.SetBool("isPlayerNear", false);
   }
 
@@ -33,25 +35,27 @@ public class FlyTowardsBehaviour : StateMachineBehaviour
     // Check ground distance
     RaycastHit2D hitDown = Physics2D.Raycast(animator.transform.position, Vector2.down, raycastDistance, layersToDistanceTo);
     RaycastHit2D hitUp = Physics2D.Raycast(animator.transform.position, Vector2.up, raycastDistance, layersToDistanceTo);
-    if (hitDown.collider != null && target.y < animator.transform.position.y && hitDown.distance < 1)
+    if ((hitDown.collider != null && target.y < animator.transform.position.y && hitDown.distance < 1) ||
+    (hitUp.collider != null && target.y > animator.transform.position.y && hitUp.distance < 1))
     {
       Debug.Log("dont go lower");
-      // animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(target.x, target.y), speed);
-      animator.SetTrigger("wait");
+      animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(target.x, animator.transform.position.y), speed);
+      distanceToStartWait += 0.5f;
     }
-    else if (hitUp.collider != null && target.y > animator.transform.position.y && hitUp.distance < 1)
-    {
-      Debug.Log("dont go higher");
-      // animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(target.x, animator.transform.position.y), speed);
-      animator.SetTrigger("wait");
-    }
+    // else if (hitUp.collider != null && target.y > animator.transform.position.y && hitUp.distance < 1)
+    // {
+    //   Debug.Log("dont go higher");
+    //   // animator.transform.position = Vector2.MoveTowards(animator.transform.position, new Vector2(target.x, animator.transform.position.y), speed);
+    //   animator.SetTrigger("wait");
+    //   return;
+    // }
     else
     {
       animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed);
     }
 
     float targetDistance = Vector2.Distance(target, animator.transform.position);
-    if (targetDistance <= 1f)
+    if (targetDistance <= distanceToStartWait)
     {
       animator.SetTrigger("wait");
     }

@@ -15,7 +15,11 @@ public abstract class Slot : MonoBehaviour
         item = _newModifier;
         icon.sprite = item.GetComponent<Effect>().modifier.icon;
         EnableInteraction(true);
-        UIController.Instance.getUiAudioSource().PlayOneShot(itemAddSound);
+        if (InventoryUI.isInventoryVisible)
+        {
+            UIController.Instance.getUiAudioSource().PlayOneShot(itemAddSound);
+
+        }
     }
 
     public virtual void ClearSlot()

@@ -4,8 +4,8 @@ public class AgileEffect : Effect
 {
     private PlayerMovement playerMovement;
     private bool isDoublejumped;
-    private float attackSpeedBoost = -0.1f;
-    private int iFrameTimeBoost = 1;
+    [SerializeField] private float attackSpeedBoost = -0.1f;
+    [SerializeField] private int iFrameTimeBoost = 1;
     public override void ArmStart(bool value)
     {
         Debug.Log("Increase Player Attack Speed: " + value);

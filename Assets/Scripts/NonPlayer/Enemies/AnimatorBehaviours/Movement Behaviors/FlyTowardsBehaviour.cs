@@ -59,9 +59,9 @@ public class FlyTowardsBehaviour : StateMachineBehaviour {
     }
   }
 
-  private bool checkDirectionForGround (Vector2 _orig, Vector2 _dir, float _dis = 1) {
+  private bool checkDirectionForGround (Vector2 _orig, Vector2 _dir, float _dis = 1.5f) {
     RaycastHit2D hit = Physics2D.Raycast (_orig, _dir, _dis, layersToDistanceTo);
-    if (hit.collider != null)
+    if (hit.collider != null && hit.distance > 0.1f)
       return true;
 
     return false;

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class FlyAroundBehaviour : StateMachineBehaviour
-{
+public class FlyAroundBehaviour : StateMachineBehaviour {
   public float range;
   public LayerMask layersToDistanceTo;
   private float speed;
@@ -13,12 +12,11 @@ public class FlyAroundBehaviour : StateMachineBehaviour
   private int verticalTargetMove;
   private MovementsBase movementScript;
 
-  override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-  {
-    FlyingEnemyAnimator enemyScript = animator.GetComponent<FlyingEnemyAnimator>();
-    movementScript = animator.GetComponent<MovementsBase>();
-    speed = enemyScript.speed.getValue();
-    startPosition = enemyScript.GetStartPosition();
+  override public void OnStateEnter (Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    FlyingEnemyAnimator enemyScript = animator.GetComponent<FlyingEnemyAnimator> ();
+    movementScript = animator.GetComponent<MovementsBase> ();
+    speed = enemyScript.speed.getValue ();
+    startPosition = enemyScript.GetStartPosition ();
     distanceToStartWait = 1;
     horizontalTargetMove = 1;
     verticalTargetMove = 1;
@@ -27,22 +25,18 @@ public class FlyAroundBehaviour : StateMachineBehaviour
 
     target = startPosition;
 
-    float angle = Random.Range(0, 2 * Mathf.PI);
-    float targetRange = Random.Range(0, range);
-    Vector2 randomV = new Vector2(range * Mathf.Sin(angle), range * Mathf.Cos(angle));
+    float angle = Random.Range (0, 2 * Mathf.PI);
+    float targetRange = Random.Range (0, range);
+    Vector2 randomV = new Vector2 (range * Mathf.Sin (angle), range * Mathf.Cos (angle));
 
     target = target + randomV;
     // Debug.Log(target);
   }
-  override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-  {
-    if (animator.transform.position.x > target.x)
-    {
-      movementScript.flip(FLIP_DIRECTION.LEFT);
-    }
-    else
-    {
-      movementScript.flip(FLIP_DIRECTION.RIGHT);
+  override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    if (animator.transform.position.x > target.x) {
+      movementScript.flip (FLIP_DIRECTION.LEFT);
+    } else {
+      movementScript.flip (FLIP_DIRECTION.RIGHT);
     }
 
     /// Check ground distance
@@ -88,10 +82,9 @@ public class FlyAroundBehaviour : StateMachineBehaviour
       target.y * allowDir[verticalTargetMove] + animator.transform.position.x * allowDir[verticalTargetMove + 1]);
     animator.transform.position = Vector2.MoveTowards (animator.transform.position, moveTarget, speed);
 
-    float targetDistance = Vector2.Distance(target, animator.transform.position);
-    if (targetDistance <= distanceToStartWait)
-    {
-      animator.SetTrigger("wait");
+    float targetDistance = Vector2.Distance (target, animator.transform.position);
+    if (targetDistance <= distanceToStartWait) {
+      animator.SetTrigger ("wait");
     }
   }
 

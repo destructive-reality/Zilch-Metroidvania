@@ -8,7 +8,7 @@ public class PlayerMovement : MovementsBase {
     public PlayerMasterController playerMasterController;
 
     [Header ("Movement")]
-    [SerializeField] private Stat jumpForce; // Amount of force added when the player jumps.
+    public Stat jumpForce; // Amount of force added when the player jumps.
     [Range (0, .3f)][SerializeField] private float movementSmoothing = .16f; // How much to smooth out the movement
     [SerializeField] private LayerMask groundLayers; // A mask determining what is ground to the character
     [SerializeField] private Transform groundCheckTransform; // A position marking where to check if the player is grounded.
@@ -191,5 +191,9 @@ public class PlayerMovement : MovementsBase {
             this.currentGroundSoundCollection = newCollection;
             Debug.Log ("Ground Sound Collection switched to: " + newCollection.name);
         }
+    }
+
+    public bool getWallSliding() {
+        return isWallSliding;
     }
 }

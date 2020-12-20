@@ -6,19 +6,19 @@ public abstract class Damaging : MonoBehaviour
     public Stat attackPower;
     public Stat attackRange;
 
-    public static void DealDamage(GameObject source, int damage, GameObject target)
+    public static void DealDamage(GameObject _source, int _damage, GameObject _target)
     {
-        if (target.GetComponent<PlayerHealth>())
+        if (_target.GetComponent<PlayerHealth>())
         {
-            target.GetComponent<PlayerHealth>().getHit(damage, source);
+            _target.GetComponent<PlayerHealth>().getHit(_damage, _source);
         }
-        else if (target.GetComponent<KnockbackHealth>())
+        else if (_target.GetComponent<KnockbackHealth>())
         {
-            target.GetComponent<KnockbackHealth>().getHit(damage, source);
+            _target.GetComponent<KnockbackHealth>().getHit(_damage, _source);
         }
         else
         {
-            target.GetComponent<Health>().applyDamage(damage);
+            _target.GetComponent<Health>().applyDamage(_damage);
         }
     }
 }

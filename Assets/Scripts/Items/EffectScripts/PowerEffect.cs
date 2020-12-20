@@ -2,9 +2,10 @@
 
 public class PowerEffect : Effect
 {
-    private int attackPowerBoost = 1;
-    private int dashSpeedBoost = 15;
-    private int healthBoost = 1;
+    [SerializeField] private int attackPowerBoost = 1;
+    [SerializeField] private int dashSpeedBoost = 15;
+    [SerializeField] private int healthBoost = 1;
+    [SerializeField] private float jumpTimeBoost = 1;
     public override void ArmStart(bool value)
     {
         Debug.Log("Increase Player Damage: " + value);
@@ -36,7 +37,12 @@ public class PowerEffect : Effect
     }
     public override void HeadStart(bool value)
     {
-
+        Debug.Log("Increase Player JumpTime: " + value);
+        PlayerMovement playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
+        if (value)
+            playerMovement.jumpTime += jumpTimeBoost;
+        else
+            playerMovement.jumpTime -= jumpTimeBoost;
     }
     public override void ArmUpdate()
     {

@@ -16,7 +16,6 @@ public class IchusDeath : StateMachineBehaviour
         //Disable non-necessary scripts to avoid harmful interaction with the player
         animator.GetComponent<EnemyCombat>().enabled = false;
         animator.GetComponent<Health>().enabled = false;
-        animator.GetComponent<EnemyMovement>().enabled = false;
         animator.GetComponent<FlyingEnemyAnimator>().enabled = false;
 
         //Change layer to "DeadEnemies"

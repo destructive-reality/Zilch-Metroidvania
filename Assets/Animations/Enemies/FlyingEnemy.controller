@@ -23,7 +23,7 @@ AnimatorStateMachine:
     m_Position: {x: 400, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4023401643103797020}
-    m_Position: {x: 462.36456, y: -145.26253, z: 0}
+    m_Position: {x: 460, y: -140, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -5208812415412860692}
@@ -232,7 +232,6 @@ MonoBehaviour:
   layersToDistanceTo:
     serializedVersion: 2
     m_Bits: 512
-  raycastDistance: 0.5
 --- !u!114 &-49686566373993370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -444,7 +443,6 @@ MonoBehaviour:
   layersToDistanceTo:
     serializedVersion: 2
     m_Bits: 512
-  raycastDistance: 0.5
 --- !u!1101 &5912896116501251053
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

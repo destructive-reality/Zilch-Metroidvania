@@ -40,28 +40,4 @@ public abstract class MovementsBase : MonoBehaviour
 
     transform.localScale = localScale;
   }
-
-  //   public void flipRight()
-  //   {
-  //     isFacingRight = true;
-
-  //     Vector3 localScale = transform.localScale;
-  //     if (localScale.x < 0)
-  //     {
-  //       localScale.x *= -1;
-  //     }
-  //     transform.localScale = localScale;
-  //   }
-
-  //   public void flipLeft()
-  //   {
-  //     isFacingRight = false;
-
-  //     Vector3 localScale = transform.localScale;
-  //     if (localScale.x > 0)
-  //     {
-  //       localScale.x *= -1;
-  //     }
-  //     transform.localScale = localScale;
-  //   }
 }

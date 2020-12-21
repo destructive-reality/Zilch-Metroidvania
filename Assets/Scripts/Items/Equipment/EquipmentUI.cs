@@ -28,7 +28,14 @@ public class EquipmentUI : MonoBehaviour
         }
     }
 
-    public void SetEquipmentUIVisible(bool visibleBoolean) {
-         equipmentUIGO.SetActive(visibleBoolean);
+    public void SetEquipmentUIVisible(bool visibleBoolean)
+    {
+        equipmentUIGO.SetActive(visibleBoolean);
+
+        //Hacky fix with mouse position, but works for now...
+        if (visibleBoolean == false && Input.mousePosition.x < Screen.width / 2)
+        {
+            TooltipHoverBoxController.Instance.setVisible(false);
+        }
     }
 }

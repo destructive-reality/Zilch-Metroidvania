@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4735156284059476521}
   - component: {fileID: 1602916315150550260}
   - component: {fileID: 8912763592728991813}
+  - component: {fileID: 6522714342748946145}
   m_Layer: 11
   m_Name: DoofEnemy
   m_TagString: Untagged
@@ -373,7 +374,7 @@ MonoBehaviour:
   initialSkinName: 
   initialFlipX: 1
   initialFlipY: 0
-  updateMode: 3
+  updateMode: 1
   updateWhenInvisible: 1
   separatorSlotNames: []
   zSpacing: 0
@@ -413,3 +414,22 @@ MonoBehaviour:
     baseValue: 3
   animator: {fileID: 8989124149612149229}
   knockbackForce: 30
+--- !u!114 &6522714342748946145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989124149612149202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52080b782e548244db4b7681d5f479c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonAnimation: {fileID: 0}
+  eventName: Death
+  audioSource: {fileID: 2331985771593584046}
+  audioClip: {fileID: 8300000, guid: 6eabbc65705b6498ba43f74d349ec1a9, type: 3}
+  basePitch: 1
+  randomPitchOffset: 0
+  logDebugMessage: 0

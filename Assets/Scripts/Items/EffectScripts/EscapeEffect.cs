@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EscapeEffect : Effect {
     private PlayerMovement playerMovement;
+    [SerializeField] float wallSlidingSpeedReduction;
     [SerializeField] float xJumpForce;
     [SerializeField] float yJumpForce;
     public bool IsWallJumpable {
@@ -9,7 +10,12 @@ public class EscapeEffect : Effect {
         private set;
     }
     public override void ArmStart (bool value) {
-
+        Debug.Log ("Reduce Players Wall Sliding Speed: " + value);
+        playerMovement = gameObject.GetComponentInParent<PlayerMovement> ();
+        if (value)
+            playerMovement.wallSlidingSpeed.addModifier(-wallSlidingSpeedReduction);
+        else
+            playerMovement.wallSlidingSpeed.removeModifier(-wallSlidingSpeedReduction);
     }
     public override void LegStart (bool value) {
         Debug.Log ("Give Player WallJump Jump: " + value);

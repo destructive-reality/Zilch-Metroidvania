@@ -26,13 +26,15 @@ public class PlayerMovement : MovementsBase {
     private bool isJumping;
 
     #endregion
+
     #region WallSlide
-    bool isTouchingWall;
+    private bool isTouchingWall;
     public Transform wallCheck;
-    bool isWallSliding;
+    private bool isWallSliding;
     public Stat wallSlidingSpeed;
 
     #endregion
+    
     public Rigidbody2D playerRigidbody2D;
     // private bool movingRight = true;        // For determining which way the player is currently facing.
     private Vector2 currentVelocity = Vector2.zero;

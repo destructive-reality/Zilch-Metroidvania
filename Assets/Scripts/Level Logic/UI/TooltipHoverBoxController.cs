@@ -11,7 +11,7 @@ public class TooltipHoverBoxController : MonoBehaviour
     public static TooltipHoverBoxController Instance { get { return _instance; } }
 
     // Vars
-    public int pixelOffsetDistance;
+    public Vector2 pixelOffsetDistance;
 
     public GameObject tooltipContentParent;
     public RectTransform tooltipContentParentRectTransform;
@@ -41,12 +41,10 @@ public class TooltipHoverBoxController : MonoBehaviour
         if (tooltipContentParent.activeSelf)
         {
             Vector2 newMousePosition = Input.mousePosition;
-            Vector2 newTransformPosition = transform.position;
+            Vector2 newTransformPosition = newMousePosition;
 
-            newTransformPosition = newMousePosition;
-
-            newTransformPosition.x += newMousePosition.x < halfScreenWidth ? pixelOffsetDistance + tooltipContentParentRectTransform.rect.width : -pixelOffsetDistance;
-            newTransformPosition.y += newMousePosition.y > halfScreenHeight ? pixelOffsetDistance - tooltipContentParentRectTransform.rect.height : -pixelOffsetDistance;
+            newTransformPosition.x += newMousePosition.x < halfScreenWidth ? pixelOffsetDistance.x : -pixelOffsetDistance.x;
+            newTransformPosition.y += newMousePosition.y > halfScreenHeight ? -pixelOffsetDistance.y : +pixelOffsetDistance.y;
 
             transform.position = newTransformPosition;
         }

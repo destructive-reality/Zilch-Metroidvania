@@ -1270,11 +1270,11 @@ RectTransform:
   m_Father: {fileID: 7646786444846139760}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 302.17426, y: 147.27592}
-  m_Pivot: {x: 1, y: 0}
+  m_SizeDelta: {x: 420, y: 210}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &109535566424648435
 Canvas:
   m_ObjectHideFlags: 0
@@ -1406,7 +1406,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -16, y: -16}
+  m_SizeDelta: {x: -36.23584, y: -35.36689}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8462321640119592598
 CanvasRenderer:
@@ -1646,7 +1646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -1339.84, y: 810.18}
+  m_AnchoredPosition: {x: 316, y: -81.60007}
   m_SizeDelta: {x: 566.9246, y: 88.91777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3632505407467265218
@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa805fef72a0ad94a95a647cd22d3d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixelOffsetDistance: 10
+  pixelOffsetDistance: {x: 210, y: 105}
   tooltipContentParent: {fileID: 4664724073492856692}
   tooltipContentParentRectTransform: {fileID: 0}
   toolTipText: {fileID: 4834682209678128556}

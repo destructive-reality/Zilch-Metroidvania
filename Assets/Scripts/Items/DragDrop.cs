@@ -105,7 +105,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         TooltipHoverBoxController.Instance.setVisible(true);
 
         ModifierObject hoveredModifier = GetComponentInParent<Slot>().GetItem().GetComponentInParent<Effect>().modifier;
-        TooltipHoverBoxController.Instance.changeText($"{hoveredModifier.modifierName} \n \n {hoveredModifier.modifierDescription}");
+        TooltipHoverBoxController.Instance.changeText($"{hoveredModifier.modifierName}\n\n{hoveredModifier.modifierDescription}");
 
         //Play sound on hover
         UIController.Instance.getUiAudioSource().PlayOneShot(itemHoverSound);

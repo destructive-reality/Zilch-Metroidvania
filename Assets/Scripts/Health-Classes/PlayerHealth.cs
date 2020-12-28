@@ -12,13 +12,13 @@ public class PlayerHealth : KnockbackHealth
 
     protected override void Start()
     {
-        setHealth(PlayerPrefs.GetInt("PlayerHealth", (int) maxHealth.getValue()));
+        setHealth(PlayerPrefs.GetInt("PlayerHealth", (int)maxHealth.getValue()));
     }
 
     public override void setHealth(int healthToSetTo)
     {
         base.setHealth(healthToSetTo);
-        UIController.Instance.setHealthInUI(currentHealth, (int) maxHealth.getValue());
+        UIController.Instance.setHealthInUI(currentHealth, (int)maxHealth.getValue());
         PostProController.Instance.SetLowLifePulseBool(currentHealth <= lowLifePulseThreshold ? true : false);
     }
 
@@ -30,6 +30,7 @@ public class PlayerHealth : KnockbackHealth
             base.getHit(damage, damagingObject);
             invincibleTime = Time.time + startInvincibleTime.getValue();
             PostProController.Instance.TriggerChromaticAberrationDamageAnimation();
+            CinemachineShake.Instance.ShakeCamera(2f, .1f);
         }
 
     }

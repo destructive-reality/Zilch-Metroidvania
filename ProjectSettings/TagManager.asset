@@ -50,6 +50,9 @@ TagManager:
   - name: Background
     uniqueID: 2334714609
     locked: 0
+  - name: Level BG Decoration
+    uniqueID: 591995199
+    locked: 0
   - name: Level
     uniqueID: 4005469141
     locked: 0

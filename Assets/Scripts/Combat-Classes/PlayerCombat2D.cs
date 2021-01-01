@@ -33,12 +33,13 @@ public class PlayerCombat2D : Damaging
     void dealDamage()
     {
         Collider2D[] hitTargets = Physics2D.OverlapCircleAll(attackPoint.position, attackRange.getValue(), attackableLayers);
-        
+
         //If anything was hit, do some screen shake
-        if (hitTargets.Length > 0) {
-            CinemachineShake.Instance.ShakeCamera(3f, .13f);
+        if (hitTargets.Length > 0)
+        {
+            CinemachineShake.Instance.ShakeCamera(2.5f, .3f);
         }
-        
+
         // remember to give enemies 2D-Colliders        MD
         // Debug.Log(hitTargets);
         foreach (Collider2D target in hitTargets)

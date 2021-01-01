@@ -22,14 +22,23 @@ public class FlyAroundBehaviour : StateMachineBehaviour {
     verticalTargetMove = 1;
 
     target = startPosition;
-
-    target = startPosition;
-
-    float angle = Random.Range (0, 2 * Mathf.PI);
-    float targetRange = Random.Range (0, range);
-    Vector2 randomV = new Vector2 (range * Mathf.Sin (angle), range * Mathf.Cos (angle));
-
+    bool noValidTarget = true;
+    int counter = 0;
+    Vector2 randomV = new Vector2();
+    while (noValidTarget && counter < 10) {
+      float angle = Random.Range (0, 2 * Mathf.PI);
+      float targetRange = Random.Range (0, range);
+      randomV = new Vector2 (range * Mathf.Sin (angle), range * Mathf.Cos (angle));
+      RaycastHit2D groundHit = Physics2D.Raycast (animator.transform.position, randomV, range, layersToDistanceTo);
+      if (groundHit.collider == null) {
+        Debug.Log("Target for " + animator.gameObject.name + " valid");
+        noValidTarget = false;
+      }
+      counter++;
+    }
     target = target + randomV;
+
+
     // Debug.Log(target);
   }
   override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -62,25 +71,28 @@ public class FlyAroundBehaviour : StateMachineBehaviour {
     //   animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed);
     // }
 
-    if (checkDirectionForGround (animator.transform.position, Vector2.down) && target.y < animator.transform.position.y ||
-      checkDirectionForGround (animator.transform.position, Vector2.up) && target.y > animator.transform.position.y) {
-      verticalTargetMove = 0;
-      // animator.transform.position = Vector2.MoveTowards (animator.transform.position, new Vector2 (target.x, animator.transform.position.y), speed);
-      distanceToStartWait += 0.5f;
-    } else {
-      verticalTargetMove = 1;
-      // animator.transform.position = Vector2.MoveTowards (animator.transform.position, target, speed);
-    }
-    if (checkDirectionForGround (animator.transform.position, Vector2.left) && target.y < animator.transform.position.y ||
-      checkDirectionForGround (animator.transform.position, Vector2.right) && target.y > animator.transform.position.y) {
-      horizontalTargetMove = 0;
-      distanceToStartWait += 0.5f;
-    } else {
-      horizontalTargetMove = 1;
-    }
-    Vector2 moveTarget = new Vector2 (target.x * allowDir[horizontalTargetMove] + animator.transform.position.x * allowDir[horizontalTargetMove + 1],
-      target.y * allowDir[verticalTargetMove] + animator.transform.position.x * allowDir[verticalTargetMove + 1]);
-    animator.transform.position = Vector2.MoveTowards (animator.transform.position, moveTarget, speed);
+    // if (checkDirectionForGround (animator.transform.position, Vector2.down) && target.y < animator.transform.position.y ||
+    //   checkDirectionForGround (animator.transform.position, Vector2.up) && target.y > animator.transform.position.y) {
+    //   verticalTargetMove = 0;
+    //   Debug.Log ("vertical wall");
+    //   // animator.transform.position = Vector2.MoveTowards (animator.transform.position, new Vector2 (target.x, animator.transform.position.y), speed);
+    //   distanceToStartWait += 0.5f;
+    // } else {
+    //   verticalTargetMove = 1;
+    //   // animator.transform.position = Vector2.MoveTowards (animator.transform.position, target, speed);
+    // }
+    // if (checkDirectionForGround (animator.transform.position, Vector2.left) && target.y < animator.transform.position.y ||
+    //   checkDirectionForGround (animator.transform.position, Vector2.right) && target.y > animator.transform.position.y) {
+    //   horizontalTargetMove = 0;
+    //   Debug.Log ("horizontal wall");
+    //   distanceToStartWait += 0.5f;
+    // } else {
+    //   horizontalTargetMove = 1;
+    // }
+    // Vector2 moveTarget = new Vector2 (target.x * allowDir[horizontalTargetMove] + animator.transform.position.x * allowDir[horizontalTargetMove + 1],
+    //   target.y * allowDir[verticalTargetMove] + animator.transform.position.x * allowDir[verticalTargetMove + 1]);
+    // animator.transform.position = Vector2.MoveTowards (animator.transform.position, moveTarget, speed);
+    animator.transform.position = Vector2.MoveTowards (animator.transform.position, target, speed);
 
     float targetDistance = Vector2.Distance (target, animator.transform.position);
     if (targetDistance <= distanceToStartWait) {

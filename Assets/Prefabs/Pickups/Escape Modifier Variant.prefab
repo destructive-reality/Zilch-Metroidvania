@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSlot: 0
   modifier: {fileID: 11400000, guid: a834684b25f5b6d45a81bbb74103d3cb, type: 2}
+  wallSlidingSpeedReduction: 2
   xJumpForce: 30
   yJumpForce: 4
 --- !u!1001 &5769296542835545255

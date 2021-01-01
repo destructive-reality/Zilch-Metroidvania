@@ -16,7 +16,7 @@ MonoBehaviour:
   modifierName: Escape Stone
   currentSlot: 0
   effectBody: {fileID: 11400000, guid: 546575982b45cb54fb8022c0f57b649c, type: 2}
-  effectArm: {fileID: 11400000, guid: 546575982b45cb54fb8022c0f57b649c, type: 2}
+  effectArm: {fileID: 11400000, guid: e5e7c59b260b4344ea555916dbfa7572, type: 2}
   effectLeg: {fileID: 11400000, guid: bdb80740b5b4af94994384e4f5d5b9fa, type: 2}
   effectHead: {fileID: 11400000, guid: 546575982b45cb54fb8022c0f57b649c, type: 2}
   modifierDescription: Used in ancient times to escape from all kinds of dangers

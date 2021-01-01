@@ -48,7 +48,5 @@ public class FlyingEnemyAnimator : EnemyBehaviour
     {
       Gizmos.DrawWireSphere(this.transform.position, aggressionRange);
     }
-    Gizmos.color = Color.black;
-    Gizmos.DrawLine(gameObject.transform.position, gameObject.transform.position + (Vector3.down * 2));
   }
 }

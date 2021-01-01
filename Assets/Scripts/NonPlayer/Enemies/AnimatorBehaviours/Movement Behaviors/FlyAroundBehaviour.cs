@@ -29,7 +29,7 @@ public class FlyAroundBehaviour : StateMachineBehaviour {
       float angle = Random.Range (0, 2 * Mathf.PI);
       float targetRange = Random.Range (0, range);
       randomV = new Vector2 (range * Mathf.Sin (angle), range * Mathf.Cos (angle));
-      RaycastHit2D groundHit = Physics2D.Raycast (startPosition, randomV, targetRange, layersToDistanceTo);
+      RaycastHit2D groundHit = Physics2D.Raycast (animator.transform.position, randomV, range, layersToDistanceTo);
       if (groundHit.collider == null) {
         Debug.Log("Target for " + animator.gameObject.name + " valid");
         noValidTarget = false;

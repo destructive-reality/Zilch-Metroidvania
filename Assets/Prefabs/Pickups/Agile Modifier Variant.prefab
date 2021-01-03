@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSlot: 0
   modifier: {fileID: 11400000, guid: 0680430a9ec0f66409e7bdc3e5cad359, type: 2}
+  attackSpeedBoost: -0.1
+  knockbackForceReduction: 20
 --- !u!1001 &5345259340039781693
 PrefabInstance:
   m_ObjectHideFlags: 0

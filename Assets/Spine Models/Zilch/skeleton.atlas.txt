@@ -6,56 +6,56 @@ filter: Linear,Linear
 repeat: none
 Auge_Links_v
   rotate: true
-  xy: 720, 418
+  xy: 789, 59
   size: 32, 31
   orig: 32, 31
   offset: 0, 0
   index: -1
 Auge_rechts_v
   rotate: false
-  xy: 734, 301
+  xy: 799, 237
   size: 70, 37
   orig: 70, 37
   offset: 0, 0
   index: -1
 Fuß_Links_v
   rotate: true
-  xy: 588, 72
+  xy: 650, 15
   size: 64, 84
   orig: 64, 84
   offset: 0, 0
   index: -1
 Fuß_Links_v-1
   rotate: true
-  xy: 588, 72
+  xy: 650, 15
   size: 64, 84
   orig: 64, 84
   offset: 0, 0
   index: -1
 Hand_greifend
   rotate: true
-  xy: 717, 221
+  xy: 812, 171
   size: 64, 56
   orig: 64, 56
   offset: 0, 0
   index: -1
 Hand_links
   rotate: false
-  xy: 665, 377
+  xy: 757, 155
   size: 53, 73
   orig: 53, 73
   offset: 0, 0
   index: -1
 Hand_rechts
-  rotate: true
-  xy: 665, 287
+  rotate: false
+  xy: 736, 24
   size: 51, 67
   orig: 51, 67
   offset: 0, 0
   index: -1
 Kniescheibe_Links
-  rotate: false
-  xy: 574, 285
+  rotate: true
+  xy: 574, 267
   size: 89, 165
   orig: 89, 165
   offset: 0, 0
@@ -76,7 +76,7 @@ Nase_v
   index: -1
 Oberarm_Links_v
   rotate: true
-  xy: 574, 217
+  xy: 588, 81
   size: 66, 141
   orig: 66, 141
   offset: 0, 0
@@ -125,14 +125,14 @@ Schrim_v
   index: -1
 Stirn_Links_v
   rotate: true
-  xy: 650, 16
+  xy: 731, 93
   size: 54, 91
   orig: 54, 91
   offset: 0, 0
   index: -1
 Stirn_Rechts_v
   rotate: false
-  xy: 743, 17
+  xy: 741, 276
   size: 131, 80
   orig: 131, 80
   offset: 0, 0
@@ -153,43 +153,43 @@ Swoosh2
   index: -1
 Swoosh3
   rotate: true
-  xy: 806, 162
+  xy: 874, 68
   size: 288, 495
   orig: 288, 495
   offset: 0, 0
   index: -1
 Unterarm_Links
   rotate: true
-  xy: 674, 99
+  xy: 574, 228
   size: 37, 112
   orig: 37, 112
   offset: 0, 0
   index: -1
 Unterarm_Rechts_v
   rotate: true
-  xy: 665, 340
+  xy: 688, 230
   size: 35, 109
   orig: 35, 109
   offset: 0, 0
   index: -1
 Wade_Rechts_v
   rotate: true
-  xy: 588, 138
+  xy: 588, 149
   size: 77, 167
   orig: 77, 167
   offset: 0, 0
   index: -1
 Wade_Rechts_v-1
   rotate: true
-  xy: 588, 138
+  xy: 588, 149
   size: 77, 167
   orig: 77, 167
   offset: 0, 0
   index: -1
 Waffe
   rotate: false
-  xy: 574, 452
-  size: 421, 572
-  orig: 421, 572
+  xy: 574, 358
+  size: 491, 666
+  orig: 491, 666
   offset: 0, 0
   index: -1

@@ -1,10 +1,10 @@
 {
 "skeleton": {
-	"hash": "M4FnstYRhc1mhQPSI6Fht/TFu9U",
+	"hash": "du4xJ7oAkgNR/Yy3bKhdwtGDJec",
 	"spine": "3.8.99",
-	"x": -269.42,
+	"x": -324.41,
 	"y": -2.41,
-	"width": 667.82,
+	"width": 777.8,
 	"height": 884.74,
 	"fps": 60,
 	"images": "./Zilch_Tiles/",
@@ -322,10 +322,10 @@
 				"Wade_Rechts_v-1": { "x": 60.12, "y": -3.26, "rotation": 87.47, "width": 77, "height": 167 }
 			},
 			"Waffe": {
-				"Waffe": { "x": 30.29, "y": -15.61, "rotation": 126.7, "width": 421, "height": 572 }
+				"Waffe": { "x": 29.59, "y": -16.19, "rotation": 126.7, "width": 491, "height": 666 }
 			},
 			"Waffe_Rücken": {
-				"Waffe": { "x": 66.43, "y": -49.61, "rotation": -165.76, "width": 421, "height": 572 }
+				"Waffe": { "x": 66.43, "y": -49.61, "rotation": -165.76, "width": 491, "height": 666 }
 			}
 		}
 	}
@@ -389,7 +389,7 @@
 					{ "time": 0.0333, "x": -40.79, "y": 301.41 },
 					{ "time": 0.05, "x": -282.31, "y": 270.25 },
 					{ "time": 0.0667, "x": -316.07, "y": 163.77 },
-					{ "time": 0.0833, "x": -199.2, "y": 20.94 },
+					{ "time": 0.0833, "x": -207.03, "y": 17.81 },
 					{ "time": 0.1, "x": -38.19, "y": 5.36 }
 				]
 			},
@@ -574,13 +574,6 @@
 	},
 	"Zilch_Death": {},
 	"Zilch_Idle": {
-		"slots": {
-			"Waffe_Rücken": {
-				"attachment": [
-					{ "name": null }
-				]
-			}
-		},
 		"bones": {
 			"Fuß_rechts_target": {
 				"rotate": [

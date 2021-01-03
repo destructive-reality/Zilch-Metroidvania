@@ -21,7 +21,7 @@ public class PlayerCombat2D : Damaging
     }
   }
 
-  private void startAttack()
+  public void startAttack()
   {
     // animator.SetTrigger("Attack");
     dealDamage();

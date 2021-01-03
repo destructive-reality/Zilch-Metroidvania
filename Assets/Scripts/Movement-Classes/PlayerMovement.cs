@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
+
+public enum State { Idle, Jumping, Dashing, Attacking } // even necessarily when working with animator? MD
 
 //Required Components
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Rigidbody2D))]
+
 public class PlayerMovement : MovementsBase
 {
   public PlayerMasterController playerMasterController;
@@ -43,7 +45,6 @@ public class PlayerMovement : MovementsBase
 
   private SpriteRenderer spriteRenderer;
   public Animator playerAnimator;
-  enum State { Idle, Jumping, Dashing, Attacking } // even necessarily when working with animator? MD
   private State playerState;
 
   #region Dash
@@ -56,6 +57,7 @@ public class PlayerMovement : MovementsBase
   private float dashDirecton;
 
   #endregion
+  public UnityEvent CollisionAction;
 
   [Header("Sounds")]
   public AudioSource playerAudioSource;
@@ -79,6 +81,7 @@ public class PlayerMovement : MovementsBase
     dashTime = startDashTime;
     DashActions = new UnityEvent();
     DashActions.AddListener(hdlDash);
+    CollisionAction = new UnityEvent();
     playerState = State.Idle;
 
     walkSoundTimer = walkSoundRate;
@@ -225,6 +228,17 @@ public class PlayerMovement : MovementsBase
   public bool getWallSliding()
   {
     return isWallSliding;
+  }
+
+  public State GetState()
+  {
+    return playerState;
+  }
+
+  private void OnCollisionEnter2D(Collision2D other)
+  {
+    // Debug.Log("Collision detected on PlayerMovement");
+    CollisionAction.Invoke();
   }
 
   private void hdlDash()

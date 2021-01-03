@@ -18,7 +18,6 @@ public class AgileEffect : Effect
   public override void ArmStart(bool value)
   {
     Debug.Log("Increase Player Attack Speed: " + value);
-
     PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
     if (value)
       playerCombat.attackTime.addModifier(attackSpeedBoost);
@@ -42,6 +41,7 @@ public class AgileEffect : Effect
   }
   public override void HeadStart(bool value)
   {
+    Debug.Log("Let Player move AttackPoint: " + value);
     PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
     attackPoint = playerCombat.attackPoint;
     attackPointStartPosition = new Vector2(attackPoint.position.x, attackPoint.position.y);

@@ -1,160 +1,174 @@
 
 skeleton.png
-size: 512,1024
+size: 2048,512
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Auge_Links_v
-  rotate: false
-  xy: 167, 2
+  rotate: true
+  xy: 1445, 477
   size: 32, 31
   orig: 32, 31
   offset: 0, 0
   index: -1
 Auge_rechts_v
   rotate: true
-  xy: 406, 332
+  xy: 721, 16
   size: 70, 37
   orig: 70, 37
   offset: 0, 0
   index: -1
 Fuß_Links_v
-  rotate: true
-  xy: 338, 195
+  rotate: false
+  xy: 353, 2
   size: 64, 84
   orig: 64, 84
   offset: 0, 0
   index: -1
 Fuß_Links_v-1
-  rotate: true
-  xy: 338, 195
+  rotate: false
+  xy: 353, 2
   size: 64, 84
   orig: 64, 84
   offset: 0, 0
   index: -1
+Hand_greifend
+  rotate: true
+  xy: 1408, 334
+  size: 64, 56
+  orig: 64, 56
+  offset: 0, 0
+  index: -1
 Hand_links
-  rotate: false
-  xy: 391, 120
+  rotate: true
+  xy: 95, 3
   size: 53, 73
   orig: 53, 73
   offset: 0, 0
   index: -1
 Hand_rechts
-  rotate: false
-  xy: 214, 2
+  rotate: true
+  xy: 170, 5
   size: 51, 67
   orig: 51, 67
   offset: 0, 0
   index: -1
 Kniescheibe_Links
   rotate: false
-  xy: 338, 404
+  xy: 1285, 2
   size: 89, 165
   orig: 89, 165
   offset: 0, 0
   index: -1
 Kniescheibe_Rechts
   rotate: true
-  xy: 310, 571
+  xy: 1131, 33
   size: 109, 152
   orig: 109, 152
   offset: 0, 0
   index: -1
 Nase_v
-  rotate: true
-  xy: 267, 36
+  rotate: false
+  xy: 310, 65
   size: 33, 21
   orig: 33, 21
   offset: 0, 0
   index: -1
 Oberarm_Links_v
-  rotate: false
-  xy: 338, 261
+  rotate: true
+  xy: 760, 20
   size: 66, 141
   orig: 66, 141
   offset: 0, 0
   index: -1
 Oberarm_Rechts_v
   rotate: false
-  xy: 429, 430
+  xy: 903, 3
   size: 57, 139
   orig: 57, 139
   offset: 0, 0
   index: -1
 Oberkörper_v
   rotate: false
-  xy: 310, 682
+  xy: 1220, 169
   size: 186, 340
   orig: 186, 340
   offset: 0, 0
   index: -1
 Ohr_links
-  rotate: true
-  xy: 2, 2
+  rotate: false
+  xy: 1376, 4
   size: 31, 163
   orig: 31, 163
   offset: 0, 0
   index: -1
 Ohr_rechts_v
-  rotate: false
-  xy: 2, 35
+  rotate: true
+  xy: 962, 11
   size: 131, 167
   orig: 131, 167
   offset: 0, 0
   index: -1
 Schirm_Innen_v
   rotate: false
-  xy: 2, 571
+  xy: 2, 58
   size: 306, 451
   orig: 306, 451
   offset: 0, 0
   index: -1
 Schrim_v
   rotate: false
-  xy: 2, 204
+  xy: 884, 144
   size: 334, 365
   orig: 334, 365
   offset: 0, 0
   index: -1
 Stirn_Links_v
-  rotate: false
-  xy: 335, 102
+  rotate: true
+  xy: 2, 2
   size: 54, 91
   orig: 54, 91
   offset: 0, 0
   index: -1
 Stirn_Rechts_v
-  rotate: true
-  xy: 214, 71
+  rotate: false
+  xy: 419, 6
   size: 131, 80
   orig: 131, 80
   offset: 0, 0
   index: -1
 Unterarm_Links
-  rotate: false
-  xy: 296, 90
+  rotate: true
+  xy: 239, 19
   size: 37, 112
   orig: 37, 112
   offset: 0, 0
   index: -1
 Unterarm_Rechts_v
   rotate: false
-  xy: 464, 571
+  xy: 1408, 400
   size: 35, 109
   orig: 35, 109
   offset: 0, 0
   index: -1
 Wade_Rechts_v
-  rotate: false
-  xy: 135, 35
+  rotate: true
+  xy: 552, 9
   size: 77, 167
   orig: 77, 167
   offset: 0, 0
   index: -1
 Wade_Rechts_v-1
-  rotate: false
-  xy: 135, 35
+  rotate: true
+  xy: 552, 9
   size: 77, 167
   orig: 77, 167
+  offset: 0, 0
+  index: -1
+Waffe
+  rotate: true
+  xy: 310, 88
+  size: 421, 572
+  orig: 421, 572
   offset: 0, 0
   index: -1

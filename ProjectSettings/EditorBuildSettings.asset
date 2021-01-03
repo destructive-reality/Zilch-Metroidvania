@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoLevelCarlotta.unity
     guid: d8fb9e5b94301b14db01a24d5125b935
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 5636266f26f77a447b7367d67c47b4cb
   m_configObjects: {}

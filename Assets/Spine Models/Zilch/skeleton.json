@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "ZwgFXbbRiMCs5XgcUP+126tVsA8",
+	"hash": "M4FnstYRhc1mhQPSI6Fht/TFu9U",
 	"spine": "3.8.99",
 	"x": -269.42,
 	"y": -2.41,
@@ -84,7 +84,8 @@
 	{ "name": "Arm_rechts_target", "parent": "Hand_rechts_target", "x": -6.76, "y": 41.95, "color": "ff3f00ff" },
 	{ "name": "Fuß_rechts_target", "parent": "root", "rotation": 12.54, "x": 118.24, "y": 8.98, "color": "ff3f00ff" },
 	{ "name": "Bein_rechts_target", "parent": "Fuß_rechts_target", "x": 37.14, "y": 71.5, "color": "ff3f00ff" },
-	{ "name": "Waffe_Rücken", "parent": "Hip8", "x": 8.81, "y": -2.08, "color": "5953f3ff" }
+	{ "name": "Waffe_Rücken", "parent": "Hip8", "x": 8.81, "y": -2.08, "color": "5953f3ff" },
+	{ "name": "bone", "parent": "root", "x": -467.79, "y": 485.08 }
 ],
 "slots": [
 	{ "name": "Schirm_Innen_v", "bone": "Schirm", "attachment": "Schirm_Innen_v" },
@@ -112,7 +113,8 @@
 	{ "name": "Oberarm_Rechts_v", "bone": "Arm_rechts", "attachment": "Oberarm_Rechts_v" },
 	{ "name": "Schirm_Pfad", "bone": "Schirm", "attachment": "Schirm_Pfad" },
 	{ "name": "Hip_Pfad", "bone": "Hip", "attachment": "Hip_Pfad" },
-	{ "name": "Waffe", "bone": "Unterarm_rechts2" }
+	{ "name": "Waffe", "bone": "Unterarm_rechts2" },
+	{ "name": "Swoosh1", "bone": "bone" }
 ],
 "ik": [
 	{
@@ -302,6 +304,11 @@
 			"Stirn_Rechts_v": {
 				"Stirn_Rechts_v": { "x": 60.77, "y": 36.02, "width": 131, "height": 80 }
 			},
+			"Swoosh1": {
+				"Swoosh1": { "x": 277.93, "y": 187.3, "width": 908, "height": 1014 },
+				"Swoosh2": { "x": 110.77, "y": 79.05, "width": 570, "height": 809 },
+				"Swoosh3": { "x": -34.24, "y": -76.03, "width": 288, "height": 495 }
+			},
 			"Unterarm_Links": {
 				"Unterarm_Links": { "x": 41.86, "y": 1.04, "rotation": 96.9, "width": 37, "height": 112 }
 			},
@@ -329,18 +336,248 @@
 	"Zilch_Step": {}
 },
 "animations": {
-	"Zilch_Attack": {},
-	"Zilch_Death": {},
-	"Zilch_Idle": {
+	"Zilch_Attack": {
 		"slots": {
 			"Hand_rechts": {
 				"attachment": [
-					{ "time": 0.2, "name": "Hand_rechts" }
+					{ "time": 0.0333, "name": "Hand_greifend" }
+				]
+			},
+			"Swoosh1": {
+				"attachment": [
+					{ "time": 0.0667, "name": "Swoosh1" },
+					{ "time": 0.0833, "name": "Swoosh2" },
+					{ "time": 0.1, "name": "Swoosh3" },
+					{ "time": 0.1167, "name": null }
 				]
 			},
 			"Waffe": {
 				"attachment": [
-					{ "time": 0.2, "name": null }
+					{ "time": 0.0333, "name": "Waffe" }
+				]
+			},
+			"Waffe_Rücken": {
+				"attachment": [
+					{ "time": 0.0333, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"Bauch_target": {
+				"translate": [
+					{ "x": 73.44, "y": -9.48 },
+					{ "time": 0.1, "x": -45.01, "y": -4.74 }
+				]
+			},
+			"Schirm_target": {
+				"translate": [
+					{ "x": 120.82, "y": -26.06 }
+				]
+			},
+			"Hand_rechts_target": {
+				"rotate": [
+					{ "angle": -102.91 },
+					{ "time": 0.0167, "angle": -166.71 },
+					{ "time": 0.0333, "angle": 60.11 },
+					{ "time": 0.05, "angle": -137.2 },
+					{ "time": 0.0667, "angle": -88.13 },
+					{ "time": 0.0833, "angle": -12.88 }
+				],
+				"translate": [
+					{ "x": -129.24, "y": 33.95 },
+					{ "time": 0.0167, "x": -203.64, "y": 227.51 },
+					{ "time": 0.0333, "x": -40.79, "y": 301.41 },
+					{ "time": 0.05, "x": -282.31, "y": 270.25 },
+					{ "time": 0.0667, "x": -316.07, "y": 163.77 },
+					{ "time": 0.0833, "x": -199.2, "y": 20.94 },
+					{ "time": 0.1, "x": -38.19, "y": 5.36 }
+				]
+			},
+			"Hand_links_target": {
+				"rotate": [
+					{ "angle": -2.73 },
+					{ "time": 0.1, "angle": 35.28 }
+				],
+				"translate": [
+					{ "x": -21.7, "y": 38.58 },
+					{ "time": 0.1, "x": 159.13, "y": 2.41 }
+				]
+			},
+			"Ohr_rechts_target": {
+				"translate": [
+					{ "x": -21.59, "y": 85.81 },
+					{ "time": 0.1, "x": -18.34, "y": -0.87 }
+				]
+			},
+			"Ohr_links_target": {
+				"rotate": [
+					{}
+				],
+				"translate": [
+					{},
+					{ "time": 0.1, "x": 9.6, "y": -10.31 }
+				]
+			},
+			"Auge_rechts": {
+				"scale": [
+					{},
+					{ "time": 0.05, "y": 0.693 }
+				]
+			},
+			"Auge_links": {
+				"scale": [
+					{},
+					{ "time": 0.05, "y": 0.747 }
+				]
+			}
+		}
+	},
+	"Zilch_Attack_2": {
+		"slots": {
+			"Hand_rechts": {
+				"attachment": [
+					{ "time": 0.0667, "name": "Hand_greifend" }
+				]
+			},
+			"Waffe": {
+				"attachment": [
+					{ "time": 0.0667, "name": "Waffe" }
+				]
+			},
+			"Waffe_Rücken": {
+				"attachment": [
+					{ "time": 0.0667, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"Hand_rechts_target": {
+				"rotate": [
+					{},
+					{ "time": 0.0333, "angle": -2.18 },
+					{ "time": 0.0667, "angle": 51.38 },
+					{ "time": 0.1833, "angle": 178.67 },
+					{ "time": 0.2, "angle": 179.93 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.0333, "x": 32, "y": 130.54 },
+					{ "time": 0.05, "x": 25.42, "y": 211.54 },
+					{ "time": 0.0667, "x": -57.46, "y": 284.26 },
+					{ "time": 0.1833, "x": -278.21, "y": 285.77 },
+					{ "time": 0.2, "x": -297.86, "y": 285.77 }
+				]
+			}
+		}
+	},
+	"Zilch_Attack_jump": {
+		"slots": {
+			"Hand_rechts": {
+				"attachment": [
+					{ "time": 0.5, "name": "Hand_greifend" }
+				]
+			},
+			"Waffe": {
+				"attachment": [
+					{ "time": 0.5, "name": "Waffe" }
+				]
+			},
+			"Waffe_Rücken": {
+				"attachment": [
+					{ "time": 0.5, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"Bauch_target": {
+				"translate": [
+					{ "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.25, "x": -8.96, "y": -69.89, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.5, "x": -73.47, "y": 118.27, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.75, "x": -132.61, "y": -141.57 }
+				]
+			},
+			"Fuß_links_target": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6167, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.7667, "angle": -30.62 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.25, "y": -4.77 }
+				]
+			},
+			"Fuß_rechts_target": {
+				"rotate": [
+					{}
+				],
+				"translate": [
+					{},
+					{ "time": 0.2333, "x": -3.21, "y": -16.05 },
+					{ "time": 0.35, "x": -1.61, "y": -1.6, "curve": "stepped" },
+					{ "time": 0.65, "x": -1.61, "y": -1.6 },
+					{ "time": 0.7333, "x": -6.42, "y": -19.26 }
+				]
+			},
+			"Hand_links_target": {
+				"rotate": [
+					{}
+				],
+				"translate": [
+					{}
+				]
+			},
+			"Hand_rechts_target": {
+				"rotate": [
+					{},
+					{ "time": 0.1167, "angle": -49.29 },
+					{ "time": 0.2333, "angle": -111.72 },
+					{ "time": 0.35, "angle": 155.51 },
+					{ "time": 0.4167, "angle": 104.87 },
+					{ "time": 0.5, "angle": 53.98 },
+					{ "time": 0.55, "angle": -162.36 },
+					{ "time": 0.6, "angle": -65.53 },
+					{ "time": 0.65, "angle": -35.6 },
+					{ "time": 0.7667, "angle": 13.07 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.1167, "x": -111.69, "y": 9.59 },
+					{ "time": 0.2333, "x": -243.93, "y": 101.41 },
+					{ "time": 0.35, "x": -182.5, "y": 264.53 },
+					{ "time": 0.4167, "x": -140.36, "y": 395.03 },
+					{ "time": 0.5, "x": -139.2, "y": 433.41 },
+					{ "time": 0.55, "x": -334.23, "y": 316.72 },
+					{ "time": 0.6, "x": -388.15, "y": 80.36 },
+					{ "time": 0.65, "x": -345.24, "y": -45.25 },
+					{ "time": 0.7333, "x": -267.66, "y": -92.63 },
+					{ "time": 0.7667, "x": -220.88, "y": -117.36 }
+				]
+			},
+			"Hip": {
+				"translate": [
+					{ "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.25, "x": -6.27, "y": -53.76, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.5, "x": -23.3, "y": 120.06, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.75, "x": -32.26, "y": -116.48 }
+				]
+			},
+			"Kopf": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.5 },
+					{ "time": 0.6833, "angle": -28.58 }
+				]
+			}
+		}
+	},
+	"Zilch_Death": {},
+	"Zilch_Idle": {
+		"slots": {
+			"Waffe_Rücken": {
+				"attachment": [
+					{ "name": null }
 				]
 			}
 		},

@@ -78,6 +78,7 @@ public class PlayerMovement : MovementsBase
 
     dashTime = startDashTime;
     DashActions = new UnityEvent();
+    DashActions.AddListener(hdlDash);
     playerState = State.Idle;
 
     walkSoundTimer = walkSoundRate;
@@ -158,10 +159,6 @@ public class PlayerMovement : MovementsBase
     {
       if (Input.GetButtonDown("Dash") && dashCooldown < Time.time)
       {
-        playerAudioSource.PlayOneShot(dashSound, dashSoundVolume);
-        playerState = State.Dashing;
-        dashDirecton = isFacingRight ? 1 : -1;
-        dashCooldown = Time.time + startDashCooldown.getValue();
         DashActions.Invoke();
       }
     }
@@ -228,5 +225,13 @@ public class PlayerMovement : MovementsBase
   public bool getWallSliding()
   {
     return isWallSliding;
+  }
+
+  private void hdlDash()
+  {
+    playerAudioSource.PlayOneShot(dashSound, dashSoundVolume);
+    playerState = State.Dashing;
+    dashDirecton = isFacingRight ? 1 : -1;
+    dashCooldown = Time.time + startDashCooldown.getValue();
   }
 }

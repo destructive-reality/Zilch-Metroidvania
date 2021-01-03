@@ -23,7 +23,6 @@ public class PlayerHealth : KnockbackHealth
   {
     if (Time.time >= invincibleTime)
     {
-      // Debug.Log("Time: " + Time.time + "; invincibleTime: " + invincibleTime);
       base.getHit(damage, damagingObject);
       startInvincibilty();
       PostProController.Instance.TriggerChromaticAberrationDamageAnimation();

@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 
+enum ATTACK_DIRECTION
+{
+  UP, DOWN, START
+}
+
 public class AgileEffect : Effect
 {
   [SerializeField] private float attackSpeedBoost = -0.1f;
   private PlayerMovement playerMovement;
   private bool isDoublejumped;
   public int knockbackForceReduction;
+  private Transform attackPoint;
+  private Vector2 attackPointStartPosition;
+  private ATTACK_DIRECTION attackDir = ATTACK_DIRECTION.START;
 
   public override void ArmStart(bool value)
   {
@@ -34,7 +42,9 @@ public class AgileEffect : Effect
   }
   public override void HeadStart(bool value)
   {
-
+    PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
+    attackPoint = playerCombat.attackPoint;
+    attackPointStartPosition = new Vector2(attackPoint.position.x, attackPoint.position.y);
   }
   public override void ArmUpdate()
   {
@@ -64,6 +74,28 @@ public class AgileEffect : Effect
   }
   public override void HeadUpdate()
   {
-
+    if (Input.GetAxis("Vertical") != 0)
+    {
+      if (Input.GetButtonDown("Up") && attackDir == ATTACK_DIRECTION.START)
+      {
+        attackDir = ATTACK_DIRECTION.UP;
+        attackPoint.Translate(-1, 1.5f, 0, Space.Self);
+      }
+      if (Input.GetButtonDown("Down") && attackDir == ATTACK_DIRECTION.START)
+      {
+        attackDir = ATTACK_DIRECTION.DOWN;
+        attackPoint.Translate(-1, -1.5f, 0, Space.Self);
+      }
+      if (Input.GetButtonUp("Up") && attackDir == ATTACK_DIRECTION.UP)
+      {
+        attackDir = ATTACK_DIRECTION.START;
+        attackPoint.Translate(1, -1.5f, 0, Space.Self);
+      }
+      if (Input.GetButtonUp("Down") && attackDir == ATTACK_DIRECTION.DOWN)
+      {
+        attackDir = ATTACK_DIRECTION.START;
+        attackPoint.Translate(1, 1.5f, 0, Space.Self);
+      }
+    }
   }
 }

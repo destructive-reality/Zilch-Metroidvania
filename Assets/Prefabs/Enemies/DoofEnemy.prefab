@@ -413,7 +413,8 @@ MonoBehaviour:
   maxHealth:
     baseValue: 3
   animator: {fileID: 8989124149612149229}
-  knockbackForce: 30
+  knockbackForce:
+    baseValue: 20
 --- !u!114 &6625724200780328413
 MonoBehaviour:
   m_ObjectHideFlags: 0

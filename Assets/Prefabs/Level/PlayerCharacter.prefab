@@ -405,7 +405,8 @@ MonoBehaviour:
   maxHealth:
     baseValue: 5
   animator: {fileID: 6768233270147321216}
-  knockbackForce: 30
+  knockbackForce:
+    baseValue: 40
   playerMasterController: {fileID: 1317141260972420986}
   startInvincibleTime:
     baseValue: 2

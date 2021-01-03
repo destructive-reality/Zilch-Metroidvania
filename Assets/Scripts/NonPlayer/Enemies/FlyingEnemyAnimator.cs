@@ -16,6 +16,8 @@ public class FlyingEnemyAnimator : EnemyBehaviour
     return startPosition;
   }
 
+  public float GetRange() { return aggressionRange; }
+
   private void Start()
   {
     startPosition = new Vector2(transform.position.x, transform.position.y);

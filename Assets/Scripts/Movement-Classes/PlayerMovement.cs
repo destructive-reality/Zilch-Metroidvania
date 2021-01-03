@@ -27,6 +27,8 @@ public class PlayerMovement : MovementsBase
   public float gravityScaleDown = 6.2f;
   private bool isJumping;
 
+  public ParticleSystem jumpParticles;
+
   #endregion
 
   #region WallSlide
@@ -119,6 +121,7 @@ public class PlayerMovement : MovementsBase
       isJumping = true;
       jumpTimeCounter = jumpTime;
       ApplyJumpForce();
+      jumpParticles.Play();
       playerAudioSource.PlayOneShot(jumpSound, jumpSoundVolume);
     }
 

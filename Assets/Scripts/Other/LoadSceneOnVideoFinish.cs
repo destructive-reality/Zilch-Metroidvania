@@ -5,24 +5,18 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(VideoPlayer))]
 public class LoadSceneOnVideoFinish : MonoBehaviour
 {
-    public VideoPlayer videoPlayer;
+    private VideoPlayer videoPlayer;
     public int levelToLoad;
 
     void Start()
     {
-        if (!videoPlayer)
-        {
-            videoPlayer = GetComponent<VideoPlayer>();
-        }
-        else
-        {
-            Debug.LogError("No VideoPlayer found");
-        }
+
+        videoPlayer = GetComponent<VideoPlayer>();
         videoPlayer.loopPointReached += EndReached;
     }
 
-    void EndReached(UnityEngine.Video.VideoPlayer vp)
+    void EndReached(VideoPlayer vp)
     {
-        SceneManager.LoadScene(levelToLoad);
+        LevelLoader.Instance.LoadLevelWithID(levelToLoad);
     }
 }

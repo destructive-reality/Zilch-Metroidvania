@@ -448,10 +448,10 @@ MonoBehaviour:
   startDashCooldown:
     baseValue: 2
   playerAudioSource: {fileID: 860947147407656699}
-  jumpSound: {fileID: 8300000, guid: 4f236988f785cc8448bc9bd07df264ec, type: 3}
-  jumpSoundVolume: 0.4
+  jumpSound: {fileID: 8300000, guid: 7e17e0642656241938d4fff636a33682, type: 3}
+  jumpSoundVolume: 0.05
   dashSound: {fileID: 8300000, guid: eb393dafe3ca4a14996f19e0bbf90527, type: 3}
-  dashSoundVolume: 0.13
+  dashSoundVolume: 0.1
   defaultGroundSoundCollection: {fileID: 11400000, guid: 5f3096aef52362643a030306fdce7b6d,
     type: 2}
   currentGroundSoundCollection: {fileID: 0}

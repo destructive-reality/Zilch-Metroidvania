@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSlot: 0
   modifier: {fileID: 11400000, guid: fc49b65c41e63a341b6ea87d57005cd5, type: 2}
+  projectilePrefab: {fileID: 3251239065350001586, guid: 85109c639cb0a3449adb4772b5ccc6b4,
+    type: 3}
 --- !u!1001 &1251984725057498119
 PrefabInstance:
   m_ObjectHideFlags: 0

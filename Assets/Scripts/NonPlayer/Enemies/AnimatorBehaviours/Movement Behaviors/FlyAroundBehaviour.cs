@@ -31,7 +31,7 @@ public class FlyAroundBehaviour : StateMachineBehaviour
       RaycastHit2D groundHit = Physics2D.Raycast(animator.transform.position, (target + randomV), range, layersToDistanceTo);
       if (groundHit.collider == null)
       {
-        Debug.Log("Target for " + animator.gameObject.name + " valid");
+        // Debug.Log("Target for " + animator.gameObject.name + " valid");
         noValidTarget = false;
       }
       counter++;

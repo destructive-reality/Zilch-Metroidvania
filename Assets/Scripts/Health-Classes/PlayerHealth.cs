@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PlayerHealth : KnockbackHealth
 {
@@ -28,6 +28,7 @@ public class PlayerHealth : KnockbackHealth
       startInvincibilty();
       PostProController.Instance.TriggerChromaticAberrationDamageAnimation();
       CinemachineShake.Instance.ShakeCamera(2f, .1f);
+      GameMaster.Instance.SlowdownTime(.6f, 1.5f);
     }
   }
 

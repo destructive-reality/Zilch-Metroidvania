@@ -78,11 +78,20 @@ SpriteShapeRenderer:
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: 3e833b4df8f1bcc41adbf5f99f986e67, type: 3}
   m_Sprites:
-  - {fileID: 21300000, guid: bfd21df8e62d3b34f8f4130b19ba5a43, type: 3}
+  - {fileID: 21300000, guid: 40486a84b3577e141840967e4dfddaab, type: 3}
+  - {fileID: 21300000, guid: 4678b57e990380a4a9c8f6c30fcb9e09, type: 3}
   - {fileID: 21300000, guid: c5499c9f6bcec6c4885c37076f2a7a80, type: 3}
+  - {fileID: 21300000, guid: 91423b806a596bc429b0ce77b24f8011, type: 3}
+  - {fileID: 21300000, guid: 868b7ee847028e54babeb15a5abfa7a0, type: 3}
+  - {fileID: 21300000, guid: 4b9da84f17ef604499ca2170c6b6c636, type: 3}
+  - {fileID: 21300000, guid: f1bbe3d2f0ff1d94fb5180d2fca45f95, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 5.941855, y: -1.8747056, z: -0.00014999999}
-    m_Extent: {x: 13.328704, y: 1.9259388, z: 0.00014999999}
+    m_Center: {x: 5.710374, y: -1.8978533, z: -0.00014999999}
+    m_Extent: {x: 13.601853, y: 1.9490865, z: 0.00014999999}
 --- !u!114 &7974248086342557975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +156,7 @@ MonoBehaviour:
   m_WorldSpaceUV: 0
   m_CornerAngleThreshold: 30
   m_ColliderDetail: 16
-  m_ColliderOffset: 0.25
+  m_ColliderOffset: 0.4
   m_UpdateCollider: 1
   m_OptimizeCollider: 1
   m_OptimizeGeometry: 1
@@ -169,15 +178,14 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -7.2896266, y: -3.8006186}
-  - {x: -7.2896266, y: -0.59202605}
-  - {x: -7.386849, y: -0.24969274}
-  - {x: 18.789076, y: -0.24969271}
-  - {x: 18.990463, y: -0.55061865}
-  - {x: 18.990463, y: -3.8006058}
+  - {x: -7.7711077, y: -3.84692}
+  - {x: -7.771108, y: -0.06913699}
+  - {x: 19.191856, y: -0.069137126}
+  - {x: 19.191856, y: -3.8468952}
+  - {x: 18.710373, y: -3.8006186}
   - {x: -6.02622, y: -3.8006186}
   - {x: -6.9583673, y: -3.8006186}
-  - {x: -7.2896266, y: -3.8006186}
+  - {x: -7.7711077, y: -3.84692}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

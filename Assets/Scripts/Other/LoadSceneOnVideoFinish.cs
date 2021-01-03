@@ -15,6 +15,11 @@ public class LoadSceneOnVideoFinish : MonoBehaviour
         videoPlayer.loopPointReached += EndReached;
     }
 
+    void OnDisable()
+    {
+        videoPlayer.loopPointReached -= EndReached;
+    }
+
     void EndReached(VideoPlayer vp)
     {
         LevelLoader.Instance.LoadLevelWithID(levelToLoad);

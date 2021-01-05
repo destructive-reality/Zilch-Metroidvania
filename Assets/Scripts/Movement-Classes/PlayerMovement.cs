@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
+
+public enum State { Idle, Jumping, Dashing, Attacking } // even necessarily when working with animator? MD
 
 //Required Components
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Rigidbody2D))]
+
 public class PlayerMovement : MovementsBase
 {
     public PlayerMasterController playerMasterController;
@@ -17,15 +19,15 @@ public class PlayerMovement : MovementsBase
                                                              // public float runSpeed = 40f;                 // uses speed instead      MD
     private float horizontalAxisInput;
 
-    #region Jumping
-    private bool isGrounded; // Whether or not the player is grounded.
-    [SerializeField] float checkRadius = .25f; // Radius of the overlap circle to determine if grounded
-
-    private float jumpTimeCounter = 0f;
-    public float jumpTime = 0.25f;
-    public float gravityScaleUp = 4.2f;
-    public float gravityScaleDown = 6.2f;
-    private bool isJumping;
+  #region Jumping
+  private bool isGrounded; // Whether or not the player is grounded.
+  [SerializeField] float checkRadius = .25f; // Radius of the overlap circle to determine if grounded
+  private float jumpTimeCounter = 0f;
+  public float jumpTime = 0.25f;
+  public float gravityScaleUp = 4.2f;
+  public float gravityScaleDown = 6.2f;
+  private bool isJumping;
+  public UnityEvent JumpTimeEnds;
 
     public ParticleSystem jumpParticles;
 
@@ -42,6 +44,9 @@ public class PlayerMovement : MovementsBase
     public Rigidbody2D playerRigidbody2D;
     // private bool movingRight = true;        // For determining which way the player is currently facing.
     private Vector2 currentVelocity = Vector2.zero;
+  private SpriteRenderer spriteRenderer;
+  public Animator playerAnimator;
+  private State playerState;
 
     private SpriteRenderer spriteRenderer;
     public Animator playerAnimator;
@@ -56,8 +61,8 @@ public class PlayerMovement : MovementsBase
     public Stat startDashCooldown;
     private float dashCooldown; // remaining dash cooldown
     private float dashDirecton;
-
-    #endregion
+  #endregion
+  public UnityEvent CollisionAction;
 
     [Header("Sounds")]
     public AudioSource playerAudioSource;
@@ -77,10 +82,14 @@ public class PlayerMovement : MovementsBase
     private void Awake()
     {
         currentGroundSoundCollection = defaultGroundSoundCollection;
+    dashTime = startDashTime;
+    DashActions = new UnityEvent();
+    DashActions.AddListener(hdlDash);
+    CollisionAction = new UnityEvent();
+    playerState = State.Idle;
 
-        dashTime = startDashTime;
-        DashActions = new UnityEvent();
-        playerState = State.Idle;
+    JumpTimeEnds = new UnityEvent();
+    JumpTimeEnds.AddListener(hdlJumpEnd);
 
         walkSoundTimer = walkSoundRate;
     }
@@ -239,4 +248,24 @@ public class PlayerMovement : MovementsBase
     {
         return isWallSliding;
     }
+  public State GetState()
+  {
+    return playerState;
+  }
+  private void OnCollisionEnter2D(Collision2D other)
+  {
+    // Debug.Log("Collision detected on PlayerMovement");
+    CollisionAction.Invoke();
+  }
+  private void hdlJumpEnd()
+  {
+    isJumping = false;
+  }
+  private void hdlDash()
+  {
+    playerAudioSource.PlayOneShot(dashSound, dashSoundVolume);
+    playerState = State.Dashing;
+    dashDirecton = isFacingRight ? 1 : -1;
+    dashCooldown = Time.time + startDashCooldown.getValue();
+  }
 }

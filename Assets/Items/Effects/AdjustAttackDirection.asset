@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 554cea36206b3dc4da4d7a3e80029b0a, type: 3}
-  m_Name: DashSpeed
+  m_Name: AdjustAttackDirection
   m_EditorClassIdentifier: 
-  effectName: DashSpeed
-  isUpdate: 0
+  effectName: AdjustAttackDirection
+  isUpdate: 1
   isStart: 1

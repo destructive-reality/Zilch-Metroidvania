@@ -2,32 +2,35 @@
 
 public class PowerEffect : Effect
 {
-  [SerializeField] private int attackPowerBoost = 1;
+  private PlayerMovement playerMovement;
+  private PlayerCombat2D playerCombat;
   [SerializeField] private int dashSpeedBoost = 15;
-  [SerializeField] private int healthBoost = 1;
   [SerializeField] private float jumpTimeBoost = 1;
+  [SerializeField] private int attackPowerBoost = 1;
+  [SerializeField] private int healthBoost = 1;
   public override void ArmStart(bool value)
   {
+    Debug.Log("Deal damage while dashing: " + value);
+    playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
+    playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
+    if (value)
+      playerMovement.CollisionAction.AddListener(dashCollision);
+    else
+      playerMovement.CollisionAction.AddListener(dashCollision);
+  }
+  public override void LegStart(bool value)
+  {
     Debug.Log("Increase Player JumpTime: " + value);
-    PlayerMovement playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
+    playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
     if (value)
       playerMovement.jumpTime += jumpTimeBoost;
     else
       playerMovement.jumpTime -= jumpTimeBoost;
   }
-  public override void LegStart(bool value)
-  {
-    Debug.Log("Increase Player DashSpeed: " + value);
-    PlayerMovement playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
-    if (value)
-      playerMovement.dashSpeed.addModifier(dashSpeedBoost);
-    else
-      playerMovement.dashSpeed.removeModifier(dashSpeedBoost);
-  }
   public override void WeaponStart(bool value)
   {
     Debug.Log("Increase Player Damage: " + value);
-    PlayerCombat2D playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
+    playerCombat = gameObject.GetComponentInParent<PlayerCombat2D>();
     if (value)
       playerCombat.attackPower.addModifier(attackPowerBoost);
     else
@@ -58,5 +61,13 @@ public class PowerEffect : Effect
   public override void HeadUpdate()
   {
 
+  }
+
+  private void dashCollision()
+  {
+    if (playerMovement.GetState() == State.Dashing)
+    {
+      playerCombat.startAttack();
+    }
   }
 }

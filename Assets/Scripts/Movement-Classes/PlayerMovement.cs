@@ -22,12 +22,12 @@ public class PlayerMovement : MovementsBase
   #region Jumping
   private bool isGrounded; // Whether or not the player is grounded.
   [SerializeField] float checkRadius = .25f; // Radius of the overlap circle to determine if grounded
-
   private float jumpTimeCounter = 0f;
   public float jumpTime = 0.25f;
   public float gravityScaleUp = 4.2f;
   public float gravityScaleDown = 6.2f;
   private bool isJumping;
+  public UnityEvent JumpTimeEnds;
 
   #endregion
 
@@ -84,6 +84,9 @@ public class PlayerMovement : MovementsBase
     CollisionAction = new UnityEvent();
     playerState = State.Idle;
 
+    JumpTimeEnds = new UnityEvent();
+    JumpTimeEnds.AddListener(hdlJumpEnd);
+
     walkSoundTimer = walkSoundRate;
   }
 
@@ -135,7 +138,7 @@ public class PlayerMovement : MovementsBase
       }
       else
       {
-        isJumping = false;
+        JumpTimeEnds.Invoke();
       }
     }
 
@@ -239,6 +242,11 @@ public class PlayerMovement : MovementsBase
   {
     // Debug.Log("Collision detected on PlayerMovement");
     CollisionAction.Invoke();
+  }
+
+  private void hdlJumpEnd()
+  {
+    isJumping = false;
   }
 
   private void hdlDash()

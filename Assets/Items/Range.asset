@@ -16,7 +16,7 @@ MonoBehaviour:
   modifierName: Range Stone
   currentSlot: 0
   effectWeapon: {fileID: 11400000, guid: 84734ee70a8ddf844ad2499b62f91954, type: 2}
-  effectArm: {fileID: 11400000, guid: 546575982b45cb54fb8022c0f57b649c, type: 2}
+  effectArm: {fileID: 11400000, guid: 274df9e75434dbc4d9aaa0e7bcdb66e9, type: 2}
   effectLeg: {fileID: 11400000, guid: 2c515d06abbed4844816abbb75a24dca, type: 2}
   effectHead: {fileID: 11400000, guid: 0fcfb518e1b7492418848e1f1ce2f9f5, type: 2}
   modifierDescription: This stone doesn't make everything longer.

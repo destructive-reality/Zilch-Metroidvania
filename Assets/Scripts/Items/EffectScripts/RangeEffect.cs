@@ -2,7 +2,9 @@
 
 public class RangeEffect : Effect
 {
-  PlayerMovement playerMovement;
+  [SerializeField] private float hoverTime = 1;
+  private float hoverTimeCounter = 0;
+  private PlayerMovement playerMovement;
   private float attackRangeBoost = 0.3f;
   private float dashTimeBoost = 0.2f;
   private PlayerCombat2D playerCombat;
@@ -12,7 +14,12 @@ public class RangeEffect : Effect
 
   public override void ArmStart(bool value = true)
   {
-
+    Debug.Log("Grant Player hover after jump: " + value);
+    playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
+    if (value)
+      playerMovement.JumpTimeEnds.AddListener(hdlHover);
+    else
+      playerMovement.JumpTimeEnds.RemoveListener(hdlHover);
   }
   public override void LegStart(bool value = true)
   {
@@ -41,7 +48,19 @@ public class RangeEffect : Effect
   }
   public override void ArmUpdate()
   {
-
+    if (hoverTimeCounter > 0)
+    {
+      Debug.Log("Check hoverTimer");
+      if (hoverTimeCounter < Time.time || Input.GetButtonUp("Jump"))
+      {
+        playerMovement.playerRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        hoverTimeCounter = 0;
+      }
+      if (Input.GetButton("Jump") && hoverTimeCounter > Time.time && playerMovement.playerRigidbody2D.velocity.y < -0.5f)
+      {
+        playerMovement.playerRigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+      }
+    }
   }
   public override void LegUpdate()
   {
@@ -60,6 +79,15 @@ public class RangeEffect : Effect
       FireProjectile();
     }
   }
+
+  private void hdlHover()
+  {
+    if (hoverTimeCounter == 0)
+    {
+      hoverTimeCounter = hoverTime + Time.time;
+    }
+  }
+
   private void FireProjectile()
   {
     Vector2 dir = Vector2.right;

@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3802199718732738927, guid: 52e3ed338f0721249a9c4f46bb0aa57a,
+        type: 3}
+      propertyPath: jumpTimeBoost
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3980962368386600019, guid: 52e3ed338f0721249a9c4f46bb0aa57a,
         type: 3}
       propertyPath: modifier

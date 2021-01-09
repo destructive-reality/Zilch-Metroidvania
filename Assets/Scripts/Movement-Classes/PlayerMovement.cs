@@ -145,7 +145,7 @@ public class PlayerMovement : MovementsBase
       }
       else
       {
-        isJumping = false;
+        JumpTimeEnds.Invoke();
       }
     }
 

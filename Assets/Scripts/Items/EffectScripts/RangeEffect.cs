@@ -4,6 +4,7 @@ public class RangeEffect : Effect
 {
   [SerializeField] private float hoverTime = 1;
   private float hoverTimeCounter = 0;
+  private ParticleSystem jumpParticles;
   private PlayerMovement playerMovement;
   private float attackRangeBoost = 0.3f;
   private float dashTimeBoost = 0.2f;
@@ -16,6 +17,7 @@ public class RangeEffect : Effect
   {
     Debug.Log("Grant Player hover after jump: " + value);
     playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
+    jumpParticles = playerMovement.jumpParticles;
     if (value)
       playerMovement.JumpTimeEnds.AddListener(hdlHover);
     else
@@ -51,14 +53,21 @@ public class RangeEffect : Effect
     if (hoverTimeCounter > 0)
     {
       Debug.Log("Check hoverTimer");
+      if (!jumpParticles.isPlaying || jumpParticles.time > jumpParticles.main.duration / 2)
+      {
+        jumpParticles.Stop();
+        jumpParticles.Play();
+      }
       if (hoverTimeCounter < Time.time || Input.GetButtonUp("Jump"))
       {
         playerMovement.playerRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         hoverTimeCounter = 0;
+        jumpParticles.Stop();
       }
       if (Input.GetButton("Jump") && hoverTimeCounter > Time.time && playerMovement.playerRigidbody2D.velocity.y < -0.5f)
       {
         playerMovement.playerRigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        jumpParticles.Play();
       }
     }
   }
@@ -84,6 +93,7 @@ public class RangeEffect : Effect
   {
     if (hoverTimeCounter == 0)
     {
+      Debug.Log("Set hover time");
       hoverTimeCounter = hoverTime + Time.time;
     }
   }

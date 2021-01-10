@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        setHealth((int) maxHealth.getValue());
+        setHealth((int)maxHealth.getValue());
     }
 
     public virtual void setHealth(int _healthToSetTo)
@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
     public virtual void applyDamage(int _damageToTake)
     {
         // Debug.Log(gameObject.name + " gets Hit for " + _damageToTake);
-        setHealth(Mathf.Clamp(currentHealth - _damageToTake, 0, (int) maxHealth.getValue()));
+        setHealth(Mathf.Clamp(currentHealth - _damageToTake, 0, (int)maxHealth.getValue()));
 
         if (isDead())
         {
@@ -44,10 +44,11 @@ public class Health : MonoBehaviour
     public void heal(int _amountToHeal)
     {
         // Debug.Log(gameObject.name + " heals for " + amountToHeal);
-        setHealth(Mathf.Clamp(currentHealth + _amountToHeal, 0, (int) maxHealth.getValue()));
+        setHealth(Mathf.Clamp(currentHealth + _amountToHeal, 0, (int)maxHealth.getValue()));
     }
 
-    public void healToMaxHealth() {
+    public void healToMaxHealth()
+    {
         heal((int)maxHealth.getValue());
     }
 

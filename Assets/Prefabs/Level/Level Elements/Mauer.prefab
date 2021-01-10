@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7974248086342557969}
   - component: {fileID: 7974248086342557968}
   - component: {fileID: 7974248086342557975}
-  - component: {fileID: 1794448698081546733}
+  - component: {fileID: 8865324314998280163}
   m_Layer: 9
   m_Name: Mauer
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 696946775
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
---- !u!68 &1794448698081546733
-EdgeCollider2D:
+--- !u!60 &8865324314998280163
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -176,17 +176,22 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -7.7711077, y: -3.84692}
-  - {x: -7.771108, y: -0.06913699}
-  - {x: 19.191856, y: -0.069137126}
-  - {x: 19.191856, y: -3.8468952}
-  - {x: 18.710373, y: -3.8006186}
-  - {x: -6.02622, y: -3.8006186}
-  - {x: -6.9583673, y: -3.8006186}
-  - {x: -7.7711077, y: -3.84692}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+    m_Paths:
+    - - {x: -7.7711077, y: -3.84692}
+      - {x: -7.771108, y: -0.06913699}
+      - {x: 19.191856, y: -0.069137126}
+      - {x: 19.191856, y: -3.8468952}
+      - {x: 18.710373, y: -3.8006186}
+      - {x: -6.02622, y: -3.8006186}
+      - {x: -6.9583673, y: -3.8006186}
+      - {x: -7.7711077, y: -3.84692}

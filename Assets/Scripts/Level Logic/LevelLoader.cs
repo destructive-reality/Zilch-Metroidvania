@@ -29,6 +29,10 @@ public class LevelLoader : MonoBehaviour
     {
         LoadLevelWithID(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void ReloadCurrentLevel()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+    }
 
     public void LoadLevelWithID(int levelIndex)
     {

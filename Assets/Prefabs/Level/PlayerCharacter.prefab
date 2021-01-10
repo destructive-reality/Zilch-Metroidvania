@@ -396,6 +396,9 @@ MonoBehaviour:
   jumpTime: 0.25
   gravityScaleUp: 6
   gravityScaleDown: 10
+  JumpTimeEnds:
+    m_PersistentCalls:
+      m_Calls: []
   jumpParticles: {fileID: 3885930845310424675}
   wallCheck: {fileID: 8037269116266527860}
   wallSlidingSpeed:
@@ -410,15 +413,18 @@ MonoBehaviour:
   startDashTime: 0.1
   startDashCooldown:
     baseValue: 2
+  CollisionAction:
+    m_PersistentCalls:
+      m_Calls: []
   playerAudioSource: {fileID: 860947147407656699}
   jumpSound: {fileID: 8300000, guid: 7e17e0642656241938d4fff636a33682, type: 3}
-  jumpSoundVolume: 0.05
+  jumpSoundVolume: 0.04
   dashSound: {fileID: 8300000, guid: eb393dafe3ca4a14996f19e0bbf90527, type: 3}
-  dashSoundVolume: 0.05
-  defaultGroundSoundCollection: {fileID: 11400000, guid: 5f3096aef52362643a030306fdce7b6d,
+  dashSoundVolume: 0.02
+  defaultGroundSoundCollection: {fileID: 11400000, guid: 3bb8f323de6311d43ae21526950edcd7,
     type: 2}
   currentGroundSoundCollection: {fileID: 0}
-  walkSoundVolume: 0.05
+  walkSoundVolume: 0.03
   walkSoundRate: 0.35
 --- !u!114 &7228385836571419879
 MonoBehaviour:
@@ -5437,7 +5443,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1380472127
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &6768233270147321216

@@ -269,12 +269,12 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 12.4
   m_LookaheadIgnoreY: 0
-  m_XDamping: 0.5
-  m_YDamping: 0.4
+  m_XDamping: 0.8
+  m_YDamping: 0.8
   m_ZDamping: 1
   m_TargetMovementOnly: 0
   m_ScreenX: 0.5
-  m_ScreenY: 0.7
+  m_ScreenY: 0.67
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.08
   m_DeadZoneHeight: 0.12

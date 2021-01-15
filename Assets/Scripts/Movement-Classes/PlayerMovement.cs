@@ -56,6 +56,7 @@ public class PlayerMovement : MovementsBase
     public Stat startDashCooldown;
     private float dashCooldown; // remaining dash cooldown
     private float dashDirecton;
+    public ParticleSystem dashParticles;
     #endregion
     public UnityEvent CollisionAction;
 
@@ -174,6 +175,7 @@ public class PlayerMovement : MovementsBase
             {
                 playerAudioSource.PlayOneShot(dashSound, dashSoundVolume);
                 playerAnimator.SetTrigger("Dash");
+                dashParticles.Play();
                 playerState = State.Dashing;
                 dashDirecton = isFacingRight ? 1 : -1;
                 dashCooldown = Time.time + startDashCooldown.getValue();
@@ -263,5 +265,20 @@ public class PlayerMovement : MovementsBase
         playerState = State.Dashing;
         dashDirecton = isFacingRight ? 1 : -1;
         dashCooldown = Time.time + startDashCooldown.getValue();
+    }
+
+    public override void flip(FLIP_DIRECTION _direction = FLIP_DIRECTION.OTHER)
+    {
+        base.flip(_direction);
+
+        if (isFacingRight)
+        {
+            dashParticles.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            //Facing Left
+            dashParticles.transform.localRotation = Quaternion.Euler(0, 0, 180);
+        }
     }
 }

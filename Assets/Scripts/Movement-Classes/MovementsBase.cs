@@ -10,7 +10,7 @@ public abstract class MovementsBase : MonoBehaviour
   public bool isFacingRight = true;
   public Stat speed;
 
-  public void flip(FLIP_DIRECTION _direction = FLIP_DIRECTION.OTHER)
+  public virtual void flip(FLIP_DIRECTION _direction = FLIP_DIRECTION.OTHER)
   {
     Vector3 localScale = transform.localScale;
     if (_direction == FLIP_DIRECTION.OTHER)

@@ -74,9 +74,9 @@ InputManager:
     descriptiveName: For picking up items
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: s
+    positiveButton: e
     altNegativeButton: 
-    altPositiveButton: down
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000

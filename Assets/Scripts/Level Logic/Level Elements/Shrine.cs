@@ -1,52 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Shrine : MonoBehaviour
 {
-    public ParticleSystem healParticleSystem;
+  [SerializeField] private ParticleSystem healParticleSystem;
 
-    public AudioClip healSound;
-    private AudioSource audioSource;
+  [SerializeField] private AudioClip healSound;
+  private AudioSource audioSource;
 
+  [SerializeField] private Animator animator;
+  protected bool isInteractable = false;
 
-    public Animator animator;
-    private bool isInteractable = false;
+  void Awake()
+  {
+    audioSource = GetComponent<AudioSource>();
+  }
 
-    void Awake()
+  void Update()
+  {
+    if (isInteractable && Input.GetButtonDown("PickUp"))
     {
-        audioSource = GetComponent<AudioSource>();
+      healParticleSystem.Play();
+      audioSource.PlayOneShot(healSound);
+      GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().healToMaxHealth();
     }
+  }
 
-    void Update()
+  protected virtual void OnTriggerEnter2D(Collider2D other)
+  {
+    if (other.CompareTag("Player"))
     {
-        if (isInteractable && Input.GetButtonDown("PickUp")) {
-            healParticleSystem.Play();
-            audioSource.PlayOneShot(healSound);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().healToMaxHealth();
-        }
+      isInteractable = true;
+      animator.SetBool("isActive", true);
     }
+  }
 
-    private void OnTriggerEnter2D(Collider2D other)
+  protected virtual void OnTriggerExit2D(Collider2D other)
+  {
+    if (other.CompareTag("Player"))
     {
-        if (other.CompareTag("Player"))
-        {
-            isInteractable = true;
-            animator.SetBool("isActive", true);
-        }
+      isInteractable = false;
+      animator.SetBool("isActive", false);
     }
+  }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isInteractable = false;
-            animator.SetBool("isActive", false);
-        }
-    }
-
-    void healPlayer()
-    {
-        healParticleSystem.Play();
-    }
+  void healPlayer()
+  {
+    healParticleSystem.Play();
+  }
 }

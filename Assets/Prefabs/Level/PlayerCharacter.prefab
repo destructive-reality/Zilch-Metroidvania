@@ -5218,7 +5218,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 14336
   attackTime:
-    baseValue: 0.3
+    baseValue: 0.15
 --- !u!114 &7643680188621843559
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,6 +40,8 @@ public class PlayerHealth : KnockbackHealth
     {
         base.die();
         LevelLoader.Instance.ReloadCurrentLevel();
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerCombat2D>().enabled = false;
         Debug.Log(gameObject.name + " is dying. Bye!");
     }
 }

@@ -7954,7 +7954,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_RenderMode: 0
-  m_SortMode: 0
+  m_SortMode: 1
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
@@ -7973,7 +7973,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 000304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -7989,15 +7989,15 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
-  cullingMode: 0
-  ringBufferMode: 0
+  cullingMode: 1
+  ringBufferMode: 2
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -8114,7 +8114,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -8230,7 +8230,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.6
+      scalar: 0.5
       minScalar: 0.4
       maxCurve:
         serializedVersion: 2
@@ -8552,7 +8552,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.03
+      scalar: 0.04
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -8811,7 +8811,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 16
+      scalar: 12
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -9250,8 +9250,8 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 1, g: 1, b: 1, a: 0.74509805}
-        key2: {r: 0, g: 0, b: 0, a: 0.74509805}
+        key1: {r: 1, g: 1, b: 1, a: 0.654902}
+        key2: {r: 0, g: 0, b: 0, a: 0.5019608}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -9266,10 +9266,10 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 386
-        atime1: 5397
+        atime1: 3277
         atime2: 57247
         atime3: 65535
-        atime4: 0
+        atime4: 65535
         atime5: 0
         atime6: 0
         atime7: 0
@@ -10628,7 +10628,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10681,7 +10681,7 @@ ParticleSystem:
     strengthY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.04
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10787,10 +10787,10 @@ ParticleSystem:
     separateAxes: 0
     frequency: 0.05
     damping: 1
-    octaves: 1
-    octaveMultiplier: 0.5
+    octaves: 2
+    octaveMultiplier: 1
     octaveScale: 2
-    quality: 2
+    quality: 1
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
@@ -11007,7 +11007,7 @@ ParticleSystem:
     positionAmount:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.9
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -11060,7 +11060,7 @@ ParticleSystem:
     rotationAmount:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -11113,7 +11113,7 @@ ParticleSystem:
     sizeAmount:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.03
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -11750,7 +11750,7 @@ ParticleSystem:
     collisionShape4: {fileID: 0}
     collisionShape5: {fileID: 0}
     inside: 1
-    outside: 0
+    outside: 1
     enter: 0
     exit: 0
     radiusScale: 1
@@ -11760,8 +11760,8 @@ ParticleSystem:
     subEmitters:
     - serializedVersion: 3
       emitter: {fileID: 0}
-      type: 0
-      properties: 0
+      type: 2
+      properties: -1
       emitProbability: 1
   LightsModule:
     enabled: 0
@@ -11936,10 +11936,10 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minVertexDistance: 0.2
-    textureMode: 0
+    textureMode: 1
     ribbonCount: 1
     shadowBias: 0.5
-    worldSpace: 0
+    worldSpace: 1
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
@@ -12013,7 +12013,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -12700,7 +12700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654105157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.8, y: 7.1, z: 51.240078}
+  m_LocalPosition: {x: 17.8, y: 7.1, z: 163.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -31168,16 +31168,6 @@ PrefabInstance:
     - target: {fileID: 5823514235671258632, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: addNormals
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5993870324957332293, guid: f5e1edfa8948b7d4092a3b9088aab59a,
-        type: 3}
-      propertyPath: m_Dithering
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5993870324957332293, guid: f5e1edfa8948b7d4092a3b9088aab59a,
-        type: 3}
-      propertyPath: m_RenderPostProcessing
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6121853363776226691, guid: f5e1edfa8948b7d4092a3b9088aab59a,

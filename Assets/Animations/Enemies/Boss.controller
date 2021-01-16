@@ -174,26 +174,26 @@ AnimatorController:
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   - m_Name: BoomerangFire
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: RockSlide
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: GroundForce
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -407,5 +407,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b81c397a518c74cba7127832594fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabGameObject: {fileID: 8582398733892580638, guid: b45a262a0bde3394393b46bedc46c8f5,
+  prefabGameObject: {fileID: 6493090262175773277, guid: 54db73a8b049f1c48862cc1b36de71a8,
     type: 3}

@@ -336,7 +336,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae717098c84e22c4f9fc244fb53800cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6768233270147321216}
   attackPower:
     baseValue: 1
   attackRange:
@@ -396,6 +395,9 @@ MonoBehaviour:
   jumpTime: 0.25
   gravityScaleUp: 6
   gravityScaleDown: 10
+  JumpTimeEnds:
+    m_PersistentCalls:
+      m_Calls: []
   jumpParticles: {fileID: 3885930845310424675}
   wallCheck: {fileID: 8037269116266527860}
   wallSlidingSpeed:
@@ -410,6 +412,9 @@ MonoBehaviour:
   startDashTime: 0.1
   startDashCooldown:
     baseValue: 2
+  CollisionAction:
+    m_PersistentCalls:
+      m_Calls: []
   playerAudioSource: {fileID: 860947147407656699}
   jumpSound: {fileID: 8300000, guid: 7e17e0642656241938d4fff636a33682, type: 3}
   jumpSoundVolume: 0.05
@@ -454,8 +459,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24994722, y: 5.998732}
-  m_Size: {x: 3.930306, y: 12.101105}
+  m_Offset: {x: 0.054889362, y: 6.044458}
+  m_Size: {x: 4.174174, y: 12.192556}
   m_Direction: 0
 --- !u!1 &6622962744746053441
 GameObject:
@@ -5437,7 +5442,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1380472127
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &6768233270147321216

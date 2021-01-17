@@ -7,11 +7,6 @@ public class PlayerHealth : KnockbackHealth
     private float invincibleTime = 0f;
     public int lowLifePulseThreshold = 1;
 
-    protected override void Start()
-    {
-        // setHealth(PlayerPrefs.GetInt("PlayerHealth", (int)maxHealth.getValue()));
-    }
-
     public override void setHealth(int healthToSetTo)
     {
         base.setHealth(healthToSetTo);

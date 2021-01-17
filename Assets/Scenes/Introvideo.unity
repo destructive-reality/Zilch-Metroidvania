@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8c01049d291104eb14cb37aec03dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 3
+  levelToLoad: 2
 --- !u!328 &1531639944
 VideoPlayer:
   m_ObjectHideFlags: 0

@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 7c68003e0932c4a40bcf413d68acf163
   - enabled: 1
-    path: Assets/Scenes/Waldlevel.unity
-    guid: 400d09321d3178c4d85395cdae4c804f
+    path: Assets/Scenes/Introvideo.unity
+    guid: b03e59ed6488dd64a8a9d11e45a3ee53
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 5636266f26f77a447b7367d67c47b4cb
   - enabled: 1
-    path: Assets/Scenes/Introvideo.unity
-    guid: b03e59ed6488dd64a8a9d11e45a3ee53
+    path: Assets/Scenes/Waldlevel.unity
+    guid: 400d09321d3178c4d85395cdae4c804f
   m_configObjects: {}

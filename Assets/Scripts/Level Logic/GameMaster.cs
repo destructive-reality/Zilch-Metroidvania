@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+public enum DIRECTION
+{
+    RightToLeft,
+    LeftToRight
+}
 
 public class GameMaster : MonoBehaviour
 {
+
     //Singleton Stuff
     private static GameMaster _instance;
     public static GameMaster Instance { get { return _instance; } }
     public int lastLevelDoorId;
+    public DIRECTION lastSpawnOffsetDirection;
 
     #region Slowdown
     private float slowdownTimer;
@@ -50,7 +57,12 @@ public class GameMaster : MonoBehaviour
             if (levelConnectorScript.doorId == lastLevelDoorId)
             {
                 Debug.Log(levelConnector);
-                GameObject.FindGameObjectWithTag("Player").transform.position = (Vector2)levelConnector.transform.position + LevelConnector.SpawnOffset(levelConnectorScript.enterDirection);
+                Vector2 newPlayerPosition = (Vector2)levelConnector.transform.position;
+
+                newPlayerPosition += lastSpawnOffsetDirection == DIRECTION.LeftToRight ? new Vector2(2.5f, 0) : new Vector2(-2.5f, 0);
+
+                GameObject.FindGameObjectWithTag("Player").transform.position = newPlayerPosition;
+                break;
             }
         }
     }

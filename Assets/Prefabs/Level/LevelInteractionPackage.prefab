@@ -1401,6 +1401,17 @@ PrefabInstance:
       propertyPath: equipment
       value: 
       objectReference: {fileID: 6318509533268976526}
+    - target: {fileID: 6955851055740990905, guid: 0aaaa63c865a01442ba1d6435740b737,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6955851055740990905, guid: 0aaaa63c865a01442ba1d6435740b737,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1217544109371111318, guid: 7513d5a74e668420c9b0ab46f01c4e4a,
+        type: 2}
     - target: {fileID: 7133761034600498386, guid: 0aaaa63c865a01442ba1d6435740b737,
         type: 3}
       propertyPath: m_AnchorMax.y

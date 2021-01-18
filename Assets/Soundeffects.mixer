@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-8457223640963257733
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: a90bac08020eb4689b49d485ef67e57a
+  m_EffectName: Attenuation
+  m_MixLevel: ad2f76c65a4bf47689658172e57b1cd0
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-6085565610928817461
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -107,6 +121,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-1217544109371111318
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: c15e05588ec56476bab47ffaa121545e
+  m_Children: []
+  m_Volume: 162ba9f89805e43099a3b98d5f4d6c83
+  m_Pitch: 13220daa17b004c478a870a947433eae
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -8457223640963257733}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-924359364579098705
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -169,6 +202,7 @@ AudioMixerController:
     - 4f71f3f39a87b49f592cbd6e90253cac
     - 22d7ca1c42d9f45c4a557ac94000bc5f
     - 3764f2709603745b2a8ab3cc8490a08e
+    - c15e05588ec56476bab47ffaa121545e
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -185,6 +219,7 @@ AudioMixerGroupController:
   - {fileID: 5107174978361992493}
   - {fileID: 9115384903544834072}
   - {fileID: -5978412447977634268}
+  - {fileID: -1217544109371111318}
   m_Volume: d1f6776b9912e49c1bb11fa99cd233eb
   m_Pitch: cdf0c3ad50c674dd7a3655a6ad4fdb69
   m_Send: 00000000000000000000000000000000
@@ -222,6 +257,7 @@ AudioMixerSnapshotController:
     d13a0fa13131e4b77a1eb84f256fa39e: -1.5838235e-11
     5ac49cd4e570f413f9d341701efda82b: -26.404226
     4ccee235921124da0b687f23b0bf7296: -31.948442
+    162ba9f89805e43099a3b98d5f4d6c83: -31.948442
     4c5fb6ca6e18e462f9ed279067663a04: 0
     d1f6776b9912e49c1bb11fa99cd233eb: 0
     6ef29b8b58488451db4fdb5a44133644: 0

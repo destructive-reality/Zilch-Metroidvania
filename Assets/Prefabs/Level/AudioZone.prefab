@@ -171,4 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e63c2940c90aea41844313d5b4ea10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1.5
+  globalLight: {fileID: 0}
+  lightAdjustment: 0.5
+  fadeDuration: 5

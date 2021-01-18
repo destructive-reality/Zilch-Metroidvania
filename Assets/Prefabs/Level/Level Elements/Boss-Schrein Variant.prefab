@@ -16,6 +16,8 @@ MonoBehaviour:
   healSound: {fileID: 8300000, guid: 4ad8b14261ca4cf47a0846e7e02d2f16, type: 3}
   animator: {fileID: 3898282442282460461}
   minModifierCount: 5
+  prefabBoss: {fileID: 3406395083984415623, guid: e1688c82c4ba24f4ebd2fafbac43008f,
+    type: 3}
 --- !u!1001 &2536203631398704861
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -24,6 +24,8 @@ public class PlayerHealth : KnockbackHealth
     if (Time.time >= invincibleTime)
     {
       base.getHit(damage, damagingObject);
+      // ApplyKnockback here, since other enemies dont use knockback    MD
+      applyKnockback(new Vector2(this.transform.position.x < damagingObject.transform.position.x ? -knockbackForce.getValue() : knockbackForce.getValue(), knockbackForce.getValue() / 4));
       startInvincibilty();
       PostProController.Instance.TriggerChromaticAberrationDamageAnimation();
       CinemachineShake.Instance.ShakeCamera(2f, .1f);

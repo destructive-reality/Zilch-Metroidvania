@@ -3,6 +3,7 @@
 public class BossShrine : Shrine
 {
   [SerializeField] private int minModifierCount;
+  [SerializeField] private Transform prefabBoss;
   private bool isReady = false;
   private bool isActive = false;
 
@@ -30,6 +31,8 @@ public class BossShrine : Shrine
 
     if (isReady)
     {
+      Transform tsfBoss = Instantiate(prefabBoss, transform.position, Quaternion.identity);
+      // GameObject.Destroy(this);
       // Start Boss-Transformation  MD
       // isActive = true;
     }
@@ -39,7 +42,7 @@ public class BossShrine : Shrine
   {
     int modifierCount = _player.GetComponentInChildren<Inventory>().gameObject.transform.childCount;
     Debug.Log(modifierCount);
-    if (modifierCount < minModifierCount)
+    if (modifierCount >= minModifierCount)
     {
       return true;
     }

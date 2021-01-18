@@ -23485,7 +23485,7 @@ PrefabInstance:
     - target: {fileID: 3406395083984415617, guid: e1688c82c4ba24f4ebd2fafbac43008f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3406395083984415623, guid: e1688c82c4ba24f4ebd2fafbac43008f,
         type: 3}
@@ -23494,18 +23494,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3406395083984415623, guid: e1688c82c4ba24f4ebd2fafbac43008f,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3406395083984415623, guid: e1688c82c4ba24f4ebd2fafbac43008f,
-        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.302536
+      value: -26.2
       objectReference: {fileID: 0}
     - target: {fileID: 3406395083984415623, guid: e1688c82c4ba24f4ebd2fafbac43008f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.761623
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 3406395083984415623, guid: e1688c82c4ba24f4ebd2fafbac43008f,
         type: 3}
@@ -23531,21 +23526,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3406395083984415623, guid: e1688c82c4ba24f4ebd2fafbac43008f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3406395083984415623, guid: e1688c82c4ba24f4ebd2fafbac43008f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3406395083984415623, guid: e1688c82c4ba24f4ebd2fafbac43008f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3406395084202696447, guid: e1688c82c4ba24f4ebd2fafbac43008f,
         type: 3}
@@ -27947,6 +27927,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1715069795, guid: eff967b9f7229f845982ab7f8472bfa8, type: 3}
+      propertyPath: minModifierCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1002038813455847074, guid: eff967b9f7229f845982ab7f8472bfa8,
         type: 3}
       propertyPath: m_RootOrder

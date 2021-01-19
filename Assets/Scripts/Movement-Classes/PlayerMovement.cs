@@ -133,6 +133,7 @@ public class PlayerMovement : MovementsBase
             isJumping = true;
             jumpTimeCounter = jumpTime;
             ApplyJumpForce();
+            playerAnimator.SetTrigger("Jump");
             jumpParticles.Play();
             playerAudioSource.PlayOneShot(jumpSound, jumpSoundVolume);
         }

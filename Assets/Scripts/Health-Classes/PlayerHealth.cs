@@ -37,6 +37,7 @@ public class PlayerHealth : KnockbackHealth
         LevelLoader.Instance.ReloadCurrentLevel();
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerCombat2D>().enabled = false;
+        playerMasterController.playerMovementController.playerAnimator.SetTrigger("Death");
         Debug.Log(gameObject.name + " is dying. Bye!");
     }
 }

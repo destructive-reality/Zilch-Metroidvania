@@ -163,6 +163,8 @@ public class PlayerMovement : MovementsBase
         else
             isWallSliding = false;
 
+        playerAnimator.SetBool("WallSlide", isWallSliding);
+
         if (isWallSliding)
         {
             playerRigidbody2D.velocity = new Vector2(playerRigidbody2D.velocity.x, Mathf.Clamp(playerRigidbody2D.velocity.y, -wallSlidingSpeed.getValue(), float.MaxValue));

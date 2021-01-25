@@ -19,6 +19,7 @@ public class PlayerMovement : MovementsBase
                                                              // public float runSpeed = 40f;                 // uses speed instead      MD
     private float horizontalAxisInput;
 
+    [Header("Jumping")]
     #region Jumping
     private bool isGrounded; // Whether or not the player is grounded.
     [SerializeField] float checkRadius = .25f; // Radius of the overlap circle to determine if grounded
@@ -33,11 +34,14 @@ public class PlayerMovement : MovementsBase
 
     #endregion
 
+    [Header("WallSlide")]
     #region WallSlide
     private bool isTouchingWall;
     public Transform wallCheck;
     private bool isWallSliding;
     public Stat wallSlidingSpeed;
+
+    public AudioSource wallSlideAudioSource;
 
     #endregion
 
@@ -48,6 +52,7 @@ public class PlayerMovement : MovementsBase
     public Animator playerAnimator;
     private State playerState;
 
+    [Header("Dash")]
     #region Dash
     public UnityEvent DashActions;
     public Stat dashSpeed;
@@ -159,9 +164,19 @@ public class PlayerMovement : MovementsBase
         //WallSliding
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, checkRadius, groundLayers);
         if (isTouchingWall && !isGrounded && horizontalAxisInput != 0)
+        {
             isWallSliding = true;
+            if (!wallSlideAudioSource.isPlaying)
+            {
+                wallSlideAudioSource.time = Random.Range(0f, wallSlideAudioSource.clip.length);
+                wallSlideAudioSource.Play();
+            }
+        }
         else
+        {
             isWallSliding = false;
+            wallSlideAudioSource.Stop();
+        }
 
         playerAnimator.SetBool("WallSlide", isWallSliding);
 

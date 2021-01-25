@@ -27,4 +27,10 @@ public class BossHealth : KnockbackHealth
       nextBreakpoint++;
     }
   }
+
+  protected override void die()
+  {
+    base.die();
+    animator.SetTrigger("die");
+  }
 }

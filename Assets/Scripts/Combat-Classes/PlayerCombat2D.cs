@@ -47,7 +47,7 @@ public class PlayerCombat2D : Damaging
         target.GetComponent<Health>().applyDamage((int)attackPower.getValue());
       }
       else if (targetLayer == LayerMask.NameToLayer("Enemy"))
-        target.GetComponent<KnockbackHealth>().getHit((int)attackPower.getValue(), this.gameObject); //Change KnockbackHealth back to EnemyHealth?
+        target.GetComponent<KnockbackHealth>().getHit((int)attackPower.getValue(), transform.position); //Change KnockbackHealth back to EnemyHealth?
     }
   }
 

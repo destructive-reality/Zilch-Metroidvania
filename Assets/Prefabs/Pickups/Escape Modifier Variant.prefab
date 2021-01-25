@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSlot: 0
   modifier: {fileID: 11400000, guid: a834684b25f5b6d45a81bbb74103d3cb, type: 2}
+  pickupSpriteRenderer: {fileID: 3207661480617170716}
   wallSlidingSpeedReduction: 2
   xJumpForce: 30
   yJumpForce: 4
+  iFrameTimeBoost: 1
 --- !u!1001 &5769296542835545255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93,6 +95,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3802199718732738927, guid: 52e3ed338f0721249a9c4f46bb0aa57a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 52e3ed338f0721249a9c4f46bb0aa57a, type: 3}
+--- !u!212 &3207661480617170716 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8976606152636351419, guid: 52e3ed338f0721249a9c4f46bb0aa57a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5769296542835545255}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2075592102895346734 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5538676189619875977, guid: 52e3ed338f0721249a9c4f46bb0aa57a,

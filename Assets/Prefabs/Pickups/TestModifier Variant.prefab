@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSlot: 0
   modifier: {fileID: 11400000, guid: 99bd6c95de5fced4d94b0115823987cb, type: 2}
+  pickupSpriteRenderer: {fileID: 3434201807479355783}
 --- !u!1001 &5997655494145505852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,6 +101,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3802199718732738927, guid: 52e3ed338f0721249a9c4f46bb0aa57a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 52e3ed338f0721249a9c4f46bb0aa57a, type: 3}
+--- !u!212 &3434201807479355783 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8976606152636351419, guid: 52e3ed338f0721249a9c4f46bb0aa57a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5997655494145505852}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2298708566653176501 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5538676189619875977, guid: 52e3ed338f0721249a9c4f46bb0aa57a,

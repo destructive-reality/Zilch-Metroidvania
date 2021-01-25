@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSlot: 0
   modifier: {fileID: 11400000, guid: 0680430a9ec0f66409e7bdc3e5cad359, type: 2}
+  pickupSpriteRenderer: {fileID: 3944417360912400006}
   attackSpeedBoost: -0.1
   knockbackForceReduction: 20
 --- !u!1001 &5345259340039781693
@@ -61,6 +62,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3802199718732738927, guid: 52e3ed338f0721249a9c4f46bb0aa57a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 52e3ed338f0721249a9c4f46bb0aa57a, type: 3}
+--- !u!212 &3944417360912400006 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8976606152636351419, guid: 52e3ed338f0721249a9c4f46bb0aa57a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5345259340039781693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &500877757226159540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5538676189619875977, guid: 52e3ed338f0721249a9c4f46bb0aa57a,

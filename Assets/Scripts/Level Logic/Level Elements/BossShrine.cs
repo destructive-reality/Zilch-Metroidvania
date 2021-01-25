@@ -4,6 +4,7 @@ public class BossShrine : Shrine
 {
   [SerializeField] private int minModifierCount;
   [SerializeField] private Transform prefabBoss;
+  [SerializeField] private BossEncounterArea encounterArea;
   private bool isReady = false;
   private bool isActive = false;
 
@@ -20,6 +21,7 @@ public class BossShrine : Shrine
       if (checkPlayerModifiers(other.gameObject))
       {
         isReady = true;
+        encounterArea.OnBossTrigger();
       }
       Debug.Log("Player at BossShrine");
     }

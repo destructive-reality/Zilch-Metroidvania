@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class BossEncounterArea : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  [SerializeField] private List<GameObject> areaObjects;
 
-    // Update is called once per frame
-    void Update()
+  private void Start()
+  {
+    activateItems(false);
+  }
+
+  public void OnBossTrigger()
+  {
+    activateItems(true);
+  }
+
+  private void activateItems(bool _active)
+  {
+    foreach (GameObject item in areaObjects)
     {
-        
+      item.SetActive(_active);
     }
+  }
 }

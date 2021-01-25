@@ -32,5 +32,6 @@ public class BossHealth : KnockbackHealth
   {
     base.die();
     animator.SetTrigger("die");
+    Component.FindObjectOfType<BossEncounterArea>().OnBossTrigger(false);
   }
 }

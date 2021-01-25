@@ -6,6 +6,7 @@ public class PlayerCombat2D : Damaging
   public Transform attackPoint;
   public LayerMask attackableLayers;       // remeber assigning layers
   public Stat attackTime;
+  public Animator animator;
   protected float nextAttackTime = 0.3f;
 
   private void Update()
@@ -41,7 +42,10 @@ public class PlayerCombat2D : Damaging
     {
       int targetLayer = target.gameObject.layer;
       if (targetLayer == LayerMask.NameToLayer("Destroyable") || targetLayer == LayerMask.NameToLayer("Attackable"))
+      {
+        Debug.Log("Hit Destroyable");
         target.GetComponent<Health>().applyDamage((int)attackPower.getValue());
+      }
       else if (targetLayer == LayerMask.NameToLayer("Enemy"))
         target.GetComponent<KnockbackHealth>().getHit((int)attackPower.getValue(), this.gameObject); //Change KnockbackHealth back to EnemyHealth?
     }

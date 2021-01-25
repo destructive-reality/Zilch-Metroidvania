@@ -1,20 +1,24 @@
 ﻿using UnityEngine;
 
-public class BossEnemyAnimator : MonoBehaviour
+public enum ACTION
 {
-    public readonly bool isFacingRight = false;
-    Animator animator;
+  RAPID_FIRE = 0, BOOMERANG_FIRE = 1, ROCK_SLIDE = 2, GROUND_FORCE = 3
+}
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        // animator.SetTrigger("RockSlide");
-    }
+public class BossEnemyAnimator : Flipables
+{
+  static string[] actions = new string[] { "RapidFire", "BoomerangFire", "RockSlide", "GroundForce" };
+  private Animator animator;
+  [SerializeField] private BossHealth bossHealth;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  private void Start()
+  {
+    animator = GetComponent<Animator>();
+    bossHealth.reachHealtBreakpoint.AddListener(hdlBreakpoint);
+  }
+
+  private void hdlBreakpoint()
+  {
+    animator.SetTrigger(actions[(int)ACTION.GROUND_FORCE]);
+  }
 }

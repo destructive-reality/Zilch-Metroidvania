@@ -5207,7 +5207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae717098c84e22c4f9fc244fb53800cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6768233270147321216}
   attackPower:
     baseValue: 1
   attackRange:
@@ -5332,8 +5331,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24994722, y: 5.998732}
-  m_Size: {x: 3.930306, y: 12.101105}
+  m_Offset: {x: 0.054889362, y: 6.044458}
+  m_Size: {x: 4.174174, y: 12.192556}
   m_Direction: 0
 --- !u!1 &6622962744746053441
 GameObject:

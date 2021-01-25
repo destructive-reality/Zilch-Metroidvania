@@ -2,11 +2,11 @@
 
 public class EnemyCombat : Damaging
 {
-    protected void OnTriggerEnter2D(Collider2D collider)
+  protected void OnTriggerEnter2D(Collider2D collider)
+  {
+    if (collider.CompareTag("Player"))
     {
-        if (collider.CompareTag("Player"))
-        {
-            collider.GetComponent<PlayerHealth>().getHit((int) attackPower.getValue(), gameObject);
-        }
+      collider.GetComponent<PlayerHealth>().getHit((int)attackPower.getValue(), transform.position);
     }
+  }
 }

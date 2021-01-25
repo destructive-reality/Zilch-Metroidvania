@@ -25,24 +25,27 @@ public class Projectile : MonoBehaviour     // vielleicht von EnemyCombat erben 
 
   protected void OnTriggerEnter2D(Collider2D other)
   {
-    KnockbackHealth health;
-    Debug.Log(other.gameObject.layer);
+    // KnockbackHealth health;
+    // Debug.Log(other.gameObject.layer);
     if (!isFriendly)
     {
-      Debug.Log("Hit Player, isFriendly " + isFriendly);
-      health = other.GetComponent<PlayerHealth>();
+      // Debug.Log("Hit Player, isFriendly " + isFriendly);
+      // health = other.GetComponent<PlayerHealth>();
+      other.GetComponent<PlayerHealth>().getHit(1, this.gameObject.transform.position);
+      Destroy(gameObject);
     }
     else if (other.gameObject.layer == LayerMask.NameToLayer("Enemy") || other.gameObject.layer == LayerMask.NameToLayer("Destroyable"))
     {
-      Debug.Log("Hit Enemy");
-      health = other.GetComponent<KnockbackHealth>();
-    }
-    else
-      health = null;
-    if (health != null)
-    {
-      health.getHit(1, this.gameObject);
+      // Debug.Log("Hit Enemy");
+      // health = other.GetComponent<KnockbackHealth>();
+      other.GetComponent<KnockbackHealth>().getHit(1, this.gameObject.transform.position);
       Destroy(gameObject);
     }
+    // else
+    //   health = null;
+    // if (health != null)
+    // {
+    //   // health.getHit(1, this.gameObject.transform.position);
+    // }
   }
 }

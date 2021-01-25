@@ -6,7 +6,7 @@ public abstract class Damaging : MonoBehaviour
   public Stat attackPower;
   public Stat attackRange;
 
-  public static void DealDamage(GameObject _source, int _damage, GameObject _target)
+  public static void DealDamage(Vector2 _source, int _damage, GameObject _target)
   {
     if (_target.GetComponent<PlayerHealth>())
     {

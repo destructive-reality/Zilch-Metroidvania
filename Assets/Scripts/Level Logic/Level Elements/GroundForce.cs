@@ -14,12 +14,19 @@ public class GroundForce : EnemyCombat
   {
     attackPower.addModifier(_damage);
     liveTime = _timeToExist;
-    Destroy(gameObject, _timeToExist);
+    Invoke("despike", _timeToExist);
+
+    // Destroy(gameObject, _timeToExist);
 
     // Invoke("changeScaling", 0.3f);
     // Invoke("changeScaling", 0.6f);
     // Invoke("changeScaling", liveTime / 2);
     // Invoke("changeScaling", liveTime / 5 * 4);
+  }
+
+  public void despike()
+  {
+    GetComponent<Animator>().SetTrigger("Despike");
   }
 
   // private void Start()

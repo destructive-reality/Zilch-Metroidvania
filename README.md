@@ -1,4 +1,4 @@
-# Projektstudium-Metrodvania
+# zilch - A Metroidvania game
 
 DAS Rep für unser Projektstudium
 

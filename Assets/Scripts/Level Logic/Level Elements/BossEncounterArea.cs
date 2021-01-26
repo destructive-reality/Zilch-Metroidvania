@@ -6,14 +6,15 @@ public class BossEncounterArea : MonoBehaviour
 {
   [SerializeField] private List<GameObject> areaObjects;
 
-  private void Start()
+  private void Awake()
   {
     activateItems(false);
+    areaObjects[areaObjects.Count - 1].SetActive(true);
   }
 
-  public void OnBossTrigger()
+  public void OnBossTrigger(bool _active = true)
   {
-    activateItems(true);
+    activateItems(_active);
   }
 
   private void activateItems(bool _active)

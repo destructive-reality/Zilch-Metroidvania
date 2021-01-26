@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 1
+  currentHealth: 0
   animator: {fileID: 0}
   knockbackForce:
     baseValue: 0
@@ -278,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab2a5d8219306c46a7f3d0e252bd4c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 7972039d43dfd46a0b53889220d0eb8e, type: 3}
+  audioClip: {fileID: 8300000, guid: 493d256cc2ae55e4fb63bd9fcf2fa267, type: 3}
   tagName: Ground
 --- !u!82 &3774672326910212063
 AudioSource:
@@ -292,7 +293,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0

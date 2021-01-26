@@ -3,7 +3,6 @@
 public class Modifier : MonoBehaviour
 {
     [SerializeField] private GameObject modifierEffect;
-    public Renderer pickUpNotification;
     private bool isInteractable = false;
     private Inventory playerInventory;
 
@@ -12,16 +11,11 @@ public class Modifier : MonoBehaviour
     public float pickupSoundVolume = 1f;
 
 
-    private void Awake()
-    {
-        pickUpNotification.enabled = isInteractable;
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            isInteractable = pickUpNotification.enabled = true;
+            isInteractable = true;
             playerInventory = other.GetComponentInChildren<Inventory>();
         }
     }
@@ -42,7 +36,7 @@ public class Modifier : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isInteractable = pickUpNotification.enabled = false;
+            isInteractable = false;
         }
     }
 }

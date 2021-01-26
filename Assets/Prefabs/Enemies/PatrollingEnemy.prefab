@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 3
+    baseValue: 4
   animator: {fileID: 4404063778651909491}
   knockbackForce:
     baseValue: 0
@@ -170,7 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5288b9fb00cfe53478fbb349a59416f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4404063778651909491}
   attackPower:
     baseValue: 1
   attackRange:

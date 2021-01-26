@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSlot: 0
   modifier: {fileID: 11400000, guid: fc49b65c41e63a341b6ea87d57005cd5, type: 2}
-  pickupSpriteRenderer: {fileID: 7911908399661297596}
-  hoverTime: 1
+  hoverTime: 0.3
   projectilePrefab: {fileID: 3251239065350001586, guid: 85109c639cb0a3449adb4772b5ccc6b4,
     type: 3}
 --- !u!1001 &1251984725057498119
@@ -123,12 +122,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3802199718732738927, guid: 52e3ed338f0721249a9c4f46bb0aa57a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 52e3ed338f0721249a9c4f46bb0aa57a, type: 3}
---- !u!212 &7911908399661297596 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8976606152636351419, guid: 52e3ed338f0721249a9c4f46bb0aa57a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1251984725057498119}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6738130371196525710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5538676189619875977, guid: 52e3ed338f0721249a9c4f46bb0aa57a,

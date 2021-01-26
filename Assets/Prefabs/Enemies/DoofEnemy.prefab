@@ -188,7 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed29c374537481a44a3ea5436b6320a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 8989124149612149229}
   attackPower:
     baseValue: 1
   attackRange:
@@ -355,7 +354,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -452041701
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1602916315150550260
@@ -411,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 3
+    baseValue: 7
   animator: {fileID: 8989124149612149229}
   knockbackForce:
     baseValue: 20

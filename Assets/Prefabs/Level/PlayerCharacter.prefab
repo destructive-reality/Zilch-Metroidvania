@@ -5345,7 +5345,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 14336
   attackTime:
-    baseValue: 0.15
+    baseValue: 0.2
   animator: {fileID: 6768233270147321216}
 --- !u!114 &7643680188621843559
 MonoBehaviour:

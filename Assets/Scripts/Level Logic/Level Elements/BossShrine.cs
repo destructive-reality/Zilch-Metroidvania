@@ -33,8 +33,9 @@ public class BossShrine : Shrine
 
     if (isReady)
     {
-      Transform tsfBoss = Instantiate(prefabBoss, transform.position, Quaternion.identity);
-      // GameObject.Destroy(this);
+      Vector2 bossSpawnPosition = new Vector2(transform.position.x, transform.position.y - 1);
+      Transform tsfBoss = Instantiate(prefabBoss, bossSpawnPosition, Quaternion.identity);
+      GameObject.Destroy(gameObject);
       // Start Boss-Transformation  MD
       // isActive = true;
     }

@@ -8,4 +8,10 @@ public class DickHealth : EnemyHealth
         animator.SetTrigger("gotAttacked");
         Debug.Log("Got Attacked");
     }
+
+    protected override void die()
+    {
+        base.die();
+        animator.SetTrigger("death");
+    }
 }

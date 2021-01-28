@@ -15,3 +15,4 @@ MonoBehaviour:
   effectName: AttackRange
   isUpdate: 0
   isStart: 1
+  effectDiscription: Increses the attack range.

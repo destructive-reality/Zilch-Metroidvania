@@ -15,3 +15,4 @@ MonoBehaviour:
   effectName: AttackPower
   isUpdate: 0
   isStart: 1
+  effectDiscription: Increases the damage dealt.

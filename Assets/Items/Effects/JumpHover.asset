@@ -15,3 +15,4 @@ MonoBehaviour:
   effectName: JumpHover
   isUpdate: 1
   isStart: 1
+  effectDiscription: Grants you the ability to levitate at the end of the jump.

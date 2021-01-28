@@ -15,3 +15,4 @@ MonoBehaviour:
   effectName: DoubleJump
   isUpdate: 1
   isStart: 1
+  effectDiscription: Grands the ability to Doublejump.

@@ -15,3 +15,4 @@ MonoBehaviour:
   effectName: WallSlidingSpeed
   isUpdate: 0
   isStart: 1
+  effectDiscription: Reduces the speed while sliding down a wall.

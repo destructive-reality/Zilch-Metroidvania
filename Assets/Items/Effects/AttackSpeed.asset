@@ -15,3 +15,4 @@ MonoBehaviour:
   effectName: AttackSpeed
   isUpdate: 0
   isStart: 1
+  effectDiscription: Increases the attack speed.

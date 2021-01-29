@@ -42,6 +42,7 @@ public class Equipment : MonoBehaviour
             break;
           default:
             Debug.LogWarning("Not a valid Equimpent-Slot");
+            UnequipModifier(modifier);
             break;
         }
       }
@@ -133,6 +134,7 @@ public class Equipment : MonoBehaviour
   {
     Effect modifierEffect = _modifier.GetComponent<Effect>();
     ModifierSlot oldSlot = modifierEffect.currentSlot;
+    Debug.Log("Check old vs new slot: " + (oldSlot == _slot));
     if (oldSlot == _slot)
     {
       Debug.Log("Don't change modifier slot");

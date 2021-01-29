@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 4
+    baseValue: 3
   animator: {fileID: 3653077688134600392}
   knockbackForce:
     baseValue: 0

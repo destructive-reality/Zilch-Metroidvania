@@ -40,6 +40,11 @@ public class PlayerCombat2D : Damaging
     // remember to give enemies 2D-Colliders        MD
     foreach (Collider2D target in hitTargets)
     {
+      if (target.isTrigger)
+      {
+        continue;
+      }
+
       int targetLayer = target.gameObject.layer;
       if (targetLayer == LayerMask.NameToLayer("Destroyable") || targetLayer == LayerMask.NameToLayer("Attackable"))
       {

@@ -3,18 +3,15 @@
 public class FallOnTrigger : MonoBehaviour
 {
   public int damage = 1;
-  Rigidbody2D rb;
-  // Start is called before the first frame update
-  void Start()
-  {
-    rb = GetComponent<Rigidbody2D>();
-  }
+  [SerializeField] private Collider2D triggerCollider;
+  [SerializeField] private Rigidbody2D rb;
 
   private void OnTriggerEnter2D(Collider2D collider)
   {
     if (collider.CompareTag("Player"))
     {
       rb.isKinematic = false;
+      triggerCollider.enabled = false;
     }
   }
 

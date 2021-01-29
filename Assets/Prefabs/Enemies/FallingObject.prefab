@@ -189,6 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  triggerCollider: {fileID: 3293268808699658453}
+  rb: {fileID: 3293268808699658451}
 --- !u!1 &8723020737840698483
 GameObject:
   m_ObjectHideFlags: 0

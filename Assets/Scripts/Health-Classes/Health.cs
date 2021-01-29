@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
 
   public virtual void applyDamage(int _damageToTake)
   {
-    Debug.Log(gameObject.name + " gets Hit for " + _damageToTake);
+    // Debug.Log(gameObject.name + " gets Hit for " + _damageToTake);
     setHealth(Mathf.Clamp(currentHealth - _damageToTake, 0, (int)maxHealth.getValue()));
 
     if (isDead())
@@ -51,7 +51,7 @@ public class Health : MonoBehaviour
 
   protected virtual void die()
   {
-    Debug.Log(gameObject.name + " is dying. Bye!");
+    // Debug.Log(gameObject.name + " is dying. Bye!");
   }
 
   public bool isDead()

@@ -56,7 +56,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
   {
     canvasGroup.alpha = 1f;
     canvasGroup.blocksRaycasts = true;
-    Debug.Log("Release Drag");
+    // Debug.Log("Release Drag");
     if (eventData.pointerEnter)
     {
       Slot slotScript = GetComponentInParent<Slot>();
@@ -77,15 +77,12 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     switch (hoveredModifierEffect.currentSlot)
     {
       case ModifierSlot.Head:
-        Debug.Log("Slot Head");
         TooltipHoverBoxController.Instance.changeText($"{hoveredModifierEffect.modifier.modifierName}\n\n{hoveredModifierEffect.modifier.effectHead.effectDiscription}");
         break;
       case ModifierSlot.None:
-        Debug.Log("No Slot");
         TooltipHoverBoxController.Instance.changeText($"{hoveredModifierEffect.modifier.modifierName}\n\n{hoveredModifierEffect.modifier.modifierDescription}");
         break;
       case ModifierSlot.Arm:
-        Debug.Log("Arm slot");
         TooltipHoverBoxController.Instance.changeText($"{hoveredModifierEffect.modifier.modifierName}\n\n{hoveredModifierEffect.modifier.effectArm.effectDiscription}");
         break;
       case ModifierSlot.Leg:

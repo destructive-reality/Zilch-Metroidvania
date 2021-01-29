@@ -40,11 +40,20 @@ public class PowerEffect : Effect
   {
     Debug.Log("Increase Player Health: " + value);
     PlayerHealth playerHealth = gameObject.GetComponentInParent<PlayerHealth>();
+    int newPlayerHealth = playerHealth.getCurrentHealth();
     if (value)
+    {
       playerHealth.maxHealth.addModifier(healthBoost);
+      newPlayerHealth++;
+    }
     else
+    {
       playerHealth.maxHealth.removeModifier(healthBoost);
-    playerHealth.setHealth((int)playerHealth.maxHealth.getValue());
+      newPlayerHealth--;
+    }
+    newPlayerHealth = Mathf.Clamp(newPlayerHealth, 1, (int)playerHealth.maxHealth.getValue());
+
+    playerHealth.setHealth(newPlayerHealth);
   }
   public override void ArmUpdate()
   {

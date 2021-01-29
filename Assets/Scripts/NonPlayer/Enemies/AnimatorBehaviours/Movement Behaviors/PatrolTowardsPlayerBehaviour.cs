@@ -32,12 +32,12 @@ public class PatrolTowardsPlayerBehaviour : WalkTowardsBehaviour
   {
     if ((playerTransform.position.x < leftX && animator.transform.position.x < leftX + 1.5f) || (playerTransform.position.x > rightX && animator.transform.position.x > rightX - 1.5f))
     {
-      Debug.Log("Distance to Player is " + (playerTransform.position.x - animator.transform.position.x));
-      if (playerInAttackRange(0, 3, animator))
+      Debug.Log("Distance to Player is " + Vector2.Distance(playerTransform.position, animator.transform.position));
+      if (playerInAttackRange(0, 4, animator))
       {
         animator.SetTrigger("inAttackRange");
       }
-      else if (playerInAttackRange(3, 10, animator))
+      else if (playerInAttackRange(4, 12, animator))
       {
         animator.SetTrigger("inRangeAttackRange");
       }
@@ -61,7 +61,8 @@ public class PatrolTowardsPlayerBehaviour : WalkTowardsBehaviour
 
   private bool playerInAttackRange(float _minRange, float _maxRange, Animator animator)
   {
-    if (Mathf.Abs(playerTransform.position.x - animator.transform.position.x) > _minRange && Mathf.Abs(playerTransform.position.x - animator.transform.position.x) < _maxRange)
+    // if (Mathf.Abs(playerTransform.position.x - animator.transform.position.x) > _minRange && Mathf.Abs(playerTransform.position.x - animator.transform.position.x) < _maxRange)
+    if (Vector2.Distance(playerTransform.position, animator.transform.position) >= _minRange && Vector2.Distance(playerTransform.position, animator.transform.position) < _maxRange)
     {
       return true;
     }

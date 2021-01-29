@@ -6,8 +6,6 @@ public class Health : MonoBehaviour
   protected int currentHealth;
   [SerializeField] protected Animator animator;
 
-
-  // Start is called before the first frame update
   protected virtual void Start()
   {
     setHealth((int)maxHealth.getValue());
@@ -23,7 +21,6 @@ public class Health : MonoBehaviour
     {
       Debug.LogError("New health cannot be above max health.");
     }
-    // Debug.Log("Setting health of " + gameObject.name + " to " + healthToSetTo);
     currentHealth = _healthToSetTo;
   }
 
@@ -40,7 +37,6 @@ public class Health : MonoBehaviour
 
   public void heal(int _amountToHeal)
   {
-    // Debug.Log(gameObject.name + " heals for " + amountToHeal);
     setHealth(Mathf.Clamp(currentHealth + _amountToHeal, 0, (int)maxHealth.getValue()));
   }
 

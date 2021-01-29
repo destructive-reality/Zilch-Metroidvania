@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3293268808699658450}
   - component: {fileID: 3293268808699658453}
   - component: {fileID: 3293268808699658460}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: FallingObject
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -103,8 +103,6 @@ MonoBehaviour:
   maxHealth:
     baseValue: 1
   animator: {fileID: 0}
-  knockbackForce:
-    baseValue: 0
 --- !u!50 &3293268808699658451
 Rigidbody2D:
   serializedVersion: 4

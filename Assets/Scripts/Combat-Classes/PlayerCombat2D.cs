@@ -48,7 +48,7 @@ public class PlayerCombat2D : Damaging
       int targetLayer = target.gameObject.layer;
       if (targetLayer == LayerMask.NameToLayer("Destroyable") || targetLayer == LayerMask.NameToLayer("Attackable"))
       {
-        Debug.Log("Hit Destroyable");
+        // Debug.Log("Hit Destroyable");
         target.GetComponent<Health>().applyDamage((int)attackPower.getValue());
       }
       else if (targetLayer == LayerMask.NameToLayer("Enemy"))

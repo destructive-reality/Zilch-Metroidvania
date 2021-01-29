@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139575700529879286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.082457, y: 0.7312877, z: 3.4458275}
+  m_LocalPosition: {x: -6.2324576, y: -7.0887117, z: 3.4458275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8023718425481029919}
@@ -477,7 +477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7249201738457027444}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.232457, y: -7.0887117, z: 3.4458275}
+  m_LocalPosition: {x: -6.2324576, y: -7.0887117, z: 3.4458275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9090853987234599517}
@@ -1028,7 +1028,7 @@ PrefabInstance:
     - target: {fileID: 6529288083630516912, guid: 1562f7758c1bcf8488e96ca4f693dec2,
         type: 3}
       propertyPath: m_Name
-      value: PlayerCharacter
+      value: Zilch
       objectReference: {fileID: 0}
     - target: {fileID: 6845137951733823254, guid: 1562f7758c1bcf8488e96ca4f693dec2,
         type: 3}

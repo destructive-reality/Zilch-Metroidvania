@@ -5163,7 +5163,7 @@ GameObject:
   - component: {fileID: 5797058685193000740}
   - component: {fileID: 7844389600313438189}
   m_Layer: 8
-  m_Name: PlayerCharacter
+  m_Name: Zilch
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5361,7 +5361,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 5
-  currentHealth: 0
   animator: {fileID: 6768233270147321216}
   knockbackForce:
     baseValue: 40

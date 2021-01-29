@@ -89,13 +89,13 @@ GameObject:
   - component: {fileID: 8989124149612149231}
   - component: {fileID: 8989124149612149228}
   - component: {fileID: 8989124149612149229}
+  - component: {fileID: 7356796843829756956}
   - component: {fileID: 188168342989609801}
   - component: {fileID: 8989124149612149224}
   - component: {fileID: 2331985771593584046}
   - component: {fileID: 990253068962711056}
   - component: {fileID: 4735156284059476521}
   - component: {fileID: 1602916315150550260}
-  - component: {fileID: 8912763592728991813}
   - component: {fileID: 6625724200780328413}
   m_Layer: 11
   m_Name: DoofEnemy
@@ -176,6 +176,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7356796843829756956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989124149612149202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 7
+  animator: {fileID: 8989124149612149229}
+  knockbackForce:
+    baseValue: 20
 --- !u!114 &188168342989609801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,23 +414,6 @@ MonoBehaviour:
     useCustomMixMode: 1
     layerMixModes: 01000000
     layerBlendModes: 01000000
---- !u!114 &8912763592728991813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8989124149612149202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d17e8219841176b4489e6436a70c1eac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth:
-    baseValue: 7
-  animator: {fileID: 8989124149612149229}
-  knockbackForce:
-    baseValue: 20
 --- !u!114 &6625724200780328413
 MonoBehaviour:
   m_ObjectHideFlags: 0

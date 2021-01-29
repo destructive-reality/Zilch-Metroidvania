@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4828533098640292747}
   - component: {fileID: 509972248452091643}
   - component: {fileID: 7835785056609124633}
-  - component: {fileID: 2879589085486195459}
+  - component: {fileID: 2975354705895010477}
   - component: {fileID: 509972248452091638}
   - component: {fileID: 1779733545369302272}
   - component: {fileID: 4435346111820826529}
@@ -110,7 +110,7 @@ MonoBehaviour:
   speed:
     baseValue: 0.1
   aggressionRange: 10
---- !u!114 &2879589085486195459
+--- !u!114 &2975354705895010477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,14 +119,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 509972248452091637}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf872489ccc75104ea7f58a79ad8f362, type: 3}
+  m_Script: {fileID: 11500000, guid: f2363bd1a78fbdd41bd2d08472fcc829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 2
-  animator: {fileID: 0}
+  animator: {fileID: 1779733545369302272}
   knockbackForce:
-    baseValue: 5
+    baseValue: 0
 --- !u!114 &509972248452091638
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -156,7 +156,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!95 &8989124149612149229
 Animator:
   serializedVersion: 3
@@ -192,7 +192,7 @@ MonoBehaviour:
     baseValue: 5
   animator: {fileID: 8989124149612149229}
   knockbackForce:
-    baseValue: 20
+    baseValue: 5
 --- !u!114 &188168342989609801
 MonoBehaviour:
   m_ObjectHideFlags: 0

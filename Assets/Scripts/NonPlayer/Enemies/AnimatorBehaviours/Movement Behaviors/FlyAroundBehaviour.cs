@@ -50,12 +50,14 @@ public class FlyAroundBehaviour : StateMachineBehaviour
 
   override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
   {
-    animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed);
+    animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed * Time.deltaTime);
 
     float targetDistance = Vector2.Distance(target, animator.transform.position);
     if (targetDistance <= distanceToStartWait)
     {
       animator.SetTrigger("wait");
     }
+    else
+      distanceToStartWait += 0.02f;
   }
 }

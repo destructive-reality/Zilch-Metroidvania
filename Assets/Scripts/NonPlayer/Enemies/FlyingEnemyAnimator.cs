@@ -32,7 +32,7 @@ public class FlyingEnemyAnimator : EnemyBehaviour
     AnimatorStateInfo currentAnimation = animator.GetCurrentAnimatorStateInfo(0);
 
     if ((currentAnimation.IsName("FlyAround") || currentAnimation.IsName("WaitFor")) &&
-    Vector2.Distance(startPosition, playerPosition) <= aggressionRange)
+        Vector2.Distance(startPosition, playerPosition) <= aggressionRange)
     {
       Debug.Log("FlyingEnemy near Player");
       animator.SetBool("isPlayerNear", true);

@@ -6,22 +6,17 @@ public class BossShrine : Shrine
   [SerializeField] private Transform prefabBoss;
   [SerializeField] private BossEncounterArea encounterArea;
   private bool isReady = false;
-  private bool isActive = false;
 
   protected override void OnTriggerEnter2D(Collider2D other)
   {
     base.OnTriggerEnter2D(other);
 
-    if (isActive)
-    {
-      isInteractable = false;
-    }
     if (other.CompareTag("Player"))
     {
       if (checkPlayerModifiers(other.gameObject))
       {
         isReady = true;
-        encounterArea.OnBossTrigger();
+        encounterArea.OnBossTrigger(other.gameObject);
       }
       Debug.Log("Player at BossShrine");
     }
@@ -37,7 +32,6 @@ public class BossShrine : Shrine
       Transform tsfBoss = Instantiate(prefabBoss, bossSpawnPosition, Quaternion.identity);
       GameObject.Destroy(gameObject);
       // Start Boss-Transformation  MD
-      // isActive = true;
     }
   }
 

@@ -5,17 +5,10 @@ public class EquipmentSlot : Slot
   public ModifierSlot slotPosition;
   private Equipment equipment;
   private int slotNumber;
-  // private EquipmentUI equipmentUI;
 
   private void Start()
   {
-    // equipmentUI = GameObject.FindWithTag("UI").GetComponentInChildren<EquipmentUI>();
     equipment = GameObject.FindWithTag("Player").GetComponent<Equipment>();
-
-    // if (!equipmentUI)
-    // {
-    //     Debug.LogError("No Equipment UI found for Equipment Slot!");
-    // }
   }
 
   public void InitializeEquipmentSlotPosition(int _i)
@@ -40,11 +33,6 @@ public class EquipmentSlot : Slot
     }
     icon.gameObject.GetComponent<DragDrop>().slotNumber = _i;
   }
-
-  // public void ChangeSlotOf(int _modifierSlotNumber)
-  // {
-  //     equipmentUI.StartSlotChange(_modifierSlotNumber, slotPosition);
-  // }
 
   public string GetModifierName()
   {

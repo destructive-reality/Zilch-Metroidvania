@@ -8,6 +8,7 @@ public class PowerEffect : Effect
   [SerializeField] private float jumpTimeBoost = 1;
   [SerializeField] private int attackPowerBoost = 1;
   [SerializeField] private int healthBoost = 1;
+
   public override void ArmStart(bool value)
   {
     Debug.Log("Deal damage while dashing: " + value);
@@ -18,6 +19,7 @@ public class PowerEffect : Effect
     else
       playerMovement.CollisionAction.AddListener(dashCollision);
   }
+
   public override void LegStart(bool value)
   {
     Debug.Log("Increase Player JumpTime: " + value);
@@ -27,6 +29,7 @@ public class PowerEffect : Effect
     else
       playerMovement.jumpTime -= jumpTimeBoost;
   }
+
   public override void WeaponStart(bool value)
   {
     Debug.Log("Increase Player Damage: " + value);
@@ -36,6 +39,7 @@ public class PowerEffect : Effect
     else
       playerCombat.attackPower.removeModifier(attackPowerBoost);
   }
+
   public override void HeadStart(bool value)
   {
     Debug.Log("Increase Player Health: " + value);
@@ -55,6 +59,7 @@ public class PowerEffect : Effect
 
     playerHealth.setHealth(newPlayerHealth);
   }
+
   public override void ArmUpdate()
   {
 

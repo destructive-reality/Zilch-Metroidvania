@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 7231885854946637070}
   - component: {fileID: 3762857671842137330}
   m_Layer: 5
-  m_Name: ItemsParent
+  m_Name: InventorySlotParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 9174788083656041608}
   - component: {fileID: 3900562341266628321}
   m_Layer: 5
-  m_Name: ItemsParent
+  m_Name: EquipmentSlotParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

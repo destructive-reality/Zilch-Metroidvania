@@ -5,7 +5,7 @@ public class EquipmentUI : MonoBehaviour
   public Transform itemsParent;
   private GameObject equipmentUIGO;
   private Equipment equipment;
-  private EquipmentSlot[] slots;
+  public EquipmentSlot[] slots { get; private set; }
 
   private void Start()
   {

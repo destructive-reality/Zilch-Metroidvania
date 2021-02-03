@@ -2,56 +2,55 @@
 
 public class InventoryUI : MonoBehaviour
 {
-    public static bool isInventoryVisible = false;
+  public static bool isInventoryVisible = false;
 
-    public Transform itemsParent;
-    public GameObject inventoryUI;
-    private Inventory inventory;
-    private InventorySlot[] slots;
+  public Transform itemsParent;
+  public GameObject inventoryUI;
+  private Inventory inventory;
+  public InventorySlot[] slots { get; private set; }
 
-    private void Start()
+  private void Start()
+  {
+    inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
+    // inventory.onItemChangedCallback += UpdateInventoryUI;
+
+    slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+    for (int i = 0; i < slots.Length; i++)
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
-        // inventory.onItemChangedCallback += UpdateInventoryUI;
-
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-        for (int i = 0; i < slots.Length; i++)
-        {
-            slots[i].icon.gameObject.GetComponent<DragDrop>().slotNumber = i;
-        }
-
+      slots[i].icon.gameObject.GetComponent<DragDrop>().slotNumber = i;
     }
 
-    private void Update()
+  }
+
+  private void Update()
+  {
+    if (Input.GetButtonDown("Inventory") && !PauseMenu.GameIsPaused)
     {
-        if (Input.GetButtonDown("Inventory") && !PauseMenu.GameIsPaused)
-        {
-            SetInventoryUIVisible(!inventoryUI.activeSelf);
-        }
+      SetInventoryUIVisible(!inventoryUI.activeSelf);
     }
+  }
 
-    public void AddNewItem(GameObject _item)
+  public void AddNewItem(GameObject _item)
+  {
+    for (int i = 0; i < slots.Length; i++)
     {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            if (slots[i].GetItem() == null)
-            {
-                slots[i].AddItem(_item);
-                return;
-            }
-        }
-
+      if (slots[i].GetItem() == null)
+      {
+        slots[i].AddItem(_item);
+        return;
+      }
     }
+  }
 
-    public void SetInventoryUIVisible(bool visibleBoolean)
+  public void SetInventoryUIVisible(bool visibleBoolean)
+  {
+    isInventoryVisible = visibleBoolean;
+    inventoryUI.SetActive(visibleBoolean);
+
+    //Hacky fix with mouse position, but works for now...
+    if (visibleBoolean == false && Input.mousePosition.x >= Screen.width / 2)
     {
-        isInventoryVisible = visibleBoolean;
-        inventoryUI.SetActive(visibleBoolean);
-
-        //Hacky fix with mouse position, but works for now...
-        if (visibleBoolean == false && Input.mousePosition.x >= Screen.width / 2)
-        {
-            TooltipHoverBoxController.Instance.setVisible(false);
-        }
+      TooltipHoverBoxController.Instance.setVisible(false);
     }
+  }
 }

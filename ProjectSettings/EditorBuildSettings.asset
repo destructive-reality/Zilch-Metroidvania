@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Waldlevel.unity
     guid: 400d09321d3178c4d85395cdae4c804f
+  - enabled: 1
+    path: Assets/Scenes/Thanks for playing.unity
+    guid: 0da53e4161c413849aeaa9da562a5c9b
   m_configObjects: {}

@@ -15,6 +15,15 @@ public class PlayerCombat2D : Damaging
     protected float nextAttackTime = 0.3f;
     public ATTACK_DIRECTION attackDirection = ATTACK_DIRECTION.START;
 
+    [Header("Sounds")]
+    public AudioClip attackSound;
+    private AudioSource playerAudioSource;
+
+    private void Awake()
+    {
+        playerAudioSource = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (Time.time >= nextAttackTime)
@@ -45,6 +54,10 @@ public class PlayerCombat2D : Damaging
                 break;
         }
         dealDamage();
+        if (playerAudioSource && attackSound)
+        {
+            playerAudioSource.PlayOneShot(attackSound);
+        }
     }
     private void dealDamage()
     {

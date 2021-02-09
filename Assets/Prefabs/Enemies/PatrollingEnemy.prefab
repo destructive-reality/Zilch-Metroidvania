@@ -160,6 +160,7 @@ MonoBehaviour:
   maxHealth:
     baseValue: 3
   animator: {fileID: 3653077688134600392}
+  takingDamageSound: {fileID: 8300000, guid: 3a3c11793924048b4b6f09931a41d56f, type: 3}
   knockbackForce:
     baseValue: 6
 --- !u!114 &3811832996060555765
@@ -207,7 +208,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

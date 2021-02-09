@@ -11,10 +11,10 @@ abstract public class KnockbackHealth : Health
     rb2D = GetComponent<Rigidbody2D>();
   }
 
-  public virtual void getHit(int damage, Vector2 damagingObject)
+  public virtual void getHit(int damage, Vector2 damagingObjectPosition)
   {
     // Remove ApplyKnockback call here, since only Player uses it   MD
-    applyKnockback(new Vector2(this.transform.position.x < damagingObject.x ? -knockbackForce.getValue() : knockbackForce.getValue(), knockbackForce.getValue() / 4));
+    applyKnockback(new Vector2(this.transform.position.x < damagingObjectPosition.x ? -knockbackForce.getValue() : knockbackForce.getValue(), knockbackForce.getValue() / 4));
     applyDamage(damage);
   }
 

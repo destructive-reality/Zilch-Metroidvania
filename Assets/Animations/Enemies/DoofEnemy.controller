@@ -42,7 +42,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0bf7f79e74cb34b95c6410f2f4c3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 8300000, guid: 8a24fb226826a454eb970a656131aa4a, type: 3}
+  soundToPlay: {fileID: 8300000, guid: 0d685cd188b0448eab5b7734fdb22033, type: 3}
   interruptPlayingSound: 0
 --- !u!1107 &-5088872207064981068
 AnimatorStateMachine:

@@ -5348,6 +5348,7 @@ MonoBehaviour:
     baseValue: 0.2
   playerAnimator: {fileID: 6768233270147321216}
   attackDirection: 2
+  attackSound: {fileID: 8300000, guid: a7e87a4f6d8384b7496e5baf7ef6ef61, type: 3}
 --- !u!114 &7643680188621843559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5363,6 +5364,7 @@ MonoBehaviour:
   maxHealth:
     baseValue: 5
   animator: {fileID: 6768233270147321216}
+  takingDamageSound: {fileID: 0}
   knockbackForce:
     baseValue: 40
   playerMasterController: {fileID: 1317141260972420986}

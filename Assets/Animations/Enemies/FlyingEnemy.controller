@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f003d645bec9aa24bbc6ebf2cd7e1e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 0.8
+  speedMultiplier: 1.2
   layersToDistanceTo:
     serializedVersion: 2
     m_Bits: 512
@@ -439,7 +439,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb11f711b5b18142ba7ce9be0ff1b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
   layersToDistanceTo:
     serializedVersion: 2
     m_Bits: 512

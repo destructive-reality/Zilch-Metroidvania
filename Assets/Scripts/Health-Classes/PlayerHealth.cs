@@ -9,9 +9,13 @@ public class PlayerHealth : KnockbackHealth
 
     [Header("Sounds")]
     public AudioClip takeDamageAudioClip;
-    private AudioSource playerAudioSource;
     [Range(0f, 4f)]
     public float takeDamageAudioClipVolume = 1f;
+
+    public AudioClip deathAudioClip;
+    [Range(0f, 4f)]
+    public float deathAudioClipVolume = 1f;
+    private AudioSource playerAudioSource;
 
     private void Awake()
     {
@@ -35,7 +39,10 @@ public class PlayerHealth : KnockbackHealth
             PostProController.Instance.TriggerChromaticAberrationDamageAnimation();
             CinemachineShake.Instance.ShakeCamera(2f, .1f);
             GameMaster.Instance.SlowdownTime(.6f, 1.5f);
-            playerAudioSource.PlayOneShot(takeDamageAudioClip, takeDamageAudioClipVolume);
+            if (takeDamageAudioClip)
+            {
+                playerAudioSource.PlayOneShot(takeDamageAudioClip, takeDamageAudioClipVolume);
+            }
         }
     }
 
@@ -47,10 +54,14 @@ public class PlayerHealth : KnockbackHealth
     protected override void die()
     {
         base.die();
-        LevelLoader.Instance.ReloadCurrentLevel();
+        if (deathAudioClip)
+        {
+            playerAudioSource.PlayOneShot(deathAudioClip, deathAudioClipVolume);
+        }
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerCombat2D>().enabled = false;
         playerMasterController.playerMovementController.playerAnimator.SetTrigger("Death");
         Debug.Log(gameObject.name + " is dying. Bye!");
+        LevelLoader.Instance.ReloadCurrentLevel();
     }
 }

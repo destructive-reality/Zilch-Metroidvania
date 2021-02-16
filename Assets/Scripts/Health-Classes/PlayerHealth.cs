@@ -70,6 +70,6 @@ public class PlayerHealth : KnockbackHealth
         GetComponent<PlayerCombat2D>().enabled = false;
         playerMasterController.playerMovementController.playerAnimator.SetTrigger("Death");
         Debug.Log(gameObject.name + " is dying. Bye!");
-        LevelLoader.Instance.ReloadCurrentLevel();
+        LevelLoader.Instance.ReloadCurrentLevelAfterSeconds(4f);
     }
 }

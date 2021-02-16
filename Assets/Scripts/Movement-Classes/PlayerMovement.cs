@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 public enum State { Idle, Jumping, Dashing, Attacking } // even necessarily when working with animator? MD
@@ -21,8 +22,8 @@ public class PlayerMovement : MovementsBase
 
     [Header("Jumping")]
     #region Jumping
-    private bool isGrounded; // Whether or not the player is grounded.
     [SerializeField] float checkRadius = .25f; // Radius of the overlap circle to determine if grounded
+    private bool isGrounded; // Whether or not the player is grounded.
     private float jumpTimeCounter = 0f;
     public float jumpTime = 0.25f;
     public float gravityScaleUp = 4.2f;
@@ -31,6 +32,9 @@ public class PlayerMovement : MovementsBase
     public UnityEvent JumpTimeEnds;
 
     public ParticleSystem jumpParticles;
+    public List<AudioClip> jumpSoundCollection;
+    [Range(0.0f, 1.0f)]
+    public float jumpSoundVolume;
 
     #endregion
 
@@ -64,15 +68,12 @@ public class PlayerMovement : MovementsBase
     public ParticleSystem dashParticles;
     #endregion
     public UnityEvent CollisionAction;
-
-    [Header("Sounds")]
-    public AudioSource playerAudioSource;
-    public AudioClip jumpSound;
-    [Range(0.0f, 1.0f)]
-    public float jumpSoundVolume;
     public AudioClip dashSound;
     [Range(0.0f, 1.0f)]
     public float dashSoundVolume;
+
+    [Header("Sounds")]
+    public AudioSource playerAudioSource;
     public GroundSoundCollection defaultGroundSoundCollection;
     [SerializeField] private GroundSoundCollection currentGroundSoundCollection;
     [Range(0.0f, 1.0f)]
@@ -140,7 +141,7 @@ public class PlayerMovement : MovementsBase
             ApplyJumpForce();
             playerAnimator.SetTrigger("Jump");
             jumpParticles.Play();
-            playerAudioSource.PlayOneShot(jumpSound, jumpSoundVolume);
+            playerAudioSource.PlayOneShot(jumpSoundCollection[Random.Range(0, jumpSoundCollection.Count)], jumpSoundVolume);
         }
 
         if (Input.GetButton("Jump") && isJumping)

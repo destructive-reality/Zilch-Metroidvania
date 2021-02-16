@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 
-public class Projectile : MonoBehaviour     // vielleicht von EnemyCombat erben lassen, da die OnTriggerEnter auch Schaden verursacht??
+public class Projectile : MonoBehaviour
 {
+  [SerializeField] protected int damage;
   protected Vector3 direction;
   protected float velocity;
   private bool isFriendly;
 
-  public void Setup(Vector2 _direction, bool _isFriendly = false, float _timeToExist = 3f, float _velocity = 7f)
+  public void Setup(Vector2 _direction, bool _isFriendly = false, float _timeToExist = 3f, float _velocity = 7f, int _damage = 1)
   {
     direction = _direction;
     if (direction.x == -1)
@@ -15,37 +16,39 @@ public class Projectile : MonoBehaviour     // vielleicht von EnemyCombat erben 
     }
     isFriendly = _isFriendly;
     velocity = _velocity;
+    damage = _damage;
     Destroy(gameObject, _timeToExist);
+    // explode(_timeToExist);
   }
-
-  // private void FixedUpdate()
-  // {
-  //     transform.position += direction * velocity * Time.deltaTime;
-  // }
 
   protected void OnTriggerEnter2D(Collider2D other)
   {
-    // KnockbackHealth health;
-    // Debug.Log(other.gameObject.layer);
     if (!isFriendly)
     {
-      // Debug.Log("Hit Player, isFriendly " + isFriendly);
-      // health = other.GetComponent<PlayerHealth>();
-      other.GetComponent<PlayerHealth>().getHit(1, this.gameObject.transform.position);
-      Destroy(gameObject);
+      if (other.CompareTag("Player"))
+      {
+        other.GetComponent<PlayerHealth>().getHit(damage, this.gameObject.transform.position);
+        explode();
+      }
     }
-    else if (other.gameObject.layer == LayerMask.NameToLayer("Enemy") || other.gameObject.layer == LayerMask.NameToLayer("Destroyable"))
+    else if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
     {
-      // Debug.Log("Hit Enemy");
-      // health = other.GetComponent<KnockbackHealth>();
-      other.GetComponent<KnockbackHealth>().getHit(1, this.gameObject.transform.position);
-      Destroy(gameObject);
+      other.GetComponent<KnockbackHealth>().getHit(damage, this.gameObject.transform.position);
+      explode();
     }
-    // else
-    //   health = null;
-    // if (health != null)
-    // {
-    //   // health.getHit(1, this.gameObject.transform.position);
-    // }
+    else if (other.gameObject.layer == LayerMask.NameToLayer("Destroyable") || other.gameObject.layer == LayerMask.NameToLayer("Attackable"))
+    {
+      other.GetComponent<Health>().applyDamage(damage);
+      explode();
+    }
+    if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+    {
+      explode();
+    }
+  }
+
+  protected virtual void explode(float _timeToExist = 0)
+  {
+    Destroy(gameObject, _timeToExist);
   }
 }

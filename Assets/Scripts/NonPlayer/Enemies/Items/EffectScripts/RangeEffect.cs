@@ -7,7 +7,7 @@ public class RangeEffect : Effect
   private ParticleSystem jumpParticles;
   private PlayerMovement playerMovement;
   private float attackRangeBoost = 0.3f;
-  private float dashTimeBoost = 0.2f;
+  private float dashCooldownReduction = -1;
   private PlayerCombat2D playerCombat;
   public Transform projectilePrefab;
   private float rangeAttackCooldown = 1f;
@@ -25,12 +25,17 @@ public class RangeEffect : Effect
   }
   public override void LegStart(bool value = true)
   {
-    Debug.Log("Increase Player Dash Time: " + value);
+    Debug.Log("Decreases Player Dash cooldown: " + value);
     playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
     if (value)
-      playerMovement.startDashTime += dashTimeBoost;
+      playerMovement.startDashCooldown.addModifier(dashCooldownReduction);
     else
-      playerMovement.startDashTime -= dashTimeBoost;
+      playerMovement.startDashCooldown.removeModifier(dashCooldownReduction);
+
+    // if (value)
+    //   playerMovement.startDashTime += dashTimeBoost;
+    // else
+    //   playerMovement.startDashTime -= dashTimeBoost;
   }
   public override void WeaponStart(bool value = true)
   {

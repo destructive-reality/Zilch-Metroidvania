@@ -173,4 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalLight: {fileID: 0}
   lightAdjustment: 0.5
-  fadeDuration: 5
+  fadeDuration: 1.5

@@ -10292,7 +10292,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6f415e74fc05f4825a8fc3a98ef74332, type: 3}
   - {fileID: 8300000, guid: f28f27f58d9ae4eada13077df0bd5e6b, type: 3}
   - {fileID: 8300000, guid: f8def3d6592ec4f6f80bb5c67f6d079d, type: 3}
-  jumpSoundVolume: 0.2
+  jumpSoundVolume: 0.15
   wallCheck: {fileID: 8037269116266527860}
   wallSlidingSpeed:
     baseValue: 2

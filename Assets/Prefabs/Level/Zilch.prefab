@@ -10243,7 +10243,6 @@ MonoBehaviour:
   startInvincibleTime:
     baseValue: 2
   lowLifePulseThreshold: 1
-  playerAudioSource: {fileID: 860947147407656699}
   takeDamageAudioClip: {fileID: 0}
   takeDamageAudioClipVolume: 1
 --- !u!114 &5198823438255694855
@@ -10277,6 +10276,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   jumpParticles: {fileID: 3885930845310424675}
+  jumpSoundCollection:
+  - {fileID: 8300000, guid: 7e17e0642656241938d4fff636a33682, type: 3}
+  - {fileID: 8300000, guid: ece5d23a4975a4f6b88883ec32a361c2, type: 3}
+  jumpSoundVolume: 0.04
   wallCheck: {fileID: 8037269116266527860}
   wallSlidingSpeed:
     baseValue: 2
@@ -10295,11 +10298,9 @@ MonoBehaviour:
   CollisionAction:
     m_PersistentCalls:
       m_Calls: []
-  playerAudioSource: {fileID: 860947147407656699}
-  jumpSound: {fileID: 8300000, guid: 7e17e0642656241938d4fff636a33682, type: 3}
-  jumpSoundVolume: 0.04
   dashSound: {fileID: 8300000, guid: eb393dafe3ca4a14996f19e0bbf90527, type: 3}
   dashSoundVolume: 0.02
+  playerAudioSource: {fileID: 860947147407656699}
   defaultGroundSoundCollection: {fileID: 11400000, guid: 3bb8f323de6311d43ae21526950edcd7,
     type: 2}
   currentGroundSoundCollection: {fileID: 0}

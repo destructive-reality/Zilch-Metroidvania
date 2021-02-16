@@ -1782,7 +1782,7 @@ GameObject:
   - component: {fileID: 8867597321798601228}
   - component: {fileID: 5084694314924596344}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Pausetext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3599,6 +3599,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3876854143659251837, guid: 7f3cea43c0db39148adf92e5b3141e19,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8206525644523243669, guid: 7f3cea43c0db39148adf92e5b3141e19,
         type: 3}
       propertyPath: m_Text
@@ -4648,6 +4653,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876854143659251837, guid: 7f3cea43c0db39148adf92e5b3141e19,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8206525644523243669, guid: 7f3cea43c0db39148adf92e5b3141e19,
         type: 3}
@@ -6897,6 +6907,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UpdateMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876854143659251837, guid: 7f3cea43c0db39148adf92e5b3141e19,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8206525644523243669, guid: 7f3cea43c0db39148adf92e5b3141e19,
         type: 3}

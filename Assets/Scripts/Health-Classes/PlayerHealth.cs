@@ -12,9 +12,12 @@ public class PlayerHealth : KnockbackHealth
     [Range(0f, 4f)]
     public float takeDamageAudioClipVolume = 1f;
 
-    public AudioClip deathAudioClip;
+    public AudioClip deathAudioClip1;
     [Range(0f, 4f)]
-    public float deathAudioClipVolume = 1f;
+    public float deathAudioClip1Volume = 1f;
+    public AudioClip deathAudioClip2;
+    [Range(0f, 4f)]
+    public float deathAudioClip2Volume = 1f;
     private AudioSource playerAudioSource;
 
     private void Awake()
@@ -54,9 +57,13 @@ public class PlayerHealth : KnockbackHealth
     protected override void die()
     {
         base.die();
-        if (deathAudioClip)
+        if (deathAudioClip1)
         {
-            playerAudioSource.PlayOneShot(deathAudioClip, deathAudioClipVolume);
+            playerAudioSource.PlayOneShot(deathAudioClip1, deathAudioClip1Volume);
+        }
+        if (deathAudioClip2)
+        {
+            playerAudioSource.PlayOneShot(deathAudioClip2, deathAudioClip2Volume);
         }
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerCombat2D>().enabled = false;

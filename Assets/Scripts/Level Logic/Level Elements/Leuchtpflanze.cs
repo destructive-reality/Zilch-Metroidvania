@@ -9,13 +9,16 @@ public class Leuchtpflanze : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.position.x > this.transform.position.x)
+        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
         {
-            animator.SetTrigger("bendToLeft");
-        }
-        else
-        {
-            animator.SetTrigger("bendToRight");
+            if (other.transform.position.x > this.transform.position.x)
+            {
+                animator.SetTrigger("bendToLeft");
+            }
+            else
+            {
+                animator.SetTrigger("bendToRight");
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : KnockbackHealth
@@ -8,9 +9,9 @@ public class PlayerHealth : KnockbackHealth
     public int lowLifePulseThreshold = 1;
 
     [Header("Sounds")]
-    public AudioClip takeDamageAudioClip;
+    public List<AudioClip> takeDamageAudioClipCollection;
     [Range(0f, 4f)]
-    public float takeDamageAudioClipVolume = 1f;
+    public float takeDamageAudioVolume = 1f;
 
     public AudioClip deathAudioClip1;
     [Range(0f, 4f)]
@@ -42,9 +43,9 @@ public class PlayerHealth : KnockbackHealth
             PostProController.Instance.TriggerChromaticAberrationDamageAnimation();
             CinemachineShake.Instance.ShakeCamera(2f, .1f);
             GameMaster.Instance.SlowdownTime(.6f, 1.5f);
-            if (takeDamageAudioClip)
+            if (takeDamageAudioClipCollection.Count > 0)
             {
-                playerAudioSource.PlayOneShot(takeDamageAudioClip, takeDamageAudioClipVolume);
+                playerAudioSource.PlayOneShot(takeDamageAudioClipCollection[Random.Range(0, takeDamageAudioClipCollection.Count)], takeDamageAudioVolume);
             }
         }
     }
@@ -69,6 +70,6 @@ public class PlayerHealth : KnockbackHealth
         GetComponent<PlayerCombat2D>().enabled = false;
         playerMasterController.playerMovementController.playerAnimator.SetTrigger("Death");
         Debug.Log(gameObject.name + " is dying. Bye!");
-        LevelLoader.Instance.ReloadCurrentLevel();
+        LevelLoader.Instance.ReloadCurrentLevelAfterSeconds(4f);
     }
 }

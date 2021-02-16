@@ -10221,6 +10221,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 6768233270147321216}
   attackDirection: 2
   attackSound: {fileID: 8300000, guid: a7e87a4f6d8384b7496e5baf7ef6ef61, type: 3}
+  attackSoundVolume: 0.8
 --- !u!114 &7643680188621843559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10243,12 +10244,16 @@ MonoBehaviour:
   startInvincibleTime:
     baseValue: 2
   lowLifePulseThreshold: 1
-  takeDamageAudioClip: {fileID: 8300000, guid: 70da0b1efa3e24091aa14e2691a6bf30, type: 3}
-  takeDamageAudioClipVolume: 0.04
+  takeDamageAudioClipCollection:
+  - {fileID: 8300000, guid: 0ff41d7a69e824860b010c2ae1b7bea0, type: 3}
+  - {fileID: 8300000, guid: a14b0e4302c764f8ea0f8420bbb9b8e2, type: 3}
+  - {fileID: 8300000, guid: 70da0b1efa3e24091aa14e2691a6bf30, type: 3}
+  - {fileID: 8300000, guid: 458bd115d38e64569822c0cdd16c7d19, type: 3}
+  takeDamageAudioVolume: 0.2
   deathAudioClip1: {fileID: 8300000, guid: d4d0b71f86aff4b389e264447f67522a, type: 3}
-  deathAudioClip1Volume: 0.04
+  deathAudioClip1Volume: 0.2
   deathAudioClip2: {fileID: 8300000, guid: 958d29cdf18934280b07404418a6be93, type: 3}
-  deathAudioClip2Volume: 0.1
+  deathAudioClip2Volume: 0.5
 --- !u!114 &5198823438255694855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10287,7 +10292,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6f415e74fc05f4825a8fc3a98ef74332, type: 3}
   - {fileID: 8300000, guid: f28f27f58d9ae4eada13077df0bd5e6b, type: 3}
   - {fileID: 8300000, guid: f8def3d6592ec4f6f80bb5c67f6d079d, type: 3}
-  jumpSoundVolume: 0.04
+  jumpSoundVolume: 0.2
   wallCheck: {fileID: 8037269116266527860}
   wallSlidingSpeed:
     baseValue: 2
@@ -10307,12 +10312,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dashSound: {fileID: 8300000, guid: eb393dafe3ca4a14996f19e0bbf90527, type: 3}
-  dashSoundVolume: 0.02
+  dashSoundVolume: 0.05
   playerAudioSource: {fileID: 860947147407656699}
   defaultGroundSoundCollection: {fileID: 11400000, guid: 3bb8f323de6311d43ae21526950edcd7,
     type: 2}
   currentGroundSoundCollection: {fileID: 0}
-  walkSoundVolume: 0.03
+  walkSoundVolume: 0.1
   walkSoundRate: 0.35
 --- !u!114 &7228385836571419879
 MonoBehaviour:

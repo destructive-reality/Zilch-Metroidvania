@@ -10244,11 +10244,11 @@ MonoBehaviour:
     baseValue: 2
   lowLifePulseThreshold: 1
   takeDamageAudioClip: {fileID: 8300000, guid: 70da0b1efa3e24091aa14e2691a6bf30, type: 3}
-  takeDamageAudioClipVolume: 1
+  takeDamageAudioClipVolume: 0.04
   deathAudioClip1: {fileID: 8300000, guid: d4d0b71f86aff4b389e264447f67522a, type: 3}
-  deathAudioClip1Volume: 1
+  deathAudioClip1Volume: 0.04
   deathAudioClip2: {fileID: 8300000, guid: 958d29cdf18934280b07404418a6be93, type: 3}
-  deathAudioClip2Volume: 1
+  deathAudioClip2Volume: 0.1
 --- !u!114 &5198823438255694855
 MonoBehaviour:
   m_ObjectHideFlags: 0

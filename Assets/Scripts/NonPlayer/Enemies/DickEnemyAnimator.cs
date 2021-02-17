@@ -9,6 +9,11 @@ public class DickEnemyAnimator : MeleeHorizontalMovingEnemy
     private List<Vector2> patrolPoints;
     private Vector2 rayDirection;
 
+    [Header("Sounds")]
+    public List<AudioClip> walkingAudioClips;
+    public float walkingAudioVolume;
+    private AudioSource enemyAudioSource;
+
     public override void ResetState()
     {
         throw new System.NotImplementedException();
@@ -32,6 +37,11 @@ public class DickEnemyAnimator : MeleeHorizontalMovingEnemy
         //     GameObject.Destroy(transform.gameObject);
         // }
 
+    }
+
+    private void Awake()
+    {
+        enemyAudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -60,10 +70,15 @@ public class DickEnemyAnimator : MeleeHorizontalMovingEnemy
             }
         }
     }
+    public void triggerRandomWalkSoundClip()
+    {
+        enemyAudioSource.PlayOneShot(walkingAudioClips[Random.Range(0, walkingAudioClips.Count)], walkingAudioVolume);
+    }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawRay(this.transform.position, new Vector2(rayDirection.x, 0));
     }
+
 }

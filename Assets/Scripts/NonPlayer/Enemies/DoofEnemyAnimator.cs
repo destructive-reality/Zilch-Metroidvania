@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class DoofEnemyAnimator : MeleeHorizontalMovingEnemy
 {
@@ -6,11 +7,21 @@ public class DoofEnemyAnimator : MeleeHorizontalMovingEnemy
     private Vector2 position;
     private Vector2 startPosition;
 
+    [Header("Sounds")]
+    public List<AudioClip> walkingAudioClips;
+    public float walkingAudioVolume;
+    private AudioSource enemyAudioSource;
+
     protected override void Start()
     {
         base.Start();
         position = gameObject.transform.position;
         startPosition = new Vector2(position.x, position.y);
+    }
+
+    private void Awake()
+    {
+        enemyAudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -75,5 +86,10 @@ public class DoofEnemyAnimator : MeleeHorizontalMovingEnemy
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(this.transform.position, aggressionRange);
+    }
+
+    public void triggerRandomWalkSoundClip()
+    {
+        enemyAudioSource.PlayOneShot(walkingAudioClips[Random.Range(0, walkingAudioClips.Count)], walkingAudioVolume);
     }
 }

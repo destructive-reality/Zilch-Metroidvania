@@ -2,49 +2,53 @@
 
 public class Shrine : MonoBehaviour
 {
-  [SerializeField] private ParticleSystem healParticleSystem;
+    [SerializeField] private ParticleSystem healParticleSystem;
 
-  [SerializeField] private AudioClip healSound;
-  private AudioSource audioSource;
+    [SerializeField] private AudioClip healSound;
+    private AudioSource audioSource;
 
-  [SerializeField] private Animator animator;
-  protected bool isInteractable = false;
+    [SerializeField] private Animator animator;
+    protected bool isInteractable = false;
 
-  void Awake()
-  {
-    audioSource = GetComponent<AudioSource>();
-  }
-
-  void Update()
-  {
-    if (isInteractable && Input.GetButtonDown("PickUp"))
+    void Awake()
     {
-      healParticleSystem.Play();
-      audioSource.PlayOneShot(healSound);
-      GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().healToMaxHealth();
+        audioSource = GetComponent<AudioSource>();
     }
-  }
 
-  protected virtual void OnTriggerEnter2D(Collider2D other)
-  {
-    if (other.CompareTag("Player"))
+    void Update()
     {
-      isInteractable = true;
-      animator.SetBool("isActive", true);
-    }
-  }
+        if (isInteractable && Input.GetButtonDown("PickUp"))
+        {
+            healParticleSystem.Play();
+            audioSource.PlayOneShot(healSound);
 
-  protected virtual void OnTriggerExit2D(Collider2D other)
-  {
-    if (other.CompareTag("Player"))
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+            player.GetComponent<PlayerHealth>().healToMaxHealth();
+            player.GetComponent<PlayerHealth>().lastUsedShrine = this;
+        }
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-      isInteractable = false;
-      animator.SetBool("isActive", false);
+        if (other.CompareTag("Player"))
+        {
+            isInteractable = true;
+            animator.SetBool("isActive", true);
+        }
     }
-  }
 
-  void healPlayer()
-  {
-    healParticleSystem.Play();
-  }
+    protected virtual void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isInteractable = false;
+            animator.SetBool("isActive", false);
+        }
+    }
+
+    void healPlayer()
+    {
+        healParticleSystem.Play();
+    }
 }

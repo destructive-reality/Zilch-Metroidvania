@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DoofEnemyAnimator : MeleeHorizontalMovingEnemy
@@ -9,7 +9,9 @@ public class DoofEnemyAnimator : MeleeHorizontalMovingEnemy
 
     [Header("Sounds")]
     public List<AudioClip> walkingAudioClips;
-    public float walkingAudioVolume;
+    
+    [Range(0f, 4f)]
+    public float walkingAudioVolume = 1;
     private AudioSource enemyAudioSource;
 
     protected override void Start()

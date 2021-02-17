@@ -11,7 +11,8 @@ public class DickEnemyAnimator : MeleeHorizontalMovingEnemy
 
     [Header("Sounds")]
     public List<AudioClip> walkingAudioClips;
-    public float walkingAudioVolume;
+    [Range(0f, 4f)]
+    public float walkingAudioVolume = 1;
     private AudioSource enemyAudioSource;
 
     public override void ResetState()

@@ -21,9 +21,18 @@ public class PlayerHealth : KnockbackHealth
     public float deathAudioClip2Volume = 1f;
     private AudioSource playerAudioSource;
 
+    [Header("Respawning")]
+    public Shrine lastUsedShrine;
+
     private void Awake()
     {
         playerAudioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Keypad0)) {
+            this.setHealth(0);
+        }
     }
 
     public override void setHealth(int healthToSetTo)
@@ -70,6 +79,17 @@ public class PlayerHealth : KnockbackHealth
         GetComponent<PlayerCombat2D>().enabled = false;
         playerMasterController.playerMovementController.playerAnimator.SetTrigger("Death");
         Debug.Log(gameObject.name + " is dying. Bye!");
-        LevelLoader.Instance.ReloadCurrentLevelAfterSeconds(4f);
+
+        // LevelLoader.Instance.ReloadCurrentLevelAfterSeconds(4f);
+        Invoke("respawn", 4f);
+    }
+
+    private void respawn()
+    {
+        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<PlayerCombat2D>().enabled = true;
+        healToMaxHealth();
+        playerMasterController.playerMovementController.playerAnimator.SetTrigger("Respawn");
+        transform.position = lastUsedShrine.transform.position;
     }
 }

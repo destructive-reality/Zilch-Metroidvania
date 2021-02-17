@@ -29,8 +29,10 @@ public class PlayerHealth : KnockbackHealth
         playerAudioSource = GetComponent<AudioSource>();
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Keypad0)) {
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
             this.setHealth(0);
         }
     }
@@ -80,8 +82,13 @@ public class PlayerHealth : KnockbackHealth
         playerMasterController.playerMovementController.playerAnimator.SetTrigger("Death");
         Debug.Log(gameObject.name + " is dying. Bye!");
 
+        float deathDelayTime = 4f;
+
+        //Make player invincible to rpevent multiple death triggers
+        invincibleTime = Time.time + deathDelayTime;
+
         // LevelLoader.Instance.ReloadCurrentLevelAfterSeconds(4f);
-        Invoke("respawn", 4f);
+        Invoke("respawn", deathDelayTime);
     }
 
     private void respawn()

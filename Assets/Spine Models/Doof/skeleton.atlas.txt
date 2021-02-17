@@ -1,111 +1,118 @@
 
 skeleton.png
-size: 1024,256
+size: 512,512
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Arm rechts
-  rotate: true
-  xy: 464, 67
+  rotate: false
+  xy: 313, 124
   size: 35, 232
   orig: 35, 232
   offset: 0, 0
   index: -1
 BL_Zeh_1
   rotate: false
-  xy: 2, 2
+  xy: 48, 9
   size: 15, 15
   orig: 15, 15
   offset: 0, 0
   index: -1
 BL_Zeh_2
   rotate: false
-  xy: 19, 2
+  xy: 65, 9
   size: 15, 15
   orig: 15, 15
   offset: 0, 0
   index: -1
 BL_Zeh_3
   rotate: false
-  xy: 328, 12
+  xy: 29, 5
   size: 17, 19
   orig: 17, 19
   offset: 0, 0
   index: -1
 BL_Zeh_4
-  rotate: true
-  xy: 569, 30
+  rotate: false
+  xy: 157, 113
   size: 35, 31
   orig: 35, 31
   offset: 0, 0
   index: -1
 BR_Zeh_1
-  rotate: true
-  xy: 532, 4
+  rotate: false
+  xy: 318, 19
   size: 61, 35
   orig: 61, 35
   offset: 0, 0
   index: -1
 BR_Zeh_2
   rotate: false
-  xy: 249, 4
+  xy: 82, 2
   size: 26, 27
   orig: 26, 27
   offset: 0, 0
   index: -1
 BR_Zeh_3
   rotate: false
-  xy: 277, 5
+  xy: 110, 3
   size: 25, 26
   orig: 25, 26
   offset: 0, 0
   index: -1
 BR_Zeh_4
-  rotate: true
-  xy: 304, 6
+  rotate: false
+  xy: 2, 2
   size: 25, 22
   orig: 25, 22
   offset: 0, 0
   index: -1
 Bein links
-  rotate: true
-  xy: 249, 33
+  rotate: false
+  xy: 350, 143
   size: 65, 213
   orig: 65, 213
   offset: 0, 0
   index: -1
 Bein rechts
   rotate: true
-  xy: 2, 19
+  xy: 71, 31
   size: 79, 245
   orig: 79, 245
   offset: 0, 0
   index: -1
 Kopf
   rotate: false
-  xy: 366, 104
+  xy: 318, 358
   size: 167, 150
   orig: 167, 150
   offset: 0, 0
   index: -1
 Körper
-  rotate: true
-  xy: 2, 100
+  rotate: false
+  xy: 157, 146
   size: 154, 362
   orig: 154, 362
   offset: 0, 0
   index: -1
 Ohr links
-  rotate: true
-  xy: 464, 15
+  rotate: false
+  xy: 318, 56
   size: 50, 66
   orig: 50, 66
   offset: 0, 0
   index: -1
 Ohr rechts
   rotate: true
-  xy: 535, 170
+  xy: 2, 26
   size: 84, 67
   orig: 84, 67
+  offset: 0, 0
+  index: -1
+attack
+  rotate: false
+  xy: 2, 112
+  size: 153, 396
+  orig: 153, 396
   offset: 0, 0
   index: -1

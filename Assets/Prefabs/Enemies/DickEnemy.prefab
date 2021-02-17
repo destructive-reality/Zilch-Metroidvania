@@ -137,6 +137,16 @@ MonoBehaviour:
   - {fileID: 5821229737200081065}
   - {fileID: 5821229738511023536}
   aggressionRange: 7
+  walkingAudioClips:
+  - {fileID: 8300000, guid: 0bf23b8a9325940e6a7c681de4224ada, type: 3}
+  - {fileID: 8300000, guid: 9db8cfaf6e33e49c4941e78d099fbde6, type: 3}
+  - {fileID: 8300000, guid: 9fb3015a2d17d449ea77122dbd77412c, type: 3}
+  - {fileID: 8300000, guid: 9c76de2dbbd83433d934147716f14aec, type: 3}
+  - {fileID: 8300000, guid: b6b33b15ff5774b15b9e5268ef0f3eaa, type: 3}
+  - {fileID: 8300000, guid: 71decd6553bf84e1abb4c1afb198ec54, type: 3}
+  - {fileID: 8300000, guid: 425afdc7b206f4eecb3cc4e7c53958ca, type: 3}
+  - {fileID: 8300000, guid: a525b48c65db74287a2ce46a18a2be52, type: 3}
+  walkingAudioVolume: 1
 --- !u!114 &3514590588894738461
 MonoBehaviour:
   m_ObjectHideFlags: 0

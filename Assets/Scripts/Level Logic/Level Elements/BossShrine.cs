@@ -4,6 +4,7 @@ public class BossShrine : Shrine
 {
   [SerializeField] private int minModifierCount;
   [SerializeField] private Transform prefabBoss;
+  [SerializeField] private Transform bossSpawn;
   [SerializeField] private BossEncounterArea encounterArea;
   private bool isReady = false;
 
@@ -28,8 +29,8 @@ public class BossShrine : Shrine
 
     if (isReady)
     {
-      Vector2 bossSpawnPosition = new Vector2(transform.position.x, transform.position.y - 1);
-      Transform tsfBoss = Instantiate(prefabBoss, bossSpawnPosition, Quaternion.identity);
+      // Vector2 bossSpawnPosition = new Vector2(transform.position.x, transform.position.y - 1);
+      Transform tsfBoss = Instantiate(prefabBoss, bossSpawn.position, Quaternion.identity);
       GameObject.Destroy(gameObject);
       // Start Boss-Transformation  MD
     }

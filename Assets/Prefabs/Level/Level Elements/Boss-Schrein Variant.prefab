@@ -18,7 +18,38 @@ MonoBehaviour:
   minModifierCount: 5
   prefabBoss: {fileID: 3406395083984415623, guid: e1688c82c4ba24f4ebd2fafbac43008f,
     type: 3}
+  bossSpawnPosition: {x: 0, y: 0}
   encounterArea: {fileID: 0}
+--- !u!1 &6666571759810061780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5094065962110426602}
+  m_Layer: 0
+  m_Name: BossSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5094065962110426602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6666571759810061780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1002038813455847074}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2536203631398704861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,6 +134,12 @@ PrefabInstance:
 --- !u!1 &1002038813455847076 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3374765390426265721, guid: bf2439960643019409f761561fd97b6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2536203631398704861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1002038813455847074 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3374765390426265727, guid: bf2439960643019409f761561fd97b6d,
     type: 3}
   m_PrefabInstance: {fileID: 2536203631398704861}
   m_PrefabAsset: {fileID: 0}

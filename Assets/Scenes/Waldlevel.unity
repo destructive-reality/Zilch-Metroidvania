@@ -20642,6 +20642,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpriteAreaHider (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4196077536809672879, guid: 1dc015dd6e324084b8a676506b30989b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc015dd6e324084b8a676506b30989b, type: 3}
 --- !u!4 &792979523 stripped
@@ -47054,22 +47059,22 @@ PrefabInstance:
     - target: {fileID: 4824898116019582413, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: 121.35712
+      value: 121.50627
       objectReference: {fileID: 0}
     - target: {fileID: 4824898116019582413, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 4.4830666
+      value: 2.7428863
       objectReference: {fileID: 0}
     - target: {fileID: 4824898116019582413, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
-      value: 75.64947
+      value: 76.15133
       objectReference: {fileID: 0}
     - target: {fileID: 4824898116019582413, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
-      value: 5.221657
+      value: 2.7495558
       objectReference: {fileID: 0}
     - target: {fileID: 4824898116019582413, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
@@ -47154,12 +47159,12 @@ PrefabInstance:
     - target: {fileID: 4824898116019582413, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[14].x
-      value: -44.753567
+      value: -48.794395
       objectReference: {fileID: 0}
     - target: {fileID: 4824898116019582413, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[14].y
-      value: -17.810179
+      value: -31.074116
       objectReference: {fileID: 0}
     - target: {fileID: 4867829393153041428, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
@@ -47424,12 +47429,12 @@ PrefabInstance:
     - target: {fileID: 6121853363776226691, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.063942
+      value: -42.52301
       objectReference: {fileID: 0}
     - target: {fileID: 6121853363776226691, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6446829
+      value: 1.502356
       objectReference: {fileID: 0}
     - target: {fileID: 6121853363776226691, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}

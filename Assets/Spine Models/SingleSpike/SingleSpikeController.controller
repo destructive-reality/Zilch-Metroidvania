@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0bf7f79e74cb34b95c6410f2f4c3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 8300000, guid: 469140d27809a4a3997b4ca2adc1e270, type: 3}
+  soundToPlay: {fileID: 8300000, guid: aad73d45eb3814c50bbdc918f285dcbd, type: 3}
   interruptPlayingSound: 1
 --- !u!114 &2946688944800227838
 MonoBehaviour:

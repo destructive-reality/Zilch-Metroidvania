@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healParticleSystem: {fileID: 6107846846376278969}
-  healSound: {fileID: 8300000, guid: 4ad8b14261ca4cf47a0846e7e02d2f16, type: 3}
+  healSound: {fileID: 8300000, guid: f6da00958653143ef8add685cc4afe45, type: 3}
   animator: {fileID: 1525344757821223920}
 --- !u!70 &6703202455030868950
 CapsuleCollider2D:
@@ -146,9 +146,10 @@ AudioSource:
   m_GameObject: {fileID: 3374765390426265721}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2441584485545161446, guid: 7513d5a74e668420c9b0ab46f01c4e4a,
+    type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

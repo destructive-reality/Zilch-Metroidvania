@@ -204,7 +204,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 35241e1c0abc845de97c63ad87c07224, type: 3}
   - {fileID: 8300000, guid: 66de1ea038d8541ca984442177cbdae9, type: 3}
   - {fileID: 8300000, guid: 43dbaf284f9a24f9699edfcddcdd4dc2, type: 3}
-  walkingAudioVolume: 1
+  walkingAudioVolume: 0.2
   enemyAudioSource: {fileID: 156184634030899993}
 --- !u!82 &156184634030899993
 AudioSource:
@@ -215,7 +215,7 @@ AudioSource:
   m_GameObject: {fileID: 3811832996060555763}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 806218329494488663, guid: 7513d5a74e668420c9b0ab46f01c4e4a,
+  OutputAudioMixerGroup: {fileID: -2116217049522381628, guid: 7513d5a74e668420c9b0ab46f01c4e4a,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -228,7 +228,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 5
-  MaxDistance: 20
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

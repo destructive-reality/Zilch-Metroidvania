@@ -833,7 +833,7 @@ MonoBehaviour:
   projectileLifeTime: 3
   projectileYOriginAdjustment: 0
   projectileVelocity: 10
-  fireFrames: 11000000390000006100000089000000
+  fireFrames: 110000003c0000006700000092000000
 --- !u!1102 &814449844638795302
 AnimatorState:
   serializedVersion: 5

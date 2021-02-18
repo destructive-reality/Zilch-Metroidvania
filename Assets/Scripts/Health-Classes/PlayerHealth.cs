@@ -46,7 +46,7 @@ public class PlayerHealth : KnockbackHealth
 
     public new void getHit(int damage, Vector2 damagingObject)
     {
-        if (Time.time >= invincibleTime)
+        if (Time.unscaledTime >= invincibleTime)
         {
             base.getHit(damage, damagingObject);
             // applyKnockback(new Vector2(this.transform.position.x < damagingObject.x ? -knockbackForce.getValue() : knockbackForce.getValue(), knockbackForce.getValue() / 4));
@@ -63,7 +63,7 @@ public class PlayerHealth : KnockbackHealth
 
     public void startInvincibilty()
     {
-        invincibleTime = Time.time + startInvincibleTime.getValue();
+        invincibleTime = Time.unscaledTime + startInvincibleTime.getValue();
     }
 
     protected override void die()
@@ -84,8 +84,8 @@ public class PlayerHealth : KnockbackHealth
 
         float deathDelayTime = 4f;
 
-        //Make player invincible to rpevent multiple death triggers
-        invincibleTime = Time.time + deathDelayTime;
+        //Make player invincible to prevent multiple death triggers
+        invincibleTime = Time.unscaledTime + deathDelayTime + 2f;
 
         // LevelLoader.Instance.ReloadCurrentLevelAfterSeconds(4f);
         Invoke("respawn", deathDelayTime);

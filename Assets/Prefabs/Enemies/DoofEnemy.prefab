@@ -228,7 +228,6 @@ MonoBehaviour:
   speed:
     baseValue: 4
   groundDetector: {fileID: 9184363458933948227}
-  aggressionRange: 8
   walkingAudioClips:
   - {fileID: 8300000, guid: 9c6088bf6e5d44d1caf5fdc19b6b7251, type: 3}
   - {fileID: 8300000, guid: 3123b199248554a81bbeab4f0e69a505, type: 3}
@@ -239,6 +238,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 66de1ea038d8541ca984442177cbdae9, type: 3}
   - {fileID: 8300000, guid: 43dbaf284f9a24f9699edfcddcdd4dc2, type: 3}
   walkingAudioVolume: 1
+  enemyAudioSource: {fileID: 2331985771593584046}
+  aggressionRange: 8
 --- !u!82 &2331985771593584046
 AudioSource:
   m_ObjectHideFlags: 0

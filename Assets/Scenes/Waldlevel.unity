@@ -47429,12 +47429,12 @@ PrefabInstance:
     - target: {fileID: 6121853363776226691, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.52301
+      value: -39.86119
       objectReference: {fileID: 0}
     - target: {fileID: 6121853363776226691, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.502356
+      value: 1.587317
       objectReference: {fileID: 0}
     - target: {fileID: 6121853363776226691, guid: f5e1edfa8948b7d4092a3b9088aab59a,
         type: 3}
@@ -47981,6 +47981,8 @@ MonoBehaviour:
   - {fileID: 903089549}
   - {fileID: 1546084039}
   - {fileID: 373219027}
+  bossShrinePrefab: {fileID: 1002038813455847074, guid: eff967b9f7229f845982ab7f8472bfa8,
+    type: 3}
 --- !u!61 &1960894063
 BoxCollider2D:
   m_ObjectHideFlags: 0

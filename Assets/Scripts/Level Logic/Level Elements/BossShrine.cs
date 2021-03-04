@@ -17,7 +17,7 @@ public class BossShrine : Shrine
       if (checkPlayerModifiers(other.gameObject))
       {
         isReady = true;
-        encounterArea.OnBossTrigger(other.gameObject);
+        encounterArea.OnBossTrigger(other.gameObject, transform.position);
       }
       Debug.Log("Player at BossShrine");
     }
@@ -29,8 +29,9 @@ public class BossShrine : Shrine
 
     if (isReady)
     {
+      encounterArea.spawnBoss(prefabBoss, bossSpawn.position);
       // Vector2 bossSpawnPosition = new Vector2(transform.position.x, transform.position.y - 1);
-      Transform tsfBoss = Instantiate(prefabBoss, bossSpawn.position, Quaternion.identity);
+      // Transform tsfBoss = Instantiate(prefabBoss, bossSpawn.position, Quaternion.identity);
       GameObject.Destroy(gameObject);
       // Start Boss-Transformation  MD
     }

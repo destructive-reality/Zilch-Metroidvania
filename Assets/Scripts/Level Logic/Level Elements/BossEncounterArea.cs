@@ -5,9 +5,12 @@ using UnityEngine;
 public class BossEncounterArea : MonoBehaviour
 {
   [SerializeField] private List<GameObject> areaObjects;
+  [SerializeField] private Transform bossShrinePrefab;
   private GameObject player;
   private List<GameObject> stolenModifiers;
   private Transform playerModifierParent;
+  private Transform tsfBoss;
+  private Vector3 bossShrinePosition;
 
   private void Awake()
   {
@@ -16,10 +19,15 @@ public class BossEncounterArea : MonoBehaviour
     stolenModifiers = new List<GameObject>();
   }
 
-  public void OnBossTrigger(GameObject _player, bool _active = true)
+  public void OnBossTrigger(GameObject _player, Vector3 _shrinePosition, bool _active = true)
   {
     activateSpikes(_active);
+    bossShrinePosition = _shrinePosition;
+
     player = _player;
+    PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+    playerHealth.onDeath.RemoveListener(resetBossArea);
+    playerHealth.onDeath.AddListener(resetBossArea);
     if (_active)
     {
       stealModifiers();
@@ -33,6 +41,11 @@ public class BossEncounterArea : MonoBehaviour
     {
       returnModifiers();
     }
+  }
+
+  public void spawnBoss(Transform _bossPrefab, Vector3 _bossSpawnPosition)
+  {
+    tsfBoss = Instantiate(_bossPrefab, _bossSpawnPosition, Quaternion.identity);
   }
 
   private void activateSpikes(bool _active)
@@ -74,6 +87,22 @@ public class BossEncounterArea : MonoBehaviour
       playerInventory.AddItem(modifier);
       modifier.transform.SetParent(playerModifierParent);
       stolenModifiers.Remove(modifier);
+    }
+  }
+
+  private void resetBossArea()
+  {
+    Debug.Log("ResetBoss");
+    if (stolenModifiers.Count > 0)
+    {
+      Transform tsfBoss = Instantiate(bossShrinePrefab, bossShrinePosition, Quaternion.identity);
+      activateSpikes(false);
+      areaObjects[areaObjects.Count - 1].SetActive(true);
+      returnModifiers();
+    }
+    if (tsfBoss)
+    {
+      Destroy(tsfBoss.gameObject);
     }
   }
 }

@@ -136,7 +136,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -162,7 +162,7 @@ MonoBehaviour:
   animator: {fileID: 3653077688134600392}
   takingDamageSound: {fileID: 8300000, guid: 3a3c11793924048b4b6f09931a41d56f, type: 3}
   knockbackForce:
-    baseValue: 6
+    baseValue: 40
 --- !u!114 &3811832996060555765
 MonoBehaviour:
   m_ObjectHideFlags: 0

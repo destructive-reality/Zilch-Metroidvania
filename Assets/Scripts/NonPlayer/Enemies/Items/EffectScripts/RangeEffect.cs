@@ -110,6 +110,7 @@ public class RangeEffect : Effect
 
     Vector2 origin = playerCombat.attackPoint.position;
     Transform tsfProjectile = Instantiate(projectilePrefab, origin, Quaternion.identity);
+    tsfProjectile.localScale = (Vector3.one * 0.7f);
     tsfProjectile.GetComponent<Projectile>().Setup(dir, true, 0.7f);
   }
 }

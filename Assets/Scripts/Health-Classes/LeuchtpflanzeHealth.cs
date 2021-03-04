@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class LeuchtpflanzeHealth : Health
 {
-    public int selfDestructTimeAfterHealthDeath;
-    public ParticleSystem destroyParticles;
+  public int selfDestructTimeAfterHealthDeath;
+  public ParticleSystem destroyParticles;
 
-    public AudioClip deathSound;
+  public AudioClip deathSound;
 
-    protected override void die()
+  protected override void die()
+  {
+    base.die();
+    foreach (Collider2D col2D in GetComponents<Collider2D>())
     {
-        base.die();
-        GetComponent<Collider2D>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
-        destroyParticles.Play();
-        GetComponent<AudioSource>().PlayOneShot(deathSound);
-        Destroy(this.gameObject, selfDestructTimeAfterHealthDeath);
+      col2D.enabled = false;
     }
+    // GetComponent<Collider2D>().enabled = false;
+    GetComponent<MeshRenderer>().enabled = false;
+    destroyParticles.Play();
+    GetComponent<AudioSource>().PlayOneShot(deathSound);
+    Destroy(this.gameObject, selfDestructTimeAfterHealthDeath);
+  }
 }

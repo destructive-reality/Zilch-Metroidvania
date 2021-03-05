@@ -82,8 +82,9 @@ public class BossEncounterArea : MonoBehaviour
   private void returnModifiers()
   {
     Inventory playerInventory = player.GetComponentInChildren<Inventory>();
-    foreach (GameObject modifier in stolenModifiers)
+    for (int i = stolenModifiers.Count - 1; i > 0; i--)
     {
+      GameObject modifier = stolenModifiers[i];
       playerInventory.AddItem(modifier);
       modifier.transform.SetParent(playerModifierParent);
       stolenModifiers.Remove(modifier);

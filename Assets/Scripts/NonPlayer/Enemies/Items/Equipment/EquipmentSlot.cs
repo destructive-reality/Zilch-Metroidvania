@@ -53,7 +53,7 @@ public class EquipmentSlot : Slot
 
   public override void ClearSlot()
   {
-    Debug.Log("is item null?" + item);
+    // Debug.Log("is item null?" + item);
     if (item != null)
       equipment.UnequipModifier(item);
 
